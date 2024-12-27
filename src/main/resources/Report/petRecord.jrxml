@@ -1,0 +1,137 @@
+<!-- Created with Jaspersoft Studio version 7.0.0.final using JasperReports Library version 7.0.0-b478feaa9aab4375eba71de77b4ca138ad2f62aa  -->
+<jasperReport name="PetRecjrxml" language="java" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="001364c2-3dd1-468c-9a1e-1511d62e9372">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="PetRecDB"/>
+	<parameter name="P_Date" class="java.lang.String"/>
+	<query language="SQL"><![CDATA[select * from records]]></query>
+	<field name="rec_id" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="rec_id"/>
+		<property name="com.jaspersoft.studio.field.label" value="rec_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="records"/>
+	</field>
+	<field name="status" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="status"/>
+		<property name="com.jaspersoft.studio.field.label" value="status"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="records"/>
+	</field>
+	<field name="description" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="description"/>
+		<property name="com.jaspersoft.studio.field.label" value="description"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="records"/>
+	</field>
+	<field name="weight" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="weight"/>
+		<property name="com.jaspersoft.studio.field.label" value="weight"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="records"/>
+	</field>
+	<field name="petid" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="petid"/>
+		<property name="com.jaspersoft.studio.field.label" value="petid"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="records"/>
+	</field>
+	<variable name="petid1" resetType="Page" calculation="Count" class="java.lang.Integer">
+		<expression><![CDATA[$F{petid}]]></expression>
+	</variable>
+	<variable name="rec_id1" resetType="Page" calculation="Count" class="java.lang.Integer">
+		<expression><![CDATA[$F{rec_id}]]></expression>
+	</variable>
+	<background splitType="Stretch"/>
+	<title height="79" splitType="Stretch">
+		<element kind="staticText" uuid="2d249e6a-6e71-4ace-ae37-85a9983415d9" x="110" y="30" width="300" height="30" fontName="Courier 10 Pitch" fontSize="22.0" bold="true" hTextAlign="Center" vTextAlign="Bottom">
+			<text><![CDATA[PET HEALTH RECORDS
+]]></text>
+		</element>
+	</title>
+	<pageHeader height="59" splitType="Stretch"/>
+	<columnHeader height="45" splitType="Stretch">
+		<element kind="staticText" uuid="2c7be5ce-7122-4ce4-9785-75acbdea0224" x="0" y="15" width="111" height="30" fontName="DejaVu Sans" fontSize="16.0" bold="true" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[rec_id]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="3d4083fc-e33a-4111-b7ca-b709e799c437"/>
+			<box>
+				<pen lineWidth="1.0"/>
+			</box>
+		</element>
+		<element kind="staticText" uuid="f2350a4b-ba59-4252-a8f1-62be2d32a530" x="110" y="15" width="111" height="30" fontName="DejaVu Sans" fontSize="16.0" bold="true" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[status]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="bbfc0d7a-5172-4174-8916-18f3bd5e66ce"/>
+			<box>
+				<pen lineWidth="1.0"/>
+			</box>
+		</element>
+		<element kind="staticText" uuid="a7cb7d9a-4122-4916-a6f0-daed8427b804" x="221" y="15" width="111" height="30" fontName="DejaVu Sans" fontSize="16.0" bold="true" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[description]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c17e2166-20aa-4f11-aaba-5a4c4926de20"/>
+			<box>
+				<pen lineWidth="1.0"/>
+			</box>
+		</element>
+		<element kind="staticText" uuid="11a37518-0ce6-44f7-a3c7-84420a20edd1" x="332" y="15" width="111" height="30" fontName="DejaVu Sans" fontSize="16.0" bold="true" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[weight]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="da50daee-af4e-4cb4-965a-506725cfa4f2"/>
+			<box>
+				<pen lineWidth="1.0"/>
+			</box>
+		</element>
+		<element kind="staticText" uuid="18eef173-35bd-48a9-b320-ff992f81b8be" x="443" y="15" width="111" height="30" fontName="DejaVu Sans" fontSize="16.0" bold="true" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[petid]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="57f86d85-94eb-46bc-9605-f6aea8ff5c50"/>
+			<box>
+				<pen lineWidth="1.0"/>
+			</box>
+		</element>
+	</columnHeader>
+	<detail>
+		<band height="32" splitType="Stretch">
+			<element kind="textField" uuid="f2897bf0-ab4a-4a2e-a69e-e7c11303e5d3" x="332" y="0" width="111" height="30" fontName="Bitstream Charter" fontSize="12.0" hTextAlign="Left" vTextAlign="Middle">
+				<expression><![CDATA[$F{weight}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="da50daee-af4e-4cb4-965a-506725cfa4f2"/>
+				<box>
+					<pen lineWidth="0.5"/>
+				</box>
+			</element>
+			<element kind="textField" uuid="c9dc4868-9411-4892-856d-08d78c4cc6e4" x="443" y="0" width="111" height="30" fontName="Bitstream Charter" fontSize="12.0" hTextAlign="Left" vTextAlign="Middle">
+				<expression><![CDATA[$F{petid}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="57f86d85-94eb-46bc-9605-f6aea8ff5c50"/>
+				<box>
+					<pen lineWidth="0.5"/>
+				</box>
+			</element>
+			<element kind="textField" uuid="f0c945b9-521a-46a8-b64a-fc2ad4439c1d" x="0" y="0" width="111" height="30" fontName="Bitstream Charter" fontSize="12.0" hTextAlign="Left" vTextAlign="Middle">
+				<expression><![CDATA[$F{rec_id}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="3d4083fc-e33a-4111-b7ca-b709e799c437"/>
+				<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				<box>
+					<pen lineWidth="0.5"/>
+				</box>
+			</element>
+			<element kind="textField" uuid="b5febd6c-fbf4-48cd-a1cf-2dffed72ba9d" x="110" y="0" width="111" height="30" fontName="Bitstream Charter" fontSize="12.0" hTextAlign="Left" vTextAlign="Middle">
+				<expression><![CDATA[$F{status}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="bbfc0d7a-5172-4174-8916-18f3bd5e66ce"/>
+				<box>
+					<pen lineWidth="0.5"/>
+				</box>
+			</element>
+			<element kind="textField" uuid="a4bd7bae-cfa9-46e8-9c04-fbd3073d2653" x="221" y="0" width="111" height="30" fontName="Bitstream Charter" fontSize="12.0" hTextAlign="Left" vTextAlign="Middle">
+				<expression><![CDATA[$F{description}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c17e2166-20aa-4f11-aaba-5a4c4926de20"/>
+				<box>
+					<pen lineWidth="0.5"/>
+				</box>
+			</element>
+		</band>
+	</detail>
+	<columnFooter height="60" splitType="Stretch"/>
+	<pageFooter height="59" splitType="Stretch">
+		<element kind="staticText" uuid="9299703e-9a1d-4f22-8186-f5006714d1b6" x="0" y="0" width="202" height="30" fontName="DejaVu Sans" fontSize="12.0" bold="true" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[Pet Record Count :]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="3d4083fc-e33a-4111-b7ca-b709e799c437"/>
+			<box>
+				<pen lineWidth="0.0"/>
+			</box>
+		</element>
+		<element kind="textField" uuid="93c732b1-8e88-4846-9bf3-1b862d0a8297" x="200" y="0" width="100" height="30" fontSize="12.0" hTextAlign="Center" vTextAlign="Middle">
+			<expression><![CDATA[$V{rec_id1}]]></expression>
+		</element>
+	</pageFooter>
+	<summary height="49" splitType="Stretch"/>
+</jasperReport>

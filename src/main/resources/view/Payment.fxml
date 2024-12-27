@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="900.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gdse71.project.animalhospital.Controller.PaymentController">
+   <children>
+      <ImageView fx:id="image" fitHeight="900.0" fitWidth="1200.0" pickOnBounds="true">
+         <image>
+            <Image url="@../../../../../../Pictures/animal%20hospital/ALL%20PET.png" />
+         </image>
+      </ImageView>
+      <Label cache="true" cacheHint="QUALITY" layoutX="478.0" layoutY="75.0" text="PAYMENT DETAILS">
+         <font>
+            <Font name="DejaVu Sans Bold" size="37.0" />
+         </font>
+      </Label>
+      <TextField fx:id="payID" layoutX="535.0" layoutY="199.0" prefHeight="31.0" prefWidth="210.0" promptText="payment_id" style="-fx-background-color: transparent; -fx-border-width: 0 0 1px 0; -fx-border-color: black;" />
+      <TextField fx:id="payTime" layoutX="535.0" layoutY="268.0" prefHeight="31.0" prefWidth="210.0" promptText="payment_time" style="-fx-background-color: transparent; -fx-border-width: 0 0 1px 0; -fx-border-color: black;" />
+      <TextField fx:id="payDate" layoutX="904.0" layoutY="199.0" prefHeight="31.0" prefWidth="210.0" promptText="payment_date" style="-fx-background-color: transparent; -fx-border-width: 0 0 1px 0; -fx-border-color: black;" />
+      <Button fx:id="delete" layoutX="909.0" layoutY="355.0" mnemonicParsing="false" onAction="#deleteAction" prefHeight="48.0" prefWidth="181.0" style="-fx-background-color: d35400; -fx-background-radius: 12;" text="DELETE" textFill="WHITE">
+         <font>
+            <Font name="DejaVuMathTeXGyre-Regular" size="21.0" />
+         </font>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Button>
+      <TableView fx:id="table" layoutY="471.0" onMouseClicked="#tableAction" prefHeight="428.0" prefWidth="1200.0" style="-fx-background-color: f39c12;">
+        <columns>
+          <TableColumn fx:id="tablePayID" prefWidth="251.0" style="-fx-background-color: #f39c12; -fx-border-color: #000; -fx-border-width: 1 1px 0 0;" text="PAYMENT ID" />
+          <TableColumn fx:id="tableTime" prefWidth="241.0" style="-fx-background-color: #f39c12; -fx-border-color: #000; -fx-border-width: 1 1px 0 0;" text="TIME" />
+            <TableColumn fx:id="tableMethod" prefWidth="337.0" style="-fx-background-color: #f39c12; -fx-border-color: #000; -fx-border-width: 1 1px 0 0;" text="METHOD" />
+            <TableColumn fx:id="tableDAte" prefWidth="370.0" style="-fx-background-color: #f39c12; -fx-border-color: #000; -fx-border-width: 1 1px 0 0;" text="DATE" />
+        </columns>
+      </TableView>
+      <Button fx:id="back" layoutX="27.0" layoutY="29.0" mnemonicParsing="false" onAction="#bakAction" style="-fx-background-color: black;" text="BACK" textFill="WHITE" underline="true" />
+      <TextField fx:id="payMethod" layoutX="535.0" layoutY="331.0" prefHeight="31.0" prefWidth="210.0" promptText="payment_method" style="-fx-background-color: transparent; -fx-border-width: 0 0 1px 0; -fx-border-color: black;" />
+      <Label layoutX="271.0" layoutY="201.0" text="PAYMENT ID">
+         <font>
+            <Font name="DejaVu Sans Bold" size="21.0" />
+         </font>
+      </Label>
+      <Label layoutX="271.0" layoutY="270.0" text="TIME">
+         <font>
+            <Font name="DejaVu Sans Bold" size="21.0" />
+         </font>
+      </Label>
+      <Label layoutX="271.0" layoutY="333.0" text="PAYMENT METHOD">
+         <font>
+            <Font name="DejaVu Sans Bold" size="21.0" />
+         </font>
+      </Label>
+      <Label layoutX="796.0" layoutY="201.0" text="DATE">
+         <font>
+            <Font name="DejaVu Sans Bold" size="21.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

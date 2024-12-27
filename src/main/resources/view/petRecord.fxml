@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="870.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gdse71.project.animalhospital.Controller.PetRecordController">
+   <children>
+      <ImageView fx:id="image" fitHeight="900.0" fitWidth="1200.0" opacity="0.9" pickOnBounds="true">
+         <image>
+            <Image url="@../../../../../../Pictures/animal%20hospital/ALL%20PET.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="450.0" layoutY="41.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="51.0" prefWidth="409.0" text="PET HEALTH RECORDS">
+         <font>
+            <Font name="DejaVu Sans Bold Oblique" size="32.0" />
+         </font>
+      </Label>
+      <Label layoutX="270.0" layoutY="141.0" text="RECORD ID">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="270.0" layoutY="197.0" text="WEIGHT">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="270.0" layoutY="268.0" text="STATUS">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="267.0" layoutY="333.0" text="DESCRIPTION">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="717.0" layoutY="137.0" text="PET ID">
+         <font>
+            <Font name="System Bold" size="23.0" />
+         </font>
+      </Label>
+      <TableView fx:id="table" layoutY="466.0" onMouseClicked="#MouseClicked" opacity="0.96" prefHeight="438.0" prefWidth="1200.0" style="-fx-background-color: #f39c12;">
+        <columns>
+          <TableColumn fx:id="tablerecid" prefWidth="217.0" style="-fx-background-color: #f39c12; -fx-border-color: #000; -fx-border-width: 1 1px 0 0;" text="RECORD ID" />
+          <TableColumn fx:id="tableDescription" prefWidth="219.0" style="-fx-background-color: #f39c12; -fx-border-color: #000; -fx-border-width: 1 1px 0 0;" text="DESCRIPTION" />
+            <TableColumn fx:id="tablestatus" prefWidth="232.0" style="-fx-background-color: #f39c12; -fx-border-color: #000; -fx-border-width: 1 1px 0 0;" text="STATUS" />
+            <TableColumn fx:id="tableWeight" prefWidth="256.0" style="-fx-background-color: #f39c12; -fx-border-color: #000; -fx-border-width: 1 1px 0 0;" text="WEIGHT" />
+            <TableColumn fx:id="tablepetid" prefWidth="275.0" style="-fx-background-color: #f39c12; -fx-border-color: #000; -fx-border-width: 1 1px 0 0;" text="PET ID" />
+        </columns>
+      </TableView>
+      <TextField fx:id="recID" layoutX="415.0" layoutY="137.0" prefHeight="29.0" prefWidth="258.0" style="-fx-background-color: transparent; -fx-border-width: 0 0 1px 0; -fx-border-color: black;" />
+      <TextField fx:id="weight" layoutX="415.0" layoutY="193.0" prefHeight="29.0" prefWidth="258.0" style="-fx-background-color: transparent; -fx-border-width: 0 0 1px 0; -fx-border-color: black;" />
+      <TextField fx:id="status" layoutX="415.0" layoutY="264.0" prefHeight="29.0" prefWidth="258.0" style="-fx-background-color: transparent; -fx-border-width: 0 0 1px 0; -fx-border-color: black;" />
+      <TextField fx:id="desc" layoutX="415.0" layoutY="329.0" prefHeight="29.0" prefWidth="258.0" style="-fx-background-color: transparent; -fx-border-width: 0 0 1px 0; -fx-border-color: black;" />
+      <Button fx:id="save" layoutX="55.0" layoutY="394.0" mnemonicParsing="false" onAction="#saveAction" prefHeight="41.0" prefWidth="121.0" style="-fx-background-radius: 12; -fx-background-color: #d35400;" text="SAVE" textFill="WHITE">
+         <font>
+            <Font name="DejaVu Sans Mono Bold" size="20.0" />
+         </font>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Button>
+      <Button fx:id="delete" layoutX="227.0" layoutY="394.0" mnemonicParsing="false" onAction="#deleteAction" prefHeight="41.0" prefWidth="121.0" style="-fx-background-radius: 12; -fx-background-color: #d35400;" text="DELETE" textFill="#fcfcfc">
+         <font>
+            <Font name="DejaVu Sans Mono Bold" size="20.0" />
+         </font>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Button>
+      <Button fx:id="update" layoutX="398.0" layoutY="394.0" mnemonicParsing="false" onAction="#updateAction" prefHeight="41.0" prefWidth="121.0" style="-fx-background-radius: 12; -fx-background-color: #d35400;" text="UPDATE" textFill="WHITE">
+         <font>
+            <Font name="DejaVu Sans Mono Bold" size="20.0" />
+         </font>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Button>
+      <Button fx:id="back" layoutX="21.0" layoutY="29.0" mnemonicParsing="false" onAction="#backAction" style="-fx-background-color: black;" text="BACK" textFill="WHITE" />
+      <Button fx:id="grn" layoutX="574.0" layoutY="394.0" mnemonicParsing="false" onAction="#grnAction" prefHeight="41.0" prefWidth="215.0" style="-fx-background-radius: 12; -fx-background-color: #d35400;" text="GENARATE RECORD" textFill="#fcfcfc">
+         <font>
+            <Font name="DejaVu Sans Mono Bold" size="20.0" />
+         </font>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Button>
+      <ComboBox fx:id="prtID" layoutX="857.0" layoutY="139.0" onAction="#prtIDACTION" prefHeight="24.0" prefWidth="215.0" promptText="select a pet id " style="-fx-background-color: transparent; -fx-border-width: 0 0 1px 0; -fx-border-color: black;" />
+      <Button fx:id="reset" layoutX="849.0" layoutY="394.0" mnemonicParsing="false" onAction="#reserAction" prefHeight="41.0" prefWidth="121.0" style="-fx-background-radius: 12; -fx-background-color: #d35400;" text="RESET" textFill="WHITE">
+         <font>
+            <Font name="DejaVu Sans Mono Bold" size="20.0" />
+         </font>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Button>
+   </children>
+</AnchorPane>

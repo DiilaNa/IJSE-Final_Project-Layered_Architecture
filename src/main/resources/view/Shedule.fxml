@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="900.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gdse71.project.animalhospital.Controller.ScheduleController">
+   <children>
+      <ImageView fx:id="image" fitHeight="900.0" fitWidth="1200.0" pickOnBounds="true">
+         <image>
+            <Image url="@../../../../../../Pictures/animal%20hospital/ALL%20PET.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="453.0" layoutY="80.0" text="SHEDULE DETAILS">
+         <font>
+            <Font name="DejaVu Sans Bold" size="37.0" />
+         </font>
+      </Label>
+      <Label layoutX="701.0" layoutY="653.0" text="TIME">
+         <font>
+            <Font name="DejaVu Sans Bold" size="21.0" />
+         </font>
+      </Label>
+      <Label layoutX="382.0" layoutY="766.0" text="DATE">
+         <font>
+            <Font name="DejaVu Sans Bold" size="21.0" />
+         </font>
+      </Label>
+      <Label layoutX="233.0" layoutY="659.0" text="SHEDULE ID">
+         <font>
+            <Font name="DejaVu Sans Bold" size="21.0" />
+         </font>
+      </Label>
+      <TextField fx:id="datetxt" layoutX="516.0" layoutY="763.0" prefHeight="32.0" prefWidth="243.0" style="-fx-background-color: transparent; -fx-border-width: 0 0 1px 0; -fx-border-color: black;" />
+      <TextField fx:id="timeTxt" layoutX="825.0" layoutY="643.0" prefHeight="32.0" prefWidth="214.0" style="-fx-background-color: transparent; -fx-border-width: 0 0 1px 0; -fx-border-color: black;" />
+      <Label fx:id="sheduleID" layoutX="474.0" layoutY="659.0" text="SHEDULE ID">
+         <font>
+            <Font name="DejaVu Sans Bold" size="21.0" />
+         </font>
+      </Label>
+      <Button fx:id="back" layoutX="55.0" layoutY="28.0" mnemonicParsing="false" onAction="#backAction" style="-fx-background-color: black;" text="BACK" textFill="WHITE" underline="true" />
+      <Button fx:id="save" layoutX="343.0" layoutY="456.0" mnemonicParsing="false" onAction="#saveAction" prefHeight="46.0" prefWidth="142.0" style="-fx-background-color: d35400; -fx-background-radius: 12;" text="SAVE" textFill="WHITE">
+         <font>
+            <Font name="DejaVu Sans Condensed Bold" size="21.0" />
+         </font>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Button>
+      <Button fx:id="update" layoutX="559.0" layoutY="456.0" mnemonicParsing="false" onAction="#updateAction" prefHeight="46.0" prefWidth="142.0" style="-fx-background-color: d35400; -fx-background-radius: 12;" text="UPDATE" textFill="WHITE">
+         <font>
+            <Font name="DejaVu Sans Condensed Bold" size="21.0" />
+         </font>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Button>
+      <Button fx:id="delete" layoutX="790.0" layoutY="456.0" mnemonicParsing="false" onAction="#deleteAction" prefHeight="46.0" prefWidth="142.0" style="-fx-background-color: d35400; -fx-background-radius: 12;" text="DELETE" textFill="WHITE">
+         <font>
+            <Font name="DejaVu Sans Condensed Bold" size="21.0" />
+         </font>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Button>
+      <Button fx:id="reset" layoutX="123.0" layoutY="456.0" mnemonicParsing="false" onAction="#resetAction" prefHeight="46.0" prefWidth="142.0" style="-fx-background-color: d35400; -fx-background-radius: 12;" text="RESET" textFill="WHITE">
+         <font>
+            <Font name="DejaVu Sans Condensed Bold" size="21.0" />
+         </font>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Button>
+      <TableView fx:id="table" layoutX="149.0" layoutY="154.0" onMouseClicked="#ACtionTAble" prefHeight="275.0" prefWidth="947.0" style="-fx-background-color: f39c12;">
+        <columns>
+          <TableColumn fx:id="tableId" prefWidth="297.0" style="-fx-background-color: #f39c12; -fx-border-color: #000; -fx-border-width: 1 1px 0 0;" text="SHEDULE ID" />
+          <TableColumn fx:id="tabledate" prefWidth="313.0" style="-fx-background-color: #f39c12; -fx-border-color: #000; -fx-border-width: 1 1px 0 0;" text="DATE" />
+            <TableColumn fx:id="tableTime" prefWidth="336.0" style="-fx-background-color: #f39c12; -fx-border-color: #000; -fx-border-width: 1 1px 0 0;" text="TIME" />
+        </columns>
+      </TableView>
+      <Label layoutX="701.0" layoutY="570.0" text="EMPLOYEE NAME">
+         <font>
+            <Font name="DejaVu Sans Bold" size="21.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="empIds" layoutX="406.0" layoutY="567.0" onAction="#empAction" prefHeight="32.0" prefWidth="237.0" promptText="select an employee id" />
+      <Label fx:id="empName" layoutX="946.0" layoutY="570.0" text="SHEDULE ID">
+         <font>
+            <Font name="DejaVu Sans Bold" size="21.0" />
+         </font>
+      </Label>
+      <Label layoutX="204.0" layoutY="570.0" text="EMPLOYEE ID">
+         <font>
+            <Font name="DejaVu Sans Bold" size="21.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
