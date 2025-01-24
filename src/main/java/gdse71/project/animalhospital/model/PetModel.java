@@ -27,23 +27,6 @@ public class PetModel {
         }
         return petDTOS;
     }
-    public boolean savePet(Petdto petdto) {
-        try {
-            return Util.execute(
-                    "insert into pet values (?,?,?,?)",
-                    petdto.getPetId(),
-                    petdto.getPetName(),
-                    petdto.getPetBreed(),
-                    petdto.getPetOwnerId()
-            );
-        } catch (SQLException e) {
-            e.printStackTrace();  // Print stack trace for better debugging
-            return false;
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();  // Print stack trace for better debugging
-            return false;
-        }
-    }
     public boolean updatePet(Petdto petdto) {
         try {
             return Util.execute(

@@ -231,7 +231,6 @@ private final DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("HH:
                 ownerMailTXT.setStyle(ownerMailTXT.getStyle() + ";-fx-border-color: red;");
                 System.out.println("Invalid mail: " + ownerMail);
             }
-
             if (isValidName && isValidAddress) {
                 Appointmentsdto appointment = new Appointmentsdto(
                         appointmentId,
@@ -297,6 +296,7 @@ private final DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("HH:
 
         }
         public void loadNextAppointmentID()  {
+
             try {
                 String nextCustomerId = appointmentsModel.getNextAppointmentID();
                 AppointmentID.setText(nextCustomerId);
