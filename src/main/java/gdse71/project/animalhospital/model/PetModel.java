@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 public class PetModel {
 
-    public ArrayList<Petdto> getALLPET() throws SQLException, ClassNotFoundException {
+   /* public ArrayList<Petdto> getALLPET() throws SQLException, ClassNotFoundException {
         ResultSet rst =  Util.execute("select * from pet");
 
         ArrayList<Petdto> petDTOS = new ArrayList<>();
@@ -55,7 +55,7 @@ public class PetModel {
             throw new RuntimeException(e);
         } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);
-        }
+        }*/
     }
 
-}
+

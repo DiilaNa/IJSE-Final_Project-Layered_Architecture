@@ -24,6 +24,5 @@ public class BOFactory{
                 default:
                     return null;
         }
-
     }
 }

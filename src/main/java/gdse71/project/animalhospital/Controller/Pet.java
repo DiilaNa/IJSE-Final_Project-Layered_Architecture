@@ -1,9 +1,10 @@
 package gdse71.project.animalhospital.Controller;
 
 
+import gdse71.project.animalhospital.bo.BOFactory;
+import gdse71.project.animalhospital.bo.Custom.PetBO;
 import gdse71.project.animalhospital.dto.PetTm.PetTM;
 import gdse71.project.animalhospital.dto.Petdto;
-import gdse71.project.animalhospital.model.PetModel;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -84,8 +85,8 @@ public class Pet  implements Initializable {
     @FXML
     private Label ownerIds;
 
-    PetModel petModel = new PetModel();
-
+    /*PetModel petModel = new PetModel();*/
+    PetBO petBO = (PetBO) BOFactory.getInstance().getBO(BOFactory.BOType.PET);
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         Image loginImage = new Image(getClass().getResourceAsStream("/images/ALL PET.png"));
@@ -104,7 +105,7 @@ public class Pet  implements Initializable {
             new Alert(Alert.AlertType.ERROR, "Fail to refresh Page").show();
         }
     }
-    private void refreshPage() throws SQLException, ClassNotFoundException {
+    private void refreshPage() throws Exception {
             loadTableData();
             petIds.setText("");
             pname.setText("");
@@ -114,9 +115,9 @@ public class Pet  implements Initializable {
 
     }
 
-    private void loadTableData() throws SQLException, ClassNotFoundException {
+    private void loadTableData() throws Exception {
 
-        ArrayList<Petdto> petDTOS = petModel.getALLPET();
+        ArrayList<Petdto> petDTOS = petBO.getAll();
         ObservableList<PetTM> petTMS = FXCollections.observableArrayList();
 
         for (Petdto petDTO : petDTOS) {
@@ -161,7 +162,7 @@ public class Pet  implements Initializable {
     }
 
     @FXML
-    void deleteAction(ActionEvent event) throws SQLException, ClassNotFoundException {
+    void deleteAction(ActionEvent event) throws Exception {
 
         String petId = petIds.getText();
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Are you sure?", ButtonType.YES, ButtonType.NO);
@@ -169,7 +170,7 @@ public class Pet  implements Initializable {
 
         if (optionalButtonType.isPresent() && optionalButtonType.get() == ButtonType.YES) {
 
-            boolean isDeleted = petModel.deletePet(petId);
+            boolean isDeleted = petBO.delete(petId);
             if (isDeleted) {
                 refreshPage();
                 new Alert(Alert.AlertType.INFORMATION, "Pet deleted...!").show();
@@ -196,7 +197,7 @@ public class Pet  implements Initializable {
 
 
     @FXML
-    void updateAction(ActionEvent event) throws SQLException, ClassNotFoundException {
+    void updateAction(ActionEvent event) throws Exception {
         String petId = petIds.getText();
         String petName = pname.getText();
         String petBreed = breedtxt.getText();
@@ -233,7 +234,7 @@ public class Pet  implements Initializable {
                     PETtype
             );
 
-            boolean isSaved = petModel.updatePet(petdto);
+            boolean isSaved = petBO.update(petdto);
             if (isSaved) {
                 refreshPage();
                 new Alert(Alert.AlertType.INFORMATION, "Pet updated...!").show();
