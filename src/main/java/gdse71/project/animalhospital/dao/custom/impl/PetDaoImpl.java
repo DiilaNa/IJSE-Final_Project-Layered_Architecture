@@ -30,10 +30,9 @@ public class PetDaoImpl implements PetDao {
     }
 
     @Override
-    public void save(Pet dto) throws Exception, ClassNotFoundException {
-
+    public boolean save(Pet dto) throws Exception, ClassNotFoundException {
+        return false;
     }
-
     @Override
     public boolean delete(String petId) throws Exception, ClassNotFoundException {
         try {
@@ -71,10 +70,5 @@ public class PetDaoImpl implements PetDao {
     @Override
     public String generateId() throws Exception, ClassNotFoundException {
         return "";
-    }
-
-    @Override
-    public Pet search(String id) throws Exception, ClassNotFoundException {
-        return null;
     }
 }

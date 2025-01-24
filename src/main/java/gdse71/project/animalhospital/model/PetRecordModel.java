@@ -9,7 +9,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class PetRecordModel {
-    public ArrayList<PetRecorddto> getAllpetRec() throws SQLException, ClassNotFoundException {
+/*    public ArrayList<PetRecorddto> getAllpetRec() throws SQLException, ClassNotFoundException {
         ResultSet rst =  Util.execute("select * from records");
 
         ArrayList<PetRecorddto> petRecorddtos = new ArrayList<>();
@@ -49,7 +49,7 @@ public class PetRecordModel {
     }
     public boolean deletePetRec(String rec_id) throws SQLException, ClassNotFoundException {
         return Util.execute("delete from records where rec_id=?", rec_id);
-    }
+    }*/
 
 
 }

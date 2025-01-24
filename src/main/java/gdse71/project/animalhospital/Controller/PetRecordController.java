@@ -1,5 +1,8 @@
 package gdse71.project.animalhospital.Controller;
 
+import gdse71.project.animalhospital.bo.BOFactory;
+import gdse71.project.animalhospital.bo.Custom.PetRecordBO;
+import gdse71.project.animalhospital.dao.custom.PetRecordDao;
 import gdse71.project.animalhospital.db.DBConnection;
 import gdse71.project.animalhospital.dto.PetRecorddto;
 import gdse71.project.animalhospital.dto.PetTm.PetRecordTM;
@@ -84,7 +87,8 @@ public class PetRecordController implements Initializable {
     @FXML
     private Button reset;
 
-    PetRecordModel petRecordModel = new PetRecordModel();
+    /*PetRecordModel petRecordModel = new PetRecordModel();*/
+    PetRecordBO petRecordBO = (PetRecordBO) BOFactory.getInstance().getBO(BOFactory.BOType.PETRECORD);
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -100,7 +104,7 @@ public class PetRecordController implements Initializable {
         try {
             refreshPage();
             loadPetIds(); // Call this method to populate ComboBox during initialization
-        } catch (SQLException | ClassNotFoundException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
@@ -138,14 +142,14 @@ public class PetRecordController implements Initializable {
     }
 
     @FXML
-    void deleteAction(ActionEvent event) throws SQLException, ClassNotFoundException {
+    void deleteAction(ActionEvent event) throws Exception {
         String Id = recID.getText();
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Are you sure?", ButtonType.YES, ButtonType.NO);
         Optional<ButtonType> optionalButtonType = alert.showAndWait();
 
         if (optionalButtonType.isPresent() && optionalButtonType.get() == ButtonType.YES) {
 
-            boolean isDeleted = petRecordModel.deletePetRec(Id);
+            boolean isDeleted = petRecordBO.delete(Id);
             if (isDeleted) {
                 refreshPage();
                 new Alert(Alert.AlertType.INFORMATION, "Pet  Record deleted...!").show();
@@ -185,7 +189,7 @@ public class PetRecordController implements Initializable {
     }
 
     @FXML
-    void saveAction(ActionEvent event) throws SQLException, ClassNotFoundException {
+    void saveAction(ActionEvent event) throws Exception {
         String recId = recID.getText();
         String DESC = desc.getText();
         String Status = status.getText();
@@ -225,7 +229,7 @@ public class PetRecordController implements Initializable {
                     petId
             );
 
-            boolean isSaved = petRecordModel.savePetRec(petRecorddto);
+            boolean isSaved = petRecordBO.save(petRecorddto);
             if (isSaved) {
                 refreshPage();
                 new Alert(Alert.AlertType.INFORMATION, "Pet Record saved...!").show();
@@ -237,7 +241,7 @@ public class PetRecordController implements Initializable {
     }
 
     @FXML
-    void updateAction(ActionEvent event) throws SQLException, ClassNotFoundException {
+    void updateAction(ActionEvent event) throws Exception {
         String recId = recID.getText();
         String DESC = desc.getText();
         String Status = status.getText();
@@ -282,7 +286,7 @@ public class PetRecordController implements Initializable {
                     petId
             );
 
-            boolean isSaved = petRecordModel.updatePetRec(petRecorddto);
+            boolean isSaved = petRecordBO.update(petRecorddto);
             if (isSaved) {
                 refreshPage();
                 new Alert(Alert.AlertType.INFORMATION, "Pet Record Updated...!").show();
@@ -307,9 +311,9 @@ public class PetRecordController implements Initializable {
             throw new RuntimeException(e);
         }
     }
-    private void loadTableData() throws SQLException, ClassNotFoundException {
+    private void loadTableData() throws Exception {
 
-        ArrayList<PetRecorddto> petRecorddtos = petRecordModel.getAllpetRec();
+        ArrayList<PetRecorddto> petRecorddtos = petRecordBO.getAll();
         ObservableList<PetRecordTM> petRecordTMS = FXCollections.observableArrayList();
 
         for (PetRecorddto petRecorddto : petRecorddtos) {
@@ -325,7 +329,7 @@ public class PetRecordController implements Initializable {
 
         table.setItems(petRecordTMS);
     }
-    private void refreshPage() throws SQLException, ClassNotFoundException {
+    private void refreshPage() throws Exception {
 
         loadTableData();
 
