@@ -62,11 +62,6 @@ public class PetRecordImpl implements PetRecordDao {
     public String generateId() throws Exception, ClassNotFoundException {
         return "";
     }
-
-    /*@Override
-    public String loadId() throws Exception, ClassNotFoundException {
-        return Util.execute("SELECT pet_id FROM pet");
-    }*/
     @Override
     public ArrayList<String> loadId() throws Exception {
         ResultSet rst = Util.execute("SELECT pet_id FROM pet");

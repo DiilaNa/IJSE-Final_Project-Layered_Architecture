@@ -1,5 +1,7 @@
 package gdse71.project.animalhospital.Controller;
 
+import gdse71.project.animalhospital.bo.BOFactory;
+import gdse71.project.animalhospital.bo.Custom.PaymentBO;
 import gdse71.project.animalhospital.dto.PaymentDto;
 import gdse71.project.animalhospital.dto.PetTm.InvoiceTM;
 import gdse71.project.animalhospital.dto.PetTm.PaymentTM;
@@ -82,7 +84,7 @@ public class PaymentController implements Initializable {
     @FXML
     private TextField payMethod;
 
-    PaymentModel paymentModel = new PaymentModel();
+   PaymentBO paymentBO = (PaymentBO) BOFactory.getInstance().getBO(BOFactory.BOType.PAYMENT);
 
     @FXML
     void bakAction(ActionEvent event) {
@@ -106,10 +108,8 @@ public class PaymentController implements Initializable {
             new Alert(Alert.AlertType.WARNING, "Please select an id to delete.").show();
             return;
         }
-
         try {
-            boolean isDeleted = paymentModel.delete(selected.getPaymentId());
-
+            boolean isDeleted = paymentBO.deletePayment(selected.getPaymentId());
             if (isDeleted) {
                 refreshPage();
                 new Alert(Alert.AlertType.INFORMATION, " deleted successfully!").show();
@@ -138,7 +138,7 @@ public class PaymentController implements Initializable {
 
     }
 
-    private void refreshPage() throws SQLException, ClassNotFoundException {
+    private void refreshPage() throws Exception {
 
         loadTableData();
         delete.setDisable(true);
@@ -148,9 +148,9 @@ public class PaymentController implements Initializable {
         payTime.setText("");
         payMethod.setText("");
     }
-    private void loadTableData() throws SQLException, ClassNotFoundException {
+    private void loadTableData() throws Exception {
 
-        ArrayList<PaymentDto> paymentDtos = paymentModel.getAll();
+        ArrayList<PaymentDto> paymentDtos = paymentBO.getAllPayment();
         ObservableList<PaymentTM> paymentTMS = FXCollections.observableArrayList();
 
         for (PaymentDto paymentDto : paymentDtos) {

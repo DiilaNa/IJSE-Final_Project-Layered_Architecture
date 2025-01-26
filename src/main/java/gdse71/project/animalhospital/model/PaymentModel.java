@@ -8,7 +8,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public class PaymentModel {
+public class PaymentModel {/*
     public ArrayList<PaymentDto> getAll() throws SQLException, ClassNotFoundException {
         ResultSet rst =  Util.execute("select * from payment");
 
@@ -47,5 +47,5 @@ public class PaymentModel {
 
     public boolean delete(String payment_id ) throws SQLException, ClassNotFoundException {
         return Util.execute("delete from payment where payment_id=?", payment_id);
-    }
+    }*/
 }
