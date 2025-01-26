@@ -13,7 +13,7 @@ public class PetBOImpl implements PetBO {
 
 
     @Override
-    public ArrayList<Petdto> getAll() throws Exception {
+    public ArrayList<Petdto> getAllPets() throws Exception {
         ArrayList<Petdto> petdtos = new ArrayList<>();
         ArrayList<Pet> pets = petDao.getAll();
         for (Pet pet : pets) {
@@ -23,7 +23,7 @@ public class PetBOImpl implements PetBO {
     }
 
     @Override
-    public boolean delete(String petId) {
+    public boolean deletePets(String petId) {
         try {
            return petDao.delete(petId);
         } catch (Exception e) {
@@ -32,12 +32,7 @@ public class PetBOImpl implements PetBO {
     }
 
     @Override
-    public boolean update(Petdto petdto) throws Exception {
+    public boolean updatePets(Petdto petdto) throws Exception {
         return petDao.update(new Pet(petdto.getPetId(),petdto.getPetName(),petdto.getPetBreed(), petdto.getPetOwnerId(), petdto.getPetOwnerId()));
-    }
-
-    @Override
-    public String generate() {
-        return "";
     }
 }

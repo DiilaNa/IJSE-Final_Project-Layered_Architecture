@@ -2,9 +2,14 @@ package gdse71.project.animalhospital.dao.custom.impl;
 
 import gdse71.project.animalhospital.CrudUtil.Util;
 import gdse71.project.animalhospital.dao.custom.PetRecordDao;
+import gdse71.project.animalhospital.db.DBConnection;
 import gdse71.project.animalhospital.entity.PetRecord;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
+import java.sql.Connection;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class PetRecordImpl implements PetRecordDao {
@@ -59,5 +64,22 @@ public class PetRecordImpl implements PetRecordDao {
     @Override
     public String generateId() throws Exception, ClassNotFoundException {
         return "";
+    }
+
+    @Override
+    public String loadId() throws Exception, ClassNotFoundException {
+
+            try {
+                Connection connection = DBConnection.getInstance().getConnection();
+                ResultSet rs = connection.createStatement().executeQuery("SELECT pet_id FROM pet");
+                ObservableList<String> data = FXCollections.observableArrayList();
+
+                while (rs.next()) {
+                    data.add(rs.getString("pet_id"));
+                }
+                prtID.setItems(data);
+            } catch (ClassNotFoundException e) {
+                throw new RuntimeException(e);
+            }
     }
 }

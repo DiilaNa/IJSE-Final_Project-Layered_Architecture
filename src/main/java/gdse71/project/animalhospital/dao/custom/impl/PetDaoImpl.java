@@ -71,4 +71,9 @@ public class PetDaoImpl implements PetDao {
     public String generateId() throws Exception, ClassNotFoundException {
         return "";
     }
+
+    @Override
+    public String loadId() throws Exception, ClassNotFoundException {
+        return "";
+    }
 }

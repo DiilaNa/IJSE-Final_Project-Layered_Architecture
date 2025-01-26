@@ -149,7 +149,7 @@ public class PetRecordController implements Initializable {
 
         if (optionalButtonType.isPresent() && optionalButtonType.get() == ButtonType.YES) {
 
-            boolean isDeleted = petRecordBO.delete(Id);
+            boolean isDeleted = petRecordBO.deletePetRecords(Id);
             if (isDeleted) {
                 refreshPage();
                 new Alert(Alert.AlertType.INFORMATION, "Pet  Record deleted...!").show();
@@ -229,7 +229,7 @@ public class PetRecordController implements Initializable {
                     petId
             );
 
-            boolean isSaved = petRecordBO.save(petRecorddto);
+            boolean isSaved = petRecordBO.savePetRecords(petRecorddto);
             if (isSaved) {
                 refreshPage();
                 new Alert(Alert.AlertType.INFORMATION, "Pet Record saved...!").show();
@@ -286,7 +286,7 @@ public class PetRecordController implements Initializable {
                     petId
             );
 
-            boolean isSaved = petRecordBO.update(petRecorddto);
+            boolean isSaved = petRecordBO.updatePetRecords(petRecorddto);
             if (isSaved) {
                 refreshPage();
                 new Alert(Alert.AlertType.INFORMATION, "Pet Record Updated...!").show();
@@ -313,7 +313,7 @@ public class PetRecordController implements Initializable {
     }
     private void loadTableData() throws Exception {
 
-        ArrayList<PetRecorddto> petRecorddtos = petRecordBO.getAll();
+        ArrayList<PetRecorddto> petRecorddtos = petRecordBO.getAllpetRecords();
         ObservableList<PetRecordTM> petRecordTMS = FXCollections.observableArrayList();
 
         for (PetRecorddto petRecorddto : petRecorddtos) {

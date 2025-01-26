@@ -117,7 +117,7 @@ public class Pet  implements Initializable {
 
     private void loadTableData() throws Exception {
 
-        ArrayList<Petdto> petDTOS = petBO.getAll();
+        ArrayList<Petdto> petDTOS = petBO.getAllPets();
         ObservableList<PetTM> petTMS = FXCollections.observableArrayList();
 
         for (Petdto petDTO : petDTOS) {
@@ -170,7 +170,7 @@ public class Pet  implements Initializable {
 
         if (optionalButtonType.isPresent() && optionalButtonType.get() == ButtonType.YES) {
 
-            boolean isDeleted = petBO.delete(petId);
+            boolean isDeleted = petBO.deletePets(petId);
             if (isDeleted) {
                 refreshPage();
                 new Alert(Alert.AlertType.INFORMATION, "Pet deleted...!").show();
@@ -234,7 +234,7 @@ public class Pet  implements Initializable {
                     PETtype
             );
 
-            boolean isSaved = petBO.update(petdto);
+            boolean isSaved = petBO.updatePets(petdto);
             if (isSaved) {
                 refreshPage();
                 new Alert(Alert.AlertType.INFORMATION, "Pet updated...!").show();

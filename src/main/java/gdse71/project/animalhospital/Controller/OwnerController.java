@@ -20,7 +20,6 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Optional;
 import java.util.ResourceBundle;
@@ -94,7 +93,7 @@ public class OwnerController implements Initializable {
 
     private void loadTableData() throws Exception {
 
-        ArrayList<Ownerdto> ownerdtos = ownerBO.getAll();
+        ArrayList<Ownerdto> ownerdtos = ownerBO.getAllOwner();
         ObservableList<OwnerTM> ownerTMS = FXCollections.observableArrayList();
 
         for (Ownerdto ownerdto : ownerdtos) {
@@ -162,7 +161,7 @@ public class OwnerController implements Initializable {
 
         if (optionalButtonType.isPresent() && optionalButtonType.get() == ButtonType.YES) {
 
-            boolean isDeleted = ownerBO.delete(ownerId);
+            boolean isDeleted = ownerBO.deleteOwners(ownerId);
             if (isDeleted) {
                 refreshPage();
                 new Alert(Alert.AlertType.INFORMATION, "Owner deleted...!").show();
@@ -272,7 +271,7 @@ public class OwnerController implements Initializable {
                     ownerMail
             );
 
-            boolean isSaved = ownerBO.update(ownerdto);
+            boolean isSaved = ownerBO.updateOwners(ownerdto);
             if (isSaved) {
                 refreshPage();
                 new Alert(Alert.AlertType.INFORMATION, "Owner Updated...!").show();

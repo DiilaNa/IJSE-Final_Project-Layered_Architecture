@@ -36,7 +36,10 @@ public class Login {
 
     @FXML
     void logbtnAction(ActionEvent event) throws IOException {
-        if (userName.getText().equals("admin") && passWord.getText().equals("1234")) {
+        if (userName.getText().equals("") && passWord.getText().equals("")) {
+
+
+            
             try {
                 Stage stage = (Stage) logbtn.getScene().getWindow();
                 stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/dashboard.fxml"))));

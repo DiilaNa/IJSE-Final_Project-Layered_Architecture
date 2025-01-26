@@ -14,7 +14,7 @@ public class PetRecordBOImpl implements PetRecordBO {
     PetRecordDao petRecordDao = (PetRecordDao) DaoFactory.getInstance().getDao(DaoFactory.DaoType.PETRECORD);
 
     @Override
-    public ArrayList<PetRecorddto> getAll() throws Exception {
+    public ArrayList<PetRecorddto> getAllpetRecords() throws Exception {
 
        ArrayList <PetRecorddto> petRecordDtos = new ArrayList<>();
        ArrayList<PetRecord> petRecords = petRecordDao.getAll();
@@ -31,7 +31,7 @@ public class PetRecordBOImpl implements PetRecordBO {
     }
 
     @Override
-    public boolean save(PetRecorddto petRecord) throws Exception {
+    public boolean savePetRecords(PetRecorddto petRecord) throws Exception {
        return petRecordDao.save(new PetRecord(
                petRecord.getRecordId(),
                petRecord.getStatus(),
@@ -41,12 +41,12 @@ public class PetRecordBOImpl implements PetRecordBO {
     }
 
     @Override
-    public boolean delete(String id) throws Exception {
+    public boolean deletePetRecords(String id) throws Exception {
         return petRecordDao.delete(id);
     }
 
     @Override
-    public boolean update(PetRecorddto petRecord) throws Exception {
+    public boolean updatePetRecords(PetRecorddto petRecord) throws Exception {
         return petRecordDao.update(new PetRecord(
                 petRecord.getRecordId(),
                 petRecord.getStatus(),

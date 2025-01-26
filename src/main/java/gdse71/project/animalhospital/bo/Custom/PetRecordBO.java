@@ -8,8 +8,8 @@ import gdse71.project.animalhospital.entity.PetRecord;
 import java.util.ArrayList;
 
 public interface PetRecordBO extends SuperBO {
-     ArrayList<PetRecorddto> getAll() throws Exception;
-     boolean save(PetRecorddto petRecord) throws Exception;
-     boolean delete(String id) throws Exception;
-     boolean update(PetRecorddto petRecord) throws Exception;
+     ArrayList<PetRecorddto> getAllpetRecords() throws Exception;
+     boolean savePetRecords(PetRecorddto petRecord) throws Exception;
+     boolean deletePetRecords(String id) throws Exception;
+     boolean updatePetRecords(PetRecorddto petRecord) throws Exception;
 }

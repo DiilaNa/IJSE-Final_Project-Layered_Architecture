@@ -12,7 +12,7 @@ public class OwnerBOImpl implements OwnerBO {
 
     OwnerDao ownerDao = (OwnerDao) DaoFactory.getInstance().getDao(DaoFactory.DaoType.OWNER);
     @Override
-    public ArrayList<Ownerdto> getAll() throws Exception, ClassNotFoundException {
+    public ArrayList<Ownerdto> getAllOwner() throws Exception, ClassNotFoundException {
         ArrayList<Ownerdto> ownerdtos = new ArrayList<>();
         ArrayList<Owner> owners = ownerDao.getAll();
         for (Owner owner : owners) {
@@ -21,19 +21,14 @@ public class OwnerBOImpl implements OwnerBO {
         return ownerdtos;
     }
     @Override
-    public boolean delete(String id) throws Exception, ClassNotFoundException {
+    public boolean deleteOwners(String id) throws Exception, ClassNotFoundException {
         return ownerDao.delete(id);
     }
 
     @Override
-    public boolean update(Ownerdto owner) throws Exception, ClassNotFoundException {
+    public boolean updateOwners(Ownerdto owner) throws Exception, ClassNotFoundException {
         return ownerDao.update(new Owner(
                 owner.getOwnerId(), owner.getOwnerName(), owner.getOwnerAddress(), owner.getOwnerMail()
         ));
-    }
-
-    @Override
-    public String generateId() throws Exception, ClassNotFoundException {
-        return "";
     }
 }
