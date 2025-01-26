@@ -7,7 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public class OwnerModel {
+public class OwnerModel {/*
 
     public ArrayList<Ownerdto> getAllOwner() throws SQLException, ClassNotFoundException {
     ResultSet rst =  Util.execute("select * from owner");
@@ -45,6 +45,6 @@ public class OwnerModel {
     }
     public boolean deleteOwner(String ownerid) throws SQLException, ClassNotFoundException {
         return Util.execute("delete from owner where owner_id=?", ownerid);
-    }
+    }*/
 
 }

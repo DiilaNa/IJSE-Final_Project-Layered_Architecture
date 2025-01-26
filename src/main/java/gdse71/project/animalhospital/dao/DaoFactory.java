@@ -1,6 +1,7 @@
 package gdse71.project.animalhospital.dao;
 
 import gdse71.project.animalhospital.dao.custom.PetDao;
+import gdse71.project.animalhospital.dao.custom.impl.OwnerDAOImpl;
 import gdse71.project.animalhospital.dao.custom.impl.PetDaoImpl;
 import gdse71.project.animalhospital.dao.custom.impl.PetRecordImpl;
 
@@ -16,7 +17,7 @@ public class DaoFactory {
         return daoFactory;
     }
     public enum DaoType {
-        PET,PETRECORD
+        PET,PETRECORD,OWNER
     }
     public SuperDAO getDao(DaoType Type) {
         switch (Type) {
@@ -24,6 +25,8 @@ public class DaoFactory {
                 return new PetDaoImpl();
                 case PETRECORD:
                     return new PetRecordImpl();
+                    case OWNER:
+                        return new OwnerDAOImpl();
                 default:
                     return null;
         }

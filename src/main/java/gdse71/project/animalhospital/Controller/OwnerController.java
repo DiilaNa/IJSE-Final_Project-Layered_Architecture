@@ -1,8 +1,9 @@
 package gdse71.project.animalhospital.Controller;
 
+import gdse71.project.animalhospital.bo.BOFactory;
+import gdse71.project.animalhospital.bo.Custom.OwnerBO;
 import gdse71.project.animalhospital.dto.Ownerdto;
 import gdse71.project.animalhospital.dto.PetTm.OwnerTM;
-import gdse71.project.animalhospital.model.OwnerModel;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -46,16 +47,16 @@ public class OwnerController implements Initializable {
     private TableView<OwnerTM> table;
 
     @FXML
-    private TableColumn<OwnerTM,String> tableOmail;
+    private TableColumn<OwnerTM, String> tableOmail;
 
     @FXML
-    private TableColumn<OwnerTM,String> tableOname;
+    private TableColumn<OwnerTM, String> tableOname;
 
     @FXML
-    private TableColumn<OwnerTM,String> tableOwnerAddrees;
+    private TableColumn<OwnerTM, String> tableOwnerAddrees;
 
     @FXML
-    private TableColumn<OwnerTM,String> tableownerID;
+    private TableColumn<OwnerTM, String> tableownerID;
 
     @FXML
     private Button updatebtn;
@@ -69,7 +70,7 @@ public class OwnerController implements Initializable {
     @FXML
     private Button reset;
 
-    OwnerModel ownerModel = new OwnerModel();
+    OwnerBO ownerBO = (OwnerBO) BOFactory.getInstance().getBO(BOFactory.BOType.OWNER);
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -82,7 +83,6 @@ public class OwnerController implements Initializable {
         tableOmail.setCellValueFactory(new PropertyValueFactory<>("ownerMail"));
 
 
-
         try {
             refreshPage();
         } catch (Exception e) {
@@ -92,9 +92,9 @@ public class OwnerController implements Initializable {
 
     }
 
-    private void loadTableData() throws SQLException, ClassNotFoundException {
+    private void loadTableData() throws Exception {
 
-        ArrayList<Ownerdto> ownerdtos = ownerModel.getAllOwner();
+        ArrayList<Ownerdto> ownerdtos = ownerBO.getAll();
         ObservableList<OwnerTM> ownerTMS = FXCollections.observableArrayList();
 
         for (Ownerdto ownerdto : ownerdtos) {
@@ -109,7 +109,8 @@ public class OwnerController implements Initializable {
 
         table.setItems(ownerTMS);
     }
-    private void refreshPage() throws SQLException, ClassNotFoundException {
+
+    private void refreshPage() throws Exception {
 
         loadTableData();
 
@@ -154,14 +155,14 @@ public class OwnerController implements Initializable {
     }
 
     @FXML
-    void deletebtnAction(ActionEvent event) throws SQLException, ClassNotFoundException {
+    void deletebtnAction(ActionEvent event) throws Exception {
         String ownerId = ownerIDS.getText();
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Are you sure?", ButtonType.YES, ButtonType.NO);
         Optional<ButtonType> optionalButtonType = alert.showAndWait();
 
         if (optionalButtonType.isPresent() && optionalButtonType.get() == ButtonType.YES) {
 
-            boolean isDeleted = ownerModel.deleteOwner(ownerId);
+            boolean isDeleted = ownerBO.delete(ownerId);
             if (isDeleted) {
                 refreshPage();
                 new Alert(Alert.AlertType.INFORMATION, "Owner deleted...!").show();
@@ -170,10 +171,11 @@ public class OwnerController implements Initializable {
             }
         }
 
-    }
+
+/*
 
     @FXML
-    void savebtnAction(ActionEvent event) throws SQLException, ClassNotFoundException {
+    void savebtnAction(ActionEvent event) throws Exception {
         String ownerId = ownerIDS.getText();
         String ownerName = name.getText();
         String ownerAddress = address.getText();
@@ -214,7 +216,7 @@ public class OwnerController implements Initializable {
                     ownerMail
             );
 
-            boolean isSaved = ownerModel.saveOwner(ownerdto);
+            boolean isSaved = ownerBO.save(ownerdto);
             if (isSaved) {
                 refreshPage();
                 new Alert(Alert.AlertType.INFORMATION, "Owner Updated...!").show();
@@ -222,13 +224,14 @@ public class OwnerController implements Initializable {
                 new Alert(Alert.AlertType.ERROR, "Failed to Update Owner...!").show();
             }
         }
+*/
 
 
 
     }
 
     @FXML
-    void updatebtnAction(ActionEvent event) throws SQLException, ClassNotFoundException {
+    void updatebtnAction(ActionEvent event) throws Exception {
         String ownerId = ownerIDS.getText();
         String ownerName = name.getText();
         String ownerAddress = address.getText();
@@ -269,7 +272,7 @@ public class OwnerController implements Initializable {
                     ownerMail
             );
 
-            boolean isSaved = ownerModel.updateOwner(ownerdto);
+            boolean isSaved = ownerBO.update(ownerdto);
             if (isSaved) {
                 refreshPage();
                 new Alert(Alert.AlertType.INFORMATION, "Owner Updated...!").show();

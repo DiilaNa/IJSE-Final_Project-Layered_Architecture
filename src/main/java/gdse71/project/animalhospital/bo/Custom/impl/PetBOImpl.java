@@ -23,11 +23,6 @@ public class PetBOImpl implements PetBO {
     }
 
     @Override
-    public void save(Petdto pet) {
-
-    }
-
-    @Override
     public boolean delete(String petId) {
         try {
            return petDao.delete(petId);
