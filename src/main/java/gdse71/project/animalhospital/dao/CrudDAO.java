@@ -1,5 +1,7 @@
 package gdse71.project.animalhospital.dao;
 
+import gdse71.project.animalhospital.entity.Pet;
+
 import java.util.ArrayList;
 
 public interface CrudDAO<T> extends SuperDAO{
@@ -8,5 +10,5 @@ public interface CrudDAO<T> extends SuperDAO{
     boolean delete(String id) throws Exception , ClassNotFoundException;
     boolean update(T dto) throws Exception, ClassNotFoundException;
     String generateId() throws Exception, ClassNotFoundException;
-    String loadId() throws Exception, ClassNotFoundException;
+
 }

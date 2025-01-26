@@ -8,6 +8,7 @@ import javafx.scene.control.Alert;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class PetDaoImpl implements PetDao {
 
@@ -72,8 +73,4 @@ public class PetDaoImpl implements PetDao {
         return "";
     }
 
-    @Override
-    public String loadId() throws Exception, ClassNotFoundException {
-        return "";
-    }
 }

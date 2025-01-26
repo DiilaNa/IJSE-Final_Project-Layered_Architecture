@@ -6,6 +6,7 @@ import gdse71.project.animalhospital.dao.custom.PetRecordDao;
 import gdse71.project.animalhospital.db.DBConnection;
 import gdse71.project.animalhospital.dto.PetRecorddto;
 import gdse71.project.animalhospital.dto.PetTm.PetRecordTM;
+import gdse71.project.animalhospital.dto.Petdto;
 import gdse71.project.animalhospital.model.PetRecordModel;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -296,21 +297,24 @@ public class PetRecordController implements Initializable {
         }
 
     }
-    private void loadPetIds() throws SQLException {
-
+/*    private void loadPetIds() throws Exception {
         try {
-            Connection connection = DBConnection.getInstance().getConnection();
-            ResultSet rs = connection.createStatement().executeQuery("SELECT pet_id FROM pet");
-            ObservableList<String> data = FXCollections.observableArrayList();
-
-            while (rs.next()) {
-                data.add(rs.getString("pet_id"));
-            }
-            prtID.setItems(data);
+            *//*ArrayList<Petdto> allPets =*//* petRecordBO.loadPetids();
+           *//* for (Petdto pet : allPets) {
+                prtID.setValue(pet.getPetId());
+            }*//*
         } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
+    }*/
+private void loadPetIds() throws Exception {
+    try {
+        ArrayList<String> petIds = petRecordBO.loadPetids();
+        prtID.getItems().addAll(String.valueOf(petIds)); // Add all IDs to ComboBox
+    } catch (ClassNotFoundException e) {
+        throw new RuntimeException(e);
     }
+}
     private void loadTableData() throws Exception {
 
         ArrayList<PetRecorddto> petRecorddtos = petRecordBO.getAllpetRecords();
@@ -346,7 +350,7 @@ public class PetRecordController implements Initializable {
     }
 
     @FXML
-    void reserAction(ActionEvent event) {
+    void reserAction(ActionEvent event) throws Exception {
         recID.setText("");
         desc.setText("");
         status.setText("");

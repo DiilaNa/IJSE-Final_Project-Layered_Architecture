@@ -1,5 +1,6 @@
 package gdse71.project.animalhospital.bo.Custom.impl;
 
+import gdse71.project.animalhospital.Controller.Pet;
 import gdse71.project.animalhospital.bo.Custom.PetRecordBO;
 import gdse71.project.animalhospital.dao.DaoFactory;
 import gdse71.project.animalhospital.dao.custom.PetRecordDao;
@@ -55,4 +56,16 @@ public class PetRecordBOImpl implements PetRecordBO {
                 petRecord.getPetID()
         ));
     }
+/*
+    @Override
+    public String loadPetids() throws Exception {
+       return petRecordDao.loadId();
+
+
+    }*/
+    @Override
+    public ArrayList<String> loadPetids() throws Exception {
+        return petRecordDao.loadId();
+    }
+
 }
