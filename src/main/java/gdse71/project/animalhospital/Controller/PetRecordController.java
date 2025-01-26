@@ -310,7 +310,7 @@ public class PetRecordController implements Initializable {
 private void loadPetIds() throws Exception {
     try {
         ArrayList<String> petIds = petRecordBO.loadPetids();
-        prtID.getItems().addAll(String.valueOf(petIds)); // Add all IDs to ComboBox
+        prtID.getItems().addAll(petIds); // Add all IDs to ComboBox
     } catch (ClassNotFoundException e) {
         throw new RuntimeException(e);
     }

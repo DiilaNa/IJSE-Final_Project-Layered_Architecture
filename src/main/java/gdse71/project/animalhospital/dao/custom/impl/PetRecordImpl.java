@@ -2,12 +2,10 @@ package gdse71.project.animalhospital.dao.custom.impl;
 
 import gdse71.project.animalhospital.CrudUtil.Util;
 import gdse71.project.animalhospital.dao.custom.PetRecordDao;
-import gdse71.project.animalhospital.entity.Pet;
 import gdse71.project.animalhospital.entity.PetRecord;
 
 import java.sql.ResultSet;
 import java.util.ArrayList;
-import java.util.Objects;
 
 public class PetRecordImpl implements PetRecordDao {
 
@@ -68,7 +66,8 @@ public class PetRecordImpl implements PetRecordDao {
         ArrayList<String> petIds = new ArrayList<>();
 
         while (rst.next()) {
-            petIds.add(rst.getString("pet_id"));
+         //   petIds.add(rst.getString("pet_id"));
+            petIds.add(rst.getString(1));
         }
 
         return petIds;

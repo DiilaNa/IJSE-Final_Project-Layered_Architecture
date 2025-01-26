@@ -73,20 +73,4 @@ public class InvoiceModel {
         }
         return "INV001";
     }
-
-  /*  public Double getServicePrice() {
-        Double servicePrice = null;
-        String query = "SELECT ";
-        try (PreparedStatement stmt = DBConnection.prepareStatement(query)) {
-            stmt.setInt(1, serviceId);
-            ResultSet rs = stmt.executeQuery();
-            if (rs.next()) {
-                servicePrice = rs.getDouble("service_price");
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return servicePrice;
-
-    }*/
 }

@@ -1,5 +1,7 @@
 package gdse71.project.animalhospital.Controller;
 
+import gdse71.project.animalhospital.bo.BOFactory;
+import gdse71.project.animalhospital.bo.Custom.InvoiceBO;
 import gdse71.project.animalhospital.db.DBConnection;
 import gdse71.project.animalhospital.dto.Invoicedto;
 import gdse71.project.animalhospital.dto.PetTm.InvoiceTM;
@@ -78,8 +80,7 @@ public class InvoiceController implements Initializable {
     @FXML
     private Button update;
 
-    InvoiceModel invoiceModel = new InvoiceModel();
-
+    InvoiceBO invoiceBO = (InvoiceBO) BOFactory.getInstance().getBO(BOFactory.BOType.INVOICE);
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -125,7 +126,7 @@ public class InvoiceController implements Initializable {
         }
 
         try {
-            boolean isDeleted = invoiceModel.delete(selected.getInvoiceNo());
+            boolean isDeleted = invoiceBO.deleteInvoice(selected.getInvoiceNo());
 
             if (isDeleted) {
                 refreshPage();
@@ -170,7 +171,7 @@ public class InvoiceController implements Initializable {
 
             Invoicedto invoicedto = new Invoicedto( invoiceNo, invName, invoiceAmount,paymentIDtxt);
             try {
-                boolean isSaved = invoiceModel.save(invoicedto);
+                boolean isSaved = invoiceBO.saveInvoice(invoicedto);
                 if (isSaved) {
                     refreshPage();
                     new Alert(Alert.AlertType.INFORMATION, "Payment Invoice saved successfully!").show();
@@ -225,7 +226,7 @@ public class InvoiceController implements Initializable {
         if (isValidID && !invoiceNo.isEmpty() && !invName.isEmpty()) {
             Invoicedto invoicedto = new Invoicedto(invoiceNo, invName, invoiceAmount,paymentIDtxt);
             try {
-                boolean isSaved = invoiceModel.update(invoicedto);
+                boolean isSaved = invoiceBO.updatePetInvoice(invoicedto);
                 if (isSaved) {
                     refreshPage();
                     new Alert(Alert.AlertType.INFORMATION, "Payment Invoice updating successfully!").show();
@@ -243,7 +244,7 @@ public class InvoiceController implements Initializable {
     }
 
 
-    private void refreshPage() throws SQLException, ClassNotFoundException {
+    private void refreshPage() throws Exception {
 
         loadTableData();
         loadPayID();
@@ -258,9 +259,9 @@ public class InvoiceController implements Initializable {
         paymentInvName.setText("");
 
     }
-    private void loadTableData() throws SQLException, ClassNotFoundException {
+    private void loadTableData() throws Exception {
 
-        ArrayList<Invoicedto> invoicedtos = invoiceModel.getAll();
+        ArrayList<Invoicedto> invoicedtos = invoiceBO.getAllInvoice();
         ObservableList<InvoiceTM> invoiceTMS = FXCollections.observableArrayList();
 
         for (Invoicedto invoicedto : invoicedtos) {
@@ -275,21 +276,15 @@ public class InvoiceController implements Initializable {
 
         table.setItems(invoiceTMS);
     }
-    public void loadNextInvoiceID()  {
-        String nextId = invoiceModel.getNextInvoiceId();
+    public void loadNextInvoiceID() throws Exception {
+        String nextId = String.valueOf(invoiceBO.loadInvoice());
         invNO.setText(nextId);
 
     }
-    private void loadPayID() throws SQLException {
+    private void loadPayID() throws Exception {
         try {
-            Connection connection = DBConnection.getInstance().getConnection();
-            ResultSet rs = connection.createStatement().executeQuery("SELECT payment_id FROM payment");
-            ObservableList<String> data = FXCollections.observableArrayList();
-
-            while (rs.next()) {
-                data.add(rs.getString("payment_id"));
-            }
-            paymenttID.setItems(data);
+            ArrayList<String> petIds = invoiceBO.getAllInvoiceId();
+            paymenttID.getItems().addAll(petIds); // Add all IDs to ComboBox
         } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
@@ -299,7 +294,7 @@ public class InvoiceController implements Initializable {
         defaultPrice.setText(aptPrice.toString());
     }
     @FXML
-    void resetAction(ActionEvent event) {
+    void resetAction(ActionEvent event) throws Exception {
         try {
             loadAptPrice();
             loadNextInvoiceID();

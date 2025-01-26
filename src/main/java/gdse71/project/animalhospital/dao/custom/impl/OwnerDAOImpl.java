@@ -3,7 +3,6 @@ package gdse71.project.animalhospital.dao.custom.impl;
 import gdse71.project.animalhospital.CrudUtil.Util;
 import gdse71.project.animalhospital.dao.custom.OwnerDao;
 import gdse71.project.animalhospital.entity.Owner;
-import gdse71.project.animalhospital.entity.Pet;
 
 import java.sql.ResultSet;
 import java.util.ArrayList;
