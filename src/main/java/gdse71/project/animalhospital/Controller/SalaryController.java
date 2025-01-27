@@ -1,5 +1,7 @@
 package gdse71.project.animalhospital.Controller;
 
+import gdse71.project.animalhospital.bo.BOFactory;
+import gdse71.project.animalhospital.bo.Custom.SalaryBO;
 import gdse71.project.animalhospital.db.DBConnection;
 import gdse71.project.animalhospital.dto.PetTm.SalaryTM;
 import gdse71.project.animalhospital.dto.Salarydto;
@@ -50,7 +52,7 @@ public class SalaryController implements Initializable {
         try {
             refreshPage();
             loadEmpIds();
-        } catch (SQLException | ClassNotFoundException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
@@ -101,7 +103,7 @@ public class SalaryController implements Initializable {
     @FXML
     private Label dateLAbel;
 
-    SalaryModel salaryModel = new SalaryModel();
+    SalaryBO salaryBO = (SalaryBO) BOFactory.getInstance().getBO(BOFactory.BOType.SALARY);
     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
     @FXML
@@ -128,7 +130,7 @@ public class SalaryController implements Initializable {
         }
 
         try {
-            boolean isDeleted = salaryModel.delete(selectedSalary.getSalaryId());
+            boolean isDeleted = salaryBO.deleteSalary(selectedSalary.getSalaryId());
 
             if (isDeleted) {
                 refreshPage();
@@ -178,7 +180,7 @@ public class SalaryController implements Initializable {
 
                 Salarydto salarydto = new Salarydto(salaryId, date, amount, employeeId);
 
-                boolean isSaved = salaryModel.save(salarydto);
+                boolean isSaved = salaryBO.saveSalary(salarydto);
                 if (isSaved) {
                     refreshPage();
                     new Alert(Alert.AlertType.INFORMATION, "Salary saved successfully!").show();
@@ -260,7 +262,7 @@ public class SalaryController implements Initializable {
                         employeeId
                 );
 
-                boolean isSaved = salaryModel.update(salarydto);
+                boolean isSaved = salaryBO.updateSalary(salarydto);
                 if (isSaved) {
                     refreshPage();
                     new Alert(Alert.AlertType.INFORMATION, "Salary updated successfully!").show();
@@ -292,9 +294,9 @@ public class SalaryController implements Initializable {
             throw new RuntimeException(e);
         }
     }
-    private void loadTableData() {
+    private void loadTableData() throws Exception {
         try {
-            ArrayList<Salarydto> salarydtos = salaryModel.getAll();
+            ArrayList<Salarydto> salarydtos = salaryBO.getAllSalary();
             ObservableList<SalaryTM> salaryTMS = FXCollections.observableArrayList();
 
             for (Salarydto salarydto : salarydtos) {
@@ -314,7 +316,7 @@ public class SalaryController implements Initializable {
         }
     }
 
-    private void refreshPage() throws SQLException, ClassNotFoundException {
+    private void refreshPage() throws Exception {
 
         loadTableData();
         getNextID();
@@ -328,7 +330,7 @@ public class SalaryController implements Initializable {
 
     }
     @FXML
-    void resetAction(ActionEvent event) {
+    void resetAction(ActionEvent event) throws Exception {
         getNextID();
         LocalDate date = LocalDate.now();
         String formattedDate = date.format(formatter);
@@ -336,8 +338,8 @@ public class SalaryController implements Initializable {
         SalAmount.setText("");
         SalEmpId.setValue(null);
     }
-    public void getNextID(){
-        String nextID = salaryModel.getNextID();
+    public void getNextID() throws Exception {
+        String nextID = salaryBO.loadNextSalaryId();
         salId.setText(nextID);
     }
 

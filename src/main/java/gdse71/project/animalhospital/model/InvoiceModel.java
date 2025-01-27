@@ -10,7 +10,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public class InvoiceModel {
+public class InvoiceModel {/*
     public ArrayList<Invoicedto> getAll() throws SQLException, ClassNotFoundException {
         ResultSet rst = Util.execute("SELECT * FROM invoice");
 
@@ -72,5 +72,5 @@ public class InvoiceModel {
             throw new RuntimeException(e);
         }
         return "INV001";
-    }
+    }*/
 }
