@@ -215,9 +215,6 @@ public class SalaryController implements Initializable {
             delete.setDisable(false);
             update.setDisable(false);
         }
-
-
-
     }
 
     @FXML
@@ -280,8 +277,10 @@ public class SalaryController implements Initializable {
 
     }
     private void loadEmpIds() throws Exception {
+        SalEmpId.getItems().clear();
         ArrayList<String> empIds = salaryBO.getEmployeeIds();
         SalEmpId.getItems().addAll(empIds);
+
 
     }
     private void loadTableData() throws Exception {

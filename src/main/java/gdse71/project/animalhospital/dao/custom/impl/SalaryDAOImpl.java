@@ -26,7 +26,7 @@ public class SalaryDAOImpl implements SalaryDAO {
 
     @Override
     public boolean save(Salary entity) throws Exception {
-        return Util.execute("INSERT INTO salary(?,?,?,?)",
+        return Util.execute("INSERT INTO salary VALUES(?,?,?,?)",
                 entity.getSalaryId(),
                 entity.getDate(),
                 entity.getAmount(),
@@ -69,8 +69,9 @@ public class SalaryDAOImpl implements SalaryDAO {
     public ArrayList<String> loadEmployeeIds() throws SQLException, ClassNotFoundException {
         ResultSet rst = Util.execute("select emp_id from employee");
         ArrayList<String> employeeids = new ArrayList<>();
+
         while (rst.next()){
-            employeeids.add(rst.getString(1));
+            employeeids.add(rst.getString("emp_id"));
 
         }
         return employeeids;

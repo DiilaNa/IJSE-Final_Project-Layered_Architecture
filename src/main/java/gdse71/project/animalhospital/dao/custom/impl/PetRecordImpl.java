@@ -66,8 +66,7 @@ public class PetRecordImpl implements PetRecordDao {
         ArrayList<String> petIds = new ArrayList<>();
 
         while (rst.next()) {
-         //   petIds.add(rst.getString("pet_id"));
-            petIds.add(rst.getString(1));
+            petIds.add(rst.getString("pet_id"));
         }
 
         return petIds;
