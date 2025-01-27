@@ -35,7 +35,7 @@ public class ServiceDAOImpl implements ServiceDAO {
 
     @Override
     public boolean delete(String id) throws Exception {
-        return false;
+        return Util.execute("DELETE FROM service WHERE service_id=?",id);
     }
 
     @Override

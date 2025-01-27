@@ -143,7 +143,7 @@ public class ServiceController implements Initializable {
 
         if (optionalButtonType.isPresent() && optionalButtonType.get() == ButtonType.YES) {
 
-            boolean isDeleted = serviceModel.deleteService(Id);
+            boolean isDeleted = serviceBO.deleteService(Id);
             if (isDeleted) {
                 refreshPage();
                 new Alert(Alert.AlertType.INFORMATION, "  Record deleted...!").show();

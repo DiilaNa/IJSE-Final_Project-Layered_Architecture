@@ -38,8 +38,8 @@ public class ServiceBOImpl implements ServiceBO {
     }
 
     @Override
-    public boolean deleteService(String id) {
-        return false;
+    public boolean deleteService(String id) throws Exception {
+       return serviceDAO.delete(id);
     }
 
     @Override
