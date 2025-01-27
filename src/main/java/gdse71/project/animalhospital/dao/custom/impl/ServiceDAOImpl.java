@@ -50,6 +50,17 @@ public class ServiceDAOImpl implements ServiceDAO {
 
     @Override
     public String generateId() throws Exception {
-        return "";
+        ResultSet rst = Util.execute("select service_id from service_booking order by service_id desc limit 1");
+        if (rst.next()) {
+            String lastID = rst.getString(1);
+            String numericPart = lastID.replaceAll("[^0-9]", "");
+            if (numericPart.isEmpty()) {
+                return "SVC001";
+            }
+            int i = Integer.parseInt(numericPart);
+            int newIndex = i + 1;
+            return String.format("SVC%03d", newIndex);
+        }
+        return "SVC001";
     }
 }

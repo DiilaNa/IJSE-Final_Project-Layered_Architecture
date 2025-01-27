@@ -53,7 +53,7 @@ public class ServiceBOImpl implements ServiceBO {
     }
 
     @Override
-    public ArrayList<String> getServiceid() {
-        return null;
+    public String getServiceId() throws Exception {
+        return serviceDAO.generateId();
     }
 }

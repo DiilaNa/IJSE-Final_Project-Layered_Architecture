@@ -248,13 +248,13 @@ public class ServiceController implements Initializable {
         duration.setText("");
 
     }
-    public void getNextServeID(){
-        String servisiD = serviceModel.getNextID();
+    public void getNextServeID() throws Exception {
+        String servisiD = serviceBO.getServiceId();
         serviceID.setText(servisiD);
     }
 
     @FXML
-    void restAction(ActionEvent event) {
+    void restAction(ActionEvent event) throws Exception {
         getNextServeID();
         serviceType.setText("");
         duration.setText("");

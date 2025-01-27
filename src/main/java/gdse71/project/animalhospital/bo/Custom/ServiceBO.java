@@ -10,5 +10,5 @@ public interface ServiceBO extends SuperBO {
     boolean saveService(Servicedto service) throws Exception;
     boolean deleteService(String id) throws Exception;
     boolean updateService(Servicedto service) throws Exception;
-    ArrayList<String> getServiceid();
+    String getServiceId() throws Exception;
 }
