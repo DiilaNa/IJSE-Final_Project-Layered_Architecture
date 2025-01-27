@@ -41,7 +41,7 @@ public class ServiceDAOImpl implements ServiceDAO {
 
     @Override
     public boolean update(Service entity) throws Exception {
-        return Util.execute("UPDATE INTO service SET service_name=?,duration=?,petid=? WHERE service_id=?",
+        return Util.execute("UPDATE service_booking SET service_name=?,duration=?,petid=? WHERE service_id=?",
                 entity.getServiceName(),
                 entity.getDuration(),
                 entity.getPetIdService(),
