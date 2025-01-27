@@ -279,20 +279,10 @@ public class SalaryController implements Initializable {
 
 
     }
-    private void loadEmpIds() throws SQLException {
-        try {
-           Connection connection = DBConnection.getInstance().getConnection();
+    private void loadEmpIds() throws Exception {
+        ArrayList<String> empIds = salaryBO.getEmployeeIds();
+        SalEmpId.getItems().addAll(empIds);
 
-            ResultSet rs = connection.createStatement().executeQuery("SELECT emp_id FROM employee");
-            ObservableList<String> data = FXCollections.observableArrayList();
-
-            while (rs.next()) {
-                data.add(rs.getString("emp_id"));
-            }
-            SalEmpId.setItems(data);
-        } catch (ClassNotFoundException e) {
-            throw new RuntimeException(e);
-        }
     }
     private void loadTableData() throws Exception {
         try {

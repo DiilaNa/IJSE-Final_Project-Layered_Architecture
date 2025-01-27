@@ -5,6 +5,7 @@ import gdse71.project.animalhospital.dao.custom.SalaryDAO;
 import gdse71.project.animalhospital.entity.Salary;
 
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class SalaryDAOImpl implements SalaryDAO {
@@ -62,5 +63,16 @@ public class SalaryDAOImpl implements SalaryDAO {
             // No existing IDs, start with default
             return "SAL001";
         }
+    }
+
+    @Override
+    public ArrayList<String> loadEmployeeIds() throws SQLException, ClassNotFoundException {
+        ResultSet rst = Util.execute("select emp_id from employee");
+        ArrayList<String> employeeids = new ArrayList<>();
+        while (rst.next()){
+            employeeids.add(rst.getString(1));
+
+        }
+        return employeeids;
     }
 }

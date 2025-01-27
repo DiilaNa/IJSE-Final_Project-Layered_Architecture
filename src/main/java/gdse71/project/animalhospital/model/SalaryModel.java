@@ -7,7 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public class SalaryModel {
+public class SalaryModel {/*
 
     public ArrayList<Salarydto> getAll() throws SQLException, ClassNotFoundException {
         ResultSet rst =  Util.execute("select * from salary");
@@ -65,6 +65,6 @@ public class SalaryModel {
             throw new RuntimeException(e);
         }
         return "SAL001";
-    }
+    }*/
 
 }

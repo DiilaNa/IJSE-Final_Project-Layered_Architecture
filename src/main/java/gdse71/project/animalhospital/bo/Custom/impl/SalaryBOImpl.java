@@ -56,4 +56,9 @@ public class SalaryBOImpl implements SalaryBO {
     public String loadNextSalaryId() throws Exception {
         return salaryDAO.generateId();
     }
+
+    @Override
+    public ArrayList<String> getEmployeeIds() throws Exception {
+        return salaryDAO.loadEmployeeIds();
+    }
 }

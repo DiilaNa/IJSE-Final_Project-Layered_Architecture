@@ -11,5 +11,6 @@ public interface SalaryBO extends SuperBO {
     boolean updateSalary(Salarydto salary) throws Exception;
     boolean deleteSalary(String id) throws Exception;
     String loadNextSalaryId() throws Exception;
+    ArrayList<String> getEmployeeIds() throws Exception;
 
 }
