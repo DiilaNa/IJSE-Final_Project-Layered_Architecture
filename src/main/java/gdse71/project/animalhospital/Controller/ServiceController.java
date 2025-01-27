@@ -190,7 +190,7 @@ public class ServiceController implements Initializable {
                 durationValue,
                 petServiceId
         );
-        boolean isSaved = serviceModel.updateService(servicedto);
+        boolean isSaved = serviceBO.updateService(servicedto);
         if (isSaved) {
             refreshPage();
             new Alert(Alert.AlertType.INFORMATION, " Record updated...!").show();

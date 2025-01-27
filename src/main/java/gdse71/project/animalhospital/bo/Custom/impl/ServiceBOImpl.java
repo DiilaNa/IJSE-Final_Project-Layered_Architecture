@@ -43,8 +43,13 @@ public class ServiceBOImpl implements ServiceBO {
     }
 
     @Override
-    public boolean updateService(Servicedto service) {
-        return false;
+    public boolean updateService(Servicedto service) throws Exception {
+        return serviceDAO.update(new Service(
+                service.getServiceID(),
+                service.getServiceName(),
+                service.getDuration(),
+                service.getPetIdService()
+        ));
     }
 
     @Override
