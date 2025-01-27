@@ -3,6 +3,7 @@ package gdse71.project.animalhospital.bo.Custom;
 import gdse71.project.animalhospital.bo.SuperBO;
 import gdse71.project.animalhospital.dto.Servicedto;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 public interface ServiceBO extends SuperBO {
@@ -11,4 +12,5 @@ public interface ServiceBO extends SuperBO {
     boolean deleteService(String id) throws Exception;
     boolean updateService(Servicedto service) throws Exception;
     String getServiceId() throws Exception;
+    ArrayList<String> getPetIdsComboBox() throws SQLException, ClassNotFoundException;
 }

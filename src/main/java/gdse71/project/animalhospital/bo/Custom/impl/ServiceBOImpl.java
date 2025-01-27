@@ -6,6 +6,7 @@ import gdse71.project.animalhospital.dao.custom.ServiceDAO;
 import gdse71.project.animalhospital.dto.Servicedto;
 import gdse71.project.animalhospital.entity.Service;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class ServiceBOImpl implements ServiceBO {
@@ -55,5 +56,10 @@ public class ServiceBOImpl implements ServiceBO {
     @Override
     public String getServiceId() throws Exception {
         return serviceDAO.generateId();
+    }
+
+    @Override
+    public ArrayList<String> getPetIdsComboBox() throws SQLException, ClassNotFoundException {
+        return serviceDAO.loadPetID();
     }
 }

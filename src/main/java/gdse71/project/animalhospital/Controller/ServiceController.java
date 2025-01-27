@@ -78,7 +78,6 @@ public class ServiceController implements Initializable {
     @FXML
     private Label serviceID;
 
-    ServiceModel serviceModel = new ServiceModel();
     ServiceBO serviceBO = (ServiceBO) BOFactory.getInstance().getBO(BOFactory.BOType.SERVICE);
 
     @Override
@@ -198,20 +197,10 @@ public class ServiceController implements Initializable {
             new Alert(Alert.AlertType.ERROR, "Failed to update  Record...!").show();
         }
     }
-    private void loadPetIds() throws SQLException {
-        try {
-            Connection connection = DBConnection.getInstance().getConnection();
-
-            ResultSet rs = connection.createStatement().executeQuery("SELECT pet_id FROM pet");
-            ObservableList<String> data = FXCollections.observableArrayList();
-
-            while (rs.next()) {
-                data.add(rs.getString("pet_id"));
-            }
-            PETid.setItems(data);
-        } catch (ClassNotFoundException e) {
-            throw new RuntimeException(e);
-        }
+    private void loadPetIds() throws SQLException, ClassNotFoundException {
+            PETid.getItems().clear();
+            ArrayList<String>petIDS = serviceBO.getPetIdsComboBox();
+            PETid.getItems().addAll(petIDS);
     }
     private void loadTableData() throws Exception {
         try {

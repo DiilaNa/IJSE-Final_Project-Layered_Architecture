@@ -5,6 +5,7 @@ import gdse71.project.animalhospital.dao.custom.ServiceDAO;
 import gdse71.project.animalhospital.entity.Service;
 
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class ServiceDAOImpl implements ServiceDAO {
@@ -62,5 +63,15 @@ public class ServiceDAOImpl implements ServiceDAO {
             return String.format("SVC%03d", newIndex);
         }
         return "SVC001";
+    }
+
+    @Override
+    public ArrayList<String> loadPetID() throws SQLException, ClassNotFoundException {
+        ResultSet rst = Util.execute("SELECT pet_id FROM pet");
+        ArrayList<String> petids = new ArrayList<>();
+        while (rst.next()){
+            petids.add(rst.getString("pet_id"));
+        }
+        return petids;
     }
 }
