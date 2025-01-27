@@ -1,5 +1,7 @@
 package gdse71.project.animalhospital.Controller;
 
+import gdse71.project.animalhospital.bo.BOFactory;
+import gdse71.project.animalhospital.bo.Custom.ServiceBO;
 import gdse71.project.animalhospital.db.DBConnection;
 import gdse71.project.animalhospital.dto.PetTm.ServiceTM;
 import gdse71.project.animalhospital.dto.Servicedto;
@@ -21,7 +23,6 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -78,6 +79,7 @@ public class ServiceController implements Initializable {
     private Label serviceID;
 
     ServiceModel serviceModel = new ServiceModel();
+    ServiceBO serviceBO = (ServiceBO) BOFactory.getInstance().getBO(BOFactory.BOType.SERVICE);
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -95,7 +97,7 @@ public class ServiceController implements Initializable {
         try {
             refreshPage();
             loadPetIds();
-        } catch (SQLException | ClassNotFoundException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
@@ -134,7 +136,7 @@ public class ServiceController implements Initializable {
 
 
     @FXML
-    void deleteAction(ActionEvent event) throws SQLException, ClassNotFoundException {
+    void deleteAction(ActionEvent event) throws Exception {
         String Id = serviceID.getText();
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Are you sure?", ButtonType.YES, ButtonType.NO);
         Optional<ButtonType> optionalButtonType = alert.showAndWait();
@@ -154,7 +156,7 @@ public class ServiceController implements Initializable {
 
 
     @FXML
-    void saveAction(ActionEvent event) throws SQLException, ClassNotFoundException {
+    void saveAction(ActionEvent event) throws Exception {
         String servId = serviceID.getText();
         String servName = serviceType.getText();
         String durationValue = duration.getText();
@@ -171,12 +173,12 @@ public class ServiceController implements Initializable {
             refreshPage();
             new Alert(Alert.AlertType.INFORMATION, "Pet Record saved...!").show();
         } else {
-            new Alert(Alert.AlertType.ERROR, "Failed to save Pet Reccord...!").show();
+            new Alert(Alert.AlertType.ERROR, "Failed to save Pet Record...!").show();
         }
     }
 
     @FXML
-    void updateAction(ActionEvent event) throws SQLException, ClassNotFoundException {
+    void updateAction(ActionEvent event) throws Exception {
         String servId = serviceID.getText();
         String servName = serviceType.getText();
         String durationValue = duration.getText();
@@ -193,7 +195,7 @@ public class ServiceController implements Initializable {
             refreshPage();
             new Alert(Alert.AlertType.INFORMATION, " Record updated...!").show();
         } else {
-            new Alert(Alert.AlertType.ERROR, "Failed to update  Reccord...!").show();
+            new Alert(Alert.AlertType.ERROR, "Failed to update  Record...!").show();
         }
     }
     private void loadPetIds() throws SQLException {
@@ -211,9 +213,9 @@ public class ServiceController implements Initializable {
             throw new RuntimeException(e);
         }
     }
-    private void loadTableData() {
+    private void loadTableData() throws Exception {
         try {
-            ArrayList<Servicedto> servicedtos = serviceModel.getAllService();
+            ArrayList<Servicedto> servicedtos = serviceBO.getAllServices();
             ObservableList<ServiceTM> serviceTMS = FXCollections.observableArrayList();
 
             for (Servicedto servicedto : servicedtos) {
@@ -233,7 +235,7 @@ public class ServiceController implements Initializable {
         }
     }
 
-    private void refreshPage() throws SQLException, ClassNotFoundException {
+    private void refreshPage() throws Exception {
 
         loadTableData();
         getNextServeID();
@@ -254,7 +256,6 @@ public class ServiceController implements Initializable {
     @FXML
     void restAction(ActionEvent event) {
         getNextServeID();
-       // loadTableData();
         serviceType.setText("");
         duration.setText("");
     }

@@ -1,6 +1,49 @@
 package gdse71.project.animalhospital.bo.Custom.impl;
 
 import gdse71.project.animalhospital.bo.Custom.ServiceBO;
+import gdse71.project.animalhospital.dao.DaoFactory;
+import gdse71.project.animalhospital.dao.custom.ServiceDAO;
+import gdse71.project.animalhospital.dto.Servicedto;
+import gdse71.project.animalhospital.entity.Service;
+
+import java.util.ArrayList;
 
 public class ServiceBOImpl implements ServiceBO {
+
+    ServiceDAO serviceDAO = (ServiceDAO) DaoFactory.getInstance().getDao(DaoFactory.DaoType.SERVICE);
+
+    @Override
+    public ArrayList<Servicedto> getAllServices() throws Exception {
+        ArrayList<Servicedto>servicedtos=new ArrayList<>();
+        ArrayList<Service>services=serviceDAO.getAll();
+        for(Service service:services) {
+            servicedtos.add(new Servicedto(
+                    service.getServiceID(),
+                    service.getServiceName(),
+                    service.getDuration(),
+                    service.getPetIdService()
+            ));
+        }
+        return servicedtos;
+    }
+
+    @Override
+    public boolean saveService(Servicedto service) {
+        return false;
+    }
+
+    @Override
+    public boolean deleteService(String id) {
+        return false;
+    }
+
+    @Override
+    public boolean updateService(Servicedto service) {
+        return false;
+    }
+
+    @Override
+    public ArrayList<String> getServiceid() {
+        return null;
+    }
 }

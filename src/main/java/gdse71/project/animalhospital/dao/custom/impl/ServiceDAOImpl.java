@@ -24,8 +24,13 @@ public class ServiceDAOImpl implements ServiceDAO {
     }
 
     @Override
-    public boolean save(Service dto) throws Exception {
-       return Util.execute("INSERT INTO service(?,?,?,?)");
+    public boolean save(Service entity) throws Exception {
+       return Util.execute("INSERT INTO service(?,?,?,?)",
+               entity.getServiceID(),
+               entity.getServiceName(),
+               entity.getDuration(),
+               entity.getPetIdService()
+               );
     }
 
     @Override
