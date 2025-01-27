@@ -11,7 +11,7 @@ import java.util.ArrayList;
 public class ServiceDAOImpl implements ServiceDAO {
     @Override
     public ArrayList<Service> getAll() throws Exception {
-        ResultSet rst = Util.execute("select * from service");
+        ResultSet rst = Util.execute("select * from service_booking");
         ArrayList<Service> servicedtos = new ArrayList<>();
         while (rst.next()) {
             servicedtos.add(new Service(
@@ -26,7 +26,7 @@ public class ServiceDAOImpl implements ServiceDAO {
 
     @Override
     public boolean save(Service entity) throws Exception {
-       return Util.execute("INSERT INTO service VALUES(?,?,?,?)",
+       return Util.execute("INSERT INTO service_booking VALUES(?,?,?,?)",
                entity.getServiceID(),
                entity.getServiceName(),
                entity.getDuration(),
@@ -36,12 +36,12 @@ public class ServiceDAOImpl implements ServiceDAO {
 
     @Override
     public boolean delete(String id) throws Exception {
-        return Util.execute("DELETE FROM service WHERE service_id=?",id);
+        return Util.execute("DELETE FROM service_booking WHERE service_id=?",id);
     }
 
     @Override
     public boolean update(Service entity) throws Exception {
-        return Util.execute("UPDATE INTO service SET service_name=?,duration=?,petid=? WHERE=service_id=?",
+        return Util.execute("UPDATE INTO service SET service_name=?,duration=?,petid=? WHERE service_id=?",
                 entity.getServiceName(),
                 entity.getDuration(),
                 entity.getPetIdService(),
