@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 public interface ServiceBO extends SuperBO {
     ArrayList<Servicedto> getAllServices() throws Exception;
-    boolean saveService(Servicedto service);
+    boolean saveService(Servicedto service) throws Exception;
     boolean deleteService(String id);
     boolean updateService(Servicedto service);
     ArrayList<String> getServiceid();

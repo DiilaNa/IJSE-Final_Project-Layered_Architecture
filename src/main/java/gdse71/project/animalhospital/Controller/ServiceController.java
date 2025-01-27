@@ -168,7 +168,7 @@ public class ServiceController implements Initializable {
                 durationValue,
                 petServiceId
         );
-        boolean isSaved = serviceModel.saveService(servicedto);
+        boolean isSaved = serviceBO.saveService(servicedto);
         if (isSaved) {
             refreshPage();
             new Alert(Alert.AlertType.INFORMATION, "Pet Record saved...!").show();

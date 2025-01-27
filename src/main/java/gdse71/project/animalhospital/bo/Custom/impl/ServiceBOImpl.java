@@ -28,8 +28,13 @@ public class ServiceBOImpl implements ServiceBO {
     }
 
     @Override
-    public boolean saveService(Servicedto service) {
-        return false;
+    public boolean saveService(Servicedto service) throws Exception {
+        return serviceDAO.save(new Service(
+           service.getServiceID(),
+           service.getServiceName(),
+           service.getDuration(),
+           service.getPetIdService()
+        ));
     }
 
     @Override
