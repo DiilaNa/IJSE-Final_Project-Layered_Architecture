@@ -6,7 +6,6 @@ import gdse71.project.animalhospital.dto.Ownerdto;
 import gdse71.project.animalhospital.dto.PaymentDto;
 import gdse71.project.animalhospital.dto.Petdto;
 import gdse71.project.animalhospital.model.AppointmentsModel;
-import gdse71.project.animalhospital.model.PetModel;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.collections.FXCollections;
@@ -103,7 +102,6 @@ public class AppointmentsController implements Initializable {
 private final DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("HH:mm:ss");
     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
     AppointmentsModel appointmentsModel = new AppointmentsModel();
-    PetModel petModel = new PetModel();
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {

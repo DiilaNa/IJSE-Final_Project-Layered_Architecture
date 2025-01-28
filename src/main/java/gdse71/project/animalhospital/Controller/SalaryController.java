@@ -2,10 +2,8 @@ package gdse71.project.animalhospital.Controller;
 
 import gdse71.project.animalhospital.bo.BOFactory;
 import gdse71.project.animalhospital.bo.Custom.SalaryBO;
-import gdse71.project.animalhospital.db.DBConnection;
 import gdse71.project.animalhospital.dto.PetTm.SalaryTM;
 import gdse71.project.animalhospital.dto.Salarydto;
-import gdse71.project.animalhospital.model.SalaryModel;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -22,9 +20,6 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;

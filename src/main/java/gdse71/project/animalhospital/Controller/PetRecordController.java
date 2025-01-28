@@ -2,12 +2,9 @@ package gdse71.project.animalhospital.Controller;
 
 import gdse71.project.animalhospital.bo.BOFactory;
 import gdse71.project.animalhospital.bo.Custom.PetRecordBO;
-import gdse71.project.animalhospital.dao.custom.PetRecordDao;
 import gdse71.project.animalhospital.db.DBConnection;
 import gdse71.project.animalhospital.dto.PetRecorddto;
 import gdse71.project.animalhospital.dto.PetTm.PetRecordTM;
-import gdse71.project.animalhospital.dto.Petdto;
-import gdse71.project.animalhospital.model.PetRecordModel;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -27,8 +24,6 @@ import net.sf.jasperreports.view.JasperViewer;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.*;
 

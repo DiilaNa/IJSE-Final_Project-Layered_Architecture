@@ -3,9 +3,7 @@ package gdse71.project.animalhospital.Controller;
 import gdse71.project.animalhospital.bo.BOFactory;
 import gdse71.project.animalhospital.bo.Custom.PaymentBO;
 import gdse71.project.animalhospital.dto.PaymentDto;
-import gdse71.project.animalhospital.dto.PetTm.InvoiceTM;
 import gdse71.project.animalhospital.dto.PetTm.PaymentTM;
-import gdse71.project.animalhospital.model.PaymentModel;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -22,9 +20,6 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
-import java.sql.SQLException;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 

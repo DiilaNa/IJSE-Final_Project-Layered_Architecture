@@ -2,10 +2,8 @@ package gdse71.project.animalhospital.Controller;
 
 import gdse71.project.animalhospital.bo.BOFactory;
 import gdse71.project.animalhospital.bo.Custom.ServiceBO;
-import gdse71.project.animalhospital.db.DBConnection;
 import gdse71.project.animalhospital.dto.PetTm.ServiceTM;
 import gdse71.project.animalhospital.dto.Servicedto;
-import gdse71.project.animalhospital.model.ServiceModel;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -22,8 +20,6 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Optional;

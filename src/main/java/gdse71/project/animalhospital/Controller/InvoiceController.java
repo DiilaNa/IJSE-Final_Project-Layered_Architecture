@@ -2,10 +2,8 @@ package gdse71.project.animalhospital.Controller;
 
 import gdse71.project.animalhospital.bo.BOFactory;
 import gdse71.project.animalhospital.bo.Custom.InvoiceBO;
-import gdse71.project.animalhospital.db.DBConnection;
 import gdse71.project.animalhospital.dto.Invoicedto;
 import gdse71.project.animalhospital.dto.PetTm.InvoiceTM;
-import gdse71.project.animalhospital.model.InvoiceModel;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -22,9 +20,6 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -277,7 +272,7 @@ public class InvoiceController implements Initializable {
         table.setItems(invoiceTMS);
     }
     public void loadNextInvoiceID() throws Exception {
-        String nextId = String.valueOf(invoiceBO.loadInvoice());
+        String nextId = invoiceBO.loadInvoice();
         invNO.setText(nextId);
 
     }
@@ -300,6 +295,7 @@ public class InvoiceController implements Initializable {
             loadNextInvoiceID();
             loadPayID();
             paymentInvName.setText("");
+            paymenttID.getSelectionModel().clearSelection();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
