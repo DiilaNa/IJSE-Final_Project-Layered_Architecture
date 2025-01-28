@@ -1,5 +1,6 @@
 package gdse71.project.animalhospital.dao;
 
+import gdse71.project.animalhospital.dao.custom.MedicineDetailDao;
 import gdse71.project.animalhospital.dao.custom.PetDao;
 import gdse71.project.animalhospital.dao.custom.impl.*;
 
@@ -15,7 +16,7 @@ public class DaoFactory {
         return daoFactory;
     }
     public enum DaoType {
-        PET,PETRECORD,OWNER,PAYMENT,INVOICE,SALARY,SERVICE,SMS
+        PET,PETRECORD,OWNER,PAYMENT,INVOICE,SALARY,SERVICE,SMS,MEDICINE,MEDICINEDETAILS
     }
     public SuperDAO getDao(DaoType Type) {
         switch (Type) {
@@ -35,6 +36,10 @@ public class DaoFactory {
                                         return new ServiceDAOImpl();
                                         case SMS:
                                             return new SmsDAOImpl();
+                                            case MEDICINE:
+                                                return new MedicineDAOImpl();
+                                                case MEDICINEDETAILS:
+                                                    return new MedicineDetailDao();
                 default:
                     return null;
         }

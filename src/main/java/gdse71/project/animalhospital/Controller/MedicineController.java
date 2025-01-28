@@ -1,6 +1,8 @@
 package gdse71.project.animalhospital.Controller;
 
 import gdse71.project.animalhospital.CrudUtil.Util;
+import gdse71.project.animalhospital.bo.BOFactory;
+import gdse71.project.animalhospital.bo.Custom.MedicineBO;
 import gdse71.project.animalhospital.db.DBConnection;
 import gdse71.project.animalhospital.dto.Med_detailDto;
 import gdse71.project.animalhospital.dto.MedicineDto;
@@ -101,6 +103,7 @@ public class MedicineController implements Initializable {
     private Label petNname;
 
     MedicineModel medicineModel = new MedicineModel();
+    MedicineBO medicineBO = (MedicineBO) BOFactory.getInstance().getBO(BOFactory.BOType.MEDICINE);
 
     @FXML
     void backAction(ActionEvent event) {
@@ -252,7 +255,7 @@ public class MedicineController implements Initializable {
         }
 
     }
-    private void refreshPage() throws SQLException, ClassNotFoundException {
+    private void refreshPage() throws Exception {
 
         loadTableData();
         getNextMedId();
@@ -266,9 +269,9 @@ public class MedicineController implements Initializable {
         Mcoondition.setText("");
         Mweight.setText("");
     }
-    private void loadTableData() throws SQLException, ClassNotFoundException {
+    private void loadTableData() throws Exception {
 
-        ArrayList<MedicineDto> medicineDtos = medicineModel.getAll();
+        ArrayList<MedicineDto> medicineDtos = medicineBO.getALLMedicine();
         ObservableList<MedicineTM> medicineTMS = FXCollections.observableArrayList();
 
         for (MedicineDto medicineDto: medicineDtos) {
