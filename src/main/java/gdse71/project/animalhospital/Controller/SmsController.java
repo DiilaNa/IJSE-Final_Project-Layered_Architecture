@@ -1,5 +1,7 @@
 package gdse71.project.animalhospital.Controller;
 
+import gdse71.project.animalhospital.bo.BOFactory;
+import gdse71.project.animalhospital.bo.Custom.SmsBO;
 import gdse71.project.animalhospital.db.DBConnection;
 import gdse71.project.animalhospital.dto.PetTm.SmsTM;
 import gdse71.project.animalhospital.dto.Smsdto;
@@ -47,7 +49,7 @@ public class SmsController implements Initializable {
         try {
             refreshPage();
             loadNextMailNo();
-        } catch (SQLException | ClassNotFoundException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
@@ -110,6 +112,7 @@ public class SmsController implements Initializable {
     private TextField subject;
 
     SmsModel smsModel = new SmsModel();
+    SmsBO smsBO = (SmsBO) BOFactory.getInstance().getBO(BOFactory.BOType.SMS);
     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
     @FXML
@@ -127,7 +130,7 @@ public class SmsController implements Initializable {
     }
 
     @FXML
-    void deleteAction(ActionEvent event) throws SQLException, ClassNotFoundException {
+    void deleteAction(ActionEvent event) throws Exception {
         String Id = smsNo.getText();
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Are you sure?", ButtonType.YES, ButtonType.NO);
         Optional<ButtonType> optionalButtonType = alert.showAndWait();
@@ -173,7 +176,7 @@ public class SmsController implements Initializable {
                     Status,
                     AppID
             );
-            boolean isSaved = smsModel.save(smsdto);
+            boolean isSaved = smsBO.saveSms(smsdto);
             if (isSaved) {
                 refreshPage();
                 new Alert(Alert.AlertType.INFORMATION, "  Record saved...!").show();
@@ -182,7 +185,7 @@ public class SmsController implements Initializable {
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
-        } catch (ClassNotFoundException e) {
+        } catch (Exception e) {
             throw new RuntimeException(e);
         }
 
@@ -249,11 +252,11 @@ public class SmsController implements Initializable {
                 }
             } catch (SQLException e) {
                 throw new RuntimeException(e);
-            } catch (ClassNotFoundException e) {
+            } catch (Exception e) {
                 throw new RuntimeException(e);
             }
     }
-    private void refreshPage() throws SQLException, ClassNotFoundException {
+    private void refreshPage() throws Exception {
 
         loadTableData();
         loadAppointmentId();
@@ -283,9 +286,9 @@ public class SmsController implements Initializable {
             throw new RuntimeException(e);
         }
     }
-    private void loadTableData() {
+    private void loadTableData() throws Exception {
         try {
-            ArrayList<Smsdto> smsdtos = smsModel.getAll();
+            ArrayList<Smsdto> smsdtos = smsBO.getAllSms();
             ObservableList<SmsTM> smsTMS = FXCollections.observableArrayList();
 
             for (Smsdto smsdto :smsdtos) {

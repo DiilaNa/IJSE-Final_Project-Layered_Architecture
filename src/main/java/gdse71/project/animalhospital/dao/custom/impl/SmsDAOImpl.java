@@ -24,8 +24,13 @@ public class SmsDAOImpl implements SmsDAO {
     }
 
     @Override
-    public boolean save(Sms dto) throws Exception {
-        return false;
+    public boolean save(Sms entity) throws Exception {
+        return Util.execute("insert into mail_reminder values(?,?,?,?)",
+                entity.getSmsNo(),
+                entity.getDate(),
+                entity.getStatus(),
+                entity.getAppID()
+                );
     }
 
     @Override

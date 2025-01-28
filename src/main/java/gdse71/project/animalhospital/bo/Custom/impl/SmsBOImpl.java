@@ -25,4 +25,9 @@ public class SmsBOImpl implements SmsBO {
         }
         return smsdtos;
     }
+
+    @Override
+    public boolean saveSms(Smsdto sms) throws Exception {
+        return smsDAO.save(new Sms(sms.getSmsNo(), sms.getDate(), sms.getStatus(), sms.getAppID()));
+    }
 }
