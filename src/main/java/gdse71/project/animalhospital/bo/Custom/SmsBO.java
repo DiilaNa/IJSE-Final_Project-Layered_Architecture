@@ -8,4 +8,5 @@ import java.util.ArrayList;
 public interface SmsBO extends SuperBO {
     ArrayList<Smsdto> getAllSms() throws Exception;
     boolean saveSms(Smsdto sms) throws Exception;
+    boolean updateSms(Smsdto sms) throws Exception;
 }

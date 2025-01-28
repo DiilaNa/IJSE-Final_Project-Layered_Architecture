@@ -243,7 +243,7 @@ public class SmsController implements Initializable {
                         Status,
                         AppID
                 );
-                boolean isSaved = smsModel.update(smsdto);
+                boolean isSaved = smsBO.updateSms(smsdto);
                 if (isSaved) {
                     refreshPage();
                     new Alert(Alert.AlertType.INFORMATION, "  Record updated...!").show();
@@ -309,8 +309,7 @@ public class SmsController implements Initializable {
     }
     public void loadNextMailNo()  {
         try {
-            String nextId = null;
-            nextId = smsModel.getNextMailNo();
+            String nextId = smsModel.getNextMailNo();
             smsNo.setText(nextId);
         } catch (SQLException e) {
             throw new RuntimeException(e);

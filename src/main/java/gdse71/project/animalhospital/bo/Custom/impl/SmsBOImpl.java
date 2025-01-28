@@ -30,4 +30,9 @@ public class SmsBOImpl implements SmsBO {
     public boolean saveSms(Smsdto sms) throws Exception {
         return smsDAO.save(new Sms(sms.getSmsNo(), sms.getDate(), sms.getStatus(), sms.getAppID()));
     }
+
+    @Override
+    public boolean updateSms(Smsdto sms) throws Exception {
+        return  smsDAO.update(new Sms(sms.getSmsNo(), sms.getDate(), sms.getStatus(), sms.getAppID()));
+    }
 }

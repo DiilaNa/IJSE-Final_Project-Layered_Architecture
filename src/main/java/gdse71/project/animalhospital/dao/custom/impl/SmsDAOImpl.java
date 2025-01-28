@@ -39,8 +39,13 @@ public class SmsDAOImpl implements SmsDAO {
     }
 
     @Override
-    public boolean update(Sms dto) throws Exception {
-        return false;
+    public boolean update(Sms entity) throws Exception {
+       return Util.execute("UPDATE mail_reminder SET mail_date=?, status=?, app_id=? WHERE mail_no=? ",
+               entity.getDate(),
+               entity.getStatus(),
+               entity.getAppID(),
+               entity.getSmsNo()
+       );
     }
 
     @Override
