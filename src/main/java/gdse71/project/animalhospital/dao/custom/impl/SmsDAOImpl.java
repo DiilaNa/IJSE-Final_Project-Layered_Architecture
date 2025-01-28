@@ -35,7 +35,7 @@ public class SmsDAOImpl implements SmsDAO {
 
     @Override
     public boolean delete(String id) throws Exception {
-        return false;
+        return Util.execute("DELETE FROM mail_reminder WHERE mail_no=?",id);
     }
 
     @Override

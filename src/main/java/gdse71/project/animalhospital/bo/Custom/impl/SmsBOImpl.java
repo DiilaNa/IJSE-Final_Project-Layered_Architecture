@@ -35,4 +35,9 @@ public class SmsBOImpl implements SmsBO {
     public boolean updateSms(Smsdto sms) throws Exception {
         return  smsDAO.update(new Sms(sms.getSmsNo(), sms.getDate(), sms.getStatus(), sms.getAppID()));
     }
+
+    @Override
+    public boolean deleteSms(String id) throws Exception {
+        return smsDAO.delete(id);
+    }
 }

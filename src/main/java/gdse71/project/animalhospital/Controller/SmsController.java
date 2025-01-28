@@ -137,7 +137,7 @@ public class SmsController implements Initializable {
 
         if (optionalButtonType.isPresent() && optionalButtonType.get() == ButtonType.YES) {
 
-            boolean isDeleted = smsModel.delete(Id);
+            boolean isDeleted = smsBO.deleteSms(Id);
             if (isDeleted) {
                 refreshPage();
                 new Alert(Alert.AlertType.INFORMATION, "  Record deleted...!").show();
