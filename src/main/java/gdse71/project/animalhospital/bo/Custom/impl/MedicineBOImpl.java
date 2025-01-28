@@ -80,6 +80,23 @@ public class MedicineBOImpl implements MedicineBO {
 
     @Override
     public boolean deleteMedicine(String medID, String MedDetailId) throws Exception {
-        return false;
+        Connection connection = DBConnection.getInstance().getConnection();
+        connection.setAutoCommit(false);
+
+        boolean b1 = medicineDAO.delete(medID);
+        if (!b1){
+            connection.rollback();
+            connection.setAutoCommit(true);
+            return false;
+        }
+        boolean b2 = medicineDetailDao.delete(MedDetailId);
+        if (!b2){
+            connection.rollback();
+            connection.setAutoCommit(true);
+            return false;
+        }
+        connection.commit();
+        connection.setAutoCommit(true);
+        return true;
     }
 }

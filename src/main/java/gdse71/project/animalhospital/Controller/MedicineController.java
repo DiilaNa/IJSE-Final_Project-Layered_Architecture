@@ -131,7 +131,7 @@ public class MedicineController implements Initializable {
         }
 
         try {
-            boolean isDeleted = medicineModel.delete(selectedMedicine,selectedMedDetail);
+            boolean isDeleted = medicineBO.deleteMedicine(selectedMedicine,selectedMedDetail);
 
             if (isDeleted) {
                 refreshPage();
