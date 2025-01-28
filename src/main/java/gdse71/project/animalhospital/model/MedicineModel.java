@@ -11,7 +11,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class MedicineModel {
-    public ArrayList<MedicineDto> getAll() throws SQLException, ClassNotFoundException {
+    public ArrayList<MedicineDto> getAllj() throws SQLException, ClassNotFoundException {
         ResultSet rst = Util.execute("SELECT * from medicine");
         ArrayList<MedicineDto> medicineDtos = new ArrayList<>();
         while (rst.next()) {
@@ -26,7 +26,7 @@ public class MedicineModel {
         return medicineDtos;
     }
 
-    public boolean save(MedicineDto medicineDto, Med_detailDto med_detailDto) throws SQLException, ClassNotFoundException {
+    public boolean savej(MedicineDto medicineDto, Med_detailDto med_detailDto) throws SQLException, ClassNotFoundException {
 
         Connection connection = null;
 

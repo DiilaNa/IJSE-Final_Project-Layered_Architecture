@@ -39,7 +39,7 @@ public class DaoFactory {
                                             case MEDICINE:
                                                 return new MedicineDAOImpl();
                                                 case MEDICINEDETAILS:
-                                                    return new MedicineDetailDao();
+                                                    return new MedicineDetailsDAOImpl();
                 default:
                     return null;
         }

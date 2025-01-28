@@ -26,6 +26,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class MedicineController implements Initializable {
@@ -152,8 +153,6 @@ public class MedicineController implements Initializable {
             Double mWeight = Double.valueOf(Mweight.getText());
             String petids = petId.getValue();
 
-
-        // Regex patterns
             String idPattern = "^[A-Za-z0-9]+$";
             String weightPattern = "^[0-9]*\\.?[0-9]+$"; // Accepts positive numbers with optional decimal
             String quantityPattern = "^[1-9][0-9]*$"; // Accepts positive integers only
@@ -174,9 +173,14 @@ public class MedicineController implements Initializable {
                 MedicineDto medicineDto = new MedicineDto(medId, medName, medCondition, mWeight);
                 Med_detailDto med_detailDto = new Med_detailDto(medId,petids);
 
+                List<MedicineDto> medicineDtos = new ArrayList<>();
+                medicineDtos.add(medicineDto);
+
+                List<Med_detailDto> medDetailDtos = new ArrayList<>();
+                medDetailDtos.add(med_detailDto);
 
                 try {
-                    boolean isSaved = medicineModel.save(medicineDto,med_detailDto);
+                    boolean isSaved = medicineBO.saveMedicine(medicineDtos, medDetailDtos); // Pass the lists
                     if (isSaved) {
                         refreshPage();
                         new Alert(Alert.AlertType.INFORMATION, "Medicine saved successfully!").show();
@@ -190,9 +194,7 @@ public class MedicineController implements Initializable {
             } else {
                 new Alert(Alert.AlertType.ERROR, "Please fix the highlighted errors before saving.").show();
             }
-
     }
-
     @FXML
     void tableMouseClicked(MouseEvent event) {
         MedicineTM  medicineTM = table.getSelectionModel().getSelectedItem();
@@ -239,7 +241,7 @@ public class MedicineController implements Initializable {
             MedicineDto medicineDto = new MedicineDto(medId, medName, medCondition,mWeight);
 
             try {
-                boolean isSaved = medicineModel.update(medicineDto);
+                boolean isSaved = medicineBO.updateMedicine(medicineDto);
                 if (isSaved) {
                     refreshPage();
                     new Alert(Alert.AlertType.INFORMATION, "Medicine updated successfully!").show();
