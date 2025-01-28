@@ -55,7 +55,7 @@ public class InvoiceBOImpl implements InvoiceBO {
     }
 
     @Override
-    public String loadInvoice() throws Exception {
+    public String loadNextInvoiceID() throws Exception {
         return invoiceDAO.generateId();
     }
 

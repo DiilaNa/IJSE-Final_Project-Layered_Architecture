@@ -288,12 +288,12 @@ public class MedicineController implements Initializable {
 
         table.setItems(medicineTMS);
     }
-    public void getNextMedId(){
-        String NextMedID = medicineModel.getNextMedid();
+    public void getNextMedId() throws Exception {
+        String NextMedID = medicineBO.getNextMedID();
         Mid.setText(NextMedID);
     }
     @FXML
-    void reseTAction(ActionEvent event) {
+    void reseTAction(ActionEvent event) throws Exception {
         getNextMedId();
         Mname.setText("");
         Mcoondition.setText("");

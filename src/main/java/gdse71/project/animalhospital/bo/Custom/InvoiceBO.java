@@ -11,7 +11,7 @@ public interface InvoiceBO extends SuperBO {
     boolean saveInvoice(Invoicedto invoice) throws Exception;
     boolean deleteInvoice(String id) throws Exception;
     boolean updatePetInvoice(Invoicedto invoice) throws Exception;
-    String loadInvoice() throws Exception;
+    String loadNextInvoiceID() throws Exception;
     ArrayList<String> getAllInvoiceId() throws Exception;
 
 }

@@ -13,5 +13,6 @@ public interface MedicineBO extends SuperBO {
     boolean saveMedicine(List<MedicineDto>medicineDtos,List<Med_detailDto> medDetailDtos) throws Exception;
     boolean updateMedicine(MedicineDto medicineDto) throws Exception;
     boolean deleteMedicine(String medID,String MedDetailId) throws Exception;
+    String getNextMedID() throws Exception;
 
 }

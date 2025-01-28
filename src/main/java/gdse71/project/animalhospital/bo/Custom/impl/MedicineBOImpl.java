@@ -99,4 +99,9 @@ public class MedicineBOImpl implements MedicineBO {
         connection.setAutoCommit(true);
         return true;
     }
+
+    @Override
+    public String getNextMedID() throws Exception {
+        return medicineDAO.generateId();
+    }
 }

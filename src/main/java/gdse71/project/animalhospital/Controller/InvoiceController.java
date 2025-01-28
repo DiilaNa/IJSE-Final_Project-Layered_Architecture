@@ -272,7 +272,7 @@ public class InvoiceController implements Initializable {
         table.setItems(invoiceTMS);
     }
     public void loadNextInvoiceID() throws Exception {
-        String nextId = invoiceBO.loadInvoice();
+        String nextId = invoiceBO.loadNextInvoiceID();
         invNO.setText(nextId);
 
     }
