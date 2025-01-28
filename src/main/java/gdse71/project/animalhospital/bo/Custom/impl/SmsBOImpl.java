@@ -45,4 +45,14 @@ public class SmsBOImpl implements SmsBO {
     public String getNextSmsNo() throws Exception {
         return smsDAO.generateId();
     }
+
+    @Override
+    public ArrayList<String> getEmailList() throws Exception {
+        return smsDAO.loadSmsComboBox();
+    }
+
+    @Override
+    public ArrayList<String> getAppointmentId() throws Exception {
+        return  smsDAO.loadAppointmentIdComboBox();
+    }
 }

@@ -5,6 +5,7 @@ import gdse71.project.animalhospital.dao.custom.SmsDAO;
 import gdse71.project.animalhospital.entity.Sms;
 
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class SmsDAOImpl implements SmsDAO {
@@ -63,5 +64,25 @@ public class SmsDAOImpl implements SmsDAO {
             return String.format("SMS%03d", newIndex); // Return the new customer ID in format Cnnn
         }
         return "SMS001";
+    }
+
+    @Override
+    public ArrayList<String> loadSmsComboBox() throws SQLException, ClassNotFoundException {
+        ResultSet rst = Util.execute("SELECT email FROM owner");
+        ArrayList<String> smsdtos = new ArrayList<>();
+        while (rst.next()) {
+            smsdtos.add(rst.getString(1));
+        }
+        return smsdtos;
+    }
+
+    @Override
+    public ArrayList<String> loadAppointmentIdComboBox() throws SQLException, ClassNotFoundException {
+       ResultSet rst = Util.execute("SELECT appointment_id from appointments");
+       ArrayList<String> smsdtos = new ArrayList<>();
+       while (rst.next()) {
+           smsdtos.add(rst.getString(1));
+       }
+       return smsdtos;
     }
 }
