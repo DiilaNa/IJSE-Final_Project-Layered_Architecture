@@ -50,6 +50,18 @@ public class SmsDAOImpl implements SmsDAO {
 
     @Override
     public String generateId() throws Exception {
-        return "";
+        ResultSet rst = Util.execute("SELECT mail_no from mail_reminder order by mail_no desc limit 1");
+
+        if (rst.next()) {
+          String lastId = rst.getString(1);
+          String numericPart = lastId.replaceAll("[^0-9]", "");
+          if (numericPart.isEmpty()){
+              return "SMS001";
+          }
+          int i = Integer.parseInt(numericPart);
+          int newIndex = i + 1;
+            return String.format("SMS%03d", newIndex); // Return the new customer ID in format Cnnn
+        }
+        return "SMS001";
     }
 }

@@ -40,4 +40,9 @@ public class SmsBOImpl implements SmsBO {
     public boolean deleteSms(String id) throws Exception {
         return smsDAO.delete(id);
     }
+
+    @Override
+    public String getNextSmsNo() throws Exception {
+        return smsDAO.generateId();
+    }
 }

@@ -111,7 +111,7 @@ public class SmsController implements Initializable {
     @FXML
     private TextField subject;
 
-    SmsModel smsModel = new SmsModel();
+    /*SmsModel smsModel = new SmsModel();*/
     SmsBO smsBO = (SmsBO) BOFactory.getInstance().getBO(BOFactory.BOType.SMS);
     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
@@ -309,11 +309,9 @@ public class SmsController implements Initializable {
     }
     public void loadNextMailNo()  {
         try {
-            String nextId = smsModel.getNextMailNo();
+            String nextId = smsBO.getNextSmsNo();
             smsNo.setText(nextId);
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        } catch (ClassNotFoundException e) {
+        } catch (Exception e) {
             throw new RuntimeException(e);
         }
 

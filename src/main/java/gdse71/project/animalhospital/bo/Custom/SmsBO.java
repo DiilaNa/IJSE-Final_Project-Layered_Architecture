@@ -10,4 +10,5 @@ public interface SmsBO extends SuperBO {
     boolean saveSms(Smsdto sms) throws Exception;
     boolean updateSms(Smsdto sms) throws Exception;
     boolean deleteSms(String id) throws Exception;
+    String getNextSmsNo() throws Exception;
 }
