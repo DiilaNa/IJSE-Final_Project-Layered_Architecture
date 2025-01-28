@@ -1,6 +1,5 @@
 package gdse71.project.animalhospital.bo;
 
-import gdse71.project.animalhospital.bo.Custom.PetBO;
 import gdse71.project.animalhospital.bo.Custom.impl.*;
 
 public class BOFactory{
@@ -15,7 +14,7 @@ public class BOFactory{
         return boFactory;
     }
     public enum BOType{
-        PET,PETRECORD,OWNER,PAYMENT,INVOICE,SALARY,SERVICE
+        PET,PETRECORD,OWNER,PAYMENT,INVOICE,SALARY,SERVICE,SMS
     }
     public SuperBO getBO(BOType type){
         switch (type){
@@ -33,6 +32,8 @@ public class BOFactory{
                                         return new SalaryBOImpl();
                                         case SERVICE:
                                             return new ServiceBOImpl();
+                                            case SMS:
+                                                return new SmsBOImpl();
                 default:
                     return null;
         }

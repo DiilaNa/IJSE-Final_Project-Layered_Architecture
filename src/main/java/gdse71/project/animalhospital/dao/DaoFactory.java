@@ -15,7 +15,7 @@ public class DaoFactory {
         return daoFactory;
     }
     public enum DaoType {
-        PET,PETRECORD,OWNER,PAYMENT,INVOICE,SALARY,SERVICE
+        PET,PETRECORD,OWNER,PAYMENT,INVOICE,SALARY,SERVICE,SMS
     }
     public SuperDAO getDao(DaoType Type) {
         switch (Type) {
@@ -33,6 +33,8 @@ public class DaoFactory {
                                     return new SalaryDAOImpl();
                                     case SERVICE:
                                         return new ServiceDAOImpl();
+                                        case SMS:
+                                            return new SmsDAOImpl();
                 default:
                     return null;
         }
