@@ -43,7 +43,6 @@ public class SmsController implements Initializable {
         tableAppointments.setCellValueFactory(new PropertyValueFactory<>("appID"));
         try {
             refreshPage();
-            loadNextMailNo();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -103,7 +102,6 @@ public class SmsController implements Initializable {
     @FXML
     private TextField subject;
 
-    /*SmsModel smsModel = new SmsModel();*/
     SmsBO smsBO = (SmsBO) BOFactory.getInstance().getBO(BOFactory.BOType.SMS);
     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
@@ -148,7 +146,7 @@ public class SmsController implements Initializable {
 
         maildescription.setText("");
         subject.setText("");
-        status.setItems(FXCollections.observableArrayList("SENT", "NOT SENT"));
+        status.getSelectionModel().clearSelection();
         aptIDs.setValue("");
 
 
@@ -210,7 +208,7 @@ public class SmsController implements Initializable {
             smsNo.setText(smsTM.getSmsNo());
             date.setValue(LocalDate.parse(smsTM.getDate()));
             aptIDs.setValue(smsTM.getAppID());
-
+            status.setValue(smsTM.getStatus());
             save.setDisable(false);
 
             delete.setDisable(false);
@@ -252,14 +250,17 @@ public class SmsController implements Initializable {
         loadTableData();
         loadAppointmentId();
         loadMail();
+        loadNextMailNo();
 
         save.setDisable(false);
         reset.setDisable(false);
+        status.setDisable(false);
+        status.setItems(FXCollections.observableArrayList("SENT", "NOT SENT"));
+
 
         update.setDisable(true);
         delete.setDisable(true);
 
-        status.setItems(FXCollections.observableArrayList("SENT", "NOT SENT"));
 
 
     }
