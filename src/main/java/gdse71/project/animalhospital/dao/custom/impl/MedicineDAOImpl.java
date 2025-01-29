@@ -4,7 +4,9 @@ import gdse71.project.animalhospital.CrudUtil.Util;
 import gdse71.project.animalhospital.dao.custom.MedicineDAO;
 import gdse71.project.animalhospital.entity.Medicine;
 
+
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class MedicineDAOImpl implements MedicineDAO {
@@ -35,7 +37,7 @@ public class MedicineDAOImpl implements MedicineDAO {
 
     @Override
     public boolean delete(String id) throws Exception {
-        return Util.execute("DELETE FROM medicine WHERE = ?",id);
+        return Util.execute("DELETE FROM medicine WHERE medicine_id=?",id);
     }
 
     @Override
@@ -59,9 +61,30 @@ public class MedicineDAOImpl implements MedicineDAO {
            }
            int i = Integer.parseInt(numericPart);
            int newIndex = i+1;
-           return String.valueOf(newIndex);
+           return String.format("MED%03d",newIndex);
        }else {
            return "MED001";
        }
+    }
+
+    @Override
+    public ArrayList<String> loadPetID() throws SQLException, ClassNotFoundException {
+        ResultSet rst = Util.execute("SELECT pet_id FROM pet");
+        ArrayList<String> petIds = new ArrayList<>();
+
+        while (rst.next()) {
+            petIds.add(rst.getString("pet_id"));
+        }
+
+        return petIds;
+    }
+    @Override
+    public String search(String petID) throws SQLException, ClassNotFoundException {
+        ResultSet rst = Util.execute("select pet_name from pet where pet_id = ?",petID);
+
+        if (rst.next()) {
+            return rst.getString("pet_name");
+        }
+        return "No Name Found";
     }
 }

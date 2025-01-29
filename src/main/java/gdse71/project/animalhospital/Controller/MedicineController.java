@@ -1,13 +1,10 @@
 package gdse71.project.animalhospital.Controller;
 
-import gdse71.project.animalhospital.CrudUtil.Util;
 import gdse71.project.animalhospital.bo.BOFactory;
 import gdse71.project.animalhospital.bo.Custom.MedicineBO;
-import gdse71.project.animalhospital.db.DBConnection;
 import gdse71.project.animalhospital.dto.Med_detailDto;
 import gdse71.project.animalhospital.dto.MedicineDto;
 import gdse71.project.animalhospital.dto.PetTm.MedicineTM;
-import gdse71.project.animalhospital.model.MedicineModel;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -39,8 +36,6 @@ public class MedicineController implements Initializable {
         tableMedNAme.setCellValueFactory(new PropertyValueFactory<>("MedicineName"));
         tableCondition.setCellValueFactory(new PropertyValueFactory<>("MedicineCondition"));
         tableWeight.setCellValueFactory(new PropertyValueFactory<>("MedicineWeight"));
-
-
         try {
             refreshPage();
         } catch (Exception e) {
@@ -103,7 +98,7 @@ public class MedicineController implements Initializable {
     @FXML
     private Label petNname;
 
-    MedicineModel medicineModel = new MedicineModel();
+
     MedicineBO medicineBO = (MedicineBO) BOFactory.getInstance().getBO(BOFactory.BOType.MEDICINE);
 
     @FXML
@@ -123,21 +118,21 @@ public class MedicineController implements Initializable {
     @FXML
     void deleteAction(ActionEvent event) {
         String selectedMedicine = Mid.getText();
-        String selectedMedDetail = petId.getSelectionModel().getSelectedItem();
+        String selectedPetIDValue = petId.getSelectionModel().getSelectedItem();
 
-        if (selectedMedicine == null && selectedMedDetail == null) {
-            new Alert(Alert.AlertType.WARNING, "Please select a medicine to delete.").show();
+        if (selectedMedicine == null && selectedPetIDValue == null) {
+            new Alert(Alert.AlertType.WARNING, "Please select a medicine id to delete.").show();
             return;
         }
 
         try {
-            boolean isDeleted = medicineBO.deleteMedicine(selectedMedicine,selectedMedDetail);
+            boolean isDeleted = medicineBO.deleteMedicine(selectedMedicine,selectedPetIDValue);
 
             if (isDeleted) {
                 refreshPage();
                 new Alert(Alert.AlertType.INFORMATION, "Medicine deleted successfully!").show();
             } else {
-                new Alert(Alert.AlertType.ERROR, "Failed to delete medicine.").show();
+                new Alert(Alert.AlertType.ERROR, "Failed to delete medicine ko.").show();
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -196,7 +191,7 @@ public class MedicineController implements Initializable {
             }
     }
     @FXML
-    void tableMouseClicked(MouseEvent event) {
+    void tableMouseClicked(MouseEvent event) throws Exception {
         MedicineTM  medicineTM = table.getSelectionModel().getSelectedItem();
 
         if (medicineTM != null) {
@@ -204,15 +199,15 @@ public class MedicineController implements Initializable {
             Mname.setText(medicineTM.getMedicineName());
             Mcoondition.setText(medicineTM.getMedicineCondition());
             Mweight.setText(String.valueOf(medicineTM.getMedicineWeight()));
-            save.setDisable(false);
 
+            String meid = Mid.getText();
+            String medgetID = medicineBO.getPetID(meid);
+            petId.setValue(medgetID);
+            save.setDisable(false);
             delete.setDisable(false);
             update.setDisable(false);
         }
-
-
     }
-
     @FXML
     void updateAction(ActionEvent event) {
         String medId = Mid.getText();
@@ -301,37 +296,23 @@ public class MedicineController implements Initializable {
 
 
     }
-    private void loadPetIds() throws SQLException {
-
-        try {
-            Connection connection = DBConnection.getInstance().getConnection();
-            ResultSet rs = connection.createStatement().executeQuery("SELECT pet_id FROM pet");
-            ObservableList<String> data = FXCollections.observableArrayList();
-
-            while (rs.next()) {
-                data.add(rs.getString("pet_id"));
-            }
-            petId.setItems(data);
-        } catch (ClassNotFoundException e) {
-            throw new RuntimeException(e);
-        }
+    private void loadPetIds() throws Exception {
+        petId.getItems().clear();
+        ArrayList<String> data = medicineBO.getMedIdComboBox();
+        petId.getItems().addAll(data);
     }
     @FXML
     void petIDAction(ActionEvent event) throws SQLException, ClassNotFoundException {
-        String petID = petId.getValue();
-
-        if (petID != null) {
-            ResultSet rst = Util.execute("select pet_name from pet where pet_id = ?",petID);
-
-            if (rst.next()) { // Ensure there is a result before accessing it
-                String petName = rst.getString("pet_name");
-                petNname.setText(petName); // Set the pet name in the Label or TextField
-            } else {
-                petNname.setText("No name found"); // Handle case where no pet is found
+            String petID = petId.getValue();
+            if (petID != null) {
+                try {
+                    String petName = medicineBO.getPetName(petID);
+                    petNname.setText(petName != null ? petName : "No name found");
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    new Alert(Alert.AlertType.ERROR, "Error fetching pet name: " + e.getMessage()).show();
+                }
             }
-
-        }else{
-            new Alert(Alert.AlertType.ERROR,"Select a petID");
         }
+
     }
-}

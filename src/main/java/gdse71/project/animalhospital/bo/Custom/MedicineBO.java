@@ -14,5 +14,8 @@ public interface MedicineBO extends SuperBO {
     boolean updateMedicine(MedicineDto medicineDto) throws Exception;
     boolean deleteMedicine(String medID,String MedDetailId) throws Exception;
     String getNextMedID() throws Exception;
+    ArrayList<String> getMedIdComboBox() throws Exception;
+    String getPetName(String petID) throws Exception;
+    String getPetID(String ID) throws Exception;
 
 }

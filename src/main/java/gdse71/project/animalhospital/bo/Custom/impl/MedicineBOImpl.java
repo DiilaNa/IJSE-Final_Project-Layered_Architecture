@@ -1,10 +1,10 @@
 package gdse71.project.animalhospital.bo.Custom.impl;
 
-import gdse71.project.animalhospital.CrudUtil.Util;
 import gdse71.project.animalhospital.bo.Custom.MedicineBO;
 import gdse71.project.animalhospital.dao.DaoFactory;
 import gdse71.project.animalhospital.dao.custom.MedicineDAO;
 import gdse71.project.animalhospital.dao.custom.MedicineDetailDao;
+import gdse71.project.animalhospital.dao.custom.QuerryDAO;
 import gdse71.project.animalhospital.db.DBConnection;
 import gdse71.project.animalhospital.dto.Med_detailDto;
 import gdse71.project.animalhospital.dto.MedicineDto;
@@ -18,6 +18,7 @@ import java.util.List;
 public class MedicineBOImpl implements MedicineBO {
     MedicineDAO medicineDAO = (MedicineDAO) DaoFactory.getInstance().getDao(DaoFactory.DaoType.MEDICINE);
     MedicineDetailDao medicineDetailDao = (MedicineDetailDao) DaoFactory.getInstance().getDao(DaoFactory.DaoType.MEDICINEDETAILS);
+    QuerryDAO querryDAO = (QuerryDAO) DaoFactory.getInstance().getDao(DaoFactory.DaoType.JOIN);
 
     @Override
     public ArrayList<MedicineDto> getALLMedicine() throws Exception {
@@ -36,36 +37,43 @@ public class MedicineBOImpl implements MedicineBO {
 
     @Override
     public boolean saveMedicine(List<MedicineDto> medicineDtos, List<Med_detailDto> medDetailDtos) throws Exception {
-        Connection connection = DBConnection.getInstance().getConnection();
-        connection.setAutoCommit(false);
+        Connection connection = null;
+        try {
+            connection = DBConnection.getInstance().getConnection();
+            connection.setAutoCommit(false);
 
-        for (MedicineDto medicineDto : medicineDtos) {
-            boolean b1 = medicineDAO.save(new Medicine(
-                    medicineDto.getMedicineId(),
-                    medicineDto.getMedicineName(),
-                    medicineDto.getMedicineCondition(),
-                    medicineDto.getMedicineWeight()
-            ));
-            if (!b1){
-                connection.rollback();
-                connection.setAutoCommit(true);
-                return false;
+            for (MedicineDto medicineDto : medicineDtos) {
+                boolean b1 = medicineDAO.save(new Medicine(
+                        medicineDto.getMedicineId(),
+                        medicineDto.getMedicineName(),
+                        medicineDto.getMedicineCondition(),
+                        medicineDto.getMedicineWeight()
+                ));
+                if (!b1) {
+                    connection.rollback();
+                    return false;
+                }
             }
-        }
-        for (Med_detailDto medDetailDto : medDetailDtos) {
-            boolean b2 = medicineDetailDao.save(new MedicineDetails(
-               medDetailDto.getMeDID(),
-               medDetailDto.getPETID()
-            ));
-            if (!b2){
-                connection.rollback();
-                connection.setAutoCommit(true);
-                return false;
+            for (Med_detailDto medDetailDto : medDetailDtos) {
+                boolean b2 = medicineDetailDao.save(new MedicineDetails(
+                        medDetailDto.getMeDID(),
+                        medDetailDto.getPETID()
+                ));
+                if (!b2) {
+                    connection.rollback();
+                    return false;
+                }
             }
+            connection.commit();
+            return true;
+
+        } catch (Exception e) {
+            if (connection != null) {
+                connection.rollback();
+            }
+            e.printStackTrace();
+            return false;
         }
-        connection.commit();
-        connection.setAutoCommit(true);
-        return true;
     }
 
     @Override
@@ -79,29 +87,56 @@ public class MedicineBOImpl implements MedicineBO {
     }
 
     @Override
-    public boolean deleteMedicine(String medID, String MedDetailId) throws Exception {
-        Connection connection = DBConnection.getInstance().getConnection();
-        connection.setAutoCommit(false);
+    public boolean deleteMedicine(String medID, String PetIDValue) throws Exception {
+        System.out.println(medID+"  "+PetIDValue);
+        Connection connection = null;
+        try {
+            connection = DBConnection.getInstance().getConnection();
+            connection.setAutoCommit(false);
+
+
+        boolean b2 = medicineDetailDao.delete(PetIDValue);
+            if (!b2) {
+                System.out.println("failed to delete petid");
+            connection.rollback();
+            return false;
+            }
+            System.out.println("succeesfully deleted pet id ");
 
         boolean b1 = medicineDAO.delete(medID);
-        if (!b1){
-            connection.rollback();
-            connection.setAutoCommit(true);
-            return false;
-        }
-        boolean b2 = medicineDetailDao.delete(MedDetailId);
-        if (!b2){
-            connection.rollback();
-            connection.setAutoCommit(true);
-            return false;
-        }
+            if (!b1) {
+                System.out.println("failed to delete medid");
+                connection.rollback();
+                return false;
+            }
+            System.out.println("succeesfully deleted medid");
         connection.commit();
-        connection.setAutoCommit(true);
         return true;
+    } catch (Exception e) {
+            if (connection != null) {
+                connection.rollback(); // Rollback transaction on any exception
+            }
+            throw new Exception("Failed to delete medicine and details: " + e.getMessage(), e);
+        }
     }
 
     @Override
     public String getNextMedID() throws Exception {
         return medicineDAO.generateId();
+    }
+
+    @Override
+    public ArrayList<String> getMedIdComboBox() throws Exception {
+        return medicineDAO.loadPetID();
+    }
+
+    @Override
+    public String getPetName( String petID) throws Exception {
+        return medicineDAO.search(petID);
+    }
+
+    @Override
+    public String getPetID(String ID) throws Exception {
+        return medicineDetailDao.searchPetID(ID);
     }
 }

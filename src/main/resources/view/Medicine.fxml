@@ -70,10 +70,10 @@
       <Button fx:id="back" layoutX="20.0" layoutY="28.0" mnemonicParsing="false" onAction="#backAction" style="-fx-background-color: black;" text="BACK" textFill="WHITE" underline="true" />
       <TableView fx:id="table" layoutY="484.0" onMouseClicked="#tableMouseClicked" opacity="0.88" prefHeight="385.0" prefWidth="1200.0" style="-fx-background-color: f39c12;">
         <columns>
-          <TableColumn fx:id="tablemediID" prefWidth="163.0" style="-fx-background-color: #f39c12; -fx-border-color: #000; -fx-border-width: 1 1px 0 0;" text="MEDICINE ID" />
-          <TableColumn fx:id="tableMedNAme" prefWidth="318.0" style="-fx-background-color: #f39c12; -fx-border-color: #000; -fx-border-width: 1 1px 0 0;" text="MEDICINE NAME" />
-            <TableColumn fx:id="tableCondition" prefWidth="357.0" style="-fx-background-color: #f39c12; -fx-border-color: #000; -fx-border-width: 1 1px 0 0;" text="CONDITION" />
-            <TableColumn fx:id="tableWeight" prefWidth="361.0" style="-fx-background-color: #f39c12; -fx-border-color: #000; -fx-border-width: 1 1px 0 0;" text="MEDICINE_WEIGHT" />
+          <TableColumn fx:id="tablemediID" prefWidth="276.8000122308731" style="-fx-background-color: #f39c12; -fx-border-color: #000; -fx-border-width: 1 1px 0 0;" text="MEDICINE ID" />
+          <TableColumn fx:id="tableMedNAme" prefWidth="362.3999938964844" style="-fx-background-color: #f39c12; -fx-border-color: #000; -fx-border-width: 1 1px 0 0;" text="MEDICINE NAME" />
+            <TableColumn fx:id="tableCondition" minWidth="0.0" prefWidth="285.6000061035156" style="-fx-background-color: #f39c12; -fx-border-color: #000; -fx-border-width: 1 1px 0 0;" text="CONDITION" />
+            <TableColumn fx:id="tableWeight" minWidth="0.0" prefWidth="275.20001220703125" style="-fx-background-color: #f39c12; -fx-border-color: #000; -fx-border-width: 1 1px 0 0;" text="Weight" />
         </columns>
          <effect>
             <Reflection />
