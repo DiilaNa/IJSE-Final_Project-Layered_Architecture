@@ -88,7 +88,6 @@ public class MedicineBOImpl implements MedicineBO {
 
     @Override
     public boolean deleteMedicine(String medID, String PetIDValue) throws Exception {
-        System.out.println(medID+"  "+PetIDValue);
         Connection connection = null;
         try {
             connection = DBConnection.getInstance().getConnection();
@@ -97,19 +96,16 @@ public class MedicineBOImpl implements MedicineBO {
 
         boolean b2 = medicineDetailDao.delete(PetIDValue);
             if (!b2) {
-                System.out.println("failed to delete petid");
             connection.rollback();
             return false;
             }
-            System.out.println("succeesfully deleted pet id ");
 
         boolean b1 = medicineDAO.delete(medID);
             if (!b1) {
-                System.out.println("failed to delete medid");
                 connection.rollback();
                 return false;
             }
-            System.out.println("succeesfully deleted medid");
+
         connection.commit();
         return true;
     } catch (Exception e) {

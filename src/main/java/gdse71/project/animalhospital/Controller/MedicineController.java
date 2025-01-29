@@ -120,7 +120,7 @@ public class MedicineController implements Initializable {
         String selectedMedicine = Mid.getText();
         String selectedPetIDValue = petId.getSelectionModel().getSelectedItem();
 
-        if (selectedMedicine == null && selectedPetIDValue == null) {
+        if (selectedMedicine == null || selectedPetIDValue == null) {
             new Alert(Alert.AlertType.WARNING, "Please select a medicine id to delete.").show();
             return;
         }
@@ -253,18 +253,17 @@ public class MedicineController implements Initializable {
 
     }
     private void refreshPage() throws Exception {
-
         loadTableData();
         getNextMedId();
+        petNname.setText("");
         loadPetIds();
-
         save.setDisable(false);
         update.setDisable(true);
         delete.setDisable(true);
-
         Mname.setText("");
         Mcoondition.setText("");
         Mweight.setText("");
+
     }
     private void loadTableData() throws Exception {
 
@@ -293,8 +292,9 @@ public class MedicineController implements Initializable {
         Mname.setText("");
         Mcoondition.setText("");
         Mweight.setText("");
-
-
+        loadPetIds();
+        delete.setDisable(true);
+        petNname.setText("");
     }
     private void loadPetIds() throws Exception {
         petId.getItems().clear();

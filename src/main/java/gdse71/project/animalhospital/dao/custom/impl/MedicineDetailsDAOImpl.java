@@ -24,7 +24,6 @@ public class MedicineDetailsDAOImpl implements MedicineDetailDao {
 
     @Override
     public boolean delete(String id) throws Exception {
-        System.out.println("pet_id in medicineDetailsDAOImpl" + id);
         return Util.execute("DELETE FROM medicine_details WHERE pet_id = ?",id);
 
     }
