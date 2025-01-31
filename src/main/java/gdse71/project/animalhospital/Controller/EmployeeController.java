@@ -5,8 +5,6 @@ import gdse71.project.animalhospital.bo.Custom.EmployeeBO;
 import gdse71.project.animalhospital.db.DBConnection;
 import gdse71.project.animalhospital.dto.DocDetailsDto;
 import gdse71.project.animalhospital.dto.Employeedto;
-import gdse71.project.animalhospital.dto.Med_detailDto;
-import gdse71.project.animalhospital.dto.MedicineDto;
 import gdse71.project.animalhospital.dto.PetTm.EmployeeTM;
 import gdse71.project.animalhospital.model.EmployeeModel;
 import javafx.collections.FXCollections;
@@ -192,7 +190,7 @@ public class EmployeeController implements Initializable {
     }
 
     @FXML
-    void tableONACTION(MouseEvent event) {
+    void tableONACTION(MouseEvent event) throws Exception {
         EmployeeTM employeeTM = table.getSelectionModel().getSelectedItem();
 
         if (employeeTM != null) {
@@ -201,6 +199,10 @@ public class EmployeeController implements Initializable {
             duty.setText(employeeTM.getEmployeeDuty());
             address.setText(employeeTM.getEmployeeAddress());
             contact.setText(employeeTM.getEmployeePhone());
+
+            String employeeID =  empId.getText();
+            String appointmentIDs = employeeBO.searchEmployee(employeeID);
+            appt.setValue(appointmentIDs);
 
             save.setDisable(false);
 

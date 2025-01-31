@@ -4,6 +4,8 @@ import gdse71.project.animalhospital.CrudUtil.Util;
 import gdse71.project.animalhospital.dao.custom.DocDetailDAO;
 import gdse71.project.animalhospital.entity.DocDetails;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class DocDetailDAOImpl implements DocDetailDAO {
@@ -33,5 +35,15 @@ public class DocDetailDAOImpl implements DocDetailDAO {
     @Override
     public String generateId() throws Exception {
         return "";
+    }
+
+    @Override
+    public String searchAppointmentID(String ID) throws SQLException, ClassNotFoundException {
+        ResultSet rst = Util.execute("SELECT appoint_id from doc_details WHERE emp_id=? ",ID);
+        if (rst.next()){
+            return rst.getString("appoint_id");
+        }
+        return "NO NAME FOUND";
+
     }
 }

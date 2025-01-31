@@ -84,7 +84,7 @@ public class PetRecordController implements Initializable {
     private Button reset;
 
     /*PetRecordModel petRecordModel = new PetRecordModel();*/
-    PetRecordBO petRecordBO = (PetRecordBO) BOFactory.getInstance().getBO(BOFactory.BOType.PETRECORD);
+    PetRecordBO petRecordBO = (PetRecordBO) BOFactory.getInstance().getBO(BOFactory.BOType.PET_RECORD);
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {

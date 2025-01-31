@@ -85,4 +85,9 @@ public class EmployeeBOImpl implements EmployeeBO {
                 employeedto.getEmployeePhone()
         ));
     }
+
+    @Override
+    public String searchEmployee(String ID) throws Exception {
+        return docDetailDAO.searchAppointmentID(ID);
+    }
 }
