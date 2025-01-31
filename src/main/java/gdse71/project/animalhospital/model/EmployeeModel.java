@@ -71,7 +71,7 @@ public class EmployeeModel {/*
         );
     }*/
 
-    public boolean delete(String emp_id,String apt_id) throws SQLException, ClassNotFoundException {
+   /* public boolean delete(String emp_id,String apt_id) throws SQLException, ClassNotFoundException {
         Connection connection =null;
 
         try{
@@ -97,8 +97,8 @@ public class EmployeeModel {/*
             return false;
         }
 
-    }
-    public String getNextID(){
+    }*/
+/*    public String getNextID(){
         try {
             ResultSet rst = null;
             rst = Util.execute("select emp_id from employee order by emp_id desc limit 1");
@@ -116,5 +116,5 @@ public class EmployeeModel {/*
             throw new RuntimeException(e);
         }
         return "EMP001";
-    }
+    }*/
 }

@@ -118,4 +118,14 @@ public class EmployeeBOImpl implements EmployeeBO {
             return false;
         }
     }
+
+    @Override
+    public String generateEmployeeID() throws Exception {
+        return employeeDAO.generateId();
+    }
+
+    @Override
+    public ArrayList<String> loadEmployeeIDs() throws Exception {
+        return employeeDAO.loadId();
+    }
 }

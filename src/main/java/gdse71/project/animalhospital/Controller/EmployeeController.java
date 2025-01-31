@@ -330,7 +330,7 @@ public class EmployeeController implements Initializable {
     }
 
     @FXML
-    void resetAction(ActionEvent event) throws SQLException {
+    void resetAction(ActionEvent event) throws Exception {
         loadNextID();
         loadaptIds();
         empNAme.setText("");
@@ -339,23 +339,17 @@ public class EmployeeController implements Initializable {
         contact.setText("");
 
     }
-    public void loadNextID()  {
-        String nextId = employeeModel.getNextID();
+    public void loadNextID() throws Exception {
+        String nextId = employeeBO.generateEmployeeID();
         empId.setText(nextId);
 
     }
     private void loadaptIds() throws SQLException {
-
         try {
-            Connection connection = DBConnection.getInstance().getConnection();
-            ResultSet rs = connection.createStatement().executeQuery("SELECT appointment_id FROM appointments");
-            ObservableList<String> data = FXCollections.observableArrayList();
-
-            while (rs.next()) {
-                data.add(rs.getString("appointment_id"));
-            }
-            appt.setItems(data);
-        } catch (ClassNotFoundException e) {
+            appt.getItems().clear();
+            ArrayList<String>petIDS = employeeBO.loadEmployeeIDs();
+            appt.getItems().addAll(petIDS);
+        } catch (Exception e) {
             throw new RuntimeException(e);
         }
     }

@@ -6,6 +6,7 @@ import gdse71.project.animalhospital.dto.Employeedto;
 import gdse71.project.animalhospital.entity.Employee;
 
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class EmployeeDAOImpl implements EmployeeDAO {
@@ -55,6 +56,29 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 
     @Override
     public String generateId() throws Exception {
-        return "";
+        ResultSet rst = Util.execute("SELECT emp_id FROM employee order by emp_id desc limit 1");
+        if (rst.next()) {
+            String lastId = rst.getString(1);
+            String numericPart = lastId.replaceAll("[^0-9]", "");
+            if (numericPart.isEmpty()){
+                return "EMP001";
+            }
+            int i = Integer.parseInt(numericPart);
+            int newIndex = i+1;
+            return String.format("EMP%03d",newIndex);
+        }else {
+            return "EMP001";
+        }
+    }
+
+    @Override
+    public ArrayList<String> loadId() throws SQLException, ClassNotFoundException {
+        ResultSet rst = Util.execute("SELECT appointment_id FROM appointments ");
+        ArrayList<String> ids = new ArrayList<>();
+
+        while (rst.next()){
+            ids.add(rst.getString("appointment_id"));
+        }
+        return ids;
     }
 }

@@ -13,4 +13,6 @@ public interface EmployeeBO extends SuperBO {
     boolean updateEmployee(Employeedto employeedto) throws Exception;
     String searchEmployee(String ID) throws Exception;
     boolean deleteEmployee(String Employee_id,String Appointment_id) throws Exception;
+    String generateEmployeeID() throws Exception;
+    ArrayList<String>loadEmployeeIDs() throws Exception;
 }
