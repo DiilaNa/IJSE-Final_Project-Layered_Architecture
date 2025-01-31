@@ -10,7 +10,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public class AppointmentsModel {
+public class
+
+AppointmentsModel {
     public String getNextAppointmentID() throws SQLException {
         try {
             ResultSet rst = Util.execute("select appointment_id from appointments order by appointment_id desc limit 1");

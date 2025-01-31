@@ -1,4 +1,5 @@
-package gdse71.project.animalhospital.dto;
+package gdse71.project.animalhospital.entity;
+
 
 import lombok.*;
 
@@ -8,7 +9,7 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 
-public class Docdto {
+public class EmployeeDetails {
     private  String empid;
     private String aptId;
 }

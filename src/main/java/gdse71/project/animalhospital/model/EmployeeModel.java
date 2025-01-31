@@ -1,9 +1,8 @@
 package gdse71.project.animalhospital.model;
 
 import gdse71.project.animalhospital.CrudUtil.Util;
-import gdse71.project.animalhospital.dto.Docdto;
+import gdse71.project.animalhospital.dto.EmployeeDetailsDto;
 import gdse71.project.animalhospital.dto.Employeedto;
-import gdse71.project.animalhospital.dto.Ownerdto;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -30,7 +29,7 @@ public class EmployeeModel {
         }
         return employeedtos;
     }
-    public boolean save(Employeedto employeedto, Docdto docdto) throws SQLException, ClassNotFoundException {
+    public boolean save(Employeedto employeedto, EmployeeDetailsDto employeeDetailsDto) throws SQLException, ClassNotFoundException {
         Connection connection =null;
         try{
             connection = Util.getConnection();
@@ -45,8 +44,8 @@ public class EmployeeModel {
             employstmnt.execute();
 
             PreparedStatement docstmnt = connection.prepareStatement("INSERT INTO doc_details (emp_id,appoint_id)VALUES (?,?)");
-            docstmnt.setString(1, docdto.getEmpid());
-            docstmnt.setString(2, docdto.getAptId());
+            docstmnt.setString(1, employeeDetailsDto.getEmpid());
+            docstmnt.setString(2, employeeDetailsDto.getAptId());
             docstmnt.execute();
 
             connection.commit();

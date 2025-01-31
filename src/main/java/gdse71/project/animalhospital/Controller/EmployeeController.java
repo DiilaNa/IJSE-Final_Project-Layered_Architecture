@@ -1,7 +1,9 @@
 package gdse71.project.animalhospital.Controller;
 
+import gdse71.project.animalhospital.bo.BOFactory;
+import gdse71.project.animalhospital.bo.Custom.EmployeeBO;
 import gdse71.project.animalhospital.db.DBConnection;
-import gdse71.project.animalhospital.dto.Docdto;
+import gdse71.project.animalhospital.dto.EmployeeDetailsDto;
 import gdse71.project.animalhospital.dto.Employeedto;
 import gdse71.project.animalhospital.dto.PetTm.EmployeeTM;
 import gdse71.project.animalhospital.model.EmployeeModel;
@@ -84,6 +86,7 @@ public class EmployeeController implements Initializable {
     private ComboBox<String> appt;
 
     EmployeeModel employeeModel = new EmployeeModel();
+    EmployeeBO employeeBO = (EmployeeBO) BOFactory.getInstance().getBO(BOFactory.BOType.EMPLOYEE);
 
     @FXML
     void backAction(ActionEvent event) {
@@ -162,10 +165,10 @@ public class EmployeeController implements Initializable {
 
         if (isValidName && isValidDuty && isValidAddress && isValidContact) {
             Employeedto employeedto = new Employeedto(employeeID, employeeName, employeeDuty, employeeAddress, employeeContact);
-            Docdto docdto = new Docdto(employeeID,appointmentid);
+            EmployeeDetailsDto employeeDetailsDto = new EmployeeDetailsDto(employeeID,appointmentid);
 
             try {
-                boolean isSaved = employeeModel.save(employeedto,docdto);
+                boolean isSaved = employeeModel.save(employeedto, employeeDetailsDto);
                 if (isSaved) {
                     refreshPage();
                     new Alert(Alert.AlertType.INFORMATION, "Employee saved successfully!").show();
@@ -278,9 +281,9 @@ public class EmployeeController implements Initializable {
         }
 
     }
-    private void loadTableData() throws SQLException, ClassNotFoundException {
+    private void loadTableData() throws Exception {
 
-        ArrayList<Employeedto> employeedtos = employeeModel.getAll();
+        ArrayList<Employeedto> employeedtos = employeeBO.getALLEmployees();
         ObservableList<EmployeeTM> employeeTMS = FXCollections.observableArrayList();
 
         for (Employeedto employeedto : employeedtos) {
@@ -297,7 +300,7 @@ public class EmployeeController implements Initializable {
 
         table.setItems(employeeTMS);
     }
-    private void refreshPage() throws SQLException, ClassNotFoundException {
+    private void refreshPage() throws Exception {
 
         loadTableData();
 
