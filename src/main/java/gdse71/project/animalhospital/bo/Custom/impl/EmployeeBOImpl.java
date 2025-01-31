@@ -98,13 +98,13 @@ public class EmployeeBOImpl implements EmployeeBO {
             connection = DBConnection.getInstance().getConnection();
             connection.setAutoCommit(false);
 
-            boolean b1 = employeeDAO.delete(Employee_id);
-            if (!b1) {
+            boolean b2 = docDetailDAO.delete(Appointment_id);
+            if (!b2) {
                 connection.rollback();
                 return false;
             }
-            boolean b2 = docDetailDAO.delete(Appointment_id);
-            if (!b2) {
+            boolean b1 = employeeDAO.delete(Employee_id);
+            if (!b1) {
                 connection.rollback();
                 return false;
             }

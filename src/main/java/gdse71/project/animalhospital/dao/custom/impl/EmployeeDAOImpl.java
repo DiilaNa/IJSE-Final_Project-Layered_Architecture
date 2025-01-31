@@ -39,7 +39,7 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 
     @Override
     public boolean delete(String id) throws Exception {
-       return Util.execute("DELETE FROM employee WHERE emp_id=?");
+       return Util.execute("DELETE FROM employee WHERE emp_id=?",id);
     }
 
     @Override

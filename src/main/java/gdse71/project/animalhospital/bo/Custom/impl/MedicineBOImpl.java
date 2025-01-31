@@ -94,14 +94,14 @@ public class MedicineBOImpl implements MedicineBO {
             connection.setAutoCommit(false);
 
 
-        boolean b2 = medicineDetailDao.delete(PetIDValue);
-            if (!b2) {
+        boolean b1 = medicineDetailDao.delete(PetIDValue);
+            if (!b1) {
             connection.rollback();
             return false;
             }
 
-        boolean b1 = medicineDAO.delete(medID);
-            if (!b1) {
+        boolean b2 = medicineDAO.delete(medID);
+            if (!b2) {
                 connection.rollback();
                 return false;
             }
