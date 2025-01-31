@@ -177,7 +177,7 @@ public class EmployeeController implements Initializable {
            docDetailsDtos.add(docDetailsDto);
 
             try {
-                boolean isSaved = employeeModel.save(employeedto, docDetailsDto);
+                boolean isSaved = employeeBO.saveEmployee(employeedtos, docDetailsDtos);
                 if (isSaved) {
                     refreshPage();
                     new Alert(Alert.AlertType.INFORMATION, "Employee saved successfully!").show();
