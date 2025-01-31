@@ -10,4 +10,5 @@ import java.util.List;
 public interface EmployeeBO extends SuperBO {
     ArrayList<Employeedto> getALLEmployees() throws Exception;
     boolean saveEmployee(List<Employeedto>employeedtos, List<DocDetailsDto>docDetailsDtos) throws Exception;
+    boolean updateEmployee(Employeedto employeedto) throws Exception;
 }

@@ -74,4 +74,15 @@ public class EmployeeBOImpl implements EmployeeBO {
             return false;
         }
     }
+
+    @Override
+    public boolean updateEmployee(Employeedto employeedto) throws Exception {
+        return employeeDAO.update(new Employee(
+                employeedto.getEmployeeId(),
+                employeedto.getEmployeeName(),
+                employeedto.getEmployeeDuty(),
+                employeedto.getEmployeeAddress(),
+                employeedto.getEmployeePhone()
+        ));
+    }
 }

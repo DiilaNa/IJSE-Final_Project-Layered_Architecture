@@ -43,8 +43,14 @@ public class EmployeeDAOImpl implements EmployeeDAO {
     }
 
     @Override
-    public boolean update(Employee dto) throws Exception {
-        return false;
+    public boolean update(Employee entity) throws Exception {
+        return Util.execute("UPDATE employee SET emp_name=?, duty=? , address=? , tel_no=? WHERE emp_id=? ",
+                    entity.getEmployeeName(),
+                    entity.getEmployeeDuty(),
+                    entity.getEmployeeAddress(),
+                    entity.getEmployeePhone(),
+                    entity.getEmployeeId()
+                );
     }
 
     @Override

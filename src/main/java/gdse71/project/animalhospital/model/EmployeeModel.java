@@ -60,7 +60,7 @@ public class EmployeeModel {/*
         }
 
     }*/
-    public boolean update(Employeedto employeedto) throws SQLException, ClassNotFoundException {
+   /* public boolean update(Employeedto employeedto) throws SQLException, ClassNotFoundException {
         return Util.execute(
                 "update employee set emp_name=?, duty=?, address=?, tel_no=? where emp_id=?",
                 employeedto.getEmployeeName(),
@@ -69,7 +69,7 @@ public class EmployeeModel {/*
                 employeedto.getEmployeePhone(),
                 employeedto.getEmployeeId()
         );
-    }
+    }*/
 
     public boolean delete(String emp_id,String apt_id) throws SQLException, ClassNotFoundException {
         Connection connection =null;

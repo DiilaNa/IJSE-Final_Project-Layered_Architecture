@@ -255,7 +255,7 @@ public class EmployeeController implements Initializable {
             );
 
             try {
-                boolean isSaved = employeeModel.update(employeedto);
+                boolean isSaved = employeeBO.updateEmployee(employeedto);
                 if (isSaved) {
                     refreshPage();
                     new Alert(Alert.AlertType.INFORMATION, "Employee updated successfully!").show();
