@@ -3,8 +3,10 @@ package gdse71.project.animalhospital.Controller;
 import gdse71.project.animalhospital.bo.BOFactory;
 import gdse71.project.animalhospital.bo.Custom.EmployeeBO;
 import gdse71.project.animalhospital.db.DBConnection;
-import gdse71.project.animalhospital.dto.EmployeeDetailsDto;
+import gdse71.project.animalhospital.dto.DocDetailsDto;
 import gdse71.project.animalhospital.dto.Employeedto;
+import gdse71.project.animalhospital.dto.Med_detailDto;
+import gdse71.project.animalhospital.dto.MedicineDto;
 import gdse71.project.animalhospital.dto.PetTm.EmployeeTM;
 import gdse71.project.animalhospital.model.EmployeeModel;
 import javafx.collections.FXCollections;
@@ -27,6 +29,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class EmployeeController implements Initializable {
@@ -165,10 +168,16 @@ public class EmployeeController implements Initializable {
 
         if (isValidName && isValidDuty && isValidAddress && isValidContact) {
             Employeedto employeedto = new Employeedto(employeeID, employeeName, employeeDuty, employeeAddress, employeeContact);
-            EmployeeDetailsDto employeeDetailsDto = new EmployeeDetailsDto(employeeID,appointmentid);
+            DocDetailsDto docDetailsDto = new DocDetailsDto(employeeID,appointmentid);
+
+           List<Employeedto> employeedtos = new ArrayList<>();
+           employeedtos.add(employeedto);
+
+           List<DocDetailsDto> docDetailsDtos = new ArrayList<>();
+           docDetailsDtos.add(docDetailsDto);
 
             try {
-                boolean isSaved = employeeModel.save(employeedto, employeeDetailsDto);
+                boolean isSaved = employeeModel.save(employeedto, docDetailsDto);
                 if (isSaved) {
                     refreshPage();
                     new Alert(Alert.AlertType.INFORMATION, "Employee saved successfully!").show();

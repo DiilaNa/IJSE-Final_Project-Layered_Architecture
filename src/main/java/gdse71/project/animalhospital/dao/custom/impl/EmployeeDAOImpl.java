@@ -26,8 +26,15 @@ public class EmployeeDAOImpl implements EmployeeDAO {
     }
 
     @Override
-    public boolean save(Object dto) throws Exception {
-        return false;
+    public boolean save(Employee entity) throws Exception {
+       return Util.execute("insert into employee values(?,?,?,?,?)",
+               entity.getEmployeeId(),
+               entity.getEmployeeName(),
+               entity.getEmployeeDuty(),
+               entity.getEmployeeAddress(),
+               entity.getEmployeePhone()
+
+       );
     }
 
     @Override
@@ -36,7 +43,7 @@ public class EmployeeDAOImpl implements EmployeeDAO {
     }
 
     @Override
-    public boolean update(Object dto) throws Exception {
+    public boolean update(Employee dto) throws Exception {
         return false;
     }
 

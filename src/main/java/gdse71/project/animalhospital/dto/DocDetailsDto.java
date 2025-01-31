@@ -8,7 +8,7 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 
-public class EmployeeDetailsDto {
+public class DocDetailsDto {
     private  String empid;
     private String aptId;
 }

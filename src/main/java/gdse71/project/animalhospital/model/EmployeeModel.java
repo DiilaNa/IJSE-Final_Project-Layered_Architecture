@@ -1,7 +1,7 @@
 package gdse71.project.animalhospital.model;
 
 import gdse71.project.animalhospital.CrudUtil.Util;
-import gdse71.project.animalhospital.dto.EmployeeDetailsDto;
+import gdse71.project.animalhospital.dto.DocDetailsDto;
 import gdse71.project.animalhospital.dto.Employeedto;
 
 import java.sql.Connection;
@@ -10,7 +10,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public class EmployeeModel {
+public class EmployeeModel {/*
     public ArrayList<Employeedto> getAll() throws SQLException, ClassNotFoundException {
         ResultSet rst =  Util.execute("select * from employee");
 
@@ -29,7 +29,7 @@ public class EmployeeModel {
         }
         return employeedtos;
     }
-    public boolean save(Employeedto employeedto, EmployeeDetailsDto employeeDetailsDto) throws SQLException, ClassNotFoundException {
+    public boolean save(Employeedto employeedto, DocDetailsDto docDetailsDto) throws SQLException, ClassNotFoundException {
         Connection connection =null;
         try{
             connection = Util.getConnection();
@@ -44,8 +44,8 @@ public class EmployeeModel {
             employstmnt.execute();
 
             PreparedStatement docstmnt = connection.prepareStatement("INSERT INTO doc_details (emp_id,appoint_id)VALUES (?,?)");
-            docstmnt.setString(1, employeeDetailsDto.getEmpid());
-            docstmnt.setString(2, employeeDetailsDto.getAptId());
+            docstmnt.setString(1, docDetailsDto.getEmpid());
+            docstmnt.setString(2, docDetailsDto.getAptId());
             docstmnt.execute();
 
             connection.commit();
@@ -59,7 +59,7 @@ public class EmployeeModel {
             return false;
         }
 
-    }
+    }*/
     public boolean update(Employeedto employeedto) throws SQLException, ClassNotFoundException {
         return Util.execute(
                 "update employee set emp_name=?, duty=?, address=?, tel_no=? where emp_id=?",

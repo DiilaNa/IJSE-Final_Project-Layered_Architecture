@@ -11,7 +11,7 @@ import java.util.ArrayList;
 
 public class PetRecordBOImpl implements PetRecordBO {
 
-    PetRecordDao petRecordDao = (PetRecordDao) DaoFactory.getInstance().getDao(DaoFactory.DaoType.PETRECORD);
+    PetRecordDao petRecordDao = (PetRecordDao) DaoFactory.getInstance().getDao(DaoFactory.DaoType.PET_RECORD);
 
     @Override
     public ArrayList<PetRecorddto> getAllpetRecords() throws Exception {
