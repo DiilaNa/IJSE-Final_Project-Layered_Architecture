@@ -24,7 +24,7 @@ public class DocDetailDAOImpl implements DocDetailDAO {
 
     @Override
     public boolean delete(String id) throws Exception {
-        return false;
+        return Util.execute("DELETE FROM doc_details WHERE appoint_id=? ",id);
     }
 
     @Override

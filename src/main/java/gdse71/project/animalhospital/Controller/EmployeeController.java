@@ -115,7 +115,7 @@ public class EmployeeController implements Initializable {
 
 
         try {
-            boolean isDeleted = employeeModel.delete(employeeID,selectedAptId);
+            boolean isDeleted = employeeBO.deleteEmployee(employeeID,selectedAptId);
             if (isDeleted) {
                 refreshPage();
                 new Alert(Alert.AlertType.INFORMATION, "Employee deleted successfully!").show();

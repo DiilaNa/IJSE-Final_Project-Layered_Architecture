@@ -12,4 +12,5 @@ public interface EmployeeBO extends SuperBO {
     boolean saveEmployee(List<Employeedto>employeedtos, List<DocDetailsDto>docDetailsDtos) throws Exception;
     boolean updateEmployee(Employeedto employeedto) throws Exception;
     String searchEmployee(String ID) throws Exception;
+    boolean deleteEmployee(String Employee_id,String Appointment_id) throws Exception;
 }

@@ -90,4 +90,32 @@ public class EmployeeBOImpl implements EmployeeBO {
     public String searchEmployee(String ID) throws Exception {
         return docDetailDAO.searchAppointmentID(ID);
     }
+
+    @Override
+    public boolean deleteEmployee(String Employee_id, String Appointment_id) throws Exception {
+        Connection connection = null;
+        try{
+            connection = DBConnection.getInstance().getConnection();
+            connection.setAutoCommit(false);
+
+            boolean b1 = employeeDAO.delete(Employee_id);
+            if (!b1) {
+                connection.rollback();
+                return false;
+            }
+            boolean b2 = docDetailDAO.delete(Appointment_id);
+            if (!b2) {
+                connection.rollback();
+                return false;
+            }
+            connection.commit();
+            return true;
+        } catch (Exception e) {
+            if (connection != null) {
+                connection.rollback();
+
+            }
+            return false;
+        }
+    }
 }
