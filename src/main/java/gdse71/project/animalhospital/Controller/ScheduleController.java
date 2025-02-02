@@ -1,6 +1,8 @@
 package gdse71.project.animalhospital.Controller;
 
 import gdse71.project.animalhospital.CrudUtil.Util;
+import gdse71.project.animalhospital.bo.BOFactory;
+import gdse71.project.animalhospital.bo.Custom.ScheduleBO;
 import gdse71.project.animalhospital.db.DBConnection;
 import gdse71.project.animalhospital.dto.EmpSheduleDto;
 import gdse71.project.animalhospital.dto.PetTm.ScheduleTM;
@@ -26,10 +28,14 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 import java.util.ResourceBundle;
 
 public class ScheduleController implements Initializable {
+
+    ScheduleBO scheduleBO = (ScheduleBO) BOFactory.getInstance().getBO(BOFactory.BOType.SCHEDULE);
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         Image loginImage = new Image(getClass().getResourceAsStream("/images/ALL PET.png"));
@@ -195,7 +201,14 @@ public class ScheduleController implements Initializable {
             try {
             ScheduleDto scheduleDto = new ScheduleDto(ScheduleId, Date, Time);
             EmpSheduleDto empSheduleDto = new EmpSheduleDto(employeeid,ScheduleId);
-            boolean isSaved = scheduleModel.save(scheduleDto,empSheduleDto);
+
+                List<ScheduleDto> scheduleDtos = new ArrayList<>();
+                scheduleDtos.add(scheduleDto);
+
+                List<EmpSheduleDto> empSheduleDtos = new ArrayList<>();
+                empSheduleDtos.add(empSheduleDto);
+
+            boolean isSaved = scheduleBO.saveSchedule(scheduleDtos,empSheduleDtos);
                 if (isSaved) {
                     refreshPage();
                     new Alert(Alert.AlertType.INFORMATION, "  Record saved...!").show();
@@ -204,7 +217,7 @@ public class ScheduleController implements Initializable {
                 }
             } catch (SQLException e) {
                 throw new RuntimeException(e);
-            } catch (ClassNotFoundException e) {
+            } catch (Exception e) {
                 throw new RuntimeException(e);
             }
       /*  }else {
@@ -277,7 +290,7 @@ public class ScheduleController implements Initializable {
     }
     private void loadTableData() {
         try {
-            ArrayList<ScheduleDto> scheduleDtos = scheduleModel.getAll();
+            ArrayList<ScheduleDto> scheduleDtos = scheduleBO.getAllSchedule();
             ObservableList<ScheduleTM> scheduleTMS = FXCollections.observableArrayList();
 
             for (ScheduleDto scheduleDto : scheduleDtos) {
@@ -290,7 +303,7 @@ public class ScheduleController implements Initializable {
             }
 
             table.setItems(scheduleTMS);
-        } catch (SQLException | ClassNotFoundException e) {
+        } catch (Exception e) {
             e.printStackTrace();
             System.out.println("Failed to load data into the table.");
         }

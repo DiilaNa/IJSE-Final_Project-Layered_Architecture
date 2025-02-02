@@ -1,8 +1,10 @@
 package gdse71.project.animalhospital.dao.custom.impl;
 
+import gdse71.project.animalhospital.CrudUtil.Util;
 import gdse71.project.animalhospital.dao.custom.EmpScheduleDAO;
 import gdse71.project.animalhospital.entity.EmpSchedule;
 
+import java.sql.ResultSet;
 import java.util.ArrayList;
 
 public class EmpScheduleDAOImpl implements EmpScheduleDAO {
@@ -12,8 +14,11 @@ public class EmpScheduleDAOImpl implements EmpScheduleDAO {
     }
 
     @Override
-    public boolean save(EmpSchedule dto) throws Exception {
-        return false;
+    public boolean save(EmpSchedule entity) throws Exception {
+        return Util.execute("INSERT INTO employee_schedule VALUE(?,?) ",
+                    entity.getEmpid(),
+                    entity.getSid()
+                );
     }
 
     @Override
@@ -22,7 +27,7 @@ public class EmpScheduleDAOImpl implements EmpScheduleDAO {
     }
 
     @Override
-    public boolean update(EmpSchedule dto) throws Exception {
+    public boolean update(EmpSchedule entity) throws Exception {
         return false;
     }
 

@@ -10,7 +10,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public class ScheduleModel {
+public class ScheduleModel {/*
     public ArrayList<ScheduleDto> getAll() throws SQLException, ClassNotFoundException {
         ResultSet rst =  Util.execute("select * from schedule");
 
@@ -53,7 +53,7 @@ public class ScheduleModel {
             e.printStackTrace();
             return false;
         }
-    }
+    }*/
     public boolean update(ScheduleDto scheduleDto) throws SQLException, ClassNotFoundException {
         return Util.execute(
                 "update schedule set  schedule_date=?, schedule_time=?  where schedule_id=?",
