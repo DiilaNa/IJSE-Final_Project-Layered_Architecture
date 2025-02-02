@@ -66,4 +66,14 @@ public class ScheduleDAOImpl implements ScheduleDAO {
         }
         return "SCH001";
     }
+
+    @Override
+    public ArrayList<String> loadId() throws Exception {
+        ResultSet rst = Util.execute("select emp_id from employee");
+        ArrayList<String> ids = new ArrayList<>();
+        while (rst.next()) {
+            ids.add(rst.getString("emp_id"));
+        }
+        return ids;
+    }
 }

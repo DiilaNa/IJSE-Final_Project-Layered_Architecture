@@ -120,4 +120,9 @@ public class ScheduleBOImpl implements ScheduleBO {
     public String getNextSchedule() throws Exception {
         return scheduleDAO.generateId();
     }
+
+    @Override
+    public ArrayList<String> getEmployeeIDs() throws Exception {
+        return scheduleDAO.loadId();
+    }
 }

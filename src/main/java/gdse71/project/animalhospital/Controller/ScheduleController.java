@@ -328,16 +328,11 @@ public class ScheduleController implements Initializable {
         timeTxt.setText("");
 
     }
-    public void loadEmpID() {
+    public void loadEmpID() throws Exception {
         try {
-            Connection connection = DBConnection.getInstance().getConnection();
-            ResultSet rst = connection.createStatement().executeQuery("select emp_id from employee");
-            ObservableList<String> data = FXCollections.observableArrayList();
-
-            while (rst.next()) {
-                data.add(rst.getString("emp_id"));
-            }
-            empIds.setItems(data);
+           empIds.getItems().clear();
+           ArrayList<String> iDs = scheduleBO.getEmployeeIDs();
+           empIds.getItems().addAll(iDs);
         } catch (ClassNotFoundException |SQLException e) {
             throw new RuntimeException(e);
         }
