@@ -85,11 +85,18 @@ public class ScheduleBOImpl implements ScheduleBO {
     }
 
     @Override
-    public boolean deleteSchedule(String EmpID, String ScheduleId) throws Exception {
+    public boolean deleteSchedule( String ScheduleId,String EmpID) throws Exception {
         Connection connection = null;
         try{
             connection = DBConnection.getInstance().getConnection();
             connection.setAutoCommit(false);
+
+            boolean b2 = empScheduleDAO.delete(EmpID);
+
+            if (!b2) {
+                connection.rollback();
+                return false;
+            }
 
             boolean b1 = scheduleDAO.delete(ScheduleId);
             if (!b1) {
@@ -97,18 +104,15 @@ public class ScheduleBOImpl implements ScheduleBO {
                 return false;
             }
 
-            boolean b2 = empScheduleDAO.delete(EmpID);
-            if (!b2) {
-                connection.rollback();
-                return false;
-            }
             connection.commit();
             return true;
 
         } catch (RuntimeException e) {
-            connection.rollback();
+            if (connection != null) {
+                connection.rollback();
+            }
+            return false;
         }
-        return false;
     }
 
     @Override

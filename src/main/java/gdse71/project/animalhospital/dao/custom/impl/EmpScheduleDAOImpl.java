@@ -39,6 +39,10 @@ public class EmpScheduleDAOImpl implements EmpScheduleDAO {
 
     @Override
     public String searchEmID(String ID) throws SQLException, ClassNotFoundException {
-        return Util.execute("SELECT e_id FROM employee_schedule WHERE s_id=?",ID);
+        ResultSet rst = Util.execute("SELECT e_id FROM employee_schedule WHERE s_id=?",ID);
+        if (rst.next()){
+            return rst.getString("e_id");
+        }
+        return "NO NAME FOUND";
     }
 }
