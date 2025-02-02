@@ -1,5 +1,7 @@
 package gdse71.project.animalhospital.Controller;
 
+import gdse71.project.animalhospital.bo.BOFactory;
+import gdse71.project.animalhospital.bo.Custom.AppointmentsBO;
 import gdse71.project.animalhospital.db.DBConnection;
 import gdse71.project.animalhospital.dto.Appointmentsdto;
 import gdse71.project.animalhospital.dto.Ownerdto;
@@ -27,6 +29,8 @@ import java.sql.*;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class AppointmentsController implements Initializable {
@@ -102,6 +106,8 @@ public class AppointmentsController implements Initializable {
 private final DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("HH:mm:ss");
     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
     AppointmentsModel appointmentsModel = new AppointmentsModel();
+
+    AppointmentsBO appointmentsBO = (AppointmentsBO) BOFactory.getInstance().getBO(BOFactory.BOType.APPOINTMENTS);
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -258,7 +264,20 @@ private final DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("HH:
                         ownerId,
                         pettype
                 );
-                boolean isSaved = appointmentsModel.save(appointment,petdto,ownerdto,paymentDto);
+
+                List<Appointmentsdto>appointmentsdtos = new ArrayList<>();
+                appointmentsdtos.add(appointment);
+
+                List<Ownerdto>ownerdtos = new ArrayList<>();
+                ownerdtos.add(ownerdto);
+
+                List<PaymentDto>paymentdtos = new ArrayList<>();
+                paymentdtos.add(paymentDto);
+
+                List<Petdto>petdtos = new ArrayList<>();
+                petdtos.add(petdto);
+
+                boolean isSaved = appointmentsBO.saveAppointment(ownerdtos,petdtos,paymentdtos,appointmentsdtos);
                 if (isSaved) {
                     refreshPage();
                     new Alert(Alert.AlertType.INFORMATION, "Appointment Saved!").show();
@@ -295,26 +314,22 @@ private final DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("HH:
         }
         public void loadNextAppointmentID()  {
 
-            try {
-                String nextCustomerId = appointmentsModel.getNextAppointmentID();
-                AppointmentID.setText(nextCustomerId);
-            } catch (SQLException e) {
-                throw new RuntimeException(e);
-            }
+            String nextCustomerId = appointmentsBO.getNextAppointmentID();
+            AppointmentID.setText(nextCustomerId);
         }
     public void loadNextPetID()  {
 
-            String nextCustomerId =appointmentsModel.getNextPetId();
+            String nextCustomerId =appointmentsBO.getNextPetID();
             PeTid.setText(nextCustomerId);
 
     }
     public void loadNextOwnerID()  {
-            String nextCustomerId = appointmentsModel.getNextOwnerId();
+            String nextCustomerId = appointmentsBO.getNextOwnerID();
             ownerid.setText(nextCustomerId);
 
     }
     public void loadNextPayID()  {
-        String nextCustomerId = appointmentsModel.getNextPayId();
+        String nextCustomerId = appointmentsBO.getNextPayID();
         PaymentId.setText(nextCustomerId);
 
     }

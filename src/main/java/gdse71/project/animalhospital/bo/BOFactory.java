@@ -14,7 +14,7 @@ public class BOFactory{
         return boFactory;
     }
     public enum BOType{
-        PET, PET_RECORD,OWNER,PAYMENT,INVOICE,SALARY,SERVICE,SMS,MEDICINE,EMPLOYEE,SCHEDULE
+        PET, PET_RECORD,OWNER,PAYMENT,INVOICE,SALARY,SERVICE,SMS,MEDICINE,EMPLOYEE,SCHEDULE,APPOINTMENTS
     }
     public SuperBO getBO(BOType type){
         switch (type){
@@ -40,6 +40,8 @@ public class BOFactory{
                                                         return new EmployeeBOImpl();
                                                         case SCHEDULE:
                                                             return new ScheduleBOImpl();
+                                                            case APPOINTMENTS:
+                                                                return new AppointmentsBOImpl();
 
                 default:
                     return null;

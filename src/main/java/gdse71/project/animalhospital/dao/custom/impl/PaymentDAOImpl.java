@@ -25,7 +25,12 @@ public class PaymentDAOImpl implements PaymentDao {
 
     @Override
     public boolean save(Payment entity) throws Exception, ClassNotFoundException {
-       return false;
+       return Util.execute("INSERT INTO payment VALUES (?, ?, ?, ?)",
+                    entity.getPaymentId(),
+                    entity.getPaymentDate(),
+                    entity.getPaymentMethodd(),
+                    entity.getPaymentTime()
+               );
     }
 
     @Override

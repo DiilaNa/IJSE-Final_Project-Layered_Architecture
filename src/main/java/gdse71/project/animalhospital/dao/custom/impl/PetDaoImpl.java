@@ -30,8 +30,14 @@ public class PetDaoImpl implements PetDao {
     }
 
     @Override
-    public boolean save(Pet dto) throws Exception, ClassNotFoundException {
-        return false;
+    public boolean save(Pet entity) throws Exception, ClassNotFoundException {
+        return Util.execute("INSERT INTO pet VALUES (?, ?, ?, ?, ?)",
+                    entity.getPetId(),
+                    entity.getPetName(),
+                    entity.getPetBreed(),
+                    entity.getPetOwnerId(),
+                    entity.getPetType()
+                );
     }
     @Override
     public boolean delete(String petId) throws Exception, ClassNotFoundException {

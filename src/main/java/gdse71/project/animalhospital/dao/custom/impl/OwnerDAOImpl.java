@@ -27,7 +27,12 @@ public class OwnerDAOImpl implements OwnerDao {
 
     @Override
     public boolean save(Owner entity) throws Exception, ClassNotFoundException {
-        return false ;
+        return Util.execute("INSERT INTO owner VALUES (?, ?, ?, ?)",
+                entity.getOwnerId(),
+                entity.getOwnerName(),
+                entity.getOwnerAddress(),
+                entity.getOwnerMail()
+        );
     }
 
     @Override

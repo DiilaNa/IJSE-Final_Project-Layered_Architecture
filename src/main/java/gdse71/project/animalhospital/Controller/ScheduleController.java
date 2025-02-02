@@ -5,7 +5,6 @@ import gdse71.project.animalhospital.bo.Custom.ScheduleBO;
 import gdse71.project.animalhospital.dto.EmpSheduleDto;
 import gdse71.project.animalhospital.dto.PetTm.ScheduleTM;
 import gdse71.project.animalhospital.dto.ScheduleDto;
-import gdse71.project.animalhospital.model.ScheduleModel;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -94,7 +93,7 @@ public class ScheduleController implements Initializable {
     @FXML
     private Label empName;
 
-   ScheduleModel scheduleModel = new ScheduleModel();
+   /*ScheduleModel scheduleModel = new ScheduleModel();*/
 
     @FXML
     void ACtionTAble(MouseEvent event) throws Exception {
