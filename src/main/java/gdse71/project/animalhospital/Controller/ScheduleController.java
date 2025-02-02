@@ -146,7 +146,7 @@ public class ScheduleController implements Initializable {
             Optional<ButtonType> optionalButtonType = alert.showAndWait();
             if (optionalButtonType.isPresent() && optionalButtonType.get() == ButtonType.YES) {
                 try {
-                    boolean isDeleted = scheduleModel.delete(Id,id);
+                    boolean isDeleted = scheduleBO.deleteSchedule(Id,id);
                     if (isDeleted) {
                         refreshPage();
                         new Alert(Alert.AlertType.INFORMATION, "  Record deleted...!").show();

@@ -23,7 +23,7 @@ public class EmpScheduleDAOImpl implements EmpScheduleDAO {
 
     @Override
     public boolean delete(String id) throws Exception {
-        return false;
+        return Util.execute("DELETE FROM employee_schedule WHERE e_id=?",id) ;
     }
 
     @Override

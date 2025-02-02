@@ -83,4 +83,31 @@ public class ScheduleBOImpl implements ScheduleBO {
                 schedule.getTime()
         ));
     }
+
+    @Override
+    public boolean deleteSchedule(String EmpID, String ScheduleId) throws Exception {
+        Connection connection = null;
+        try{
+            connection = DBConnection.getInstance().getConnection();
+            connection.setAutoCommit(false);
+
+            boolean b1 = scheduleDAO.delete(ScheduleId);
+            if (!b1) {
+                connection.rollback();
+                return false;
+            }
+
+            boolean b2 = empScheduleDAO.delete(EmpID);
+            if (!b2) {
+                connection.rollback();
+                return false;
+            }
+            connection.commit();
+            return true;
+
+        } catch (RuntimeException e) {
+            connection.rollback();
+        }
+        return false;
+    }
 }
