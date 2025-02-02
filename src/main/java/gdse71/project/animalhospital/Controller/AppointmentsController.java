@@ -134,7 +134,7 @@ private final DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("HH:
         String appointmentSearchID = APTsearch.getValue();
 
         try {
-            boolean isCancelled = AppointmentsModel.CancelApt(appointmentSearchID);
+            boolean isCancelled = appointmentsBO.CancelApt(appointmentSearchID);
 
             if (isCancelled) {
                 new Alert(Alert.AlertType.INFORMATION, "Appointment successfully cancelled!").show();

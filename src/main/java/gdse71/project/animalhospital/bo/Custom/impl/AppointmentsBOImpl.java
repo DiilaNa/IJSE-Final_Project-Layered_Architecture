@@ -47,8 +47,8 @@ public class AppointmentsBOImpl implements AppointmentsBO {
     }
 
     @Override
-    public boolean CancelApt(String AppointmentSid) {
-        return false;
+    public boolean CancelApt(String AppointmentSid) throws SQLException, ClassNotFoundException {
+        return appointmentsDAO.CancelApt(AppointmentSid);
     }
 
     @Override

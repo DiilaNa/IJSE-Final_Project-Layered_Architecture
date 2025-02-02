@@ -10,5 +10,5 @@ public interface AppointmentsDAO extends CrudDAO<Appointments> {
      String getNextPetID();
      String getNextOwnerID();
      String getNextPayID();
-     boolean CancelApt(String AppointmentSid);
+     boolean CancelApt(String id) throws SQLException, ClassNotFoundException;
 }

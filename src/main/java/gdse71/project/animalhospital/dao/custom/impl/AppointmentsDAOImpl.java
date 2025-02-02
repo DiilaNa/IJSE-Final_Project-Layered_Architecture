@@ -121,7 +121,8 @@ public class AppointmentsDAOImpl implements AppointmentsDAO {
     }
 
     @Override
-    public boolean CancelApt(String AppointmentSid) {
-        return false;
+    public boolean CancelApt(String id) throws SQLException, ClassNotFoundException {
+        return  Util.execute("UPDATE appointments set isCancelled = 'APPOINTMENT CANCELLED' WHERE appointment_id = ?", id);
+
     }
 }
