@@ -226,7 +226,7 @@ public class ScheduleController implements Initializable {
     }
 
     @FXML
-    void updateAction(ActionEvent event) {
+    void updateAction(ActionEvent event) throws Exception {
 
         String ScheduleId = sheduleID.getText();
         String Date = datetxt.getText();
@@ -258,7 +258,7 @@ public class ScheduleController implements Initializable {
                         Date,
                         Time
                 );
-                boolean isSaved = scheduleModel.update(scheduleDto);
+                boolean isSaved = scheduleBO.updateSchedule(scheduleDto);
                 if (isSaved) {
                     refreshPage();
                     new Alert(Alert.AlertType.INFORMATION, "  Record updated Successfully...!").show();

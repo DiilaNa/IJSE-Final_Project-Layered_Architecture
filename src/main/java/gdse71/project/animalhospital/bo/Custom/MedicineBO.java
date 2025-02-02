@@ -11,7 +11,7 @@ import java.util.List;
 public interface MedicineBO extends SuperBO {
     ArrayList<MedicineDto> getALLMedicine() throws Exception;
     boolean saveMedicine(List<MedicineDto>medicineDtos,List<Med_detailDto> medDetailDtos) throws Exception;
-    boolean updateMedicine(MedicineDto medicineDto) throws Exception;
+    boolean updateMedicine(MedicineDto medicine) throws Exception;
     boolean deleteMedicine(String medID,String MedDetailId) throws Exception;
     String getNextMedID() throws Exception;
     ArrayList<String> getMedIdComboBox() throws Exception;

@@ -74,4 +74,13 @@ public class ScheduleBOImpl implements ScheduleBO {
             return false;
         }
     }
+
+    @Override
+    public boolean updateSchedule(ScheduleDto schedule) throws Exception {
+        return scheduleDAO.update(new Schedule(
+                schedule.getScheduleID(),
+                schedule.getDate(),
+                schedule.getTime()
+        ));
+    }
 }

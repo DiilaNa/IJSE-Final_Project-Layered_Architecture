@@ -77,12 +77,12 @@ public class MedicineBOImpl implements MedicineBO {
     }
 
     @Override
-    public boolean updateMedicine(MedicineDto medicineDto) throws Exception {
+    public boolean updateMedicine(MedicineDto medicine) throws Exception {
         return medicineDAO.update(new Medicine(
-                medicineDto.getMedicineId(),
-                medicineDto.getMedicineName(),
-                medicineDto.getMedicineCondition(),
-                medicineDto.getMedicineWeight()
+                medicine.getMedicineId(),
+                medicine.getMedicineName(),
+                medicine.getMedicineCondition(),
+                medicine.getMedicineWeight()
         ));
     }
 

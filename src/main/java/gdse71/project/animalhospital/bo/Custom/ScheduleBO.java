@@ -10,4 +10,5 @@ import java.util.List;
 public interface ScheduleBO extends SuperBO {
     ArrayList<ScheduleDto> getAllSchedule() throws Exception;
     boolean saveSchedule( List<ScheduleDto> scheduleDtos,List<EmpSheduleDto> empSheduleDtos) throws Exception;
+    boolean updateSchedule(ScheduleDto schedule) throws Exception;
 }
