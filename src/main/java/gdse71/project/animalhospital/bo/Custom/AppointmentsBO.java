@@ -17,5 +17,5 @@ public interface AppointmentsBO extends SuperBO {
     String getNextPayID();
     boolean CancelApt(String AppointmentSid) throws SQLException, ClassNotFoundException;
     boolean saveAppointment(List<Ownerdto>ownerdtos,List<Petdto>petdtos,List<PaymentDto>paymentdtos,List<Appointmentsdto> appointmentsdtos) throws SQLException;
-
+    public ArrayList<String> LoadAppointmentsId() throws SQLException, ClassNotFoundException;
 }

@@ -125,4 +125,14 @@ public class AppointmentsDAOImpl implements AppointmentsDAO {
         return  Util.execute("UPDATE appointments set isCancelled = 'APPOINTMENT CANCELLED' WHERE appointment_id = ?", id);
 
     }
+
+    @Override
+    public ArrayList<String> LoadId() throws SQLException, ClassNotFoundException {
+        ResultSet rst = Util.execute("SELECT appointment_id FROM appointments");
+        ArrayList<String> list = new ArrayList<>();
+        while (rst.next()) {
+            list.add(rst.getString("appointment_id"));
+        }
+        return list;
+    }
 }

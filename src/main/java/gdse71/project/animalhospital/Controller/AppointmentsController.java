@@ -2,16 +2,13 @@ package gdse71.project.animalhospital.Controller;
 
 import gdse71.project.animalhospital.bo.BOFactory;
 import gdse71.project.animalhospital.bo.Custom.AppointmentsBO;
-import gdse71.project.animalhospital.db.DBConnection;
 import gdse71.project.animalhospital.dto.Appointmentsdto;
 import gdse71.project.animalhospital.dto.Ownerdto;
 import gdse71.project.animalhospital.dto.PaymentDto;
 import gdse71.project.animalhospital.dto.Petdto;
-import gdse71.project.animalhospital.model.AppointmentsModel;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -105,7 +102,7 @@ public class AppointmentsController implements Initializable {
 
 private final DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("HH:mm:ss");
     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-    AppointmentsModel appointmentsModel = new AppointmentsModel();
+   /* AppointmentsModel appointmentsModel = new AppointmentsModel();*/
 
     AppointmentsBO appointmentsBO = (AppointmentsBO) BOFactory.getInstance().getBO(BOFactory.BOType.APPOINTMENTS);
 
@@ -334,24 +331,16 @@ private final DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("HH:
 
     }
     private void updateTime() {
-        // Get the current time and format it
         String currentTime = LocalTime.now().format(timeFormatter);
         TimeLabel.setText(currentTime);
     }
     private void loadAptid() throws SQLException {
         try {
-            Connection connection = DBConnection.getInstance().getConnection();
-            ResultSet rs = connection.createStatement().executeQuery("SELECT appointment_id FROM appointments");
-            ObservableList<String> data = FXCollections.observableArrayList();
-
-            while (rs.next()) {
-                data.add(rs.getString("appointment_id"));
-            }
-            APTsearch.setItems(data);
+           APTsearch.getItems().clear();
+           ArrayList<String> data = appointmentsBO.LoadAppointmentsId();
+            APTsearch.getItems().addAll(data);
         } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
     }
-
-
 }

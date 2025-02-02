@@ -18,6 +18,7 @@ import gdse71.project.animalhospital.entity.Pet;
 
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class AppointmentsBOImpl implements AppointmentsBO {
@@ -126,5 +127,10 @@ public class AppointmentsBOImpl implements AppointmentsBO {
             e.printStackTrace();
             return false;
         }
+    }
+
+    @Override
+    public ArrayList<String> LoadAppointmentsId() throws SQLException, ClassNotFoundException {
+        return appointmentsDAO.LoadId();
     }
 }
