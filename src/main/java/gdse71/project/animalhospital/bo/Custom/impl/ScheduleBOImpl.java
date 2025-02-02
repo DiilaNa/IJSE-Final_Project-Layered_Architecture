@@ -125,4 +125,9 @@ public class ScheduleBOImpl implements ScheduleBO {
     public ArrayList<String> getEmployeeIDs() throws Exception {
         return scheduleDAO.loadId();
     }
+
+    @Override
+    public String getEmpName(String ID) throws Exception {
+        return scheduleDAO.loadName(ID);
+    }
 }

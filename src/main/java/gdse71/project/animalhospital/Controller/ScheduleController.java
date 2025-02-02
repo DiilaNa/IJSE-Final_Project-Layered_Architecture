@@ -3,7 +3,6 @@ package gdse71.project.animalhospital.Controller;
 import gdse71.project.animalhospital.CrudUtil.Util;
 import gdse71.project.animalhospital.bo.BOFactory;
 import gdse71.project.animalhospital.bo.Custom.ScheduleBO;
-import gdse71.project.animalhospital.db.DBConnection;
 import gdse71.project.animalhospital.dto.EmpSheduleDto;
 import gdse71.project.animalhospital.dto.PetTm.ScheduleTM;
 import gdse71.project.animalhospital.dto.ScheduleDto;
@@ -24,7 +23,6 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
-import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -312,7 +310,7 @@ public class ScheduleController implements Initializable {
         }
     }
 
-    private void refreshPage() throws SQLException, ClassNotFoundException {
+    private void refreshPage() throws Exception {
 
         loadTableData();
         loadEmpID();
@@ -340,23 +338,13 @@ public class ScheduleController implements Initializable {
 
     @FXML
     void empAction(ActionEvent event) {
-
         try {
             String Empids = empIds.getValue();
-            if (Empids !=null) {
-                ResultSet rst = Util.execute("select emp_name from employee where emp_id=?", Empids);
-                if (rst.next()) {
-                    String aptid = rst.getString("emp_name");
-                    empName.setText(aptid);
-                }else {
-                    empName.setText("no name found");
-                }
-            }
-
+            String EmpNAME = scheduleBO.getEmpName(Empids);
+                    empName.setText(EmpNAME);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-
     }
 
 }

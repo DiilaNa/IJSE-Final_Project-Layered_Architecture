@@ -15,4 +15,5 @@ public interface ScheduleBO extends SuperBO {
     String setSchedule(String ID) throws Exception;
     String getNextSchedule() throws Exception;
     ArrayList<String> getEmployeeIDs() throws Exception;
+    String getEmpName(String ID) throws Exception;
 }

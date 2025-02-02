@@ -128,7 +128,7 @@ public class MedicineBOImpl implements MedicineBO {
 
     @Override
     public String getPetName( String petID) throws Exception {
-        return medicineDAO.search(petID);
+        return medicineDAO.searchPetName(petID);
     }
 
     @Override

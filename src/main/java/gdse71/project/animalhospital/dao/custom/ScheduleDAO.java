@@ -7,4 +7,5 @@ import java.util.ArrayList;
 
 public interface ScheduleDAO extends CrudDAO<Schedule> {
     ArrayList<String> loadId() throws Exception;
+    String loadName(String ID) throws Exception;
 }

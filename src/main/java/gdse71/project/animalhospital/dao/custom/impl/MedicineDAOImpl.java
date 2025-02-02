@@ -79,7 +79,7 @@ public class MedicineDAOImpl implements MedicineDAO {
         return petIds;
     }
     @Override
-    public String search(String petID) throws SQLException, ClassNotFoundException {
+    public String searchPetName(String petID) throws SQLException, ClassNotFoundException {
         ResultSet rst = Util.execute("select pet_name from pet where pet_id = ?",petID);
 
         if (rst.next()) {

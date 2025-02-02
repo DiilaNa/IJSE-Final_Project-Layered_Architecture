@@ -76,4 +76,14 @@ public class ScheduleDAOImpl implements ScheduleDAO {
         }
         return ids;
     }
+
+    @Override
+    public String loadName(String ID) throws Exception {
+        ResultSet rst = Util.execute("select emp_name from employee where emp_id=?", ID);
+        if (rst.next()) {
+            return rst.getString("emp_name");
+        }
+        return "Found None";
+    }
+
 }

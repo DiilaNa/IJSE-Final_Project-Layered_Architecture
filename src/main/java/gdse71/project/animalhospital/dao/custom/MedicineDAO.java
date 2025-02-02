@@ -8,5 +8,5 @@ import java.util.ArrayList;
 
 public interface MedicineDAO extends CrudDAO<Medicine> {
     ArrayList<String> loadPetID() throws SQLException, ClassNotFoundException;
-    String search(String petID) throws SQLException, ClassNotFoundException;
+    String searchPetName(String petID) throws SQLException, ClassNotFoundException;
 }
