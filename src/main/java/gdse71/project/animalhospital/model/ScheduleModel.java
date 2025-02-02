@@ -53,7 +53,7 @@ public class ScheduleModel {/*
             e.printStackTrace();
             return false;
         }
-    }*/
+    }*//*
     public boolean update(ScheduleDto scheduleDto) throws SQLException, ClassNotFoundException {
         return Util.execute(
                 "update schedule set  schedule_date=?, schedule_time=?  where schedule_id=?",
@@ -87,8 +87,8 @@ public class ScheduleModel {/*
            e.printStackTrace();
            return false;
        }
-    }
-    public String  getNextScheduleID() throws SQLException, ClassNotFoundException {
+    }*/
+/*    public String  getNextScheduleID() throws SQLException, ClassNotFoundException {
         try {
             ResultSet rst = Util.execute("select schedule_id from schedule order by schedule_id desc limit 1");
             if (rst.next()) {
@@ -106,4 +106,5 @@ public class ScheduleModel {/*
         }
         return "SCH001";
     }
+}*/
 }

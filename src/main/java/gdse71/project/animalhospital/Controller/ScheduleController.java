@@ -48,7 +48,7 @@ public class ScheduleController implements Initializable {
         try {
             refreshPage();
             loadNextScheduleId();
-        } catch (SQLException | ClassNotFoundException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
@@ -169,7 +169,7 @@ public class ScheduleController implements Initializable {
     }
 
     @FXML
-    void resetAction(ActionEvent event) {
+    void resetAction(ActionEvent event) throws Exception {
         datetxt.setText("");
         timeTxt.setText("");
         loadNextScheduleId();
@@ -279,10 +279,10 @@ public class ScheduleController implements Initializable {
         }*/
 
     }
-    public void loadNextScheduleId()  {
+    public void loadNextScheduleId() throws Exception {
         try {
-            String nextId = null;
-            nextId = scheduleModel.getNextScheduleID();
+
+            String nextId = scheduleBO.getNextSchedule();
             sheduleID.setText(nextId);
         } catch (SQLException e) {
             throw new RuntimeException(e);
