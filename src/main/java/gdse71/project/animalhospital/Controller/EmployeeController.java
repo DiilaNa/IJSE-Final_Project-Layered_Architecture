@@ -2,11 +2,9 @@ package gdse71.project.animalhospital.Controller;
 
 import gdse71.project.animalhospital.bo.BOFactory;
 import gdse71.project.animalhospital.bo.Custom.EmployeeBO;
-import gdse71.project.animalhospital.db.DBConnection;
 import gdse71.project.animalhospital.dto.DocDetailsDto;
 import gdse71.project.animalhospital.dto.Employeedto;
 import gdse71.project.animalhospital.dto.PetTm.EmployeeTM;
-import gdse71.project.animalhospital.model.EmployeeModel;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -23,8 +21,6 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -86,7 +82,7 @@ public class EmployeeController implements Initializable {
     @FXML
     private ComboBox<String> appt;
 
-    EmployeeModel employeeModel = new EmployeeModel();
+   /* EmployeeModel employeeModel = new EmployeeModel();*/
     EmployeeBO employeeBO = (EmployeeBO) BOFactory.getInstance().getBO(BOFactory.BOType.EMPLOYEE);
 
     @FXML
