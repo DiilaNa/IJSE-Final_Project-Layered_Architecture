@@ -6,5 +6,5 @@ import gdse71.project.animalhospital.dto.Med_detailDto;
 import java.sql.SQLException;
 
 public interface QuerryDAO extends SuperDAO {
-    public Med_detailDto findPetDetailsByMedicineId(String medicineId) throws SQLException, ClassNotFoundException;
+
 }

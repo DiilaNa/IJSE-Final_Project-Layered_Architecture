@@ -1,5 +1,7 @@
 package gdse71.project.animalhospital.Controller;
 
+import gdse71.project.animalhospital.bo.BOFactory;
+import gdse71.project.animalhospital.bo.Custom.ViewAppointmentsBO;
 import gdse71.project.animalhospital.dto.PetTm.ViewAppointmentTM;
 import gdse71.project.animalhospital.dto.ViewAppointmentDto;
 import gdse71.project.animalhospital.model.ViewAppointmentModel;
@@ -19,10 +21,6 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Optional;
 import java.util.ResourceBundle;
@@ -79,6 +77,7 @@ public class ViewAppointments implements Initializable {
     private TableColumn<ViewAppointmentTM, String> tableTime;
 
     ViewAppointmentModel viewAppointmentModel = new ViewAppointmentModel();
+    ViewAppointmentsBO viewAppointmentsBO = (ViewAppointmentsBO) BOFactory.getInstance().getBO(BOFactory.BOType.VIEW_APPOINTMENTS);
 
     @FXML
     void TableMouseClick(MouseEvent event) {
@@ -105,7 +104,7 @@ public class ViewAppointments implements Initializable {
     }
 
     @FXML
-    void deleteAction(ActionEvent event) throws SQLException, ClassNotFoundException {
+    void deleteAction(ActionEvent event) throws Exception {
         String AptDeleteid = tableAptID.getText();
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION,"Are You Sure You Want to Delete this Appointment?",ButtonType.YES,ButtonType.NO);
         Optional<ButtonType> result = alert.showAndWait();
@@ -123,15 +122,15 @@ public class ViewAppointments implements Initializable {
 
 
     }
-    private void refreshPage() throws SQLException, ClassNotFoundException {
+    private void refreshPage() throws Exception {
 
         loadTableData();
         delete.setDisable(true);
 
     }
-    private void loadTableData() throws SQLException, ClassNotFoundException {
+    private void loadTableData() throws Exception {
 
-        ArrayList<ViewAppointmentDto> viewAppointmentDtos = viewAppointmentModel.getAll();
+        ArrayList<ViewAppointmentDto> viewAppointmentDtos = viewAppointmentsBO.getAllAppointments();
         ObservableList<ViewAppointmentTM> viewAppointmentTMS = FXCollections.observableArrayList();
 
         for (ViewAppointmentDto viewAppointmentDto : viewAppointmentDtos) {

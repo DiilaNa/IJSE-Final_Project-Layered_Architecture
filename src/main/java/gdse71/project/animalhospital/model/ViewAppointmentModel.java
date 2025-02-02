@@ -10,25 +10,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class ViewAppointmentModel {
-    public ArrayList<ViewAppointmentDto> getAll() throws SQLException, ClassNotFoundException {
-        ResultSet rst =  Util.execute("select * from appointments");
-
-        ArrayList<ViewAppointmentDto> viewAppointmentDtos = new ArrayList<>();
-
-        while (rst.next()){
-            ViewAppointmentDto viewAppointmentDto = new ViewAppointmentDto(
-                    rst.getString(1),
-                    rst.getString(2),
-                    rst.getString(3),
-                    rst.getString(4),
-                    rst.getString(5),
-                    rst.getString(6)
-
-            );
-            viewAppointmentDtos.add(viewAppointmentDto);
-        }
-        return viewAppointmentDtos;
-    }
     public boolean delete(String appointment_id) throws SQLException, ClassNotFoundException {
         Connection conn = null;
         boolean success = false;
