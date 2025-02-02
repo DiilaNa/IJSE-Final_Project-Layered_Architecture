@@ -18,7 +18,7 @@ import java.util.List;
 public class MedicineBOImpl implements MedicineBO {
     MedicineDAO medicineDAO = (MedicineDAO) DaoFactory.getInstance().getDao(DaoFactory.DaoType.MEDICINE);
     MedicineDetailDao medicineDetailDao = (MedicineDetailDao) DaoFactory.getInstance().getDao(DaoFactory.DaoType.MEDICINE_DETAILS);
-    QuerryDAO querryDAO = (QuerryDAO) DaoFactory.getInstance().getDao(DaoFactory.DaoType.JOIN);
+    QuerryDAO querryDAO = (QuerryDAO) DaoFactory.getInstance().getDao(DaoFactory.DaoType.QUERY);
 
     @Override
     public ArrayList<MedicineDto> getALLMedicine() throws Exception {

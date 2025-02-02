@@ -111,7 +111,7 @@ public class ViewAppointments implements Initializable {
 
         if (result.isPresent() && result.get() == ButtonType.YES) {
 
-            boolean isDeleted = viewAppointmentModel.delete(AptDeleteid);
+            boolean isDeleted = viewAppointmentsBO.deleteAppointment(AptDeleteid);
             if (isDeleted) {
                 refreshPage();
                 new Alert(Alert.AlertType.INFORMATION, "  Record deleted...!").show();

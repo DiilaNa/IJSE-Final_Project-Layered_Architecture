@@ -8,27 +8,15 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class QuerryDAOImpl implements QuerryDAO {
-    public Med_detailDto findPetDetailsByMedicineId(String medicineId) throws SQLException, ClassNotFoundException {
-        ResultSet resultSet  = Util.execute( "SELECT\n" +
-                "    m.medicine_id,\n" +
-                "    m.med_name,\n" +
-                "    m.med_condition,\n" +
-                "    m.weight,\n" +
-                "    md.pet_id\n" +
-                "FROM\n" +
-                "    medicine m\n" +
-                "        JOIN\n" +
-                "    medicine_details md\n" +
-                "    ON\n" +
-                "        m.medicine_id = md.med_id;" +
-                "WHERE med_detail.med_id = ?",medicineId);
-        if (resultSet.next()) {
-            return new Med_detailDto(
-                    resultSet.getString("pet_id"),
-                    resultSet.getString(2)
-            );
-        }
-        return null;
+    @Override
+    public boolean delete(String appointment_id) throws SQLException, ClassNotFoundException {
+        return Util.execute("DELETE payment, owner, pet, appointments\n" +
+                "            FROM appointments\n" +
+                "            LEFT JOIN payment ON payment.payment_id = appointments.pay_id\n" +
+                "            LEFT JOIN pet ON pet.pet_id = appointments.petId\n" +
+                "            LEFT JOIN owner ON owner.owner_id = pet.ownerid\n" +
+                "            WHERE appointments.appointment_id = ?",appointment_id);
+
     }
 
 }

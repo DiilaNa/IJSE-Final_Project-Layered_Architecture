@@ -8,4 +8,5 @@ import java.util.ArrayList;
 
 public interface ViewAppointmentsBO extends SuperBO {
      ArrayList<ViewAppointmentDto> getAllAppointments() throws Exception;
+     boolean deleteAppointment(String Appointment_id) throws Exception;
 }
