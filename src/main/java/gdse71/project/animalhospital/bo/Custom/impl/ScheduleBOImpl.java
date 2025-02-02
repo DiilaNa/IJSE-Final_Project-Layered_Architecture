@@ -110,4 +110,9 @@ public class ScheduleBOImpl implements ScheduleBO {
         }
         return false;
     }
+
+    @Override
+    public String setSchedule(String ID) throws Exception {
+        return empScheduleDAO.searchEmID(ID);
+    }
 }

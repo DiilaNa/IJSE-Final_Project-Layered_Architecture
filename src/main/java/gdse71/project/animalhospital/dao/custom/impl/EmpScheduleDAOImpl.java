@@ -5,6 +5,7 @@ import gdse71.project.animalhospital.dao.custom.EmpScheduleDAO;
 import gdse71.project.animalhospital.entity.EmpSchedule;
 
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class EmpScheduleDAOImpl implements EmpScheduleDAO {
@@ -34,5 +35,10 @@ public class EmpScheduleDAOImpl implements EmpScheduleDAO {
     @Override
     public String generateId() throws Exception {
         return "";
+    }
+
+    @Override
+    public String searchEmID(String ID) throws SQLException, ClassNotFoundException {
+        return Util.execute("SELECT e_id FROM employee_schedule WHERE s_id=?",ID);
     }
 }

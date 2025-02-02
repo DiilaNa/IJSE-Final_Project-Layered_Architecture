@@ -12,4 +12,5 @@ public interface ScheduleBO extends SuperBO {
     boolean saveSchedule( List<ScheduleDto> scheduleDtos,List<EmpSheduleDto> empSheduleDtos) throws Exception;
     boolean updateSchedule(ScheduleDto schedule) throws Exception;
     boolean deleteSchedule(String EmpID,String ScheduleId) throws Exception;
+    String setSchedule(String ID) throws Exception;
 }

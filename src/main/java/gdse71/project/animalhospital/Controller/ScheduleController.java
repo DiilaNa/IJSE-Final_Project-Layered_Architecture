@@ -102,13 +102,16 @@ public class ScheduleController implements Initializable {
    ScheduleModel scheduleModel = new ScheduleModel();
 
     @FXML
-    void ACtionTAble(MouseEvent event) {
+    void ACtionTAble(MouseEvent event) throws Exception {
         ScheduleTM scheduleTM = table.getSelectionModel().getSelectedItem();
         if (scheduleTM != null) {
             sheduleID.setText(scheduleTM.getScheduleID());
             datetxt.setText(scheduleTM.getDate());
             timeTxt.setText(scheduleTM.getTime());
 
+            String SCHid = sheduleID.getText();
+            String empid = scheduleBO.setSchedule(SCHid);
+            empIds.setValue(empid);
             save.setDisable(false);
 
             delete.setDisable(false);
