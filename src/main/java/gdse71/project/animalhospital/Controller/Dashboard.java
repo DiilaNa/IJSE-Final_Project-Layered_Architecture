@@ -60,7 +60,9 @@ public class Dashboard {
     void SMSAction(ActionEvent event) {
         try {
             Stage stage = (Stage) Shedule.getScene().getWindow();
-            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/Sms.fxml"))));
+            Scene scene =new Scene(FXMLLoader.load(getClass().getResource("/view/Sms.fxml")));
+            scene.getStylesheets().add(getClass().getResource("/Css/Login.css").toExternalForm());
+            stage.setScene(scene);
             stage.setTitle("Pets & Vets Animal Hospital");
             stage.show();
         } catch (IOException e) {
@@ -73,7 +75,9 @@ public class Dashboard {
     void ShedulebtnAction(ActionEvent event) {
         try {
             Stage stage = (Stage) Shedule.getScene().getWindow();
-            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/Shedule.fxml"))));
+            Scene scene =new Scene(FXMLLoader.load(getClass().getResource("/view/Shedule.fxml")));
+            scene.getStylesheets().add(getClass().getResource("/Css/Login.css").toExternalForm());
+            stage.setScene(scene);
             stage.setTitle("Pets & Vets Animal Hospital");
             stage.show();
         } catch (IOException e) {
@@ -87,7 +91,9 @@ public class Dashboard {
     void invoiceAction(ActionEvent event) {
         try {
             Stage stage = (Stage) Invoice.getScene().getWindow();
-            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/Invoice.fxml"))));
+            Scene scene =new Scene(FXMLLoader.load(getClass().getResource("/view/Invoice.fxml")));
+            scene.getStylesheets().add(getClass().getResource("/Css/Login.css").toExternalForm());
+            stage.setScene(scene);
             stage.setTitle("Pets & Vets Animal Hospital");
             stage.setResizable(false);
             stage.show();
@@ -110,7 +116,9 @@ public class Dashboard {
     void appointmentsbtn(ActionEvent event) {
         try {
             Stage stage = (Stage) appointments.getScene().getWindow();
-            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/Appointments.fxml"))));
+            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/view/Appointments.fxml")));
+            scene.getStylesheets().add(getClass().getResource("/Css/Login.css").toExternalForm());
+            stage.setScene(scene);
             stage.setTitle("Pets & Vets Animal Hospital");
             stage.setResizable(false);
             stage.show();
@@ -124,7 +132,9 @@ public class Dashboard {
     void empbtn(ActionEvent event) {
         try {
             Stage stage = (Stage) pet.getScene().getWindow();
-            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/Employee.fxml"))));
+            Scene scene =new Scene(FXMLLoader.load(getClass().getResource("/view/Employee.fxml")));
+            scene.getStylesheets().add(getClass().getResource("/Css/Login.css").toExternalForm());
+            stage.setScene(scene);
             stage.setTitle("Pets & Vets Animal Hospital");
             stage.setResizable(false);
             stage.show();
@@ -138,7 +148,9 @@ public class Dashboard {
     void inventorybtn(ActionEvent event) { //this is medicine button in dashboard
         try {
             Stage stage = (Stage) invent.getScene().getWindow();
-            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/Medicine.fxml"))));
+            Scene scene =new Scene(FXMLLoader.load(getClass().getResource("/view/Medicine.fxml")));
+            scene.getStylesheets().add(getClass().getResource("/Css/Login.css").toExternalForm());
+            stage.setScene(scene);
             stage.setTitle("Pets & Vets Animal Hospital");
             stage.setResizable(false);
             stage.show();
@@ -152,8 +164,9 @@ public class Dashboard {
     void ownerbtn(ActionEvent event) {
         try {
             Stage stage = (Stage) pet.getScene().getWindow();
-            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/Owner.fxml"))));
-            stage.setTitle("Pets & Vets Animal Hospital");
+            Scene scene =new Scene(FXMLLoader.load(getClass().getResource("/view/Owner.fxml.")));
+            scene.getStylesheets().add(getClass().getResource("/Css/Login.css").toExternalForm());
+            stage.setScene(scene);            stage.setTitle("Pets & Vets Animal Hospital");
             stage.setResizable(false);
             stage.show();
         } catch (IOException e) {
@@ -165,7 +178,9 @@ public class Dashboard {
     void paymentsbtn(ActionEvent event) {
         try {
             Stage stage = (Stage) paymnt.getScene().getWindow();
-            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/Payment.fxml"))));
+            Scene scene =new Scene(FXMLLoader.load(getClass().getResource("/view/Payment.fxml")));
+            scene.getStylesheets().add(getClass().getResource("/Css/Login.css").toExternalForm());
+            stage.setScene(scene);
             stage.setTitle("Pets & Vets Animal Hospital");
             stage.setResizable(false);
             stage.show();
@@ -179,7 +194,9 @@ public class Dashboard {
     void petbtn(ActionEvent event)  {
         try {
             Stage stage = (Stage) pet.getScene().getWindow();
-            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/pet.fxml"))));
+            Scene scene =new Scene(FXMLLoader.load(getClass().getResource("/view/pet.fxml")));
+            scene.getStylesheets().add(getClass().getResource("/Css/Login.css").toExternalForm());
+            stage.setScene(scene);
             stage.setTitle("Pets & Vets Animal Hospital");
             stage.setResizable(false);
             stage.show();
@@ -192,7 +209,9 @@ public class Dashboard {
     void salarybtn(ActionEvent event) {
         try {
             Stage stage = (Stage) pet.getScene().getWindow();
-            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/Salary.fxml"))));
+            Scene scene =new Scene(FXMLLoader.load(getClass().getResource("/view/Salary.fxml")));
+            scene.getStylesheets().add(getClass().getResource("/Css/Login.css").toExternalForm());
+            stage.setScene(scene);
             stage.setTitle("Pets & Vets Animal Hospital");
             stage.setResizable(false);
             stage.show();
@@ -206,7 +225,9 @@ public class Dashboard {
     void servicebtn(ActionEvent event){
         try {
             Stage stage = (Stage) service.getScene().getWindow();
-            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/service.fxml"))));
+            Scene scene =new Scene(FXMLLoader.load(getClass().getResource("/view/service.fxml")));
+            scene.getStylesheets().add(getClass().getResource("/Css/Login.css").toExternalForm());
+            stage.setScene(scene);
             stage.setTitle("Pets & Vets Animal Hospital");
             stage.setResizable(false);
             stage.show();

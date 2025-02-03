@@ -7,6 +7,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -15,6 +16,10 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class Login {
+
+
+    @FXML
+    private Label textTopic;
 
     @FXML
     private ImageView image;
@@ -42,8 +47,10 @@ public class Login {
             
             try {
                 Stage stage = (Stage) logbtn.getScene().getWindow();
-                stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/dashboard.fxml"))));
+                Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/view/dashboard.fxml")));
+                scene.getStylesheets().add(getClass().getResource("/Css/Login.css").toExternalForm());
                 stage.setTitle("Pets & Vets Animal Hospital");
+                stage.setScene(scene);
                 stage.setResizable(false);
                 stage.show();
             } catch (IOException e) {

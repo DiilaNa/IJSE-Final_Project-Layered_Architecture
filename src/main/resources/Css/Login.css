@@ -1,0 +1,36 @@
+#backID:hover {
+    -fx-background-color: Orange;
+    -fx-text-fill: White;
+    -fx-effect: dropshadow(gaussian, rgba(255, 140, 0, 0.8), 15, 0.3, 0, 0);
+}
+#back:hover {
+    -fx-background-color: Orange;
+    -fx-text-fill: White;
+    -fx-effect: dropshadow(gaussian, rgba(255, 140, 0, 0.8), 15, 0.3, 0, 0);
+}
+#backbtn:hover {
+    -fx-background-color: Orange;
+    -fx-text-fill: White;
+    -fx-effect: dropshadow(gaussian, rgba(255, 140, 0, 0.8), 15, 0.3, 0, 0);
+}
+#back:hover {
+    -fx-background-color: Orange;
+    -fx-text-fill: White;
+    -fx-effect: dropshadow(gaussian, rgba(255, 140, 0, 0.8), 15, 0.3, 0, 0);
+}
+
+.button:hover {
+    -fx-background-color: #0A5DC4;
+    -fx-text-fill: Black;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.8), 15, 0.3, 0, 0);
+
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+    -fx-transition: all 0.3s ease-in-out;
+}
+
+
+
+
+
+

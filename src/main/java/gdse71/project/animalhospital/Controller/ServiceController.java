@@ -118,7 +118,9 @@ public class ServiceController implements Initializable {
     void backIdAction(ActionEvent event) {
         try {
             Stage stage = (Stage) backId.getScene().getWindow();
-            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/dashboard.fxml"))));
+            Scene scene =new Scene(FXMLLoader.load(getClass().getResource("/view/dashboard.fxml")));
+            scene.getStylesheets().add(getClass().getResource("/Css/Login.css").toExternalForm());
+            stage.setScene(scene);
             stage.setTitle("Pets & Vets Animal Hospital");
             stage.setResizable(false);
             stage.show();
