@@ -12,31 +12,31 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="870.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gdse71.project.animalhospital.Controller.Pet">
+<AnchorPane prefHeight="770.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gdse71.project.animalhospital.Controller.Pet">
    <children>
-      <ImageView fx:id="image" fitHeight="900.0" fitWidth="1200.0" pickOnBounds="true">
+      <ImageView fx:id="image" fitHeight="770.0" fitWidth="1200.0" pickOnBounds="true">
          <image>
             <Image url="@../../../../../../Pictures/animal%20hospital/ALL%20PET.png" />
          </image>
       </ImageView>
       <Label fx:id="petIds" layoutX="833.0" layoutY="184.0" text="PET ID">
          <font>
-            <Font name="DejaVu Sans Bold" size="26.0" />
+            <Font name="Gadugi Bold" size="26.0" />
          </font>
       </Label>
       <Label layoutX="260.0" layoutY="178.0" text="PET NAME">
          <font>
-            <Font name="DejaVu Sans Bold" size="26.0" />
+            <Font name="Georgia Bold" size="26.0" />
          </font>
       </Label>
       <Label layoutX="260.0" layoutY="250.0" text="BREED">
          <font>
-            <Font name="DejaVu Sans Bold" size="26.0" />
+            <Font name="Georgia Bold" size="26.0" />
          </font>
       </Label>
       <Label fx:id="ownerIds" layoutX="818.0" layoutY="256.0" text="OWNER ID">
          <font>
-            <Font name="DejaVu Sans Bold" size="26.0" />
+            <Font name="Gadugi Bold" size="26.0" />
          </font>
       </Label>
       <TextField fx:id="pname" layoutX="466.0" layoutY="185.0" prefHeight="29.0" prefWidth="267.0" style="-fx-background-color: transparent; -fx-border-width: 0 0 1px 0; -fx-border-color: black;" />
@@ -64,7 +64,7 @@
       <Button fx:id="backID" layoutX="20.0" layoutY="30.0" mnemonicParsing="false" onAction="#backIDAction" style="-fx-background-color: black; -fx-background-radius: 21;" text="Back" textFill="WHITE" underline="true" />
       <TextField fx:id="breedtxt" layoutX="467.0" layoutY="251.0" prefHeight="29.0" prefWidth="267.0" style="-fx-background-color: transparent; -fx-border-width: 0 0 1px 0; -fx-border-color: black;" />
       <TabPane layoutX="14.0" layoutY="369.0" />
-      <TableView fx:id="table" layoutX="-1.0" layoutY="480.0" onMouseClicked="#ONmouseClicked" opacity="0.92" prefHeight="417.0" prefWidth="1200.0" style="-fx-background-color: #f39c12;">
+      <TableView fx:id="table" layoutX="-1.0" layoutY="480.0" onMouseClicked="#ONmouseClicked" opacity="0.92" prefHeight="294.0" prefWidth="1200.0" style="-fx-background-color: #f39c12;">
         <columns>
           <TableColumn fx:id="columnId" prefWidth="215.0" style="-fx-background-color: #f39c12; -fx-border-color: #000; -fx-border-width: 1 1px 0 0;" text="ID" />
           <TableColumn fx:id="ColoumnName" prefWidth="230.0" style="-fx-background-color: #f39c12; -fx-border-color: #000; -fx-border-width: 1 1px 0 0;" text="NAME" />
@@ -75,13 +75,13 @@
       </TableView>
       <Label layoutX="272.0" layoutY="320.0" text="TYPE">
          <font>
-            <Font name="DejaVu Sans Bold" size="26.0" />
+            <Font name="Georgia Bold" size="26.0" />
          </font>
       </Label>
       <TextField fx:id="petTypeTxt" layoutX="467.0" layoutY="321.0" prefHeight="29.0" prefWidth="267.0" style="-fx-background-color: transparent; -fx-border-width: 0 0 1px 0; -fx-border-color: black;" />
       <Label layoutX="501.0" layoutY="68.0" text="PET DETAILS">
          <font>
-            <Font name="DejaVu Sans Condensed Bold" size="43.0" />
+            <Font name="Georgia Bold Italic" size="43.0" />
          </font>
       </Label>
       <Button fx:id="reset" layoutX="846.0" layoutY="402.0" mnemonicParsing="false" onAction="#resetAction" prefHeight="40.0" prefWidth="133.0" style="-fx-background-radius: 15; -fx-background-color: #d35400;" text="RESET" textFill="WHITE">

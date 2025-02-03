@@ -14,34 +14,34 @@
 
 <AnchorPane prefHeight="900.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gdse71.project.animalhospital.Controller.InvoiceController">
    <children>
-      <ImageView fx:id="image" fitHeight="907.0" fitWidth="991.0" pickOnBounds="true">
+      <ImageView fx:id="image" fitHeight="907.0" fitWidth="1202.0" pickOnBounds="true">
          <image>
             <Image url="@../../../../../../Pictures/animal%20hospital/ALL%20PET.png" />
          </image>
       </ImageView>
-      <Label layoutX="404.0" layoutY="40.0" text="INVOICE DETAILS">
+      <Label layoutX="562.0" layoutY="54.0" text="INVOICE DETAILS">
          <font>
-            <Font name="DejaVu Sans Bold" size="36.0" />
+            <Font name="Georgia Bold Italic" size="36.0" />
          </font>
       </Label>
       <Label layoutX="222.0" layoutY="132.0" text="PAYMENT ID">
          <font>
-            <Font name="DejaVu Sans Bold" size="26.0" />
+            <Font name="Georgia Bold" size="26.0" />
          </font>
       </Label>
       <Label layoutX="688.0" layoutY="132.0" text="NAME">
          <font>
-            <Font name="DejaVu Sans Bold" size="26.0" />
+            <Font name="Georgia Bold" size="26.0" />
          </font>
       </Label>
       <Label layoutX="262.0" layoutY="288.0" text="AMOUNT">
          <font>
-            <Font name="DejaVu Sans Bold" size="26.0" />
+            <Font name="Georgia Bold" size="26.0" />
          </font>
       </Label>
       <Label layoutX="226.0" layoutY="205.0" text="INVOICE NO">
          <font>
-            <Font name="DejaVu Sans Bold" size="26.0" />
+            <Font name="Georgia Bold" size="26.0" />
          </font>
       </Label>
       <TextField fx:id="paymentInvName" layoutX="792.0" layoutY="130.0" prefHeight="31.0" prefWidth="190.0" style="-fx-background-color: transparent; -fx-border-width: 0 0 1px 0; -fx-border-color: black;" />

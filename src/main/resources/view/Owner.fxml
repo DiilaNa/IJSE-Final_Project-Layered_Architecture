@@ -11,22 +11,22 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="928.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gdse71.project.animalhospital.Controller.OwnerController">
+<AnchorPane prefHeight="770.0" prefWidth="1202.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gdse71.project.animalhospital.Controller.OwnerController">
    <children>
-      <ImageView fx:id="imagefromscenebuilderID" fitHeight="928.0" fitWidth="1202.0" layoutY="-2.0" pickOnBounds="true">
+      <ImageView fx:id="imagefromscenebuilderID" fitHeight="770.0" fitWidth="1202.0" layoutY="-2.0" pickOnBounds="true">
          <image>
             <Image url="@../../../../../../Pictures/animal%20hospital/ALL%20PET.png" />
          </image>
       </ImageView>
       <Label layoutX="390.0" layoutY="53.0" text="OWNER DETAILS">
          <font>
-            <Font name="DejaVu Sans Condensed Bold" size="56.0" />
+            <Font name="Comic Sans MS Bold" size="56.0" />
          </font>
       </Label>
       <TextField fx:id="name" layoutX="512.0" layoutY="260.0" prefHeight="33.0" prefWidth="226.0" style="-fx-background-color: transparent; -fx-border-color: black; -fx-border-width: 0 0 1px 0;" />
       <TextField fx:id="address" layoutX="512.0" layoutY="329.0" prefHeight="33.0" prefWidth="226.0" style="-fx-background-color: transparent; -fx-border-color: black; -fx-border-width: 0 0 1px 0;" />
       <TextField fx:id="mail" layoutX="512.0" layoutY="394.0" prefHeight="33.0" prefWidth="226.0" style="-fx-background-color: transparent; -fx-border-color: black; -fx-border-width: 0 0 1px 0;" />
-      <TableView fx:id="table" layoutY="494.0" onMouseClicked="#TABLEACTION" opacity="0.91" prefHeight="434.0" prefWidth="1202.0" style="-fx-background-color: #f39c12;">
+      <TableView fx:id="table" layoutY="470.0" onMouseClicked="#TABLEACTION" opacity="0.91" prefHeight="302.0" prefWidth="1202.0" style="-fx-background-color: #f39c12;">
         <columns>
           <TableColumn fx:id="tableownerID" prefWidth="330.0" style="-fx-background-color: #f39c12; -fx-border-color: #000; -fx-border-width: 1 1px 0 0;" text="OWNER ID" />
           <TableColumn fx:id="tableOname" prefWidth="255.0" style="-fx-background-color: #f39c12; -fx-border-color: #000; -fx-border-width: 1 1px 0 0;" text="OWNER NAME" />
@@ -36,22 +36,22 @@
       </TableView>
       <Label layoutX="355.0" layoutY="333.0" text="ADDRESS">
          <font>
-            <Font name="System Bold Italic" size="20.0" />
+            <Font name="Georgia Bold Italic" size="20.0" />
          </font>
       </Label>
       <Label layoutX="353.0" layoutY="398.0" text="EMAIL">
          <font>
-            <Font name="System Bold Italic" size="20.0" />
+            <Font name="Georgia Bold Italic" size="20.0" />
          </font>
       </Label>
       <Label layoutX="357.0" layoutY="193.0" prefHeight="24.0" prefWidth="141.0" text="OWNER ID">
          <font>
-            <Font name="System Bold Italic" size="20.0" />
+            <Font name="Georgia Bold Italic" size="20.0" />
          </font>
       </Label>
       <Label layoutX="355.0" layoutY="264.0" text="NAME">
          <font>
-            <Font name="System Bold Italic" size="20.0" />
+            <Font name="Georgia Bold Italic" size="20.0" />
          </font>
       </Label>
       <Button fx:id="backbtn" layoutX="36.0" layoutY="29.0" mnemonicParsing="false" onAction="#backbtnAction" style="-fx-background-color: black; -fx-background-radius: 21;" text="BACK" textFill="WHITE" underline="true" />

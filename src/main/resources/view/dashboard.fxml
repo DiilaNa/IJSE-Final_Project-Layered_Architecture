@@ -8,9 +8,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="870.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gdse71.project.animalhospital.Controller.Dashboard">
+<AnchorPane prefHeight="749.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gdse71.project.animalhospital.Controller.Dashboard">
    <children>
-      <ImageView fx:id="image" fitHeight="870.0" fitWidth="1200.0" pickOnBounds="true">
+      <ImageView fx:id="image" fitHeight="768.0" fitWidth="1200.0" pickOnBounds="true">
          <image>
             <Image url="@../../../../../../Pictures/animal%20hospital/Dashboard.png" />
          </image>
@@ -20,7 +20,7 @@
             <Font name="System Bold" size="43.0" />
          </font>
       </Label>
-      <Button fx:id="pet" alignment="CENTER" layoutX="439.0" layoutY="307.0" mnemonicParsing="false" onAction="#petbtn" prefHeight="54.0" prefWidth="271.0" style="-fx-background-radius: 15; -fx-background-color: #d35400;" text="PET DETAILS" textFill="WHITE">
+      <Button fx:id="pet" alignment="CENTER" layoutX="438.0" layoutY="245.0" mnemonicParsing="false" onAction="#petbtn" prefHeight="54.0" prefWidth="271.0" style="-fx-background-radius: 15; -fx-background-color: #d35400;" text="PET DETAILS" textFill="WHITE">
          <font>
             <Font size="21.0" />
          </font>
@@ -28,7 +28,7 @@
             <InnerShadow choke="0.21" height="0.0" radius="5.43" width="23.72" />
          </effect>
       </Button>
-      <Button fx:id="appointments" alignment="CENTER" layoutX="440.0" layoutY="178.0" mnemonicParsing="false" onAction="#appointmentsbtn" prefHeight="54.0" prefWidth="270.0" style="-fx-background-color: #d35400; -fx-background-radius: 15;" text="APPOINTMENTS" textFill="WHITE">
+      <Button fx:id="appointments" alignment="CENTER" layoutX="439.0" layoutY="136.0" mnemonicParsing="false" onAction="#appointmentsbtn" prefHeight="54.0" prefWidth="270.0" style="-fx-background-color: #d35400; -fx-background-radius: 15;" text="APPOINTMENTS" textFill="WHITE">
          <font>
             <Font size="23.0" />
          </font>
@@ -36,7 +36,7 @@
             <InnerShadow />
          </effect>
       </Button>
-      <Button fx:id="emp" alignment="CENTER" layoutX="430.0" layoutY="426.0" mnemonicParsing="false" onAction="#empbtn" prefHeight="54.0" prefWidth="270.0" style="-fx-background-color: #d35400; -fx-background-radius: 15;" text="EMPLOYEE" textFill="WHITE">
+      <Button fx:id="emp" alignment="CENTER" layoutX="430.0" layoutY="358.0" mnemonicParsing="false" onAction="#empbtn" prefHeight="54.0" prefWidth="270.0" style="-fx-background-color: #d35400; -fx-background-radius: 15;" text="EMPLOYEE" textFill="WHITE">
          <font>
             <Font size="23.0" />
          </font>
@@ -44,7 +44,7 @@
             <InnerShadow />
          </effect>
       </Button>
-      <Button fx:id="invent" alignment="CENTER" layoutX="776.0" layoutY="426.0" mnemonicParsing="false" onAction="#inventorybtn" prefHeight="54.0" prefWidth="270.0" style="-fx-background-color: #d35400; -fx-background-radius: 15;" text="MEDICINE" textFill="WHITE">
+      <Button fx:id="invent" alignment="CENTER" layoutX="775.0" layoutY="358.0" mnemonicParsing="false" onAction="#inventorybtn" prefHeight="54.0" prefWidth="270.0" style="-fx-background-color: #d35400; -fx-background-radius: 15;" text="MEDICINE" textFill="WHITE">
          <font>
             <Font size="23.0" />
          </font>
@@ -52,7 +52,7 @@
             <InnerShadow />
          </effect>
       </Button>
-      <Button fx:id="owner" alignment="CENTER" layoutX="776.0" layoutY="178.0" mnemonicParsing="false" onAction="#ownerbtn" prefHeight="54.0" prefWidth="270.0" style="-fx-background-radius: 15; -fx-background-color: #d35400;" text="OWNER DETAILS" textFill="WHITE">
+      <Button fx:id="owner" alignment="CENTER" layoutX="776.0" layoutY="136.0" mnemonicParsing="false" onAction="#ownerbtn" prefHeight="54.0" prefWidth="270.0" style="-fx-background-radius: 15; -fx-background-color: #d35400;" text="OWNER DETAILS" textFill="WHITE">
          <font>
             <Font size="21.0" />
          </font>
@@ -60,7 +60,7 @@
             <InnerShadow />
          </effect>
       </Button>
-      <Button fx:id="service" alignment="CENTER" layoutX="776.0" layoutY="307.0" mnemonicParsing="false" onAction="#servicebtn" prefHeight="54.0" prefWidth="270.0" style="-fx-background-radius: 15; -fx-background-color: #d35400;" text="SERVICE DETAILS" textFill="WHITE">
+      <Button fx:id="service" alignment="CENTER" layoutX="776.0" layoutY="245.0" mnemonicParsing="false" onAction="#servicebtn" prefHeight="54.0" prefWidth="270.0" style="-fx-background-radius: 15; -fx-background-color: #d35400;" text="SERVICE DETAILS" textFill="WHITE">
          <font>
             <Font size="21.0" />
          </font>
@@ -68,7 +68,7 @@
             <InnerShadow />
          </effect>
       </Button>
-      <Button fx:id="sal" alignment="CENTER" layoutX="430.0" layoutY="541.0" mnemonicParsing="false" onAction="#salarybtn" prefHeight="54.0" prefWidth="270.0" style="-fx-background-color: #d35400; -fx-background-radius: 15;" text="SALARY" textFill="WHITE">
+      <Button fx:id="sal" alignment="CENTER" layoutX="430.0" layoutY="469.0" mnemonicParsing="false" onAction="#salarybtn" prefHeight="54.0" prefWidth="270.0" style="-fx-background-color: #d35400; -fx-background-radius: 15;" text="SALARY" textFill="WHITE">
          <font>
             <Font size="23.0" />
          </font>
@@ -76,7 +76,7 @@
             <InnerShadow />
          </effect>
       </Button>
-      <Button fx:id="paymnt" alignment="CENTER" layoutX="776.0" layoutY="541.0" mnemonicParsing="false" onAction="#paymentsbtn" prefHeight="54.0" prefWidth="270.0" style="-fx-background-color: #d35400; -fx-background-radius: 15;" text="PAYMENTS" textFill="WHITE">
+      <Button fx:id="paymnt" alignment="CENTER" layoutX="775.0" layoutY="469.0" mnemonicParsing="false" onAction="#paymentsbtn" prefHeight="54.0" prefWidth="270.0" style="-fx-background-color: #d35400; -fx-background-radius: 15;" text="PAYMENTS" textFill="WHITE">
          <font>
             <Font size="23.0" />
          </font>
@@ -84,7 +84,7 @@
             <InnerShadow />
          </effect>
       </Button>
-      <Button fx:id="Invoice" alignment="CENTER" layoutX="430.0" layoutY="661.0" mnemonicParsing="false" onAction="#invoiceAction" prefHeight="54.0" prefWidth="270.0" style="-fx-background-color: #d35400; -fx-background-radius: 15;" text="INVOICE" textFill="WHITE">
+      <Button fx:id="Invoice" alignment="CENTER" layoutX="430.0" layoutY="579.0" mnemonicParsing="false" onAction="#invoiceAction" prefHeight="54.0" prefWidth="270.0" style="-fx-background-color: #d35400; -fx-background-radius: 15;" text="INVOICE" textFill="WHITE">
          <font>
             <Font size="23.0" />
          </font>
@@ -92,7 +92,7 @@
             <InnerShadow />
          </effect>
       </Button>
-      <Button fx:id="SmS" alignment="CENTER" layoutX="776.0" layoutY="661.0" mnemonicParsing="false" onAction="#SMSAction" prefHeight="54.0" prefWidth="270.0" style="-fx-background-color: #d35400; -fx-background-radius: 15;" text="REMINDER" textFill="WHITE">
+      <Button fx:id="SmS" alignment="CENTER" layoutX="775.0" layoutY="579.0" mnemonicParsing="false" onAction="#SMSAction" prefHeight="54.0" prefWidth="270.0" style="-fx-background-color: #d35400; -fx-background-radius: 15;" text="REMINDER" textFill="WHITE">
          <font>
             <Font size="23.0" />
          </font>
@@ -100,7 +100,7 @@
             <InnerShadow />
          </effect>
       </Button>
-      <Button fx:id="Shedule" alignment="CENTER" layoutX="600.0" layoutY="772.0" mnemonicParsing="false" onAction="#ShedulebtnAction" prefHeight="54.0" prefWidth="270.0" style="-fx-background-color: #d35400; -fx-background-radius: 15;" text="SHEDULE" textFill="WHITE">
+      <Button fx:id="Shedule" alignment="CENTER" layoutX="599.0" layoutY="678.0" mnemonicParsing="false" onAction="#ShedulebtnAction" prefHeight="54.0" prefWidth="270.0" style="-fx-background-color: #d35400; -fx-background-radius: 15;" text="SHEDULE" textFill="WHITE">
          <font>
             <Font size="23.0" />
          </font>

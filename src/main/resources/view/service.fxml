@@ -12,62 +12,62 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="870.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gdse71.project.animalhospital.Controller.ServiceController">
+<AnchorPane prefHeight="770.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gdse71.project.animalhospital.Controller.ServiceController">
    <children>
-      <ImageView fx:id="image" fitHeight="900.0" fitWidth="1200.0" pickOnBounds="true">
+      <ImageView fx:id="image" fitHeight="770.0" fitWidth="1200.0" pickOnBounds="true">
          <image>
             <Image url="@../../../../../../Pictures/animal%20hospital/ALL%20PET.png" />
          </image>
       </ImageView>
-      <Pane layoutX="927.0" layoutY="-10.0" prefHeight="534.0" prefWidth="273.0" style="-fx-background-color: black;">
+      <Pane layoutX="927.0" layoutY="-10.0" prefHeight="486.0" prefWidth="274.0" style="-fx-background-color: black;">
          <children>
             <Button fx:id="save" layoutX="58.0" layoutY="74.0" mnemonicParsing="false" onAction="#saveAction" prefHeight="49.0" prefWidth="176.0" style="-fx-background-color: #d35400; -fx-background-radius: 12;" text="SAVE" textFill="WHITE">
                <font>
-                  <Font name="DejaVu Sans" size="26.0" />
+                  <Font name="Georgia Bold Italic" size="23.0" />
                </font>
             </Button>
             <Button fx:id="update" layoutX="58.0" layoutY="174.0" mnemonicParsing="false" onAction="#updateAction" prefHeight="49.0" prefWidth="170.0" style="-fx-background-color: #d35400; -fx-background-radius: 12;" text="UPDATE" textFill="WHITE">
                <font>
-                  <Font size="26.0" />
+                  <Font name="Georgia Bold Italic" size="23.0" />
                </font>
             </Button>
             <Button fx:id="delete" layoutX="58.0" layoutY="274.0" mnemonicParsing="false" onAction="#deleteAction" prefHeight="49.0" prefWidth="170.0" style="-fx-background-color: #d35400; -fx-background-radius: 12;" text="DELETE" textFill="WHITE">
                <font>
-                  <Font name="DejaVu Sans" size="26.0" />
+                  <Font name="Georgia Bold Italic" size="23.0" />
                </font>
             </Button>
             <Button fx:id="reset" layoutX="58.0" layoutY="374.0" mnemonicParsing="false" onAction="#restAction" prefHeight="49.0" prefWidth="170.0" style="-fx-background-color: #d35400; -fx-background-radius: 12;" text="RESET" textFill="WHITE">
                <font>
-                  <Font name="DejaVu Sans" size="26.0" />
+                  <Font name="Georgia Bold Italic" size="23.0" />
                </font>
             </Button>
          </children>
       </Pane>
       <Label layoutX="314.0" layoutY="47.0" text="SERVICE DETIALS">
          <font>
-            <Font name="DejaVu Sans Bold Oblique" size="51.0" />
+            <Font name="Georgia Bold" size="51.0" />
          </font>
       </Label>
       <Label alignment="TOP_LEFT" layoutX="287.0" layoutY="173.0" style="-fx-background-radius: 1;" text="SERVICE ID" textAlignment="CENTER">
          <font>
-            <Font name="DejaVu Sans Condensed Bold" size="27.0" />
+            <Font name="Georgia Bold" size="27.0" />
          </font>
       </Label>
       <Label layoutX="292.0" layoutY="327.0" style="-fx-background-radius: 1;" text="DURATION">
          <font>
-            <Font name="DejaVu Sans Condensed Bold" size="27.0" />
+            <Font name="Georgia Bold" size="27.0" />
          </font>
       </Label>
       <Label layoutX="287.0" layoutY="397.0" text="PET ID">
          <font>
-            <Font name="DejaVu Sans Condensed Bold" size="27.0" />
+            <Font name="Georgia Bold" size="27.0" />
          </font>
       </Label>
       <TextField fx:id="duration" layoutX="557.0" layoutY="327.0" prefHeight="35.0" prefWidth="244.0" style="-fx-background-color: transparent; -fx-border-width: 0 0 1px 0; -fx-border-color: black;" />
       <TextField fx:id="serviceType" layoutX="557.0" layoutY="245.0" prefHeight="35.0" prefWidth="244.0" style="-fx-background-color: transparent; -fx-border-width: 0 0 1px 0; -fx-border-color: black;" />
       <ComboBox fx:id="PETid" layoutX="590.0" layoutY="394.0" prefHeight="34.0" prefWidth="210.0" promptText="select a Pet ID" style="-fx-background-color: transparent; -fx-border-width: 0 0 1px 0; -fx-border-color: black;" />
       <Button fx:id="backId" layoutX="39.0" layoutY="35.0" mnemonicParsing="false" onAction="#backIdAction" prefHeight="24.0" prefWidth="100.0" style="-fx-background-color: black;" text="Back" textFill="WHITE" underline="true" />
-      <TableView fx:id="table" layoutY="522.0" onMouseClicked="#MouseClickAction" opacity="0.87" prefHeight="379.0" prefWidth="1200.0" style="-fx-background-color: #f39c12;">
+      <TableView fx:id="table" layoutY="476.0" onMouseClicked="#MouseClickAction" opacity="0.87" prefHeight="298.0" prefWidth="1200.0" style="-fx-background-color: #f39c12;">
         <columns>
           <TableColumn fx:id="tableServiceId" prefWidth="211.0" style="-fx-background-color: #f39c12; -fx-border-color: #000; -fx-border-width: 1 1px 0 0;" text="SERVICE ID" />
             <TableColumn fx:id="tableServiceName" prefWidth="340.0" style="-fx-background-color: #f39c12; -fx-border-color: #000; -fx-border-width: 1 1px 0 0;" text="SERVICE NAME" />
@@ -77,7 +77,7 @@
       </TableView>
       <Label layoutX="287.0" layoutY="245.0" style="-fx-background-radius: 1;" text="SERVICE NAME">
          <font>
-            <Font name="DejaVu Sans Condensed Bold" size="27.0" />
+            <Font name="Georgia Bold" size="27.0" />
          </font>
       </Label>
       <Label fx:id="serviceID" alignment="TOP_LEFT" layoutX="557.0" layoutY="173.0" style="-fx-background-radius: 1;" text="SERVICE ID" textAlignment="CENTER">

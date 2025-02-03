@@ -10,14 +10,14 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="900.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gdse71.project.animalhospital.Controller.ViewAppointments">
+<AnchorPane prefHeight="770.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gdse71.project.animalhospital.Controller.ViewAppointments">
    <children>
-      <ImageView fx:id="image" fitHeight="900.0" fitWidth="1200.0" opacity="0.84" pickOnBounds="true">
+      <ImageView fx:id="image" fitHeight="770.0" fitWidth="1200.0" opacity="0.84" pickOnBounds="true">
          <image>
             <Image url="@../../../../../../Pictures/animal%20hospital/ALL%20PET.png" />
          </image>
       </ImageView>
-      <TableView fx:id="table" layoutY="185.0" onMouseClicked="#TableMouseClick" opacity="0.95" prefHeight="565.0" prefWidth="1200.0" style="-fx-background-color: f39c12;">
+      <TableView fx:id="table" layoutY="184.0" onMouseClicked="#TableMouseClick" opacity="0.95" prefHeight="475.0" prefWidth="1200.0" style="-fx-background-color: f39c12;">
         <columns>
           <TableColumn fx:id="tableAptID" prefWidth="135.0" style="-fx-background-color: #f39c12; -fx-border-color: #000; -fx-border-width: 1 1px 0 0;" text="APPOINTMENT ID" />
           <TableColumn fx:id="tableDate" minWidth="5.0" prefWidth="235.0" style="-fx-background-color: #f39c12; -fx-border-color: #000; -fx-border-width: 1 1px 0 0;" text="DATE" />
@@ -27,12 +27,12 @@
             <TableColumn fx:id="tableStatus" prefWidth="280.0" style="-fx-background-color: #f39c12; -fx-border-color: #000; -fx-border-width: 1 1px 0 0;" text="STATUS (CANCELLED OR NOT)" />
         </columns>
       </TableView>
-      <Label layoutX="429.0" layoutY="61.0" text="APPOINTMENT DETAILS">
+      <Label layoutX="420.0" layoutY="67.0" text="APPOINTMENT DETAILS">
          <font>
-            <Font name="DejaVu Sans Bold" size="37.0" />
+            <Font name="Georgia Bold Italic" size="37.0" />
          </font>
       </Label>
-      <Button fx:id="delete" layoutX="500.0" layoutY="801.0" mnemonicParsing="false" onAction="#deleteAction" prefHeight="45.0" prefWidth="215.0" style="-fx-background-color: d35400; -fx-background-radius: 12;" text="DELETE APPOINTMENT" textFill="WHITE">
+      <Button fx:id="delete" layoutX="485.0" layoutY="684.0" mnemonicParsing="false" onAction="#deleteAction" prefHeight="45.0" prefWidth="215.0" style="-fx-background-color: d35400; -fx-background-radius: 12;" text="DELETE APPOINTMENT" textFill="WHITE">
          <font>
             <Font name="DejaVu Sans Bold" size="15.0" />
          </font>

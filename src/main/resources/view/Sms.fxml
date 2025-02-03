@@ -14,27 +14,27 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="900.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gdse71.project.animalhospital.Controller.SmsController">
+<AnchorPane prefHeight="770.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gdse71.project.animalhospital.Controller.SmsController">
    <children>
-      <ImageView fx:id="image" fitHeight="900.0" fitWidth="1200.0" pickOnBounds="true">
+      <ImageView fx:id="image" fitHeight="770.0" fitWidth="1200.0" pickOnBounds="true">
          <image>
             <Image url="@../../../../../../Pictures/animal%20hospital/ALL%20PET.png" />
          </image>
       </ImageView>
       <Label layoutX="484.0" layoutY="65.0" text="MAIL REMINDER">
          <font>
-            <Font name="DejaVu Sans Bold" size="31.0" />
+            <Font name="Georgia Bold" size="31.0" />
          </font>
       </Label>
-      <Label fx:id="smsNo" layoutX="917.0" layoutY="133.0" text="REMINDER NO">
+      <Label fx:id="smsNo" layoutX="648.0" layoutY="156.0" text="REMINDER NO">
          <font>
-            <Font name="DejaVu Sans Bold" size="21.0" />
+            <Font name="Gadugi Bold" size="21.0" />
          </font>
       </Label>
-      <DatePicker fx:id="date" layoutX="845.0" layoutY="332.0" promptText="date" />
-      <ComboBox fx:id="aptIDs" layoutX="845.0" layoutY="212.0" prefHeight="25.0" prefWidth="185.0" promptText="select apt id" style="-fx-background-color: transparent; -fx-border-width: 0 0 1px 0; -fx-border-color: black;" />
-      <ComboBox fx:id="status" layoutX="845.0" layoutY="277.0" prefHeight="25.0" prefWidth="185.0" promptText="select status" style="-fx-background-color: transparent; -fx-border-width: 0 0 1px 0; -fx-border-color: black;" />
-      <Button fx:id="save" layoutX="845.0" layoutY="465.0" mnemonicParsing="false" onAction="#saveAction" prefHeight="39.0" prefWidth="127.0" style="-fx-background-color: d35400; -fx-background-radius: 12;" text="SAVE" textFill="WHITE">
+      <DatePicker fx:id="date" layoutX="889.0" layoutY="224.0" promptText="date" />
+      <ComboBox fx:id="aptIDs" layoutX="827.0" layoutY="159.0" prefHeight="25.0" prefWidth="185.0" promptText="select apt id" style="-fx-background-color: transparent; -fx-border-width: 0 0 1px 0; -fx-border-color: black;" />
+      <ComboBox fx:id="status" layoutX="641.0" layoutY="224.0" prefHeight="25.0" prefWidth="185.0" promptText="select status" style="-fx-background-color: transparent; -fx-border-width: 0 0 1px 0; -fx-border-color: black;" />
+      <Button fx:id="save" layoutX="833.0" layoutY="385.0" mnemonicParsing="false" onAction="#saveAction" prefHeight="39.0" prefWidth="127.0" style="-fx-background-color: d35400; -fx-background-radius: 12;" text="SAVE" textFill="WHITE">
          <font>
             <Font name="DejaVu Sans Bold" size="21.0" />
          </font>
@@ -42,7 +42,7 @@
             <InnerShadow />
          </effect>
       </Button>
-      <Button fx:id="update" layoutX="845.0" layoutY="393.0" mnemonicParsing="false" onAction="#updateAction" prefHeight="39.0" prefWidth="127.0" style="-fx-background-color: d35400; -fx-background-radius: 12;" text="UPDATE" textFill="WHITE">
+      <Button fx:id="update" layoutX="670.0" layoutY="307.0" mnemonicParsing="false" onAction="#updateAction" prefHeight="39.0" prefWidth="127.0" style="-fx-background-color: d35400; -fx-background-radius: 12;" text="UPDATE" textFill="WHITE">
          <font>
             <Font name="DejaVu Sans Bold" size="21.0" />
          </font>
@@ -50,7 +50,7 @@
             <InnerShadow />
          </effect>
       </Button>
-      <Button fx:id="delete" layoutX="1001.0" layoutY="393.0" mnemonicParsing="false" onAction="#deleteAction" prefHeight="39.0" prefWidth="127.0" style="-fx-background-color: d35400; -fx-background-radius: 12;" text="DELETE" textFill="WHITE">
+      <Button fx:id="delete" layoutX="825.0" layoutY="307.0" mnemonicParsing="false" onAction="#deleteAction" prefHeight="39.0" prefWidth="127.0" style="-fx-background-color: d35400; -fx-background-radius: 12;" text="DELETE" textFill="WHITE">
          <font>
             <Font name="DejaVu Sans Bold" size="21.0" />
          </font>
@@ -58,7 +58,7 @@
             <InnerShadow />
          </effect>
       </Button>
-      <Button fx:id="reset" layoutX="1001.0" layoutY="465.0" mnemonicParsing="false" onAction="#resetAction" prefHeight="39.0" prefWidth="127.0" style="-fx-background-color: d35400; -fx-background-radius: 12;" text="RESET" textFill="WHITE">
+      <Button fx:id="reset" layoutX="977.0" layoutY="307.0" mnemonicParsing="false" onAction="#resetAction" prefHeight="39.0" prefWidth="127.0" style="-fx-background-color: d35400; -fx-background-radius: 12;" text="RESET" textFill="WHITE">
          <font>
             <Font name="DejaVu Sans Bold" size="21.0" />
          </font>
@@ -66,7 +66,7 @@
             <InnerShadow />
          </effect>
       </Button>
-      <Button fx:id="send" layoutX="598.0" layoutY="485.0" mnemonicParsing="false" onAction="#sendAction" prefHeight="39.0" prefWidth="127.0" style="-fx-background-color: d35400; -fx-background-radius: 12;" text="SEND" textFill="WHITE">
+      <Button fx:id="send" layoutX="427.0" layoutY="446.0" mnemonicParsing="false" onAction="#sendAction" prefHeight="39.0" prefWidth="127.0" style="-fx-background-color: d35400; -fx-background-radius: 12;" text="SEND" textFill="WHITE">
          <font>
             <Font name="DejaVu Sans Condensed Bold" size="21.0" />
          </font>
@@ -74,7 +74,7 @@
             <InnerShadow />
          </effect>
       </Button>
-      <TableView fx:id="table" layoutY="549.0" onMouseClicked="#tableAction" opacity="0.87" prefHeight="350.0" prefWidth="1200.0" style="-fx-background-color: f39c12;">
+      <TableView fx:id="table" layoutY="510.0" onMouseClicked="#tableAction" opacity="0.87" prefHeight="259.0" prefWidth="1200.0" style="-fx-background-color: f39c12;">
         <columns>
           <TableColumn fx:id="tableReminderNo" prefWidth="208.0" style="-fx-background-color: #f39c12; -fx-border-color: #000; -fx-border-width: 1 1px 0 0;" text="REMNDER NO" />
           <TableColumn fx:id="tableDate" prefWidth="316.0" style="-fx-background-color: #f39c12; -fx-border-color: #000; -fx-border-width: 1 1px 0 0;" text="DATE" />
@@ -83,8 +83,8 @@
         </columns>
       </TableView>
       <Button fx:id="back" layoutX="43.0" layoutY="24.0" mnemonicParsing="false" onAction="#backAction" style="-fx-background-color: black;" text="BACK" textFill="WHITE" underline="true" />
-      <ComboBox fx:id="ownerMail" layoutX="280.0" layoutY="159.0" prefHeight="25.0" prefWidth="198.0" promptText="select an E-mail" style="-fx-background-color: transparent; -fx-border-width: 0 0 1px 0; -fx-border-color: black;" />
-      <TextField fx:id="subject" layoutX="280.0" layoutY="211.0" prefHeight="26.0" prefWidth="381.0" promptText="write a subject for your mail" />
-      <TextArea fx:id="maildescription" layoutX="274.0" layoutY="264.0" prefHeight="200.0" prefWidth="460.0" />
+      <ComboBox fx:id="ownerMail" layoutX="238.0" layoutY="159.0" prefHeight="25.0" prefWidth="198.0" promptText="select an E-mail" style="-fx-background-color: transparent; -fx-border-width: 0 0 1px 0; -fx-border-color: black;" />
+      <TextField fx:id="subject" layoutX="238.0" layoutY="211.0" prefHeight="26.0" prefWidth="302.0" promptText="write a subject for your mail" />
+      <TextArea fx:id="maildescription" layoutX="113.0" layoutY="263.0" prefHeight="159.0" prefWidth="442.0" />
    </children>
 </AnchorPane>

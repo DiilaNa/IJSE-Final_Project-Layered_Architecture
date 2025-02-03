@@ -12,38 +12,38 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="900.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gdse71.project.animalhospital.Controller.SalaryController">
+<AnchorPane prefHeight="770.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gdse71.project.animalhospital.Controller.SalaryController">
    <children>
-      <ImageView fx:id="image" fitHeight="900.0" fitWidth="1200.0" pickOnBounds="true">
+      <ImageView fx:id="image" fitHeight="770.0" fitWidth="1200.0" pickOnBounds="true">
          <image>
             <Image url="@../../../../../../Pictures/animal%20hospital/ALL%20PET.png" />
          </image>
       </ImageView>
       <Label layoutX="735.0" layoutY="204.0" text="AMOUNT">
          <font>
-            <Font name="DejaVu Sans Bold" size="26.0" />
+            <Font name="Georgia Bold" size="26.0" />
          </font>
       </Label>
       <Label layoutX="286.0" layoutY="198.0" text="DATE">
          <font>
-            <Font name="DejaVu Sans Bold" size="26.0" />
+            <Font name="Georgia Bold" size="26.0" />
          </font>
       </Label>
       <Label layoutX="286.0" layoutY="270.0" text="EMPLOYEE ID">
          <font>
-            <Font name="DejaVu Sans Bold" size="26.0" />
+            <Font name="Georgia Bold" size="26.0" />
          </font>
       </Label>
       <Label layoutX="445.0" layoutY="61.0" prefHeight="55.0" prefWidth="466.0" text="SALARY DETAILS">
          <font>
-            <Font name="DejaVu Sans Bold" size="45.0" />
+            <Font name="Georgia Bold" size="45.0" />
          </font>
       </Label>
       <TextField fx:id="SalAmount" layoutX="889.0" layoutY="198.0" prefHeight="31.0" prefWidth="246.0" promptText="XX.XX" style="-fx-background-color: transparent; -fx-border-width: 0 0 1px 0; -fx-border-color: black;">
          <font>
             <Font size="18.0" />
          </font></TextField>
-      <Button fx:id="save" layoutX="534.0" layoutY="397.0" mnemonicParsing="false" onAction="#saveAction" prefHeight="40.0" prefWidth="136.0" style="-fx-background-radius: 12; -fx-background-color: d35400;" text="SAVE" textFill="WHITE">
+      <Button fx:id="save" layoutX="532.0" layoutY="374.0" mnemonicParsing="false" onAction="#saveAction" prefHeight="40.0" prefWidth="136.0" style="-fx-background-radius: 12; -fx-background-color: d35400;" text="SAVE" textFill="WHITE">
          <font>
             <Font name="DejaVu Sans Bold" size="22.0" />
          </font>
@@ -51,7 +51,7 @@
             <InnerShadow />
          </effect>
       </Button>
-      <Button fx:id="update" layoutX="728.0" layoutY="397.0" mnemonicParsing="false" onAction="#updateAction" prefHeight="40.0" prefWidth="136.0" style="-fx-background-radius: 12; -fx-background-color: d35400;" text="UPDATE" textFill="WHITE">
+      <Button fx:id="update" layoutX="729.0" layoutY="374.0" mnemonicParsing="false" onAction="#updateAction" prefHeight="40.0" prefWidth="136.0" style="-fx-background-radius: 12; -fx-background-color: d35400;" text="UPDATE" textFill="WHITE">
          <font>
             <Font name="DejaVu Sans Bold" size="22.0" />
          </font>
@@ -59,7 +59,7 @@
             <InnerShadow />
          </effect>
       </Button>
-      <Button fx:id="delete" layoutX="917.0" layoutY="397.0" mnemonicParsing="false" onAction="#deleteAction" prefHeight="40.0" prefWidth="136.0" style="-fx-background-radius: 12; -fx-background-color: d35400;" text="DELETE" textFill="WHITE">
+      <Button fx:id="delete" layoutX="911.0" layoutY="374.0" mnemonicParsing="false" onAction="#deleteAction" prefHeight="40.0" prefWidth="136.0" style="-fx-background-radius: 12; -fx-background-color: d35400;" text="DELETE" textFill="WHITE">
          <font>
             <Font name="DejaVu Sans Bold" size="22.0" />
          </font>
@@ -73,7 +73,7 @@
          </font>
       </Button>
       <ComboBox fx:id="SalEmpId" layoutX="535.0" layoutY="270.0" prefHeight="31.0" prefWidth="246.0" promptText="select an Employee ID" style="-fx-background-color: transparent; -fx-border-width: 0 0 1px 0; -fx-border-color: black;" />
-      <TableView fx:id="table" layoutY="495.0" onMouseClicked="#tableClick" opacity="0.87" prefHeight="404.0" prefWidth="1200.0" style="-fx-background-color: f39c12;">
+      <TableView fx:id="table" layoutY="453.0" onMouseClicked="#tableClick" opacity="0.87" prefHeight="317.0" prefWidth="1200.0" style="-fx-background-color: f39c12;">
         <columns>
           <TableColumn fx:id="tableSalaryId" prefWidth="282.0" style="-fx-background-color: #f39c12; -fx-border-color: #000; -fx-border-width: 1 1px 0 0;" text="SALARY ID" />
           <TableColumn fx:id="tableSalaryDate" prefWidth="241.0" style="-fx-background-color: #f39c12; -fx-border-color: #000; -fx-border-width: 1 1px 0 0;" text="DATE" />
@@ -81,7 +81,7 @@
             <TableColumn fx:id="tableSalaryEmployeeId" prefWidth="323.0" style="-fx-background-color: #f39c12; -fx-border-color: #000; -fx-border-width: 1 1px 0 0;" text="EMPLOYEE ID" />
         </columns>
       </TableView>
-      <Button fx:id="reset" layoutX="347.0" layoutY="397.0" mnemonicParsing="false" onAction="#resetAction" prefHeight="40.0" prefWidth="136.0" style="-fx-background-radius: 12; -fx-background-color: d35400;" text="RESET" textFill="WHITE">
+      <Button fx:id="reset" layoutX="349.0" layoutY="374.0" mnemonicParsing="false" onAction="#resetAction" prefHeight="40.0" prefWidth="136.0" style="-fx-background-radius: 12; -fx-background-color: d35400;" text="RESET" textFill="WHITE">
          <font>
             <Font name="DejaVu Sans Bold" size="22.0" />
          </font>
@@ -91,7 +91,7 @@
       </Button>
       <Label fx:id="salId" layoutX="898.0" layoutY="270.0" text="SALARY ID" textFill="#030303">
          <font>
-            <Font name="DejaVu Sans Bold" size="26.0" />
+            <Font name="Gadugi Bold" size="26.0" />
          </font>
       </Label>
       <Label fx:id="dateLAbel" layoutX="535.0" layoutY="198.0" text="DATE">

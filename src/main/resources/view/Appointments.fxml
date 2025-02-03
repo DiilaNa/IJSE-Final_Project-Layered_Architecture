@@ -12,14 +12,14 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="870.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gdse71.project.animalhospital.Controller.AppointmentsController">
+<AnchorPane prefHeight="763.0" prefWidth="1210.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gdse71.project.animalhospital.Controller.AppointmentsController">
    <children>
-      <ImageView fx:id="image" fitHeight="887.0" fitWidth="983.0" pickOnBounds="true">
+      <ImageView fx:id="image" fitHeight="770.0" fitWidth="983.0" pickOnBounds="true">
          <image>
             <Image url="@../../../../../../Pictures/animal%20hospital/ALL%20PET.png" />
          </image>
       </ImageView>
-      <Pane layoutX="971.0" prefHeight="887.0" prefWidth="239.0" style="-fx-background-color: black;">
+      <Pane layoutX="971.0" prefHeight="770.0" prefWidth="239.0" style="-fx-background-color: black;">
          <children>
             <Button fx:id="save" layoutX="16.0" layoutY="198.0" mnemonicParsing="false" onAction="#saveAPT" prefHeight="44.0" prefWidth="213.0" style="-fx-background-color: #d35400; -fx-background-radius: 11;" text="ADD APPOINTMENT" textFill="WHITE">
                <font>
@@ -56,36 +56,36 @@
                </effect></Button>
          </children>
       </Pane>
-      <Label layoutX="433.0" layoutY="90.0" style="-fx-background-color: black;" text="Appointment Details" textFill="WHITE">
+      <Label layoutX="433.0" layoutY="90.0" style="-fx-background-color: black;" text="APPOINTMENTS DETAILS" textFill="WHITE">
          <font>
-            <Font name="DejaVu Sans Mono Bold" size="30.0" />
+            <Font name="Constantia Bold Italic" size="30.0" />
          </font>
       </Label>
       <Label layoutX="173.0" layoutY="205.0" text="APPOINTMENT ID">
          <font>
-            <Font name="DejaVu Sans Bold" size="21.0" />
+            <Font name="Georgia Bold" size="21.0" />
          </font>
       </Label>
       <Label layoutX="651.0" layoutY="265.0" text="DATE">
          <font>
-            <Font name="DejaVu Sans Bold" size="21.0" />
+            <Font name="Georgia Bold" size="21.0" />
          </font>
       </Label>
       <Label layoutX="651.0" layoutY="325.0" text="TIME" textFill="#390c0c">
          <font>
-            <Font name="DejaVu Sans Bold" size="21.0" />
+            <Font name="Georgia Bold" size="21.0" />
          </font>
       </Label>
       <Label layoutX="651.0" layoutY="205.0" text="PAY ID">
          <font>
-            <Font name="DejaVu Sans Bold" size="21.0" />
+            <Font name="Georgia Bold" size="21.0" />
          </font>
       </Label>
       <Button fx:id="backID" layoutX="39.0" layoutY="24.0" mnemonicParsing="false" onAction="#backIDAction" style="-fx-background-color: black;" text="Back" textFill="WHITE" underline="true" />
       <DatePicker fx:id="date" layoutX="784.0" layoutY="265.0" prefHeight="24.0" prefWidth="169.0" />
       <Label layoutX="182.0" layoutY="265.0" text="PET ID">
          <font>
-            <Font name="DejaVu Sans Bold" size="21.0" />
+            <Font name="Georgia Bold" size="21.0" />
          </font>
       </Label>
       <Label fx:id="PeTid" layoutX="398.0" layoutY="268.0" text="PET ID">
@@ -95,7 +95,7 @@
       </Label>
       <Label layoutX="182.0" layoutY="325.0" text="PET NAME">
          <font>
-            <Font name="DejaVu Sans Bold" size="21.0" />
+            <Font name="Georgia Bold" size="21.0" />
          </font>
       </Label>
       <TextField fx:id="petName" layoutX="399.0" layoutY="325.0" prefHeight="26.0" prefWidth="213.0" style="-fx-background-color: transparent; -fx-border-color: black; -fx-border-width: 0 0 1px 0;">
@@ -105,12 +105,12 @@
       </TextField>
       <Label layoutX="182.0" layoutY="385.0" text="PET TYPE">
          <font>
-            <Font name="DejaVu Sans Bold" size="21.0" />
+            <Font name="Georgia Bold" size="21.0" />
          </font>
       </Label>
       <Label layoutX="182.0" layoutY="445.0" text="PET BREED">
          <font>
-            <Font name="DejaVu Sans Bold" size="21.0" />
+            <Font name="Georgia Bold" size="21.0" />
          </font>
       </Label>
       <TextField fx:id="petBreed" layoutX="399.0" layoutY="445.0" prefHeight="26.0" prefWidth="213.0" style="-fx-background-color: transparent; -fx-border-color: black; -fx-border-width: 0 0 1px 0;">
@@ -120,10 +120,10 @@
       </TextField>
       <Label layoutX="182.0" layoutY="505.0" text="OWNER ID">
          <font>
-            <Font name="DejaVu Sans Bold" size="21.0" />
+            <Font name="Georgia Bold" size="21.0" />
          </font>
       </Label>
-      <ComboBox fx:id="petType" layoutX="399.0" layoutY="385.0" prefHeight="25.0" prefWidth="213.0" promptText="choose Pet Type(Dog/Pet)" style="-fx-background-color: transparent; -fx-border-color: black; -fx-border-width: 0 0 1px 0;" />
+      <ComboBox fx:id="petType" layoutX="399.0" layoutY="385.0" prefHeight="25.0" prefWidth="213.0" promptText="Choose Pet Type(Dog/Pet)" style="-fx-background-color: transparent; -fx-border-color: black; -fx-border-width: 0 0 1px 0;" />
       <Label fx:id="AppointmentID" layoutX="400.0" layoutY="205.0" text="APOINT ID">
          <font>
             <Font name="DejaVu Sans" size="18.0" />
@@ -131,7 +131,7 @@
       </Label>
       <Label layoutX="182.0" layoutY="565.0" text="OWNER NAME">
          <font>
-            <Font name="DejaVu Sans Bold" size="21.0" />
+            <Font name="Georgia Bold" size="21.0" />
          </font>
       </Label>
       <TextField fx:id="ownerNAmeTXT" layoutX="399.0" layoutY="565.0" prefHeight="26.0" prefWidth="213.0" style="-fx-background-color: transparent; -fx-border-color: black; -fx-border-width: 0 0 1px 0;">
@@ -141,12 +141,12 @@
       </TextField>
       <Label layoutX="182.0" layoutY="625.0" text="ADDRESS">
          <font>
-            <Font name="DejaVu Sans Bold" size="21.0" />
+            <Font name="Georgia Bold" size="21.0" />
          </font>
       </Label>
-      <Label layoutX="182.0" layoutY="685.0" text="EMAIL">
+      <Label layoutX="661.0" layoutY="518.0" text="EMAIL">
          <font>
-            <Font name="DejaVu Sans Bold" size="21.0" />
+            <Font name="Georgia Bold" size="21.0" />
          </font>
       </Label>
       <TextField fx:id="ownerAddressTXT" layoutX="399.0" layoutY="625.0" prefHeight="26.0" prefWidth="213.0" style="-fx-background-color: transparent; -fx-border-color: black; -fx-border-width: 0 0 1px 0;">
@@ -154,7 +154,7 @@
             <Font name="DejaVu Sans" size="18.0" />
          </font>
       </TextField>
-      <TextField fx:id="ownerMailTXT" layoutX="399.0" layoutY="685.0" prefHeight="26.0" prefWidth="213.0" style="-fx-background-color: transparent; -fx-border-color: black; -fx-border-width: 0 0 1px 0;">
+      <TextField fx:id="ownerMailTXT" layoutX="750.0" layoutY="510.0" prefHeight="26.0" prefWidth="213.0" style="-fx-background-color: transparent; -fx-border-color: black; -fx-border-width: 0 0 1px 0;">
          <font>
             <Font name="DejaVu Sans Bold" size="18.0" />
          </font>
@@ -166,7 +166,7 @@
       </Label>
       <Label layoutX="651.0" layoutY="400.0" text="PAYEMENT METHOD" textFill="#390c0c">
          <font>
-            <Font name="DejaVu Sans Bold" size="21.0" />
+            <Font name="Georgia Bold" size="21.0" />
          </font>
       </Label>
       <ComboBox fx:id="paymentMethod" layoutX="700.0" layoutY="450.0" prefHeight="25.0" prefWidth="213.0" promptText="Select Payment Method" style="-fx-background-color: transparent; -fx-border-color: black; -fx-border-width: 0 0 1px 0;" />
@@ -180,11 +180,11 @@
             <Font name="DejaVu Sans Bold" size="18.0" />
          </font>
       </TextField>
-      <Label layoutX="182.0" layoutY="783.0" text="SELECT APPOINTMENT ID">
+      <Label layoutX="182.0" layoutY="696.0" text="SELECT APPOINTMENT ID">
          <font>
-            <Font name="DejaVu Sans Bold" size="21.0" />
+            <Font name="Georgia Bold" size="21.0" />
          </font>
       </Label>
-      <ComboBox fx:id="APTsearch" layoutX="518.0" layoutY="784.0" prefHeight="25.0" prefWidth="213.0" style="-fx-background-color: transparent; -fx-border-color: black; -fx-border-width: 0 0 1px 0;" />
+      <ComboBox fx:id="APTsearch" layoutX="510.0" layoutY="695.0" prefHeight="25.0" prefWidth="213.0" style="-fx-background-color: transparent; -fx-border-color: black; -fx-border-width: 0 0 1px 0;" />
    </children>
 </AnchorPane>
