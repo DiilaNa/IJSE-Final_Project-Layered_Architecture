@@ -1,0 +1,137 @@
+<!-- Created with Jaspersoft Studio version 7.0.0.final using JasperReports Library version 7.0.0-b478feaa9aab4375eba71de77b4ca138ad2f62aa  -->
+<jasperReport name="Records" language="java" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="d019a8bd-f1bc-440c-b23b-74cac99a5794">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="SupermarketDBConnection"/>
+	<query language="SQL"><![CDATA[select * from records]]></query>
+	<field name="rec_id" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="rec_id"/>
+		<property name="com.jaspersoft.studio.field.label" value="rec_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="records"/>
+	</field>
+	<field name="status" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="status"/>
+		<property name="com.jaspersoft.studio.field.label" value="status"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="records"/>
+	</field>
+	<field name="description" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="description"/>
+		<property name="com.jaspersoft.studio.field.label" value="description"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="records"/>
+	</field>
+	<field name="weight" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="weight"/>
+		<property name="com.jaspersoft.studio.field.label" value="weight"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="records"/>
+	</field>
+	<field name="petid" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="petid"/>
+		<property name="com.jaspersoft.studio.field.label" value="petid"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="records"/>
+	</field>
+	<variable name="rec_id1" resetType="Page" calculation="Count" class="java.lang.Integer">
+		<expression><![CDATA[$F{rec_id}]]></expression>
+	</variable>
+	<variable name="petid1" resetType="Page" calculation="DistinctCount" class="java.lang.Integer">
+		<expression><![CDATA[$F{petid}]]></expression>
+	</variable>
+	<background splitType="Stretch"/>
+	<title height="79" splitType="Stretch">
+		<element kind="staticText" uuid="2c2cf909-232f-4e4d-8bb3-831a25e30dbd" x="120" y="16" width="370" height="46" fontName="Palatino Linotype" fontSize="24.0" bold="true" underline="true" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[PET RECORDS]]></text>
+		</element>
+	</title>
+	<pageHeader height="35" splitType="Stretch"/>
+	<columnHeader height="66" splitType="Stretch">
+		<element kind="staticText" uuid="0b9a8592-d0ef-4295-9489-ef2828c5b6f8" x="17" y="36" width="111" height="30" fontName="Arial" fontSize="16.0" bold="true" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[RECORD_ID
+]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="f2bf1ed6-d4bd-46ce-953d-24fc7e4ef81d"/>
+			<box>
+				<pen lineWidth="1.0"/>
+			</box>
+		</element>
+		<element kind="staticText" uuid="0e4c26f7-a8e1-404f-8b61-fcaa4493425f" x="128" y="36" width="111" height="30" fontName="Arial" fontSize="16.0" bold="true" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[STATUS]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a2e1bc56-6920-4734-a615-53178dfbc79d"/>
+			<box>
+				<pen lineWidth="1.0"/>
+			</box>
+		</element>
+		<element kind="staticText" uuid="481bc3c2-996a-4d8a-a0c3-ea409e8bd1cb" x="239" y="36" width="111" height="30" fontName="Arial" fontSize="16.0" bold="true" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[DESCRIPTION]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="cfb7437a-f7dc-4281-90dc-8e7635a312c5"/>
+			<box>
+				<pen lineWidth="1.0"/>
+			</box>
+		</element>
+		<element kind="staticText" uuid="151e555e-6de6-4fe8-9c9e-9505a6e402df" x="350" y="36" width="111" height="30" fontName="Arial" fontSize="16.0" bold="true" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[WEIGHT]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="cefee367-a48d-48bc-a2c5-ae75beebe96b"/>
+			<box>
+				<pen lineWidth="1.0"/>
+			</box>
+		</element>
+		<element kind="staticText" uuid="acb3f0b6-f0db-4513-b9f9-4c76e92dad90" x="461" y="36" width="111" height="30" markup="none" fontName="Arial" fontSize="16.0" bold="true" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[PET_ID]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="41734595-7f88-4b45-98ba-fae74d08032b"/>
+			<box>
+				<pen lineWidth="1.0"/>
+			</box>
+		</element>
+	</columnHeader>
+	<detail>
+		<band height="31" splitType="Stretch">
+			<element kind="textField" uuid="82a5a894-13c2-423f-a7d3-89d7d26a20dd" x="17" y="0" width="111" height="30" fontSize="14.0" hTextAlign="Center" vTextAlign="Middle">
+				<expression><![CDATA[$F{rec_id}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="f2bf1ed6-d4bd-46ce-953d-24fc7e4ef81d"/>
+				<box>
+					<pen lineWidth="0.75"/>
+				</box>
+			</element>
+			<element kind="textField" uuid="696de637-b0f3-4e42-bd4d-d4fddea489f3" x="128" y="0" width="111" height="30" fontSize="14.0" hTextAlign="Center" vTextAlign="Middle">
+				<expression><![CDATA[$F{status}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a2e1bc56-6920-4734-a615-53178dfbc79d"/>
+				<box>
+					<pen lineWidth="0.75"/>
+				</box>
+			</element>
+			<element kind="textField" uuid="79c70618-2a84-4314-b95d-6ff29546b0c7" x="239" y="0" width="111" height="30" fontSize="14.0" hTextAlign="Center" vTextAlign="Middle">
+				<expression><![CDATA[$F{description}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="cfb7437a-f7dc-4281-90dc-8e7635a312c5"/>
+				<box>
+					<pen lineWidth="0.75"/>
+				</box>
+			</element>
+			<element kind="textField" uuid="c7729681-c0e0-4492-848a-69b704a5cac8" x="350" y="0" width="111" height="30" fontSize="14.0" hTextAlign="Center" vTextAlign="Middle">
+				<expression><![CDATA[$F{weight}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="cefee367-a48d-48bc-a2c5-ae75beebe96b"/>
+				<box>
+					<pen lineWidth="0.75"/>
+				</box>
+			</element>
+			<element kind="textField" uuid="bce51421-fbce-417f-9636-6c9b82a54385" x="461" y="0" width="111" height="30" fontSize="14.0" hTextAlign="Center" vTextAlign="Middle">
+				<expression><![CDATA[$F{petid}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="41734595-7f88-4b45-98ba-fae74d08032b"/>
+				<box>
+					<pen lineWidth="0.75"/>
+				</box>
+			</element>
+		</band>
+	</detail>
+	<columnFooter height="45" splitType="Stretch"/>
+	<pageFooter height="71" splitType="Stretch">
+		<element kind="staticText" uuid="205e823e-c830-4d81-8e6e-e07c329faa6a" x="17" y="0" width="122" height="30" bold="false" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[RECORD COUNT :]]></text>
+		</element>
+		<element kind="textField" uuid="074c27da-f2ac-45ed-a9b4-1eecf0dcb7fb" x="139" y="0" width="100" height="30" hTextAlign="Center" vTextAlign="Middle">
+			<expression><![CDATA[$V{rec_id1}]]></expression>
+		</element>
+		<element kind="staticText" uuid="b079ef3a-494c-470f-94f0-df5a979d6c49" x="17" y="30" width="122" height="30" bold="false" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[COUNT OF PETS :]]></text>
+		</element>
+		<element kind="textField" uuid="33dcb6f1-35cd-47b3-a009-5761bf486ea7" x="139" y="30" width="100" height="30" hTextAlign="Center" vTextAlign="Middle">
+			<expression><![CDATA[$V{petid1}]]></expression>
+		</element>
+	</pageFooter>
+	<summary height="42" splitType="Stretch"/>
+</jasperReport>

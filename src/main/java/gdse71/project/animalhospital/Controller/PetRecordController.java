@@ -163,7 +163,7 @@ public class PetRecordController implements Initializable {
             return;
         }
         try {
-            JasperReport jasperReport = JasperCompileManager.compileReport(getClass().getResourceAsStream("/Report/petRecord.jrxml"));
+            JasperReport jasperReport = JasperCompileManager.compileReport(getClass().getResourceAsStream("/Report/Records.jrxml"));
             Connection connection = DBConnection.getInstance().getConnection();
             Map<String, Object> parameters = new HashMap<>();
             parameters.put("P_Date", ""); // or an actual date if needed
