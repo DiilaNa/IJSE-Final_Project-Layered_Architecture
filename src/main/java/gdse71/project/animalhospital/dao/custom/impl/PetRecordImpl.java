@@ -58,7 +58,19 @@ public class PetRecordImpl implements PetRecordDao {
 
     @Override
     public String generateId() throws Exception, ClassNotFoundException {
-        return "";
+        ResultSet rst = Util.execute("SELECT rec_id FROM records order by rec_id desc limit 1");
+        if (rst.next()) {
+            String lastId = rst.getString(1);
+            String numericPart = lastId.replaceAll("[^0-9]", "");
+            if (numericPart.isEmpty()){
+                return "REC001";
+            }
+            int i = Integer.parseInt(numericPart);
+            int newIndex = i+1;
+            return String.format("REC%03d",newIndex);
+        }else {
+            return "REC001";
+        }
     }
     @Override
     public ArrayList<String> loadId() throws Exception {

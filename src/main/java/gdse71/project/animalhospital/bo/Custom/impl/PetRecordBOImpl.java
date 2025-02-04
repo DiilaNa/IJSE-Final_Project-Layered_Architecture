@@ -60,4 +60,9 @@ public class PetRecordBOImpl implements PetRecordBO {
         return petRecordDao.loadId();
     }
 
+    @Override
+    public String generateNextRecordId() throws Exception {
+        return petRecordDao.generateId();
+    }
+
 }

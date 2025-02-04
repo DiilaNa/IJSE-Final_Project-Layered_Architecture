@@ -47,8 +47,11 @@ public class PetRecordController implements Initializable {
     @FXML
     private ComboBox<String> prtID;
 
+/*    @FXML
+    private TextField recID;*/
+
     @FXML
-    private TextField recID;
+    private Label RecordID;
 
     @FXML
     private Button save;
@@ -99,7 +102,7 @@ public class PetRecordController implements Initializable {
 
         try {
             refreshPage();
-            loadPetIds(); // Call this method to populate ComboBox during initialization
+            // Call this method to populate ComboBox during initialization
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -109,7 +112,7 @@ public class PetRecordController implements Initializable {
     void MouseClicked(MouseEvent event) {
         PetRecordTM petRecordTM = table.getSelectionModel().getSelectedItem();
         if (petRecordTM != null) {
-            recID.setText(petRecordTM.getRecordId());
+            RecordID.setText(petRecordTM.getRecordId());
             desc.setText(petRecordTM.getDescription());
             status.setText(petRecordTM.getStatus());
             weight.setText(String.valueOf(petRecordTM.getWeight()));
@@ -141,7 +144,7 @@ public class PetRecordController implements Initializable {
 
     @FXML
     void deleteAction(ActionEvent event) throws Exception {
-        String Id = recID.getText();
+        String Id = RecordID.getText();
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Are you sure?", ButtonType.YES, ButtonType.NO);
         Optional<ButtonType> optionalButtonType = alert.showAndWait();
 
@@ -188,13 +191,13 @@ public class PetRecordController implements Initializable {
 
     @FXML
     void saveAction(ActionEvent event) throws Exception {
-        String recId = recID.getText();
+        String recId = RecordID.getText();
         String DESC = desc.getText();
         String Status = status.getText();
         Double Weight = Double.parseDouble(weight.getText());
         String petId = prtID.getValue();
 
-        recID.setStyle(recID.getStyle() + ";-fx-border-color: #7367F0;");
+        RecordID.setStyle(RecordID.getStyle() + ";-fx-border-color: #7367F0;");
         status.setStyle(status.getStyle() + ";-fx-border-color: #7367F0;");
         weight.setStyle(weight.getStyle() + ";-fx-border-color: #7367F0;");
 
@@ -207,7 +210,7 @@ public class PetRecordController implements Initializable {
 
 
         if (!isVali1) {
-            recID.setStyle(recID.getStyle() + ";-fx-border-color: red;");
+            RecordID.setStyle(RecordID.getStyle() + ";-fx-border-color: red;");
             System.out.println("Invalid record ID.");
         }
 
@@ -240,7 +243,7 @@ public class PetRecordController implements Initializable {
 
     @FXML
     void updateAction(ActionEvent event) throws Exception {
-        String recId = recID.getText();
+        String recId = RecordID.getText();
         String DESC = desc.getText();
         String Status = status.getText();
 // Parse the weight as a Double, assuming it's a number
@@ -249,7 +252,7 @@ public class PetRecordController implements Initializable {
         // Get selected pet ID from ComboBox
         String petId = prtID.getValue();
 
-        recID.setStyle(recID.getStyle() + ";-fx-border-color: #7367F0;");
+        RecordID.setStyle(RecordID.getStyle() + ";-fx-border-color: #7367F0;");
         status.setStyle(status.getStyle() + ";-fx-border-color: #7367F0;");
         weight.setStyle(weight.getStyle() + ";-fx-border-color: #7367F0;");
 
@@ -264,7 +267,7 @@ public class PetRecordController implements Initializable {
 
 
         if (!isVali1) {
-            recID.setStyle(recID.getStyle() + ";-fx-border-color: red;");
+            RecordID.setStyle(RecordID.getStyle() + ";-fx-border-color: red;");
             System.out.println("Invalid record ID.");
         }
 
@@ -294,24 +297,11 @@ public class PetRecordController implements Initializable {
         }
 
     }
-/*    private void loadPetIds() throws Exception {
-        try {
-            *//*ArrayList<Petdto> allPets =*//* petRecordBO.loadPetids();
-           *//* for (Petdto pet : allPets) {
-                prtID.setValue(pet.getPetId());
-            }*//*
-        } catch (ClassNotFoundException e) {
-            throw new RuntimeException(e);
-        }
-    }*/
-private void loadPetIds() throws Exception {
-    try {
+    private void loadPetIds() throws Exception {
+        prtID.getItems().clear();
         ArrayList<String> petIds = petRecordBO.loadPetids();
         prtID.getItems().addAll(petIds); // Add all IDs to ComboBox
-    } catch (ClassNotFoundException e) {
-        throw new RuntimeException(e);
     }
-}
     private void loadTableData() throws Exception {
 
         ArrayList<PetRecorddto> petRecorddtos = petRecordBO.getAllpetRecords();
@@ -333,32 +323,32 @@ private void loadPetIds() throws Exception {
     private void refreshPage() throws Exception {
 
         loadTableData();
+        loadPetIds();
+        getNextID();
 
         save.setDisable(false);
 
         update.setDisable(true);
         delete.setDisable(true);
 
-        recID.setText("");
         desc.setText("");
         status.setText("");
         weight.setText("");
 
     }
+
+    public void getNextID() throws Exception {
+        String nextID = petRecordBO.generateNextRecordId();
+        RecordID.setText(nextID);
+    }
+
 
     @FXML
-    void reserAction(ActionEvent event) throws Exception {
-        recID.setText("");
+    void resetAction(ActionEvent event) throws Exception {
         desc.setText("");
         status.setText("");
         weight.setText("");
-        try {
-            loadPetIds();
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-
+        getNextID();
+        loadPetIds();
     }
-
-
 }

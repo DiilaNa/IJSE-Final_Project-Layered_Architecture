@@ -14,4 +14,5 @@ public interface PetRecordBO extends SuperBO {
      boolean deletePetRecords(String id) throws Exception;
      boolean updatePetRecords(PetRecorddto petRecord) throws Exception;
      ArrayList<String> loadPetids() throws Exception;
+      String generateNextRecordId() throws Exception;
 }

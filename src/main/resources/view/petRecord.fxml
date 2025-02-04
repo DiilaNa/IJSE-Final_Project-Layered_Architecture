@@ -58,7 +58,6 @@
             <TableColumn fx:id="tablepetid" prefWidth="275.0" style="-fx-background-color: #f39c12; -fx-border-color: #000; -fx-border-width: 1 1px 0 0;" text="PET ID" />
         </columns>
       </TableView>
-      <TextField fx:id="recID" layoutX="415.0" layoutY="137.0" prefHeight="29.0" prefWidth="258.0" style="-fx-background-color: transparent; -fx-border-width: 0 0 1px 0; -fx-border-color: black;" />
       <TextField fx:id="weight" layoutX="415.0" layoutY="193.0" prefHeight="29.0" prefWidth="258.0" style="-fx-background-color: transparent; -fx-border-width: 0 0 1px 0; -fx-border-color: black;" />
       <TextField fx:id="status" layoutX="415.0" layoutY="264.0" prefHeight="29.0" prefWidth="258.0" style="-fx-background-color: transparent; -fx-border-width: 0 0 1px 0; -fx-border-color: black;" />
       <TextField fx:id="desc" layoutX="415.0" layoutY="329.0" prefHeight="29.0" prefWidth="258.0" style="-fx-background-color: transparent; -fx-border-width: 0 0 1px 0; -fx-border-color: black;" />
@@ -95,8 +94,8 @@
             <InnerShadow />
          </effect>
       </Button>
-      <ComboBox fx:id="prtID" layoutX="857.0" layoutY="139.0" onAction="#prtIDACTION" prefHeight="24.0" prefWidth="215.0" promptText="select a pet id " style="-fx-background-color: transparent; -fx-border-width: 0 0 1px 0; -fx-border-color: black;" />
-      <Button fx:id="reset" layoutX="849.0" layoutY="394.0" mnemonicParsing="false" onAction="#reserAction" prefHeight="41.0" prefWidth="121.0" style="-fx-background-radius: 12; -fx-background-color: #d35400;" text="RESET" textFill="WHITE">
+      <ComboBox fx:id="prtID" layoutX="857.0" layoutY="139.0" onAction="#prtIDACTION" prefHeight="24.0" prefWidth="215.0" promptText="Select an ID" style="-fx-background-color: transparent; -fx-border-width: 0 0 1px 0; -fx-border-color: black;" />
+      <Button fx:id="reset" layoutX="849.0" layoutY="394.0" mnemonicParsing="false" onAction="#resetAction" prefHeight="41.0" prefWidth="121.0" style="-fx-background-radius: 12; -fx-background-color: #d35400;" text="RESET" textFill="WHITE">
          <font>
             <Font name="DejaVu Sans Mono Bold" size="20.0" />
          </font>
@@ -104,5 +103,10 @@
             <InnerShadow />
          </effect>
       </Button>
+      <Label fx:id="RecordID" layoutX="466.0" layoutY="141.0" text="RECORD ID">
+         <font>
+            <Font name="Georgia Bold" size="17.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
