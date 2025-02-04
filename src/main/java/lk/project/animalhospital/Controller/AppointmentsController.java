@@ -50,10 +50,6 @@ public class AppointmentsController implements Initializable {
     private Button backID;
 
     @FXML
-    private DatePicker date;
-
-
-    @FXML
     private ImageView image;
 
     @FXML
@@ -80,7 +76,6 @@ public class AppointmentsController implements Initializable {
     @FXML
     private ComboBox<String> petType;
 
-
     @FXML
     private TextField addTime;
 
@@ -98,6 +93,9 @@ public class AppointmentsController implements Initializable {
 
     @FXML
     private ComboBox<String> APTsearch;
+
+    @FXML
+    private Button resetDetails;
 
 
 private final DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("HH:mm:ss");
@@ -148,7 +146,9 @@ private final DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("HH:
     void servicedetailsViewAction(ActionEvent event) {
         try {
             Stage stage = (Stage) backID.getScene().getWindow();
-            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/service.fxml"))));
+            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/view/service.fxml")));
+            scene.getStylesheets().add(getClass().getResource("/Css/Login.css").toExternalForm());
+            stage.setScene(scene);
             stage.setTitle("Pets & Vets Animal Hospital");
             stage.setResizable(false);
             stage.show();
@@ -162,7 +162,9 @@ private final DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("HH:
     void viewApt(ActionEvent event) {
         try {
             Stage stage = (Stage) view.getScene().getWindow();
-            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/View Appointments.fxml"))));
+            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/view/View Appointments.fxml")));
+            scene.getStylesheets().add(getClass().getResource("/Css/Login.css").toExternalForm());
+            stage.setScene(scene);
             stage.setTitle("Pets & Vets Animal Hospital");
             stage.setResizable(false);
             stage.show();
@@ -284,8 +286,6 @@ private final DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("HH:
                     new Alert(Alert.AlertType.ERROR, "Failed to Save Appointment!").show();
                 }
             }
-
-
         }
         private void refreshPage() throws SQLException {
 
@@ -311,26 +311,26 @@ private final DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("HH:
 
 
         }
-        public void loadNextAppointmentID()  {
 
-            String nextCustomerId = appointmentsBO.getNextAppointmentID();
-            AppointmentID.setText(nextCustomerId);
-        }
+    @FXML
+    void resetDetailsAction(ActionEvent event) throws SQLException {
+        refreshPage();
+    }
+    public void loadNextAppointmentID()  {
+        String nextCustomerId = appointmentsBO.getNextAppointmentID();
+        AppointmentID.setText(nextCustomerId);
+    }
     public void loadNextPetID()  {
-
-            String nextCustomerId =appointmentsBO.getNextPetID();
-            PeTid.setText(nextCustomerId);
-
+        String nextCustomerId =appointmentsBO.getNextPetID();
+        PeTid.setText(nextCustomerId);
     }
     public void loadNextOwnerID()  {
-            String nextCustomerId = appointmentsBO.getNextOwnerID();
-            ownerid.setText(nextCustomerId);
-
+        String nextCustomerId = appointmentsBO.getNextOwnerID();
+        ownerid.setText(nextCustomerId);
     }
     public void loadNextPayID()  {
         String nextCustomerId = appointmentsBO.getNextPayID();
         PaymentId.setText(nextCustomerId);
-
     }
     private void updateTime() {
         String currentTime = LocalTime.now().format(timeFormatter);

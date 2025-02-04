@@ -54,6 +54,14 @@
                <effect>
                   <ColorAdjust brightness="0.14" contrast="0.12" />
                </effect></Button>
+            <Button fx:id="resetDetails" layoutX="16.0" layoutY="586.0" mnemonicParsing="false" onAction="#resetDetailsAction" prefHeight="44.0" prefWidth="213.0" style="-fx-background-color: #d35400; -fx-background-radius: 11;" text="RESET DETAILS" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <effect>
+                  <ColorAdjust brightness="0.14" contrast="0.12" />
+               </effect>
+            </Button>
          </children>
       </Pane>
       <Label layoutX="433.0" layoutY="90.0" style="-fx-background-color: black;" text="APPOINTMENTS DETAILS" textFill="WHITE">

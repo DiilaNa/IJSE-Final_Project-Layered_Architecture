@@ -52,7 +52,7 @@
             </Label>
          </children>
       </Pane>
-      <Label fx:id="textTopic" layoutX="235.0" layoutY="42.0" style="-fx-background-radius: 21; -fx-effect: glow; -fx-background-color: white;" text="PETS &amp; VETS ANIMAL HOSPITAL" textFill="#0d0909">
+      <Label fx:id="textTopic" layoutX="235.0" layoutY="42.0" style="-fx-background-radius: 21; -fx-background-color: white;" text="PETS &amp; VETS ANIMAL HOSPITAL" textFill="#0d0909">
          <font>
             <Font name="Georgia Bold" size="44.0" />
          </font>
