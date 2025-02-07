@@ -41,7 +41,7 @@ public class Login {
 
     @FXML
     void logbtnAction(ActionEvent event) throws IOException {
-        if (userName.getText().equals("") && passWord.getText().equals("")) {
+        if (userName.getText().equals("admin") && passWord.getText().equals("1234")) {
 
 
             

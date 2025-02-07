@@ -41,7 +41,7 @@
       </Label>
       <TextField fx:id="datetxt" layoutX="518.0" layoutY="715.0" prefHeight="32.0" prefWidth="243.0" style="-fx-background-color: transparent; -fx-border-width: 0 0 1px 0; -fx-border-color: black;" />
       <TextField fx:id="timeTxt" layoutX="825.0" layoutY="643.0" prefHeight="32.0" prefWidth="214.0" style="-fx-background-color: transparent; -fx-border-width: 0 0 1px 0; -fx-border-color: black;" />
-      <Label fx:id="sheduleID" layoutX="474.0" layoutY="659.0" text="SHEDULE ID">
+      <Label fx:id="sheduleID" layoutX="462.0" layoutY="656.0" text="SHEDULE ID">
          <font>
             <Font name="DejaVu Sans Bold" size="21.0" />
          </font>

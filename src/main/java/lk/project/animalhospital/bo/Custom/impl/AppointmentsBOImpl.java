@@ -67,7 +67,7 @@ public class AppointmentsBOImpl implements AppointmentsBO {
                         ownerdto.getOwnerMail()
                 ));
                 if (!b1) {
-                    System.out.println("owner not saved");
+
                     connection.rollback();
                     return false;
                 }
@@ -82,7 +82,7 @@ public class AppointmentsBOImpl implements AppointmentsBO {
                         petdto.getPetType()
                 ));
                 if (!b2) {
-                    System.out.println("pet not saved");
+
                     connection.rollback();
                     return false;
                 }
@@ -96,7 +96,7 @@ public class AppointmentsBOImpl implements AppointmentsBO {
                         paymentdto.getPaymentTime()
                 ));
                 if (!b3) {
-                    System.out.println("payment not saved");
+
                     connection.rollback();
                     return false;
                 }
@@ -111,7 +111,7 @@ public class AppointmentsBOImpl implements AppointmentsBO {
                         appointmentsdto.getPet_ID()
                 ));
                 if (!b4) {
-                    System.out.println("apt not saved");
+
                     connection.rollback();
                     return false;
                 }

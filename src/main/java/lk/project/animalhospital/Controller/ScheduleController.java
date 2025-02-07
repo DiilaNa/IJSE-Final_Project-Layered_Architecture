@@ -278,8 +278,8 @@ public class ScheduleController implements Initializable {
 
     }
     public void loadNextScheduleId() throws Exception {
-        try {
 
+        try {
             String nextId = scheduleBO.getNextSchedule();
             sheduleID.setText(nextId);
         } catch (SQLException e) {
@@ -322,7 +322,6 @@ public class ScheduleController implements Initializable {
         update.setDisable(true);
         delete.setDisable(true);
 
-        sheduleID.setText("");
         datetxt.setText("");
         timeTxt.setText("");
         empIds.setValue("");

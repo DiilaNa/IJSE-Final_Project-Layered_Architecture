@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 public class EmployeeDAOImpl implements EmployeeDAO {
     @Override
-    public ArrayList getAll() throws Exception {
+    public ArrayList<Employee> getAll() throws Exception {
         ResultSet rst = Util.execute("select * from employee");
         ArrayList<Employee> employdtos = new ArrayList<>();
         while (rst.next()) {

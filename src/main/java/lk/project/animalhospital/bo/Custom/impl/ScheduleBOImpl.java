@@ -48,7 +48,7 @@ public class ScheduleBOImpl implements ScheduleBO {
                 ));
                 if (!b1) {
                     connection.rollback();
-                    return true;
+                    return false;
                 }
             }
             for (EmpSheduleDto empSheduleDto : empSheduleDtos) {
