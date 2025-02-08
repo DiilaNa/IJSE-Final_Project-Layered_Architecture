@@ -2,9 +2,9 @@ package lk.project.animalhospital.Controller;
 
 import lk.project.animalhospital.bo.BOFactory;
 import lk.project.animalhospital.bo.Custom.MedicineBO;
-import lk.project.animalhospital.dto.Med_detailDto;
-import lk.project.animalhospital.dto.MedicineDto;
-import lk.project.animalhospital.dto.PetTm.MedicineTM;
+import lk.project.animalhospital.model.Med_detailDto;
+import lk.project.animalhospital.model.MedicineDto;
+import lk.project.animalhospital.model.PetTm.MedicineTM;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;

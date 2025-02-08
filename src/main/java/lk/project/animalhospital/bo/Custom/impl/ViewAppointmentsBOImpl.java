@@ -4,7 +4,7 @@ import lk.project.animalhospital.bo.Custom.ViewAppointmentsBO;
 import lk.project.animalhospital.dao.DaoFactory;
 import lk.project.animalhospital.dao.custom.QuerryDAO;
 import lk.project.animalhospital.dao.custom.ViewAppointmentsDAO;
-import lk.project.animalhospital.dto.ViewAppointmentDto;
+import lk.project.animalhospital.model.ViewAppointmentDto;
 import lk.project.animalhospital.entity.ViewAppointments;
 
 import java.util.ArrayList;

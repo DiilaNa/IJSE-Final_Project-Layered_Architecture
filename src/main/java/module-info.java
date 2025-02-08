@@ -10,7 +10,7 @@ module gdse71.project.animalhospital {
     exports lk.project.animalhospital;
     exports lk.project.animalhospital.Controller;
     opens lk.project.animalhospital.Controller to javafx.fxml;
-    opens lk.project.animalhospital.dto.PetTm to javafx.base;
+    opens lk.project.animalhospital.model.PetTm to javafx.base;
 
 
 }

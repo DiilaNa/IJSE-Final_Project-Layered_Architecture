@@ -6,8 +6,8 @@ import lk.project.animalhospital.dao.custom.MedicineDAO;
 import lk.project.animalhospital.dao.custom.MedicineDetailDao;
 import lk.project.animalhospital.dao.custom.QuerryDAO;
 import lk.project.animalhospital.db.DBConnection;
-import lk.project.animalhospital.dto.Med_detailDto;
-import lk.project.animalhospital.dto.MedicineDto;
+import lk.project.animalhospital.model.Med_detailDto;
+import lk.project.animalhospital.model.MedicineDto;
 import lk.project.animalhospital.entity.Medicine;
 import lk.project.animalhospital.entity.MedicineDetails;
 

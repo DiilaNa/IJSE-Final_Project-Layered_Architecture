@@ -1,6 +1,6 @@
 package lk.project.animalhospital.dao.custom.impl;
 
-import lk.project.animalhospital.CrudUtil.Util;
+import lk.project.animalhospital.dao.Util;
 import lk.project.animalhospital.dao.custom.MedicineDetailDao;
 import lk.project.animalhospital.entity.MedicineDetails;
 

@@ -3,7 +3,7 @@ package lk.project.animalhospital.bo.Custom.impl;
 import lk.project.animalhospital.bo.Custom.OwnerBO;
 import lk.project.animalhospital.dao.DaoFactory;
 import lk.project.animalhospital.dao.custom.OwnerDao;
-import lk.project.animalhospital.dto.Ownerdto;
+import lk.project.animalhospital.model.Ownerdto;
 import lk.project.animalhospital.entity.Owner;
 
 import java.util.ArrayList;

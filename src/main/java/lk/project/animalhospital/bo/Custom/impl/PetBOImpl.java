@@ -3,7 +3,7 @@ package lk.project.animalhospital.bo.Custom.impl;
 import lk.project.animalhospital.bo.Custom.PetBO;
 import lk.project.animalhospital.dao.DaoFactory;
 import lk.project.animalhospital.dao.custom.PetDao;
-import lk.project.animalhospital.dto.Petdto;
+import lk.project.animalhospital.model.Petdto;
 import lk.project.animalhospital.entity.Pet;
 
 import java.util.ArrayList;

@@ -3,8 +3,8 @@ package lk.project.animalhospital.Controller;
 
 import lk.project.animalhospital.bo.BOFactory;
 import lk.project.animalhospital.bo.Custom.PetBO;
-import lk.project.animalhospital.dto.PetTm.PetTM;
-import lk.project.animalhospital.dto.Petdto;
+import lk.project.animalhospital.model.PetTm.PetTM;
+import lk.project.animalhospital.model.Petdto;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;

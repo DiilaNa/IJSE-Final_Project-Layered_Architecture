@@ -1,10 +1,10 @@
 package lk.project.animalhospital.bo.Custom;
 
 import lk.project.animalhospital.bo.SuperBO;
-import lk.project.animalhospital.dto.Appointmentsdto;
-import lk.project.animalhospital.dto.Ownerdto;
-import lk.project.animalhospital.dto.PaymentDto;
-import lk.project.animalhospital.dto.Petdto;
+import lk.project.animalhospital.model.Appointmentsdto;
+import lk.project.animalhospital.model.Ownerdto;
+import lk.project.animalhospital.model.PaymentDto;
+import lk.project.animalhospital.model.Petdto;
 
 import java.sql.SQLException;
 import java.util.ArrayList;

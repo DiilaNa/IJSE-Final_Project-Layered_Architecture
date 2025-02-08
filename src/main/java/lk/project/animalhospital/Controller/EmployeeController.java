@@ -2,9 +2,9 @@ package lk.project.animalhospital.Controller;
 
 import lk.project.animalhospital.bo.BOFactory;
 import lk.project.animalhospital.bo.Custom.EmployeeBO;
-import lk.project.animalhospital.dto.DocDetailsDto;
-import lk.project.animalhospital.dto.Employeedto;
-import lk.project.animalhospital.dto.PetTm.EmployeeTM;
+import lk.project.animalhospital.model.DocDetailsDto;
+import lk.project.animalhospital.model.Employeedto;
+import lk.project.animalhospital.model.PetTm.EmployeeTM;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;

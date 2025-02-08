@@ -2,8 +2,8 @@ package lk.project.animalhospital.Controller;
 
 import lk.project.animalhospital.bo.BOFactory;
 import lk.project.animalhospital.bo.Custom.PaymentBO;
-import lk.project.animalhospital.dto.PaymentDto;
-import lk.project.animalhospital.dto.PetTm.PaymentTM;
+import lk.project.animalhospital.model.PaymentDto;
+import lk.project.animalhospital.model.PetTm.PaymentTM;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;

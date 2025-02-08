@@ -3,7 +3,7 @@ package lk.project.animalhospital.bo.Custom.impl;
 import lk.project.animalhospital.bo.Custom.SmsBO;
 import lk.project.animalhospital.dao.DaoFactory;
 import lk.project.animalhospital.dao.custom.SmsDAO;
-import lk.project.animalhospital.dto.Smsdto;
+import lk.project.animalhospital.model.Smsdto;
 import lk.project.animalhospital.entity.Sms;
 
 import java.util.ArrayList;

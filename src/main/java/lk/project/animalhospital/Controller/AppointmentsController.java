@@ -2,10 +2,10 @@ package lk.project.animalhospital.Controller;
 
 import lk.project.animalhospital.bo.BOFactory;
 import lk.project.animalhospital.bo.Custom.AppointmentsBO;
-import lk.project.animalhospital.dto.Appointmentsdto;
-import lk.project.animalhospital.dto.Ownerdto;
-import lk.project.animalhospital.dto.PaymentDto;
-import lk.project.animalhospital.dto.Petdto;
+import lk.project.animalhospital.model.Appointmentsdto;
+import lk.project.animalhospital.model.Ownerdto;
+import lk.project.animalhospital.model.PaymentDto;
+import lk.project.animalhospital.model.Petdto;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.collections.FXCollections;

@@ -2,8 +2,8 @@ package lk.project.animalhospital.Controller;
 
 import lk.project.animalhospital.bo.BOFactory;
 import lk.project.animalhospital.bo.Custom.OwnerBO;
-import lk.project.animalhospital.dto.Ownerdto;
-import lk.project.animalhospital.dto.PetTm.OwnerTM;
+import lk.project.animalhospital.model.Ownerdto;
+import lk.project.animalhospital.model.PetTm.OwnerTM;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;

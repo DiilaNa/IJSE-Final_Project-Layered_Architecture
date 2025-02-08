@@ -1,7 +1,7 @@
 package lk.project.animalhospital.bo.Custom;
 
 import lk.project.animalhospital.bo.SuperBO;
-import lk.project.animalhospital.dto.Servicedto;
+import lk.project.animalhospital.model.Servicedto;
 
 import java.sql.SQLException;
 import java.util.ArrayList;

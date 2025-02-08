@@ -1,7 +1,7 @@
 package lk.project.animalhospital.bo.Custom;
 
 import lk.project.animalhospital.bo.SuperBO;
-import lk.project.animalhospital.dto.ViewAppointmentDto;
+import lk.project.animalhospital.model.ViewAppointmentDto;
 
 import java.util.ArrayList;
 

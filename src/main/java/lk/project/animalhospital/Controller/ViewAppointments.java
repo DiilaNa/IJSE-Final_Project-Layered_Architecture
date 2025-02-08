@@ -2,8 +2,8 @@ package lk.project.animalhospital.Controller;
 
 import lk.project.animalhospital.bo.BOFactory;
 import lk.project.animalhospital.bo.Custom.ViewAppointmentsBO;
-import lk.project.animalhospital.dto.PetTm.ViewAppointmentTM;
-import lk.project.animalhospital.dto.ViewAppointmentDto;
+import lk.project.animalhospital.model.PetTm.ViewAppointmentTM;
+import lk.project.animalhospital.model.ViewAppointmentDto;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;

@@ -3,7 +3,7 @@ package lk.project.animalhospital.bo.Custom.impl;
 import lk.project.animalhospital.bo.Custom.SalaryBO;
 import lk.project.animalhospital.dao.DaoFactory;
 import lk.project.animalhospital.dao.custom.SalaryDAO;
-import lk.project.animalhospital.dto.Salarydto;
+import lk.project.animalhospital.model.Salarydto;
 import lk.project.animalhospital.entity.Salary;
 
 import java.util.ArrayList;

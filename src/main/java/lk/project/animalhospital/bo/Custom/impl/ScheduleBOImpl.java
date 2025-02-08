@@ -5,8 +5,8 @@ import lk.project.animalhospital.dao.DaoFactory;
 import lk.project.animalhospital.dao.custom.EmpScheduleDAO;
 import lk.project.animalhospital.dao.custom.ScheduleDAO;
 import lk.project.animalhospital.db.DBConnection;
-import lk.project.animalhospital.dto.EmpSheduleDto;
-import lk.project.animalhospital.dto.ScheduleDto;
+import lk.project.animalhospital.model.EmpSheduleDto;
+import lk.project.animalhospital.model.ScheduleDto;
 import lk.project.animalhospital.entity.EmpSchedule;
 import lk.project.animalhospital.entity.Schedule;
 

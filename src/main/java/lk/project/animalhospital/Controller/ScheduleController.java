@@ -2,9 +2,9 @@ package lk.project.animalhospital.Controller;
 
 import lk.project.animalhospital.bo.BOFactory;
 import lk.project.animalhospital.bo.Custom.ScheduleBO;
-import lk.project.animalhospital.dto.EmpSheduleDto;
-import lk.project.animalhospital.dto.PetTm.ScheduleTM;
-import lk.project.animalhospital.dto.ScheduleDto;
+import lk.project.animalhospital.model.EmpSheduleDto;
+import lk.project.animalhospital.model.PetTm.ScheduleTM;
+import lk.project.animalhospital.model.ScheduleDto;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;

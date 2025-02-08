@@ -2,8 +2,8 @@ package lk.project.animalhospital.Controller;
 
 import lk.project.animalhospital.bo.BOFactory;
 import lk.project.animalhospital.bo.Custom.SmsBO;
-import lk.project.animalhospital.dto.PetTm.SmsTM;
-import lk.project.animalhospital.dto.Smsdto;
+import lk.project.animalhospital.model.PetTm.SmsTM;
+import lk.project.animalhospital.model.Smsdto;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;

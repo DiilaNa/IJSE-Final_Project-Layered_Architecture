@@ -1,8 +1,8 @@
 package lk.project.animalhospital.bo.Custom;
 
 import lk.project.animalhospital.bo.SuperBO;
-import lk.project.animalhospital.dto.EmpSheduleDto;
-import lk.project.animalhospital.dto.ScheduleDto;
+import lk.project.animalhospital.model.EmpSheduleDto;
+import lk.project.animalhospital.model.ScheduleDto;
 
 import java.util.ArrayList;
 import java.util.List;

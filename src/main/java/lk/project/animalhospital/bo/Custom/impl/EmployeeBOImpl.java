@@ -5,8 +5,8 @@ import lk.project.animalhospital.dao.DaoFactory;
 import lk.project.animalhospital.dao.custom.DocDetailDAO;
 import lk.project.animalhospital.dao.custom.EmployeeDAO;
 import lk.project.animalhospital.db.DBConnection;
-import lk.project.animalhospital.dto.DocDetailsDto;
-import lk.project.animalhospital.dto.Employeedto;
+import lk.project.animalhospital.model.DocDetailsDto;
+import lk.project.animalhospital.model.Employeedto;
 import lk.project.animalhospital.entity.DocDetails;
 import lk.project.animalhospital.entity.Employee;
 

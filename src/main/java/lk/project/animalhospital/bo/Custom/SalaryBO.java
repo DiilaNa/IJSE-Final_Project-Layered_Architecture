@@ -1,7 +1,7 @@
 package lk.project.animalhospital.bo.Custom;
 
 import lk.project.animalhospital.bo.SuperBO;
-import lk.project.animalhospital.dto.Salarydto;
+import lk.project.animalhospital.model.Salarydto;
 
 import java.util.ArrayList;
 

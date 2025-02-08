@@ -3,7 +3,7 @@ package lk.project.animalhospital.bo.Custom.impl;
 import lk.project.animalhospital.bo.Custom.ServiceBO;
 import lk.project.animalhospital.dao.DaoFactory;
 import lk.project.animalhospital.dao.custom.ServiceDAO;
-import lk.project.animalhospital.dto.Servicedto;
+import lk.project.animalhospital.model.Servicedto;
 import lk.project.animalhospital.entity.Service;
 
 import java.sql.SQLException;

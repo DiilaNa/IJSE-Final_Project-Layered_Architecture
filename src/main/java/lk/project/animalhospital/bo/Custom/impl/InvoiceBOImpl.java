@@ -3,7 +3,7 @@ package lk.project.animalhospital.bo.Custom.impl;
 import lk.project.animalhospital.bo.Custom.InvoiceBO;
 import lk.project.animalhospital.dao.DaoFactory;
 import lk.project.animalhospital.dao.custom.InvoiceDAO;
-import lk.project.animalhospital.dto.Invoicedto;
+import lk.project.animalhospital.model.Invoicedto;
 import lk.project.animalhospital.entity.Invoice;
 
 import java.util.ArrayList;

@@ -1,8 +1,8 @@
 package lk.project.animalhospital.bo.Custom;
 
 import lk.project.animalhospital.bo.SuperBO;
-import lk.project.animalhospital.dto.Med_detailDto;
-import lk.project.animalhospital.dto.MedicineDto;
+import lk.project.animalhospital.model.Med_detailDto;
+import lk.project.animalhospital.model.MedicineDto;
 
 import java.util.ArrayList;
 import java.util.List;
