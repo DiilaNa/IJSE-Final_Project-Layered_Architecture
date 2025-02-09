@@ -167,10 +167,7 @@ public class ScheduleController implements Initializable {
 
     @FXML
     void resetAction(ActionEvent event) throws Exception {
-        datetxt.setText("");
-        timeTxt.setText("");
-        loadNextScheduleId();
-        loadEmpID();
+       refreshPage();
     }
 
     @FXML
