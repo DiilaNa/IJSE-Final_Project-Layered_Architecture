@@ -29,8 +29,4 @@ public class Util {
             return (T) ((Boolean) isSaved);
         }
     }
-
-    public static Connection getConnection() throws SQLException, ClassNotFoundException {
-        return DBConnection.getInstance().getConnection();
-    }
 }

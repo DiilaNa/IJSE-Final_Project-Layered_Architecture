@@ -91,6 +91,7 @@ public class InvoiceController implements Initializable {
         try {
             refreshPage();
 
+
         } catch (Exception e) {
             e.printStackTrace();
             new Alert(Alert.AlertType.ERROR, "Fail to load id").show();
@@ -108,6 +109,7 @@ public class InvoiceController implements Initializable {
             stage.setTitle("Pets & Vets Animal Hospital");
             stage.setResizable(false);
             stage.show();
+
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -293,11 +295,7 @@ public class InvoiceController implements Initializable {
     @FXML
     void resetAction(ActionEvent event) throws Exception {
         try {
-            loadAptPrice();
-            loadNextInvoiceID();
-            loadPayID();
-            paymentInvName.setText("");
-            paymenttID.getSelectionModel().clearSelection();
+            refreshPage();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

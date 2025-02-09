@@ -4,6 +4,7 @@ package lk.project.animalhospital.Controller;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
@@ -11,7 +12,9 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import lk.project.animalhospital.AppInitializer;
 
 import java.io.IOException;
 
@@ -34,17 +37,18 @@ public class Login {
     private TextField userName;
 
 
+
+
     public void initialize() {
         Image loginImage = new Image(getClass().getResourceAsStream("/images/v.jpeg"));
         image.setImage(loginImage);
     }
 
+
+
     @FXML
     void logbtnAction(ActionEvent event) throws IOException {
         if (userName.getText().equals("admin") && passWord.getText().equals("1234")) {
-
-
-            
             try {
                 Stage stage = (Stage) logbtn.getScene().getWindow();
                 Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/view/dashboard.fxml")));
@@ -65,5 +69,6 @@ public class Login {
         }
 
     }
+
 
 }
