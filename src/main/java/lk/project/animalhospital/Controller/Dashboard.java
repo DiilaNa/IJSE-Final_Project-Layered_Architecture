@@ -160,7 +160,6 @@ public class Dashboard {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-
     }
 
     @FXML
@@ -170,8 +169,6 @@ public class Dashboard {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-
     }
-
 }
 
