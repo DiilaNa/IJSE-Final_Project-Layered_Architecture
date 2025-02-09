@@ -138,17 +138,10 @@ public class Dashboard {
     @FXML
     void paymentsbtn(ActionEvent event) {
         try {
-            Stage stage = (Stage) paymnt.getScene().getWindow();
-            Scene scene =new Scene(FXMLLoader.load(getClass().getResource("/view/Payment.fxml")));
-            scene.getStylesheets().add(getClass().getResource("/Css/Login.css").toExternalForm());
-            stage.setScene(scene);
-            stage.setTitle("Pets & Vets Animal Hospital");
-            stage.setResizable(false);
-            stage.show();
+            login("/view/Payment.fxml");
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-
     }
 
     @FXML
