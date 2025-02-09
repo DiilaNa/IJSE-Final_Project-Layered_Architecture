@@ -52,8 +52,8 @@
       <TableView fx:id="table" layoutY="466.0" onMouseClicked="#MouseClicked" opacity="0.96" prefHeight="308.0" prefWidth="1200.0" style="-fx-background-color: #f39c12;">
         <columns>
           <TableColumn fx:id="tablerecid" prefWidth="217.0" style="-fx-background-color: #f39c12; -fx-border-color: #000; -fx-border-width: 1 1px 0 0;" text="RECORD ID" />
-          <TableColumn fx:id="tableDescription" prefWidth="219.0" style="-fx-background-color: #f39c12; -fx-border-color: #000; -fx-border-width: 1 1px 0 0;" text="DESCRIPTION" />
             <TableColumn fx:id="tablestatus" prefWidth="232.0" style="-fx-background-color: #f39c12; -fx-border-color: #000; -fx-border-width: 1 1px 0 0;" text="STATUS" />
+          <TableColumn fx:id="tableDescription" prefWidth="219.0" style="-fx-background-color: #f39c12; -fx-border-color: #000; -fx-border-width: 1 1px 0 0;" text="DESCRIPTION" />
             <TableColumn fx:id="tableWeight" prefWidth="256.0" style="-fx-background-color: #f39c12; -fx-border-color: #000; -fx-border-width: 1 1px 0 0;" text="WEIGHT" />
             <TableColumn fx:id="tablepetid" prefWidth="275.0" style="-fx-background-color: #f39c12; -fx-border-color: #000; -fx-border-width: 1 1px 0 0;" text="PET ID" />
         </columns>

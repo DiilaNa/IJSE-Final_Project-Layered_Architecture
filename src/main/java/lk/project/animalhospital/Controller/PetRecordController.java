@@ -277,8 +277,8 @@ public class PetRecordController implements Initializable {
         if (isVali1 && isValid3 ) {
             PetRecorddto petRecorddto = new PetRecorddto(
                     recId,
-                    DESC,
                     Status,
+                    DESC,
                     Weight,
                     petId
             );

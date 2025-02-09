@@ -8,7 +8,7 @@ import javafx.stage.Stage;
 public class AppInitializer extends Application {
     @Override
     public void start(Stage stage) throws Exception {
-        FXMLLoader fxmlLoader = new FXMLLoader(AppInitializer.class.getResource("/view/dashboard.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(AppInitializer.class.getResource("/view/view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         scene.getStylesheets().add(getClass().getResource("/Css/Login.css").toExternalForm());
         stage.setTitle("Pets & Vets Animal Hospital");
