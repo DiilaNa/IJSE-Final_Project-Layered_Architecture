@@ -91,7 +91,7 @@ public class ServiceController implements Initializable {
 
         try {
             refreshPage();
-            loadPetIds();
+
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -223,7 +223,7 @@ public class ServiceController implements Initializable {
     }
 
     private void refreshPage() throws Exception {
-
+        loadPetIds();
         loadTableData();
         getNextServeID();
 
@@ -242,8 +242,6 @@ public class ServiceController implements Initializable {
 
     @FXML
     void restAction(ActionEvent event) throws Exception {
-        getNextServeID();
-        serviceType.setText("");
-        duration.setText("");
+       refreshPage();
     }
 }
