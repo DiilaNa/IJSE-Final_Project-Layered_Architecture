@@ -69,28 +69,20 @@ public class Dashboard {
     @FXML
     void SMSAction(ActionEvent event) {
         try {
-          login("/view/Sms.fxml");
+            login("/view/Sms.fxml");
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-
     }
 
     @FXML
     void ShedulebtnAction(ActionEvent event) {
         try {
-            Stage stage = (Stage) Shedule.getScene().getWindow();
-            Scene scene =new Scene(FXMLLoader.load(getClass().getResource("/view/Shedule.fxml")));
-            scene.getStylesheets().add(getClass().getResource("/Css/Login.css").toExternalForm());
-            stage.setScene(scene);
-            stage.setTitle("Pets & Vets Animal Hospital");
-            stage.show();
+           login("/view/Shedule.fxml");
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-
     }
-
 
     @FXML
     void invoiceAction(ActionEvent event) {
