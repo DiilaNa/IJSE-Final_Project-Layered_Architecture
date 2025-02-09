@@ -47,9 +47,6 @@ public class PetRecordController implements Initializable {
     @FXML
     private ComboBox<String> prtID;
 
-/*    @FXML
-    private TextField recID;*/
-
     @FXML
     private Label RecordID;
 
@@ -95,14 +92,13 @@ public class PetRecordController implements Initializable {
         image.setImage(loginImage);
 
         tablerecid.setCellValueFactory(new PropertyValueFactory<>("recordId"));
-        tableDescription.setCellValueFactory(new PropertyValueFactory<>("status"));
-        tablestatus.setCellValueFactory(new PropertyValueFactory<>("description"));
+        tableDescription.setCellValueFactory(new PropertyValueFactory<>("description"));
+        tablestatus.setCellValueFactory(new PropertyValueFactory<>("status"));
         tableWeight.setCellValueFactory(new PropertyValueFactory<>("weight"));
         tablepetid.setCellValueFactory(new PropertyValueFactory<>("petID"));
 
         try {
             refreshPage();
-            // Call this method to populate ComboBox during initialization
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -113,8 +109,8 @@ public class PetRecordController implements Initializable {
         PetRecordTM petRecordTM = table.getSelectionModel().getSelectedItem();
         if (petRecordTM != null) {
             RecordID.setText(petRecordTM.getRecordId());
-            desc.setText(petRecordTM.getDescription());
             status.setText(petRecordTM.getStatus());
+            desc.setText(petRecordTM.getDescription());
             weight.setText(String.valueOf(petRecordTM.getWeight()));
             prtID.setValue(petRecordTM.getPetID());
 
@@ -224,8 +220,8 @@ public class PetRecordController implements Initializable {
         if (isVali1 && isValid3 ) {
             PetRecorddto petRecorddto = new PetRecorddto(
                     recId,
-                    DESC,
                     Status,
+                    DESC,
                     Weight,
                     petId
             );
