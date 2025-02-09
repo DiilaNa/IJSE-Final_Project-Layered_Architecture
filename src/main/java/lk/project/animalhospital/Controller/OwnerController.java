@@ -143,7 +143,7 @@ public class OwnerController implements Initializable {
     void backbtnAction(ActionEvent event) {
         try {
             Stage stage = (Stage) backbtn.getScene().getWindow();
-            Scene scene =new Scene(FXMLLoader.load(getClass().getResource("/view/dashboard.fxml")));
+            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/view/dashboard.fxml")));
             scene.getStylesheets().add(getClass().getResource("/Css/Login.css").toExternalForm());
             stage.setScene(scene);
             stage.setTitle("Pets & Vets Animal Hospital");
@@ -171,64 +171,6 @@ public class OwnerController implements Initializable {
                 new Alert(Alert.AlertType.ERROR, "Fail to delete Owner...!").show();
             }
         }
-
-
-/*
-
-    @FXML
-    void savebtnAction(ActionEvent event) throws Exception {
-        String ownerId = ownerIDS.getText();
-        String ownerName = name.getText();
-        String ownerAddress = address.getText();
-        String ownerMail = mail.getText();
-
-        // Reset styles
-        name.setStyle(name.getStyle() + ";-fx-border-color: #7367F0;");
-        address.setStyle(address.getStyle() + ";-fx-border-color: #7367F0;");
-        mail.setStyle(mail.getStyle() + ";-fx-border-color: #7367F0;");
-
-        // Pattern adjustments
-        String namePattern =  "^[a-zA-Z0-9, -]+$";
-        String addressPattern = "^[a-zA-Z0-9, -]+$";
-        String mailPattern = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$";
-
-        boolean isValidName = ownerName.matches(namePattern);
-        boolean isValidAddress = ownerAddress.matches(addressPattern);
-        boolean isValidMail = ownerMail.matches(mailPattern);
-
-        if (!isValidName) {
-            name.setStyle(name.getStyle() + ";-fx-border-color: red;");
-            System.out.println("Invalid name: " + ownerName);
-        }
-        if (!isValidAddress) {
-            address.setStyle(address.getStyle() + ";-fx-border-color: red;");
-            System.out.println("Invalid address: " + ownerAddress);
-        }
-        if (!isValidMail) {
-            mail.setStyle(mail.getStyle() + ";-fx-border-color: red;");
-            System.out.println("Invalid mail: " + ownerMail);
-        }
-
-        if (isValidName && isValidAddress && isValidMail) {
-            Ownerdto ownerdto = new Ownerdto(
-                    ownerId,
-                    ownerName,
-                    ownerAddress,
-                    ownerMail
-            );
-
-            boolean isSaved = ownerBO.save(ownerdto);
-            if (isSaved) {
-                refreshPage();
-                new Alert(Alert.AlertType.INFORMATION, "Owner Updated...!").show();
-            } else {
-                new Alert(Alert.AlertType.ERROR, "Failed to Update Owner...!").show();
-            }
-        }
-*/
-
-
-
     }
 
     @FXML
@@ -244,7 +186,7 @@ public class OwnerController implements Initializable {
         mail.setStyle(mail.getStyle() + ";-fx-border-color: #7367F0;");
 
         // Pattern adjustments
-        String namePattern ="^[a-zA-Z0-9, -]+$";
+        String namePattern = "^[a-zA-Z0-9, -]+$";
         String addressPattern = "^[a-zA-Z0-9, -]+$"; // Allow spaces, commas, hyphens
         String mailPattern = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$";
 
@@ -282,13 +224,10 @@ public class OwnerController implements Initializable {
             }
         }
     }
+
     @FXML
-    void resetbtnAction(ActionEvent event) {
-        name.setText("");
-        address.setText("");
-        mail.setText("");
+    void resetbtnAction(ActionEvent event) throws Exception {
+        refreshPage();
 
     }
-
 }
-
