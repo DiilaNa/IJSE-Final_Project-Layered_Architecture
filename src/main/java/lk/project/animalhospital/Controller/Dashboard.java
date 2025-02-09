@@ -147,13 +147,7 @@ public class Dashboard {
     @FXML
     void petbtn(ActionEvent event)  {
         try {
-            Stage stage = (Stage) pet.getScene().getWindow();
-            Scene scene =new Scene(FXMLLoader.load(getClass().getResource("/view/pet.fxml")));
-            scene.getStylesheets().add(getClass().getResource("/Css/Login.css").toExternalForm());
-            stage.setScene(scene);
-            stage.setTitle("Pets & Vets Animal Hospital");
-            stage.setResizable(false);
-            stage.show();
+            login("/view/pet.fxml");
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
