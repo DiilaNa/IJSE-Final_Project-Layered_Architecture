@@ -314,6 +314,8 @@ private final DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("HH:
 
     @FXML
     void resetDetailsAction(ActionEvent event) throws SQLException {
+        petType.setValue("");
+        paymentMethod.setValue(null);
         refreshPage();
     }
     public void loadNextAppointmentID()  {
