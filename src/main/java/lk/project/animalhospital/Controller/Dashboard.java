@@ -55,16 +55,21 @@ public class Dashboard {
     @FXML
     private ImageView image;
 
+    private void login(String fxmlPath) throws IOException {
+        Stage stage = (Stage) Shedule.getScene().getWindow();
+        Scene scene =new Scene(FXMLLoader.load(getClass().getResource(fxmlPath)));
+        scene.getStylesheets().add(getClass().getResource("/Css/Login.css").toExternalForm());
+        stage.setScene(scene);
+        stage.setTitle("Pets & Vets Animal Hospital");
+        stage.show();
+
+    }
+
 
     @FXML
     void SMSAction(ActionEvent event) {
         try {
-            Stage stage = (Stage) Shedule.getScene().getWindow();
-            Scene scene =new Scene(FXMLLoader.load(getClass().getResource("/view/Sms.fxml")));
-            scene.getStylesheets().add(getClass().getResource("/Css/Login.css").toExternalForm());
-            stage.setScene(scene);
-            stage.setTitle("Pets & Vets Animal Hospital");
-            stage.show();
+          login("/view/Sms.fxml");
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
