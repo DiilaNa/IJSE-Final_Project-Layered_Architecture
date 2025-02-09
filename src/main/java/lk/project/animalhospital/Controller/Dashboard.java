@@ -166,13 +166,7 @@ public class Dashboard {
     @FXML
     void servicebtn(ActionEvent event){
         try {
-            Stage stage = (Stage) service.getScene().getWindow();
-            Scene scene =new Scene(FXMLLoader.load(getClass().getResource("/view/service.fxml")));
-            scene.getStylesheets().add(getClass().getResource("/Css/Login.css").toExternalForm());
-            stage.setScene(scene);
-            stage.setTitle("Pets & Vets Animal Hospital");
-            stage.setResizable(false);
-            stage.show();
+            login("/view/service.fxml");
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
