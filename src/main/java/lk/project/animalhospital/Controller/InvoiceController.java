@@ -146,9 +146,8 @@ public class InvoiceController implements Initializable {
         String paymentIDtxt = paymenttID.getValue();
 
 
-        // Validation patterns
-        String idPattern = "^[A-Za-z0-9]+$";
 
+        String idPattern = "^[A-Za-z0-9]+$";
         boolean isValidID = paymentIDtxt.matches(idPattern);
 
 
@@ -280,6 +279,7 @@ public class InvoiceController implements Initializable {
     }
     private void loadPayID() throws Exception {
         try {
+            paymenttID.getItems().clear();
             ArrayList<String> petIds = invoiceBO.getAllInvoiceId();
             paymenttID.getItems().addAll(petIds); // Add all IDs to ComboBox
         } catch (ClassNotFoundException e) {
