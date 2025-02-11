@@ -2,6 +2,7 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.InnerShadow?>
 <?import javafx.scene.image.Image?>
@@ -21,11 +22,7 @@
          <children>
             <TextField fx:id="userName" layoutX="47.0" layoutY="184.0" prefHeight="49.0" prefWidth="403.0" promptText="User_name" style="-fx-background-radius: 11;">
                <font>
-                  <Font size="20.0" />
-               </font></TextField>
-            <TextField fx:id="passWord" layoutX="47.0" layoutY="283.0" prefHeight="49.0" prefWidth="403.0" promptText="Password" style="-fx-background-radius: 11;">
-               <font>
-                  <Font size="20.0" />
+                  <Font name="Consolas Bold" size="20.0" />
                </font></TextField>
             <Label layoutX="11.0" layoutY="41.0" text="LOG IN TO YOUR ACCOUNT" textFill="WHITE">
                <font>
@@ -50,6 +47,11 @@
                   <Font name="Consolas Bold Italic" size="16.0" />
                </font>
             </Label>
+            <PasswordField fx:id="passWord" layoutX="47.0" layoutY="287.0" prefHeight="49.0" prefWidth="403.0" promptText="Password" style="-fx-background-radius: 11;">
+               <font>
+                  <Font name="Consolas Bold" size="20.0" />
+               </font>
+            </PasswordField>
          </children>
       </Pane>
       <Label fx:id="textTopic" layoutX="235.0" layoutY="42.0" style="-fx-background-radius: 21; -fx-background-color: white;" text="PETS &amp; VETS ANIMAL HOSPITAL" textFill="#0d0909">
