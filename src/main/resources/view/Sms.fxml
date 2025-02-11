@@ -74,12 +74,12 @@
             <InnerShadow />
          </effect>
       </Button>
-      <TableView fx:id="table" layoutY="510.0" onMouseClicked="#tableAction" opacity="0.87" prefHeight="259.0" prefWidth="1200.0" style="-fx-background-color: f39c12;">
+      <TableView fx:id="table" layoutY="510.0" onMouseClicked="#tableAction" prefHeight="259.0" prefWidth="1200.0">
         <columns>
-          <TableColumn fx:id="tableReminderNo" prefWidth="208.0" style="-fx-background-color: #f39c12; -fx-border-color: #000; -fx-border-width: 1 1px 0 0;" text="REMNDER NO" />
-          <TableColumn fx:id="tableDate" prefWidth="316.0" style="-fx-background-color: #f39c12; -fx-border-color: #000; -fx-border-width: 1 1px 0 0;" text="DATE" />
-            <TableColumn fx:id="tableStatus" prefWidth="374.0" style="-fx-background-color: #f39c12; -fx-border-color: #000; -fx-border-width: 1 1px 0 0;" text="STATUS" />
-            <TableColumn fx:id="tableAppointments" prefWidth="301.0" style="-fx-background-color: #f39c12; -fx-border-color: #000; -fx-border-width: 1 1px 0 0;" text="APPOINTMENT ID" />
+          <TableColumn fx:id="tableReminderNo" prefWidth="208.0" style="-fx-background-color: #f39c12; -fx-border-color: #000; -fx-border-width: 2 1px 0 0;" text="REMNDER NO" />
+          <TableColumn fx:id="tableDate" prefWidth="316.0" style="-fx-background-color: #f39c12; -fx-border-color: #000; -fx-border-width: 2 1px 0 0;" text="DATE" />
+            <TableColumn fx:id="tableStatus" prefWidth="374.0" style="-fx-background-color: #f39c12; -fx-border-color: #000; -fx-border-width: 2 1px 0 0;" text="STATUS" />
+            <TableColumn fx:id="tableAppointments" prefWidth="301.0" style="-fx-background-color: #f39c12; -fx-border-color: #000; -fx-border-width: 2 1px 0 0;" text="APPOINTMENT ID" />
         </columns>
       </TableView>
       <Button fx:id="back" layoutX="43.0" layoutY="24.0" mnemonicParsing="false" onAction="#backAction" style="-fx-background-color: black;" text="BACK" textFill="WHITE" underline="true" />

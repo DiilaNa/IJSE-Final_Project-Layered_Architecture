@@ -19,12 +19,12 @@
       </ImageView>
       <TableView fx:id="table" layoutY="184.0" onMouseClicked="#TableMouseClick" opacity="0.95" prefHeight="475.0" prefWidth="1200.0" style="-fx-background-color: f39c12;">
         <columns>
-          <TableColumn fx:id="tableAptID" prefWidth="135.0" style="-fx-background-color: #f39c12; -fx-border-color: #000; -fx-border-width: 1 1px 0 0;" text="APPOINTMENT ID" />
-          <TableColumn fx:id="tableDate" minWidth="5.0" prefWidth="235.0" style="-fx-background-color: #f39c12; -fx-border-color: #000; -fx-border-width: 1 1px 0 0;" text="DATE" />
-            <TableColumn fx:id="tableTime" prefWidth="166.0" style="-fx-background-color: #f39c12; -fx-border-color: #000; -fx-border-width: 1 1px 0 0;" text="TIME" />
-            <TableColumn fx:id="tablePetId" prefWidth="186.0" style="-fx-background-color: #f39c12; -fx-border-color: #000; -fx-border-width: 1 1px 0 0;" text="PET ID" />
-            <TableColumn fx:id="tablePayId" prefWidth="194.0" style="-fx-background-color: #f39c12; -fx-border-color: #000; -fx-border-width: 1 1px 0 0;" text="PAYMENT ID" />
-            <TableColumn fx:id="tableStatus" prefWidth="280.0" style="-fx-background-color: #f39c12; -fx-border-color: #000; -fx-border-width: 1 1px 0 0;" text="STATUS (CANCELLED OR NOT)" />
+          <TableColumn fx:id="tableAptID" prefWidth="135.0" style="-fx-background-color: #f39c12; -fx-border-color: #000; -fx-border-width: 2 1px 0 0;" text="APPOINTMENT ID" />
+          <TableColumn fx:id="tableDate" minWidth="5.0" prefWidth="235.0" style="-fx-background-color: #f39c12; -fx-border-color: #000; -fx-border-width: 2 1px 0 0;" text="DATE" />
+            <TableColumn fx:id="tableTime" prefWidth="166.0" style="-fx-background-color: #f39c12; -fx-border-color: #000; -fx-border-width: 2 1px 0 0;" text="TIME" />
+            <TableColumn fx:id="tablePetId" prefWidth="186.0" style="-fx-background-color: #f39c12; -fx-border-color: #000; -fx-border-width: 2 1px 0 0;" text="PET ID" />
+            <TableColumn fx:id="tablePayId" prefWidth="194.0" style="-fx-background-color: #f39c12; -fx-border-color: #000; -fx-border-width: 2 1px 0 0;" text="PAYMENT ID" />
+            <TableColumn fx:id="tableStatus" prefWidth="280.0" style="-fx-background-color: #f39c12; -fx-border-color: #000; -fx-border-width: 2 1px 0 0;" text="STATUS (CANCELLED OR NOT)" />
         </columns>
       </TableView>
       <Label layoutX="420.0" layoutY="67.0" text="APPOINTMENT DETAILS">
