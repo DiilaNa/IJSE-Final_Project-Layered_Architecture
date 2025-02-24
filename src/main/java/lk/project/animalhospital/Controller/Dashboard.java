@@ -43,20 +43,17 @@ public class Dashboard {
     private Button Invoice;
 
     @FXML
-    private Button Shedule;
+    private Button button;
 
     @FXML
     private Button SmS;
-
-    @FXML
-    private Button extrsbtn111;
 
 
     @FXML
     private ImageView image;
 
     private void login(String fxmlPath) throws IOException {
-        Stage stage = (Stage) Shedule.getScene().getWindow();
+        Stage stage = (Stage) button.getScene().getWindow();
         Scene scene =new Scene(FXMLLoader.load(getClass().getResource(fxmlPath)));
         scene.getStylesheets().add(getClass().getResource("/Css/Login.css").toExternalForm());
         stage.setScene(scene);

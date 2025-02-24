@@ -100,7 +100,6 @@ public class AppointmentsController implements Initializable {
 
 private final DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("HH:mm:ss");
     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-   /* AppointmentsModel appointmentsModel = new AppointmentsModel();*/
 
     AppointmentsBO appointmentsBO = (AppointmentsBO) BOFactory.getInstance().getBO(BOFactory.BOType.APPOINTMENTS);
 
@@ -145,13 +144,7 @@ private final DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("HH:
     @FXML
     void servicedetailsViewAction(ActionEvent event) {
         try {
-            Stage stage = (Stage) backID.getScene().getWindow();
-            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/view/service.fxml")));
-            scene.getStylesheets().add(getClass().getResource("/Css/Login.css").toExternalForm());
-            stage.setScene(scene);
-            stage.setTitle("Pets & Vets Animal Hospital");
-            stage.setResizable(false);
-            stage.show();
+            login("/view/service.fxml");
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -161,34 +154,19 @@ private final DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("HH:
     @FXML
     void viewApt(ActionEvent event) {
         try {
-            Stage stage = (Stage) view.getScene().getWindow();
-            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/view/View Appointments.fxml")));
-            scene.getStylesheets().add(getClass().getResource("/Css/Login.css").toExternalForm());
-            stage.setScene(scene);
-            stage.setTitle("Pets & Vets Animal Hospital");
-            stage.setResizable(false);
-            stage.show();
+                login("/view/View Appointments.fxml");
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-
     }
 
         @FXML
         void backIDAction(ActionEvent event) {
             try {
-                Stage stage = (Stage) backID.getScene().getWindow();
-                Scene scene =new Scene(FXMLLoader.load(getClass().getResource("/view/dashboard.fxml")));
-                scene.getStylesheets().add(getClass().getResource("/Css/Login.css").toExternalForm());
-                stage.setScene(scene);
-                stage.setTitle("Pets & Vets Animal Hospital");
-                stage.setResizable(false);
-                stage.show();
+                login("/view/dashboard.fxml");
             } catch (IOException e) {
                 e.printStackTrace();
             }
-
         }
 
         @FXML
@@ -346,5 +324,14 @@ private final DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("HH:
         } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
+    }
+    private void login(String fxmlPath) throws IOException {
+        Stage stage = (Stage) view.getScene().getWindow();
+        Scene scene =new Scene(FXMLLoader.load(getClass().getResource(fxmlPath)));
+        scene.getStylesheets().add(getClass().getResource("/Css/Login.css").toExternalForm());
+        stage.setScene(scene);
+        stage.setTitle("Pets & Vets Animal Hospital");
+        stage.show();
+
     }
 }

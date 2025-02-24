@@ -86,9 +86,6 @@ public class ServiceController implements Initializable {
         tableDuration.setCellValueFactory(new PropertyValueFactory<>("duration"));
         tablePetId.setCellValueFactory(new PropertyValueFactory<>("PetIdService"));
 
-
-
-
         try {
             refreshPage();
 

@@ -100,7 +100,7 @@
             <InnerShadow />
          </effect>
       </Button>
-      <Button fx:id="Shedule" alignment="CENTER" layoutX="599.0" layoutY="678.0" mnemonicParsing="false" onAction="#ShedulebtnAction" prefHeight="54.0" prefWidth="270.0" style="-fx-background-color: #d35400; -fx-background-radius: 15;" text="SCHEDULE" textFill="WHITE">
+      <Button fx:id="button" alignment="CENTER" layoutX="599.0" layoutY="678.0" mnemonicParsing="false" onAction="#ShedulebtnAction" prefHeight="54.0" prefWidth="270.0" style="-fx-background-color: #d35400; -fx-background-radius: 15;" text="SCHEDULE" textFill="WHITE">
          <font>
             <Font size="23.0" />
          </font>

@@ -159,8 +159,6 @@ public class ScheduleController implements Initializable {
                     throw new RuntimeException(e);
                 }
             }
-
-
         }
 
     }
@@ -230,15 +228,14 @@ public class ScheduleController implements Initializable {
         String Date = datetxt.getText();
         String Time = timeTxt.getText();
 
-/*
-        String datePattern = "^\\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12]\\d|3[01])$\n";
+    /*    String datePattern = "^\\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12]\\d|3[01])$\n";
         String timePattern = "^([01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d$\n";
 
         boolean isValidDate = datePattern.matches(datePattern);
         boolean isValidTime = timePattern.matches(timePattern);
-*/
 
-       /* if (!isValidDate) {
+
+        if (!isValidDate) {
             datetxt.setStyle(datetxt.getStyle()+";-fx-border-color: red;");
             System.out.println("Invalid Date "+Date);
 
@@ -246,9 +243,9 @@ public class ScheduleController implements Initializable {
         if (!isValidTime) {
             timeTxt.setStyle(timeTxt.getStyle()+";-fx-border-color: red;");
             System.out.println("Invalid Time "+Time);
-        }*/
+        }
 
-    //    if (isValidDate && isValidTime) {
+       if (isValidDate && isValidTime) {*/
 
             try {
                 ScheduleDto scheduleDto = new ScheduleDto(
@@ -269,7 +266,7 @@ public class ScheduleController implements Initializable {
                 throw new RuntimeException(e);
             }
 
-      /*  }else {
+       /* }else {
             new Alert(Alert.AlertType.ERROR, "Fail to update an Error Occured While Saving...!").show();
         }*/
 
