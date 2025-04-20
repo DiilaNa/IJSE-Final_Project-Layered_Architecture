@@ -94,7 +94,7 @@
             <InnerShadow />
          </effect>
       </Button>
-      <ComboBox fx:id="prtID" layoutX="857.0" layoutY="139.0" onAction="#prtIDACTION" prefHeight="24.0" prefWidth="215.0" promptText="Select an ID" style="-fx-background-color: transparent; -fx-border-width: 0 0 1px 0; -fx-border-color: black;" />
+      <ComboBox fx:id="prtID" layoutX="857.0" layoutY="139.0" prefHeight="24.0" prefWidth="215.0" promptText="Select an ID" style="-fx-background-color: transparent; -fx-border-width: 0 0 1px 0; -fx-border-color: black;" />
       <Button fx:id="reset" layoutX="849.0" layoutY="394.0" mnemonicParsing="false" onAction="#resetAction" prefHeight="41.0" prefWidth="121.0" style="-fx-background-radius: 12; -fx-background-color: #d35400;" text="RESET" textFill="WHITE">
          <font>
             <Font name="DejaVu Sans Mono Bold" size="20.0" />

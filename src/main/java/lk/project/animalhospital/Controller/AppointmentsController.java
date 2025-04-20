@@ -98,7 +98,7 @@ public class AppointmentsController implements Initializable {
     private Button resetDetails;
 
 
-private final DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("HH:mm:ss");
+    private final DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("HH:mm:ss");
     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
     AppointmentsBO appointmentsBO = (AppointmentsBO) BOFactory.getInstance().getBO(BOFactory.BOType.APPOINTMENTS);
@@ -170,7 +170,7 @@ private final DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("HH:
         }
 
         @FXML
-        void saveAPT(ActionEvent event) throws SQLException, ClassNotFoundException {
+        void saveAPT(ActionEvent event) throws SQLException {
             String appointmentId = AppointmentID.getText();
             String appointmentTime = addTime.getText();
             String ownerId = ownerid.getText();
@@ -184,7 +184,7 @@ private final DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("HH:
             String ownerAddress = ownerAddressTXT.getText();
             String petBREED = petBreed.getText();
             String petNAME = petName.getText();
-            String paymentMethodd = paymentMethod.getValue();
+            String paymentMETHOD = paymentMethod.getValue();
 
             // Reset styles
             ownerMailTXT.setStyle(ownerMailTXT.getStyle() + ";-fx-border-color: #7367F0;");
@@ -232,7 +232,7 @@ private final DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("HH:
                 PaymentDto paymentDto = new PaymentDto(
                         paymentId,
                         paymentDate,
-                        paymentMethodd,
+                        paymentMETHOD,
                         paymentTime
                 );
 

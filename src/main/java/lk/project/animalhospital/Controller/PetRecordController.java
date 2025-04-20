@@ -175,13 +175,8 @@ public class PetRecordController implements Initializable {
             new Alert(Alert.AlertType.ERROR, "Fail to load  Report").show();
             e.printStackTrace();
         } catch (SQLException | ClassNotFoundException e) {
-            new Alert(Alert.AlertType.ERROR, "DB eror").show();
+            new Alert(Alert.AlertType.ERROR, "DB Error").show();
         }
-
-    }
-
-    @FXML
-    void prtIDACTION(ActionEvent event) throws SQLException {
 
     }
 

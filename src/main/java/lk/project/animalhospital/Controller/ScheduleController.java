@@ -228,7 +228,7 @@ public class ScheduleController implements Initializable {
         String Date = datetxt.getText();
         String Time = timeTxt.getText();
 
-    /*    String datePattern = "^\\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12]\\d|3[01])$\n";
+   /*     String datePattern = "^\\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12]\\d|3[01])$\n";
         String timePattern = "^([01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d$\n";
 
         boolean isValidDate = datePattern.matches(datePattern);
