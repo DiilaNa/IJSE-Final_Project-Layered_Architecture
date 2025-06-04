@@ -4,6 +4,7 @@ package lk.project.animalhospital.Controller;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
@@ -13,9 +14,17 @@ import javafx.stage.Stage;
 
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class Login {
-
+public class Login implements Initializable {
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        Image loginImage = new Image(getClass().getResourceAsStream("/images/v.jpeg"));
+        image.setImage(loginImage);
+        passWord.setVisible(true);
+        passWordText.setVisible(false);
+    }
 
     @FXML
     private Label textTopic;
@@ -39,15 +48,18 @@ public class Login {
     @FXML
     private TextField passWordText;
 
-
-
-
-    public void initialize() {
-        Image loginImage = new Image(getClass().getResourceAsStream("/images/v.jpeg"));
-        image.setImage(loginImage);
+    @FXML
+    void checkBoxAction(ActionEvent event) {
+        if (checkBox.isSelected()) {
+            passWordText.setVisible(true);
+            passWord.setVisible(false);
+            passWordText.setText(passWord.getText());
+        }else {
+            passWordText.setVisible(false);
+            passWord.setVisible(true);
+            passWord.setText(passWordText.getText());
+        }
     }
-
-
 
     @FXML
     void logbtnAction(ActionEvent event) throws IOException {
@@ -70,8 +82,5 @@ public class Login {
             alert.setContentText("Invalid username or password");
             alert.showAndWait();
         }
-
     }
-
-
 }

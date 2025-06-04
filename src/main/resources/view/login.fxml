@@ -24,9 +24,9 @@
       </ImageView>
       <Pane layoutX="363.0" layoutY="161.0" prefHeight="552.0" prefWidth="597.0" style="-fx-background-color: #e67e22; -fx-background-radius: 12;">
          <children>
-            <TextField fx:id="userName" layoutX="153.0" layoutY="184.0" prefHeight="49.0" prefWidth="369.0" promptText="User_name" style="-fx-background-radius: 11;">
+            <TextField fx:id="userName" layoutX="152.0" layoutY="184.0" prefHeight="49.0" prefWidth="369.0" promptText="User_name" style="-fx-background-radius: 11;">
                <font>
-                  <Font name="Consolas Bold" size="20.0" />
+                  <Font name="Consolas Bold" size="18.0" />
                </font></TextField>
             <Label layoutX="132.0" layoutY="14.0" prefHeight="35.0" prefWidth="438.0" text="LOG IN TO YOUR ACCOUNT" textFill="WHITE">
                <font>
@@ -48,9 +48,9 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <PasswordField fx:id="passWord" layoutX="153.0" layoutY="282.0" prefHeight="49.0" prefWidth="369.0" promptText="Password" style="-fx-background-radius: 11;">
+            <PasswordField fx:id="passWord" layoutX="152.0" layoutY="282.0" prefHeight="49.0" prefWidth="369.0" promptText="Password" style="-fx-background-radius: 11;">
                <font>
-                  <Font name="Consolas Bold" size="20.0" />
+                  <Font name="Consolas Bold" size="15.0" />
                </font>
             </PasswordField>
             <Line endX="393.79998779296875" layoutX="175.0" layoutY="525.0" startX="-61.0" />
@@ -60,7 +60,7 @@
                   <DropShadow />
                </effect>
             </Pane>
-            <CheckBox fx:id="checkBox" layoutX="395.0" layoutY="372.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="133.0" text="See Password" textFill="WHITE">
+            <CheckBox fx:id="checkBox" layoutX="395.0" layoutY="372.0" mnemonicParsing="false" onAction="#checkBoxAction" prefHeight="20.0" prefWidth="133.0" text="See Password" textFill="WHITE">
                <font>
                   <Font size="14.0" />
                </font>
@@ -68,9 +68,9 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </CheckBox>
-            <TextField fx:id="passWordText" layoutX="153.0" layoutY="283.0" prefHeight="42.0" prefWidth="369.0" promptText="Password" style="-fx-background-radius: 11;">
+            <TextField fx:id="passWordText" layoutX="152.0" layoutY="282.0" prefHeight="49.0" prefWidth="369.0" promptText="Password" style="-fx-background-radius: 11;">
                <font>
-                  <Font size="22.0" />
+                  <Font size="18.0" />
                </font>
             </TextField>
          </children>
