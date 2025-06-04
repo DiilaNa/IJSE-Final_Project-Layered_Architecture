@@ -33,6 +33,12 @@ public class Login {
     @FXML
     private TextField userName;
 
+    @FXML
+    private CheckBox checkBox;
+
+    @FXML
+    private TextField passWordText;
+
 
 
 
