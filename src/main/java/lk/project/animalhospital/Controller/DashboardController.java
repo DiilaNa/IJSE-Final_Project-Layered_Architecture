@@ -4,14 +4,18 @@ package lk.project.animalhospital.Controller;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class DashboardController {
+public class DashboardController implements Initializable {
 
     @FXML
     private Button appointments;
@@ -57,9 +61,7 @@ public class DashboardController {
         stage.setScene(scene);
         stage.setTitle("Pets & Vets Animal Hospital");
         stage.show();
-
     }
-
 
     @FXML
     void SMSAction(ActionEvent event) {
@@ -88,18 +90,13 @@ public class DashboardController {
         }
     }
 
-    @FXML
-    public void initialize() {
-
+    public void refreshPage() {
+        navigateTo("/view/Appointments.fxml");
     }
 
     @FXML
     void appointmentsbtn(ActionEvent event) {
-        try {
-           login("/view/Appointments.fxml");
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+        navigateTo("/view/Appointments.fxml");
     }
 
     @FXML
@@ -163,6 +160,25 @@ public class DashboardController {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    private void navigateTo(String fxmlPath) {
+        try {
+            anchorPane.getChildren().clear();
+            AnchorPane load = FXMLLoader.load(getClass().getResource(fxmlPath));
+            load.getStylesheets().add(getClass().getResource("/Css/Login.css").toExternalForm());
+            load.prefWidthProperty().bind(anchorPane.widthProperty());
+            load.prefHeightProperty().bind(anchorPane.heightProperty());
+            anchorPane.getChildren().add(load);
+        } catch (IOException e) {
+            e.printStackTrace();
+            new Alert(Alert.AlertType.ERROR, "Fail to load page!").show();
+        }
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        refreshPage();
     }
 }
 
