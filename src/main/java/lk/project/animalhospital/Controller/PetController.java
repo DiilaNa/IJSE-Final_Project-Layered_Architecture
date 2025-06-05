@@ -25,7 +25,7 @@ import java.util.ArrayList;
 import java.util.Optional;
 import java.util.ResourceBundle;
 
-public class Pet  implements Initializable {
+public class PetController implements Initializable {
 
 
     @FXML
