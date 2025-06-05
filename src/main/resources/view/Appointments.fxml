@@ -12,49 +12,49 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="763.0" prefWidth="1210.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.project.animalhospital.Controller.AppointmentsController">
+<AnchorPane prefHeight="790.0" prefWidth="1272.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.project.animalhospital.Controller.AppointmentsController">
    <children>
-      <ImageView fx:id="image" fitHeight="770.0" fitWidth="983.0" pickOnBounds="true">
+      <ImageView fx:id="image" fitHeight="645.0" fitWidth="1273.0" layoutX="-5.0" layoutY="1.0" pickOnBounds="true">
          <image>
             <Image url="@../../../../../../Pictures/animal%20hospital/ALL%20PET.png" />
          </image>
       </ImageView>
-      <Pane layoutX="971.0" prefHeight="770.0" prefWidth="239.0" style="-fx-background-color: black;">
+      <Pane layoutX="-2.0" layoutY="646.0" prefHeight="142.0" prefWidth="1273.0" style="-fx-background-color: black;">
          <children>
-            <Button fx:id="save" layoutX="16.0" layoutY="198.0" mnemonicParsing="false" onAction="#saveAPT" prefHeight="44.0" prefWidth="213.0" style="-fx-background-color: #d35400; -fx-background-radius: 11;" text="ADD APPOINTMENT" textFill="WHITE">
+            <Button fx:id="save" layoutX="23.0" layoutY="50.0" mnemonicParsing="false" onAction="#saveAPT" prefHeight="44.0" prefWidth="181.0" style="-fx-background-color: #d35400; -fx-background-radius: 11;" text="ADD APPOINTMENT" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
                <effect>
                   <ColorAdjust brightness="0.15" contrast="0.14" />
                </effect></Button>
-            <Button fx:id="cancel" layoutX="16.0" layoutY="298.0" mnemonicParsing="false" onAction="#cancelAPt" prefHeight="44.0" prefWidth="213.0" style="-fx-background-color: #d35400; -fx-background-radius: 11;" text="CANCEL APPOINTMENT" textFill="WHITE">
+            <Button fx:id="cancel" layoutX="226.0" layoutY="51.0" mnemonicParsing="false" onAction="#cancelAPt" prefHeight="44.0" prefWidth="192.0" style="-fx-background-color: #d35400; -fx-background-radius: 11;" text="CANCEL APPOINTMENT" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
                <effect>
                   <ColorAdjust brightness="0.14" contrast="0.07" />
                </effect></Button>
-            <Label fx:id="TimeLabel" layoutX="65.0" layoutY="27.0" text="ss" textFill="WHITE">
+            <Label fx:id="TimeLabel" layoutX="1072.0" layoutY="57.0" prefHeight="35.0" prefWidth="98.0" text="ss" textFill="WHITE">
                <font>
                   <Font name="DejaVu Sans Bold" size="24.0" />
                </font>
             </Label>
-            <Button fx:id="view" layoutX="16.0" layoutY="398.0" mnemonicParsing="false" onAction="#viewApt" prefHeight="44.0" prefWidth="213.0" style="-fx-background-color: #d35400; -fx-background-radius: 11;" text="VIEW APPOINTMENT" textFill="WHITE">
+            <Button fx:id="view" layoutX="430.0" layoutY="52.0" mnemonicParsing="false" onAction="#viewApt" prefHeight="44.0" prefWidth="181.0" style="-fx-background-color: #d35400; -fx-background-radius: 11;" text="VIEW APPOINTMENT" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
                <effect>
                   <ColorAdjust brightness="0.05" contrast="0.12" />
                </effect></Button>
-            <Button fx:id="servicedetailsView" layoutX="16.0" layoutY="498.0" mnemonicParsing="false" onAction="#servicedetailsViewAction" prefHeight="44.0" prefWidth="213.0" style="-fx-background-color: #d35400; -fx-background-radius: 11;" text="SERVICE DETAILS" textFill="WHITE">
+            <Button fx:id="servicedetailsView" layoutX="640.0" layoutY="51.0" mnemonicParsing="false" onAction="#servicedetailsViewAction" prefHeight="44.0" prefWidth="144.0" style="-fx-background-color: #d35400; -fx-background-radius: 11;" text="SERVICE DETAILS" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
                <effect>
                   <ColorAdjust brightness="0.14" contrast="0.12" />
                </effect></Button>
-            <Button fx:id="resetDetails" layoutX="16.0" layoutY="586.0" mnemonicParsing="false" onAction="#resetDetailsAction" prefHeight="44.0" prefWidth="213.0" style="-fx-background-color: #d35400; -fx-background-radius: 11;" text="RESET DETAILS" textFill="WHITE">
+            <Button fx:id="resetDetails" layoutX="814.0" layoutY="52.0" mnemonicParsing="false" onAction="#resetDetailsAction" prefHeight="44.0" prefWidth="160.0" style="-fx-background-color: #d35400; -fx-background-radius: 11;" text="RESET DETAILS" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
@@ -64,135 +64,135 @@
             </Button>
          </children>
       </Pane>
-      <Label layoutX="433.0" layoutY="90.0" style="-fx-background-color: black;" text="APPOINTMENTS DETAILS" textFill="WHITE">
+      <Label layoutX="469.0" layoutY="15.0" prefHeight="38.0" prefWidth="398.0" style="-fx-background-color: black;" text="APPOINTMENTS DETAILS" textFill="WHITE">
          <font>
             <Font name="Constantia Bold Italic" size="30.0" />
          </font>
       </Label>
-      <Label layoutX="173.0" layoutY="205.0" text="APPOINTMENT ID">
+      <Label layoutX="189.0" layoutY="82.0" text="APPOINTMENT ID">
          <font>
             <Font name="Georgia Bold" size="21.0" />
          </font>
       </Label>
-      <Label layoutX="651.0" layoutY="265.0" text="DATE">
+      <Label layoutX="667.0" layoutY="142.0" text="DATE">
          <font>
             <Font name="Georgia Bold" size="21.0" />
          </font>
       </Label>
-      <Label layoutX="651.0" layoutY="325.0" text="TIME" textFill="#390c0c">
+      <Label layoutX="667.0" layoutY="202.0" text="TIME" textFill="#390c0c">
          <font>
             <Font name="Georgia Bold" size="21.0" />
          </font>
       </Label>
-      <Label layoutX="651.0" layoutY="205.0" text="PAY ID">
+      <Label layoutX="667.0" layoutY="82.0" text="PAY ID">
          <font>
             <Font name="Georgia Bold" size="21.0" />
          </font>
       </Label>
       <Button fx:id="backID" layoutX="39.0" layoutY="24.0" mnemonicParsing="false" onAction="#backIDAction" style="-fx-background-color: black;" text="Back" textFill="WHITE" underline="true" />
-      <DatePicker fx:id="date" layoutX="784.0" layoutY="265.0" prefHeight="24.0" prefWidth="169.0" />
-      <Label layoutX="182.0" layoutY="265.0" text="PET ID">
+      <DatePicker fx:id="date" layoutX="800.0" layoutY="142.0" prefHeight="24.0" prefWidth="169.0" />
+      <Label layoutX="198.0" layoutY="142.0" text="PET ID">
          <font>
             <Font name="Georgia Bold" size="21.0" />
          </font>
       </Label>
-      <Label fx:id="PeTid" layoutX="398.0" layoutY="268.0" text="PET ID">
+      <Label fx:id="PeTid" layoutX="414.0" layoutY="145.0" text="PET ID">
          <font>
             <Font name="DejaVu Sans" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="182.0" layoutY="325.0" text="PET NAME">
+      <Label layoutX="198.0" layoutY="202.0" text="PET NAME">
          <font>
             <Font name="Georgia Bold" size="21.0" />
          </font>
       </Label>
-      <TextField fx:id="petName" layoutX="399.0" layoutY="325.0" prefHeight="26.0" prefWidth="213.0" style="-fx-background-color: transparent; -fx-border-color: black; -fx-border-width: 0 0 1px 0;">
-         <font>
-            <Font name="DejaVu Sans" size="18.0" />
-         </font>
-      </TextField>
-      <Label layoutX="182.0" layoutY="385.0" text="PET TYPE">
-         <font>
-            <Font name="Georgia Bold" size="21.0" />
-         </font>
-      </Label>
-      <Label layoutX="182.0" layoutY="445.0" text="PET BREED">
-         <font>
-            <Font name="Georgia Bold" size="21.0" />
-         </font>
-      </Label>
-      <TextField fx:id="petBreed" layoutX="399.0" layoutY="445.0" prefHeight="26.0" prefWidth="213.0" style="-fx-background-color: transparent; -fx-border-color: black; -fx-border-width: 0 0 1px 0;">
+      <TextField fx:id="petName" layoutX="415.0" layoutY="202.0" prefHeight="26.0" prefWidth="213.0" style="-fx-background-color: transparent; -fx-border-color: black; -fx-border-width: 0 0 1px 0;">
          <font>
             <Font name="DejaVu Sans" size="18.0" />
          </font>
       </TextField>
-      <Label layoutX="182.0" layoutY="505.0" text="OWNER ID">
+      <Label layoutX="198.0" layoutY="262.0" text="PET TYPE">
          <font>
             <Font name="Georgia Bold" size="21.0" />
          </font>
       </Label>
-      <ComboBox fx:id="petType" layoutX="399.0" layoutY="385.0" prefHeight="25.0" prefWidth="213.0" promptText="Choose Pet Type(Dog/Pet)" style="-fx-background-color: transparent; -fx-border-color: black; -fx-border-width: 0 0 1px 0;" />
-      <Label fx:id="AppointmentID" layoutX="400.0" layoutY="205.0" text="APOINT ID">
-         <font>
-            <Font name="DejaVu Sans" size="18.0" />
-         </font>
-      </Label>
-      <Label layoutX="182.0" layoutY="565.0" text="OWNER NAME">
+      <Label layoutX="198.0" layoutY="322.0" text="PET BREED">
          <font>
             <Font name="Georgia Bold" size="21.0" />
          </font>
       </Label>
-      <TextField fx:id="ownerNAmeTXT" layoutX="399.0" layoutY="565.0" prefHeight="26.0" prefWidth="213.0" style="-fx-background-color: transparent; -fx-border-color: black; -fx-border-width: 0 0 1px 0;">
+      <TextField fx:id="petBreed" layoutX="415.0" layoutY="322.0" prefHeight="26.0" prefWidth="213.0" style="-fx-background-color: transparent; -fx-border-color: black; -fx-border-width: 0 0 1px 0;">
          <font>
             <Font name="DejaVu Sans" size="18.0" />
          </font>
       </TextField>
-      <Label layoutX="182.0" layoutY="625.0" text="ADDRESS">
+      <Label layoutX="198.0" layoutY="382.0" text="OWNER ID">
          <font>
             <Font name="Georgia Bold" size="21.0" />
          </font>
       </Label>
-      <Label layoutX="661.0" layoutY="518.0" text="EMAIL">
+      <ComboBox fx:id="petType" layoutX="415.0" layoutY="262.0" prefHeight="25.0" prefWidth="213.0" promptText="Choose Pet Type(Dog/Pet)" style="-fx-background-color: transparent; -fx-border-color: black; -fx-border-width: 0 0 1px 0;" />
+      <Label fx:id="AppointmentID" layoutX="416.0" layoutY="82.0" text="APOINT ID">
+         <font>
+            <Font name="DejaVu Sans" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="198.0" layoutY="442.0" text="OWNER NAME">
          <font>
             <Font name="Georgia Bold" size="21.0" />
          </font>
       </Label>
-      <TextField fx:id="ownerAddressTXT" layoutX="399.0" layoutY="625.0" prefHeight="26.0" prefWidth="213.0" style="-fx-background-color: transparent; -fx-border-color: black; -fx-border-width: 0 0 1px 0;">
+      <TextField fx:id="ownerNAmeTXT" layoutX="415.0" layoutY="442.0" prefHeight="26.0" prefWidth="213.0" style="-fx-background-color: transparent; -fx-border-color: black; -fx-border-width: 0 0 1px 0;">
          <font>
             <Font name="DejaVu Sans" size="18.0" />
          </font>
       </TextField>
-      <TextField fx:id="ownerMailTXT" layoutX="750.0" layoutY="510.0" prefHeight="26.0" prefWidth="213.0" style="-fx-background-color: transparent; -fx-border-color: black; -fx-border-width: 0 0 1px 0;">
+      <Label layoutX="198.0" layoutY="502.0" text="ADDRESS">
+         <font>
+            <Font name="Georgia Bold" size="21.0" />
+         </font>
+      </Label>
+      <Label layoutX="677.0" layoutY="395.0" text="EMAIL">
+         <font>
+            <Font name="Georgia Bold" size="21.0" />
+         </font>
+      </Label>
+      <TextField fx:id="ownerMailTXT" layoutX="766.0" layoutY="387.0" prefHeight="26.0" prefWidth="213.0" style="-fx-background-color: transparent; -fx-border-color: black; -fx-border-width: 0 0 1px 0;">
          <font>
             <Font name="DejaVu Sans Bold" size="18.0" />
          </font>
       </TextField>
-      <Label fx:id="PaymentId" layoutX="806.0" layoutY="205.0" text="PET ID">
+      <Label fx:id="PaymentId" layoutX="822.0" layoutY="82.0" text="PET ID">
          <font>
             <Font name="DejaVu Sans" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="651.0" layoutY="400.0" text="PAYEMENT METHOD" textFill="#390c0c">
+      <Label layoutX="663.0" layoutY="293.0" text="PAYEMENT METHOD" textFill="#390c0c">
          <font>
             <Font name="Georgia Bold" size="21.0" />
          </font>
       </Label>
-      <ComboBox fx:id="paymentMethod" layoutX="700.0" layoutY="450.0" prefHeight="25.0" prefWidth="213.0" promptText="Select Payment Method" style="-fx-background-color: transparent; -fx-border-color: black; -fx-border-width: 0 0 1px 0;" />
-      <Label fx:id="ownerid" layoutX="399.0" layoutY="508.0" text="owner">
+      <ComboBox fx:id="paymentMethod" layoutX="716.0" layoutY="327.0" prefHeight="25.0" prefWidth="213.0" promptText="Select Payment Method" style="-fx-background-color: transparent; -fx-border-color: black; -fx-border-width: 0 0 1px 0;" />
+      <Label fx:id="ownerid" layoutX="415.0" layoutY="385.0" text="owner">
          <font>
             <Font name="DejaVu Sans" size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="addTime" layoutX="784.0" layoutY="321.0" prefHeight="34.0" prefWidth="188.0" promptText="00:00:00" style="-fx-background-color: transparent; -fx-border-color: black; -fx-border-width: 0 0 1px 0;">
+      <TextField fx:id="addTime" layoutX="784.0" layoutY="201.0" prefHeight="34.0" prefWidth="188.0" promptText="00:00:00" style="-fx-background-color: transparent; -fx-border-color: black; -fx-border-width: 0 0 1px 0;">
          <font>
             <Font name="DejaVu Sans Bold" size="18.0" />
          </font>
       </TextField>
-      <Label layoutX="182.0" layoutY="696.0" text="SELECT APPOINTMENT ID">
+      <Label layoutX="198.0" layoutY="573.0" text="SELECT APPOINTMENT ID">
          <font>
             <Font name="Georgia Bold" size="21.0" />
          </font>
       </Label>
-      <ComboBox fx:id="APTsearch" layoutX="510.0" layoutY="695.0" prefHeight="25.0" prefWidth="213.0" style="-fx-background-color: transparent; -fx-border-color: black; -fx-border-width: 0 0 1px 0;" />
+      <ComboBox fx:id="APTsearch" layoutX="526.0" layoutY="572.0" prefHeight="25.0" prefWidth="213.0" style="-fx-background-color: transparent; -fx-border-color: black; -fx-border-width: 0 0 1px 0;" />
+      <TextField fx:id="ownerAddressTXT" layoutX="412.0" layoutY="485.0" prefHeight="26.0" prefWidth="213.0" style="-fx-background-color: transparent; -fx-border-color: black; -fx-border-width: 0 0 1px 0;">
+         <font>
+            <Font name="DejaVu Sans" size="18.0" />
+         </font>
+      </TextField>
    </children>
 </AnchorPane>
