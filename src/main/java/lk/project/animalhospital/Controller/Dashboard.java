@@ -8,6 +8,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -48,9 +49,8 @@ public class Dashboard {
     @FXML
     private Button SmS;
 
-
     @FXML
-    private ImageView image;
+    private AnchorPane anchorPane;
 
     private void login(String fxmlPath) throws IOException {
         Stage stage = (Stage) button.getScene().getWindow();
@@ -92,8 +92,7 @@ public class Dashboard {
 
     @FXML
     public void initialize() {
-        Image loginImage = new Image(getClass().getResourceAsStream("/images/dashboard.png"));
-        image.setImage(loginImage);
+
     }
 
     @FXML

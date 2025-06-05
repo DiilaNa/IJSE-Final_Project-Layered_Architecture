@@ -1,112 +1,157 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.effect.InnerShadow?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="749.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.project.animalhospital.Controller.Dashboard">
+<AnchorPane prefHeight="790.0" prefWidth="1535.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.project.animalhospital.Controller.Dashboard">
    <children>
-      <ImageView fx:id="image" fitHeight="768.0" fitWidth="1200.0" pickOnBounds="true">
-         <image>
-            <Image url="@../../../../../../Pictures/animal%20hospital/Dashboard.png" />
-         </image>
-      </ImageView>
-      <Label layoutX="594.0" layoutY="35.0" text="DASH BOARD">
-         <font>
-            <Font name="System Bold" size="43.0" />
-         </font>
-      </Label>
-      <Button fx:id="pet" alignment="CENTER" layoutX="438.0" layoutY="245.0" mnemonicParsing="false" onAction="#petbtn" prefHeight="54.0" prefWidth="271.0" style="-fx-background-radius: 15; -fx-background-color: #d35400;" text="PET DETAILS" textFill="WHITE">
-         <font>
-            <Font size="21.0" />
-         </font>
+      <VBox layoutY="-4.0" prefHeight="795.0" prefWidth="262.0" style="-fx-background-color: brown;">
+         <children>
+            <Label prefHeight="26.0" prefWidth="306.0" text="DASH BOARD" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="10.0" top="10.0" />
+               </VBox.margin>
+               <padding>
+                  <Insets left="45.0" />
+               </padding>
+            </Label>
+            <Button fx:id="appointments" alignment="CENTER" mnemonicParsing="false" onAction="#appointmentsbtn" prefHeight="50.0" prefWidth="251.0" style="-fx-background-color: #d35400; -fx-background-radius: 15;" text="APPOINTMENTS" textFill="WHITE">
+               <font>
+                  <Font size="23.0" />
+               </font>
+               <effect>
+                  <DropShadow />
+               </effect>
+               <VBox.margin>
+                  <Insets bottom="5.0" top="5.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="pet" alignment="CENTER" mnemonicParsing="false" onAction="#petbtn" prefHeight="50.0" prefWidth="250.0" style="-fx-background-radius: 15; -fx-background-color: #d35400;" text="PET DETAILS" textFill="WHITE">
+               <font>
+                  <Font size="21.0" />
+               </font>
+               <effect>
+                  <DropShadow />
+               </effect>
+               <VBox.margin>
+                  <Insets bottom="5.0" top="5.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="emp" alignment="CENTER" mnemonicParsing="false" onAction="#empbtn" prefHeight="50.0" prefWidth="250.0" style="-fx-background-color: #d35400; -fx-background-radius: 15;" text="EMPLOYEE" textFill="WHITE">
+               <font>
+                  <Font size="23.0" />
+               </font>
+               <effect>
+                  <DropShadow />
+               </effect>
+               <VBox.margin>
+                  <Insets bottom="5.0" top="5.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="sal" alignment="CENTER" mnemonicParsing="false" onAction="#salarybtn" prefHeight="50.0" prefWidth="250.0" style="-fx-background-color: #d35400; -fx-background-radius: 15;" text="SALARY" textFill="WHITE">
+               <font>
+                  <Font size="23.0" />
+               </font>
+               <effect>
+                  <DropShadow />
+               </effect>
+               <VBox.margin>
+                  <Insets bottom="5.0" top="5.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="Invoice" alignment="CENTER" mnemonicParsing="false" onAction="#invoiceAction" prefHeight="50.0" prefWidth="250.0" style="-fx-background-color: #d35400; -fx-background-radius: 15;" text="INVOICE" textFill="WHITE">
+               <font>
+                  <Font size="23.0" />
+               </font>
+               <effect>
+                  <DropShadow />
+               </effect>
+               <VBox.margin>
+                  <Insets bottom="5.0" top="5.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="button" alignment="CENTER" mnemonicParsing="false" onAction="#ShedulebtnAction" prefHeight="50.0" prefWidth="250.0" style="-fx-background-color: #d35400; -fx-background-radius: 15;" text="SCHEDULE" textFill="WHITE">
+               <font>
+                  <Font size="23.0" />
+               </font>
+               <effect>
+                  <DropShadow />
+               </effect>
+               <VBox.margin>
+                  <Insets bottom="5.0" top="5.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="owner" alignment="CENTER" mnemonicParsing="false" onAction="#ownerbtn" prefHeight="50.0" prefWidth="250.0" style="-fx-background-radius: 15; -fx-background-color: #d35400;" text="OWNER DETAILS" textFill="WHITE">
+               <font>
+                  <Font size="21.0" />
+               </font>
+               <effect>
+                  <DropShadow />
+               </effect>
+               <VBox.margin>
+                  <Insets bottom="5.0" top="5.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="service" alignment="CENTER" mnemonicParsing="false" onAction="#servicebtn" prefHeight="50.0" prefWidth="250.0" style="-fx-background-radius: 15; -fx-background-color: #d35400;" text="SERVICE DETAILS" textFill="WHITE">
+               <font>
+                  <Font size="21.0" />
+               </font>
+               <effect>
+                  <DropShadow />
+               </effect>
+               <VBox.margin>
+                  <Insets bottom="5.0" top="5.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="invent" alignment="CENTER" mnemonicParsing="false" onAction="#inventorybtn" prefHeight="50.0" prefWidth="250.0" style="-fx-background-color: #d35400; -fx-background-radius: 15;" text="MEDICINE" textFill="WHITE">
+               <font>
+                  <Font size="23.0" />
+               </font>
+               <effect>
+                  <DropShadow />
+               </effect>
+               <VBox.margin>
+                  <Insets bottom="5.0" top="5.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="paymnt" alignment="CENTER" mnemonicParsing="false" onAction="#paymentsbtn" prefHeight="50.0" prefWidth="250.0" style="-fx-background-color: #d35400; -fx-background-radius: 15;" text="PAYMENTS" textFill="WHITE">
+               <font>
+                  <Font size="23.0" />
+               </font>
+               <effect>
+                  <DropShadow />
+               </effect>
+               <VBox.margin>
+                  <Insets bottom="5.0" top="5.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="SmS" alignment="CENTER" mnemonicParsing="false" onAction="#SMSAction" prefHeight="50.0" prefWidth="250.0" style="-fx-background-color: #d35400; -fx-background-radius: 15;" text="REMINDER" textFill="WHITE">
+               <font>
+                  <Font size="23.0" />
+               </font>
+               <effect>
+                  <DropShadow />
+               </effect>
+               <VBox.margin>
+                  <Insets bottom="5.0" top="5.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+         <padding>
+            <Insets left="5.0" right="5.0" />
+         </padding>
          <effect>
-            <InnerShadow choke="0.21" height="0.0" radius="5.43" width="23.72" />
+            <DropShadow />
          </effect>
-      </Button>
-      <Button fx:id="appointments" alignment="CENTER" layoutX="439.0" layoutY="136.0" mnemonicParsing="false" onAction="#appointmentsbtn" prefHeight="54.0" prefWidth="270.0" style="-fx-background-color: #d35400; -fx-background-radius: 15;" text="APPOINTMENTS" textFill="WHITE">
-         <font>
-            <Font size="23.0" />
-         </font>
-         <effect>
-            <InnerShadow />
-         </effect>
-      </Button>
-      <Button fx:id="emp" alignment="CENTER" layoutX="430.0" layoutY="358.0" mnemonicParsing="false" onAction="#empbtn" prefHeight="54.0" prefWidth="270.0" style="-fx-background-color: #d35400; -fx-background-radius: 15;" text="EMPLOYEE" textFill="WHITE">
-         <font>
-            <Font size="23.0" />
-         </font>
-         <effect>
-            <InnerShadow />
-         </effect>
-      </Button>
-      <Button fx:id="invent" alignment="CENTER" layoutX="775.0" layoutY="358.0" mnemonicParsing="false" onAction="#inventorybtn" prefHeight="54.0" prefWidth="270.0" style="-fx-background-color: #d35400; -fx-background-radius: 15;" text="MEDICINE" textFill="WHITE">
-         <font>
-            <Font size="23.0" />
-         </font>
-         <effect>
-            <InnerShadow />
-         </effect>
-      </Button>
-      <Button fx:id="owner" alignment="CENTER" layoutX="776.0" layoutY="136.0" mnemonicParsing="false" onAction="#ownerbtn" prefHeight="54.0" prefWidth="270.0" style="-fx-background-radius: 15; -fx-background-color: #d35400;" text="OWNER DETAILS" textFill="WHITE">
-         <font>
-            <Font size="21.0" />
-         </font>
-         <effect>
-            <InnerShadow />
-         </effect>
-      </Button>
-      <Button fx:id="service" alignment="CENTER" layoutX="776.0" layoutY="245.0" mnemonicParsing="false" onAction="#servicebtn" prefHeight="54.0" prefWidth="270.0" style="-fx-background-radius: 15; -fx-background-color: #d35400;" text="SERVICE DETAILS" textFill="WHITE">
-         <font>
-            <Font size="21.0" />
-         </font>
-         <effect>
-            <InnerShadow />
-         </effect>
-      </Button>
-      <Button fx:id="sal" alignment="CENTER" layoutX="430.0" layoutY="469.0" mnemonicParsing="false" onAction="#salarybtn" prefHeight="54.0" prefWidth="270.0" style="-fx-background-color: #d35400; -fx-background-radius: 15;" text="SALARY" textFill="WHITE">
-         <font>
-            <Font size="23.0" />
-         </font>
-         <effect>
-            <InnerShadow />
-         </effect>
-      </Button>
-      <Button fx:id="paymnt" alignment="CENTER" layoutX="775.0" layoutY="469.0" mnemonicParsing="false" onAction="#paymentsbtn" prefHeight="54.0" prefWidth="270.0" style="-fx-background-color: #d35400; -fx-background-radius: 15;" text="PAYMENTS" textFill="WHITE">
-         <font>
-            <Font size="23.0" />
-         </font>
-         <effect>
-            <InnerShadow />
-         </effect>
-      </Button>
-      <Button fx:id="Invoice" alignment="CENTER" layoutX="430.0" layoutY="579.0" mnemonicParsing="false" onAction="#invoiceAction" prefHeight="54.0" prefWidth="270.0" style="-fx-background-color: #d35400; -fx-background-radius: 15;" text="INVOICE" textFill="WHITE">
-         <font>
-            <Font size="23.0" />
-         </font>
-         <effect>
-            <InnerShadow />
-         </effect>
-      </Button>
-      <Button fx:id="SmS" alignment="CENTER" layoutX="775.0" layoutY="579.0" mnemonicParsing="false" onAction="#SMSAction" prefHeight="54.0" prefWidth="270.0" style="-fx-background-color: #d35400; -fx-background-radius: 15;" text="REMINDER" textFill="WHITE">
-         <font>
-            <Font size="23.0" />
-         </font>
-         <effect>
-            <InnerShadow />
-         </effect>
-      </Button>
-      <Button fx:id="button" alignment="CENTER" layoutX="599.0" layoutY="678.0" mnemonicParsing="false" onAction="#ShedulebtnAction" prefHeight="54.0" prefWidth="270.0" style="-fx-background-color: #d35400; -fx-background-radius: 15;" text="SCHEDULE" textFill="WHITE">
-         <font>
-            <Font size="23.0" />
-         </font>
-         <effect>
-            <InnerShadow />
-         </effect>
-      </Button>
+      </VBox>
+      <AnchorPane fx:id="anchorPane" layoutX="266.0" prefHeight="790.0" prefWidth="1273.0" />
    </children>
 </AnchorPane>
