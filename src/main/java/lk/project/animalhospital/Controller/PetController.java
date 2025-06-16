@@ -1,6 +1,7 @@
 package lk.project.animalhospital.Controller;
 
 
+import javafx.scene.layout.AnchorPane;
 import lk.project.animalhospital.bo.BOFactory;
 import lk.project.animalhospital.bo.Custom.PetBO;
 import lk.project.animalhospital.model.PetTm.PetTM;
@@ -26,7 +27,6 @@ import java.util.Optional;
 import java.util.ResourceBundle;
 
 public class PetController implements Initializable {
-
 
     @FXML
     private TableColumn<PetTM, String> ColoumnBreed;
@@ -80,6 +80,9 @@ public class PetController implements Initializable {
 
     @FXML
     private Label ownerIds;
+
+    @FXML
+    private AnchorPane anchorPane;
 
     /*PetModel petModel = new PetModel();*/
     PetBO petBO = (PetBO) BOFactory.getInstance().getBO(BOFactory.BOType.PET);
@@ -145,21 +148,6 @@ public class PetController implements Initializable {
     }
 
     @FXML
-    void backIDAction(ActionEvent event) {
-        try {
-            Stage stage = (Stage) backID.getScene().getWindow();
-            Scene scene =new Scene(FXMLLoader.load(getClass().getResource("/view/dashboard.fxml")));
-            scene.getStylesheets().add(getClass().getResource("/Css/Login.css").toExternalForm());
-            stage.setScene(scene);
-            stage.setTitle("Pets & Vets Animal Hospital");
-            stage.setResizable(false);
-            stage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    @FXML
     void deleteAction(ActionEvent event) throws Exception {
 
         String petId = petIds.getText();
@@ -180,13 +168,14 @@ public class PetController implements Initializable {
     }
 
     @FXML
-    void genReport(ActionEvent event)  {
+    void viewPetRecords(ActionEvent event) {
         try {
-            Stage stage = (Stage) gr.getScene().getWindow();
-            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/petRecord.fxml"))));
-            stage.setTitle("Pets & Vets Animal Hospital");
-            stage.setResizable(false);
-            stage.show();
+            anchorPane.getChildren().clear();
+            AnchorPane load = FXMLLoader.load(getClass().getResource("/view/petRecord.fxml"));
+            load.getStylesheets().add(getClass().getResource("/Css/Login.css").toExternalForm());
+            load.prefWidthProperty().bind(anchorPane.widthProperty());
+            load.prefHeightProperty().bind(anchorPane.heightProperty());
+            anchorPane.getChildren().add(load);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

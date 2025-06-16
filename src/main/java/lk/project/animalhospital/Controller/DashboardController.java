@@ -113,11 +113,7 @@ public class DashboardController implements Initializable {
 
     @FXML
     void petbtn(ActionEvent event)  {
-        try {
-            login("/view/pet.fxml");
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+        navigateTo("/view/pet.fxml");
     }
 
     @FXML

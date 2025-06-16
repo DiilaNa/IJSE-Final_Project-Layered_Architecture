@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="790.0" prefWidth="1270.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.project.animalhospital.Controller.PetController">
+<AnchorPane fx:id="anchorPane" prefHeight="790.0" prefWidth="1270.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.project.animalhospital.Controller.PetController">
    <children>
       <ImageView fx:id="image" fitHeight="790.0" fitWidth="1270.0" pickOnBounds="true">
          <image>
@@ -42,7 +42,6 @@
          </font>
       </Label>
       <TextField fx:id="pname" layoutX="466.0" layoutY="185.0" prefHeight="29.0" prefWidth="267.0" style="-fx-background-color: transparent; -fx-border-width: 0 0 1px 0; -fx-border-color: black;" />
-      <Button fx:id="backID" layoutX="20.0" layoutY="30.0" mnemonicParsing="false" onAction="#backIDAction" style="-fx-background-color: black; -fx-background-radius: 21;" text="Back" textFill="WHITE" underline="true" />
       <TextField fx:id="breedtxt" layoutX="467.0" layoutY="251.0" prefHeight="29.0" prefWidth="267.0" style="-fx-background-color: transparent; -fx-border-width: 0 0 1px 0; -fx-border-color: black;" />
       <TabPane layoutX="14.0" layoutY="369.0" />
       <TableView fx:id="table" layoutX="-3.0" layoutY="384.0" onMouseClicked="#ONmouseClicked" opacity="0.92" prefHeight="310.0" prefWidth="1272.0" style="-fx-background-color: #f39c12;">
@@ -67,7 +66,7 @@
       </Label>
       <Pane layoutX="-2.0" layoutY="693.0" prefHeight="99.0" prefWidth="1270.0" style="-fx-background-color: black;">
          <children>
-            <Button fx:id="gr" layoutX="51.0" layoutY="25.0" mnemonicParsing="false" onAction="#genReport" prefHeight="46.0" prefWidth="242.0" style="-fx-background-radius: 11; -fx-background-color: #d35400;" text="VIEW  PET REPCORDS" textAlignment="CENTER" textFill="WHITE">
+            <Button layoutX="51.0" layoutY="25.0" mnemonicParsing="false" onAction="#viewPetRecords" prefHeight="46.0" prefWidth="242.0" style="-fx-background-radius: 11; -fx-background-color: #d35400;" text="VIEW  PET REPCORDS" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font name="Consolas Bold" size="20.0" />
                </font>
