@@ -101,11 +101,7 @@ public class DashboardController implements Initializable {
 
     @FXML
     void empbtn(ActionEvent event) {
-        try {
-           login("/view/Employee.fxml");
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+        navigateTo("/view/Employee.fxml");
     }
 
     @FXML

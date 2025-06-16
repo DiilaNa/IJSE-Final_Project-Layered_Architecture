@@ -12,9 +12,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="770.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.project.animalhospital.Controller.EmployeeController">
+<AnchorPane prefHeight="790.0" prefWidth="1270.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.project.animalhospital.Controller.EmployeeController">
    <children>
-      <ImageView fx:id="image" fitHeight="770.0" fitWidth="1227.0" layoutX="-21.0" layoutY="-8.0" pickOnBounds="true">
+      <ImageView fx:id="image" fitHeight="806.0" fitWidth="1260.0" layoutY="-11.0" pickOnBounds="true">
          <image>
             <Image url="@../../../../../../Pictures/animal%20hospital/ALL%20PET.png" />
          </image>
@@ -74,13 +74,13 @@
       <TextField fx:id="duty" layoutX="889.0" layoutY="146.0" prefHeight="24.0" prefWidth="171.0" style="-fx-background-color: transparent; -fx-border-width: 0 0 1px 0; -fx-border-color: black;" />
       <TextField fx:id="address" layoutX="889.0" layoutY="278.0" style="-fx-background-color: transparent; -fx-border-width: 0 0 1px 0; -fx-border-color: black;" />
       <TextField fx:id="contact" layoutX="889.0" layoutY="211.0" style="-fx-background-color: transparent; -fx-border-width: 0 0 1px 0; -fx-border-color: black;" />
-      <TableView fx:id="table" layoutY="459.0" onMouseClicked="#tableONACTION" opacity="0.92" prefHeight="316.0" prefWidth="1206.0" style="-fx-background-color: f39c12;">
+      <TableView fx:id="table" layoutX="67.0" layoutY="456.0" onMouseClicked="#tableONACTION" opacity="0.92" prefHeight="342.0" prefWidth="1209.0" style="-fx-background-color: f39c12;">
         <columns>
           <TableColumn fx:id="tableEmpID" prefWidth="189.0" style="-fx-background-color: #f39c12; -fx-border-color: #000; -fx-border-width: 1 1px 0 0;" text="EMPLOYEE ID" />
           <TableColumn fx:id="tableEmpName" prefWidth="236.0" style="-fx-background-color: #f39c12; -fx-border-color: #000; -fx-border-width: 1 1px 0 0;" text="EMPLOYEE NAME" />
             <TableColumn fx:id="tableDuty" prefWidth="199.0" style="-fx-background-color: #f39c12; -fx-border-color: #000; -fx-border-width: 1 1px 0 0;" text="DUTY" />
             <TableColumn fx:id="tableAddress" prefWidth="290.0" style="-fx-background-color: #f39c12; -fx-border-color: #000; -fx-border-width: 1 1px 0 0;" text="ADDRESS" />
-            <TableColumn fx:id="tableContactNo" prefWidth="291.0" style="-fx-background-color: #f39c12; -fx-border-color: #000; -fx-border-width: 1 1px 0 0;" text="CONTACT NO" />
+            <TableColumn fx:id="tableContactNo" prefWidth="296.0" style="-fx-background-color: #f39c12; -fx-border-color: #000; -fx-border-width: 1 1px 0 0;" text="CONTACT NO" />
         </columns>
       </TableView>
       <Button fx:id="back" layoutX="25.0" layoutY="24.0" mnemonicParsing="false" onAction="#backAction" style="-fx-background-color: black; -fx-background-radius: 21;" text="BACK" textFill="WHITE" underline="true" />

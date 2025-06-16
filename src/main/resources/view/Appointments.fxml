@@ -12,14 +12,14 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="790.0" prefWidth="1272.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.project.animalhospital.Controller.AppointmentsController">
+<AnchorPane prefHeight="790.0" prefWidth="1270.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.project.animalhospital.Controller.AppointmentsController">
    <children>
-      <ImageView fx:id="image" fitHeight="645.0" fitWidth="1273.0" layoutX="-5.0" layoutY="1.0" pickOnBounds="true">
+      <ImageView fx:id="image" fitHeight="645.0" fitWidth="1275.0" layoutX="-5.0" layoutY="1.0" pickOnBounds="true">
          <image>
             <Image url="@../../../../../../Pictures/animal%20hospital/ALL%20PET.png" />
          </image>
       </ImageView>
-      <Pane layoutX="-2.0" layoutY="646.0" prefHeight="142.0" prefWidth="1273.0" style="-fx-background-color: black;">
+      <Pane layoutX="-2.0" layoutY="646.0" prefHeight="150.0" prefWidth="1274.0" style="-fx-background-color: black;">
          <children>
             <Button fx:id="save" layoutX="23.0" layoutY="50.0" mnemonicParsing="false" onAction="#saveAPT" prefHeight="44.0" prefWidth="181.0" style="-fx-background-color: #d35400; -fx-background-radius: 11;" text="ADD APPOINTMENT" textFill="WHITE">
                <font>

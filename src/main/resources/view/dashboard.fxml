@@ -10,7 +10,7 @@
 
 <AnchorPane prefHeight="790.0" prefWidth="1535.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.project.animalhospital.Controller.DashboardController">
    <children>
-      <VBox layoutY="-4.0" prefHeight="795.0" prefWidth="262.0" style="-fx-background-color: brown;">
+      <VBox layoutY="-4.0" prefHeight="802.0" prefWidth="271.0" style="-fx-background-color: brown;">
          <children>
             <Label prefHeight="26.0" prefWidth="306.0" text="DASH BOARD" textAlignment="CENTER" textFill="WHITE">
                <font>
@@ -152,6 +152,6 @@
             <DropShadow />
          </effect>
       </VBox>
-      <AnchorPane fx:id="anchorPane" layoutX="266.0" prefHeight="790.0" prefWidth="1273.0" />
+      <AnchorPane fx:id="anchorPane" layoutX="270.0" prefHeight="798.0" prefWidth="1270.0" />
    </children>
 </AnchorPane>
