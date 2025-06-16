@@ -37,7 +37,6 @@
             <TableColumn fx:id="tableDAte" prefWidth="336.53338623046875" style="-fx-background-color: #f39c12; -fx-border-color: #000; -fx-border-width: 1 1px 0 0;" text="DATE" />
         </columns>
       </TableView>
-      <Button fx:id="back" layoutX="27.0" layoutY="29.0" mnemonicParsing="false" onAction="#bakAction" style="-fx-background-color: black;" text="BACK" textFill="WHITE" underline="true" />
       <TextField fx:id="payMethod" layoutX="535.0" layoutY="331.0" prefHeight="31.0" prefWidth="210.0" promptText="payment_method" style="-fx-background-color: transparent; -fx-border-width: 0 0 1px 0; -fx-border-color: black;" />
       <Label layoutX="271.0" layoutY="201.0" text="PAYMENT ID">
          <font>

@@ -1,5 +1,6 @@
 package lk.project.animalhospital.Controller;
 
+import javafx.scene.layout.AnchorPane;
 import lk.project.animalhospital.bo.BOFactory;
 import lk.project.animalhospital.bo.Custom.ViewAppointmentsBO;
 import lk.project.animalhospital.model.PetTm.ViewAppointmentTM;
@@ -75,6 +76,24 @@ public class ViewAppointments implements Initializable {
     @FXML
     private TableColumn<ViewAppointmentTM, String> tableTime;
 
+    @FXML
+    private AnchorPane anchorPane;
+
+    @FXML
+    void backIDAction(ActionEvent event) {
+        try {
+            anchorPane.getChildren().clear();
+            AnchorPane load = FXMLLoader.load(getClass().getResource("/view/pet.fxml"));
+            load.getStylesheets().add(getClass().getResource("/Css/Login.css").toExternalForm());
+            load.prefWidthProperty().bind(anchorPane.widthProperty());
+            load.prefHeightProperty().bind(anchorPane.heightProperty());
+            anchorPane.getChildren().add(load);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+
     ViewAppointmentsBO viewAppointmentsBO = (ViewAppointmentsBO) BOFactory.getInstance().getBO(BOFactory.BOType.VIEW_APPOINTMENTS);
 
     @FXML
@@ -83,22 +102,6 @@ public class ViewAppointments implements Initializable {
         if (viewAppointmentTM != null) {
             tableAptID.setText(viewAppointmentTM.getAppointmentId());
             delete.setDisable(false);
-        }
-
-    }
-
-    @FXML
-    void backAction(ActionEvent event) {
-        try {
-            Stage stage = (Stage) back.getScene().getWindow();
-            Scene scene =new Scene(FXMLLoader.load(getClass().getResource("/view/Appointments.fxml")));
-            scene.getStylesheets().add(getClass().getResource("/Css/Login.css").toExternalForm());
-            stage.setScene(scene);
-            stage.setTitle("Pets & Vets Animal Hospital");
-            stage.setResizable(false);
-            stage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
         }
 
     }

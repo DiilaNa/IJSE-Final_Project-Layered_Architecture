@@ -98,7 +98,6 @@
             <TableColumn fx:id="tableAppointments" prefWidth="324.79998779296875" style="-fx-background-color: #f39c12; -fx-border-color: #000; -fx-border-width: 2 1px 0 0;" text="APPOINTMENT ID" />
         </columns>
       </TableView>
-      <Button fx:id="back" layoutX="43.0" layoutY="24.0" mnemonicParsing="false" onAction="#backAction" style="-fx-background-color: black;" text="BACK" textFill="WHITE" underline="true" />
       <ComboBox fx:id="ownerMail" layoutX="238.0" layoutY="159.0" prefHeight="25.0" prefWidth="198.0" promptText="select an E-mail" style="-fx-background-color: transparent; -fx-border-width: 0 0 1px 0; -fx-border-color: black;" />
       <TextField fx:id="subject" layoutX="238.0" layoutY="211.0" prefHeight="26.0" prefWidth="302.0" promptText="write a subject for your mail" />
       <TextArea fx:id="maildescription" layoutX="113.0" layoutY="263.0" prefHeight="159.0" prefWidth="442.0" />

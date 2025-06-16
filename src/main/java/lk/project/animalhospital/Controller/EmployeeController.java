@@ -86,20 +86,6 @@ public class EmployeeController implements Initializable {
     EmployeeBO employeeBO = (EmployeeBO) BOFactory.getInstance().getBO(BOFactory.BOType.EMPLOYEE);
 
     @FXML
-    void backAction(ActionEvent event) throws IOException {
-
-            Stage stage = (Stage) back.getScene().getWindow();
-            Scene scene =new Scene(FXMLLoader.load(getClass().getResource("/view/dashboard.fxml")));
-            scene.getStylesheets().add(getClass().getResource("/Css/Login.css").toExternalForm());
-            stage.setScene(scene);
-            stage.setTitle("Pets & Vets Animal Hospital");
-            stage.setResizable(false);
-            stage.show();
-
-
-    }
-
-    @FXML
     void deleteAction(ActionEvent event) {
         String employeeID = empId.getText();
         String selectedAptId = appt.getValue();

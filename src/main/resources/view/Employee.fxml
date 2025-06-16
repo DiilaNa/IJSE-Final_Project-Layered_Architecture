@@ -65,7 +65,6 @@
             <TableColumn fx:id="tableContactNo" prefWidth="355.199951171875" style="-fx-background-color: #f39c12; -fx-border-color: #000; -fx-border-width: 1 1px 0 0;" text="CONTACT NO" />
         </columns>
       </TableView>
-      <Button fx:id="back" layoutX="25.0" layoutY="24.0" mnemonicParsing="false" onAction="#backAction" style="-fx-background-color: black; -fx-background-radius: 21;" text="BACK" textFill="WHITE" underline="true" />
       <Label fx:id="empId" layoutX="432.0" layoutY="210.0" text="EMPLOYEE ID">
          <font>
             <Font size="21.0" />

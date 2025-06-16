@@ -1,5 +1,6 @@
 package lk.project.animalhospital.Controller;
 
+import javafx.scene.layout.AnchorPane;
 import lk.project.animalhospital.bo.BOFactory;
 import lk.project.animalhospital.bo.Custom.AppointmentsBO;
 import lk.project.animalhospital.model.Appointmentsdto;
@@ -97,6 +98,9 @@ public class AppointmentsController implements Initializable {
     @FXML
     private Button resetDetails;
 
+    @FXML
+    private AnchorPane anchorPane;
+
 
     private final DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("HH:mm:ss");
     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
@@ -143,31 +147,14 @@ public class AppointmentsController implements Initializable {
 
     @FXML
     void servicedetailsViewAction(ActionEvent event) {
-        try {
-            login("/view/service.fxml");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        navigateTo("/view/service.fxml");
 
     }
 
     @FXML
     void viewApt(ActionEvent event) {
-        try {
-                login("/view/View Appointments.fxml");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        navigateTo("/view/View Appointments.fxml");
     }
-
-        @FXML
-        void backIDAction(ActionEvent event) {
-            try {
-                login("/view/dashboard.fxml");
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
 
         @FXML
         void saveAPT(ActionEvent event) throws SQLException {
@@ -325,13 +312,18 @@ public class AppointmentsController implements Initializable {
             throw new RuntimeException(e);
         }
     }
-    private void login(String fxmlPath) throws IOException {
-        Stage stage = (Stage) view.getScene().getWindow();
-        Scene scene =new Scene(FXMLLoader.load(getClass().getResource(fxmlPath)));
-        scene.getStylesheets().add(getClass().getResource("/Css/Login.css").toExternalForm());
-        stage.setScene(scene);
-        stage.setTitle("Pets & Vets Animal Hospital");
-        stage.show();
 
+    private void navigateTo(String fxmlPath) {
+        try {
+            anchorPane.getChildren().clear();
+            AnchorPane load = FXMLLoader.load(getClass().getResource(fxmlPath));
+            load.getStylesheets().add(getClass().getResource("/Css/Login.css").toExternalForm());
+            load.prefWidthProperty().bind(anchorPane.widthProperty());
+            load.prefHeightProperty().bind(anchorPane.heightProperty());
+            anchorPane.getChildren().add(load);
+        } catch (IOException e) {
+            e.printStackTrace();
+            new Alert(Alert.AlertType.ERROR, "Fail to load page!").show();
+        }
     }
 }

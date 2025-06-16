@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="790.0" prefWidth="1270.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.project.animalhospital.Controller.AppointmentsController">
+<AnchorPane fx:id="anchorPane" prefHeight="790.0" prefWidth="1270.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.project.animalhospital.Controller.AppointmentsController">
    <children>
       <ImageView fx:id="image" fitHeight="645.0" fitWidth="1275.0" layoutX="-5.0" layoutY="1.0" pickOnBounds="true">
          <image>
@@ -109,7 +109,6 @@
             <Font name="Georgia Bold" size="21.0" />
          </font>
       </Label>
-      <Button fx:id="backID" layoutX="39.0" layoutY="24.0" mnemonicParsing="false" onAction="#backIDAction" style="-fx-background-color: black;" text="Back" textFill="WHITE" underline="true" />
       <DatePicker fx:id="date" layoutX="800.0" layoutY="142.0" prefHeight="24.0" prefWidth="169.0" />
       <Label layoutX="198.0" layoutY="142.0" text="PET ID">
          <font>

@@ -102,22 +102,6 @@ public class MedicineController implements Initializable {
     MedicineBO medicineBO = (MedicineBO) BOFactory.getInstance().getBO(BOFactory.BOType.MEDICINE);
 
     @FXML
-    void backAction(ActionEvent event) {
-        try {
-            Stage stage = (Stage) back.getScene().getWindow();
-            Scene scene =new Scene(FXMLLoader.load(getClass().getResource("/view/dashboard.fxml")));
-            scene.getStylesheets().add(getClass().getResource("/Css/Login.css").toExternalForm());
-            stage.setScene(scene);
-            stage.setTitle("Pets & Vets Animal Hospital");
-            stage.setResizable(false);
-            stage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-    }
-
-    @FXML
     void deleteAction(ActionEvent event) {
         String selectedMedicine = Mid.getText();
         String selectedPetIDValue = petId.getSelectionModel().getSelectedItem();

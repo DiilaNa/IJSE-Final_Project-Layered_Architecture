@@ -112,24 +112,6 @@ public class ServiceController implements Initializable {
     }
 
     @FXML
-    void backIdAction(ActionEvent event) {
-        try {
-            Stage stage = (Stage) backId.getScene().getWindow();
-            Scene scene =new Scene(FXMLLoader.load(getClass().getResource("/view/dashboard.fxml")));
-            scene.getStylesheets().add(getClass().getResource("/Css/Login.css").toExternalForm());
-            stage.setScene(scene);
-            stage.setTitle("Pets & Vets Animal Hospital");
-            stage.setResizable(false);
-            stage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-
-    }
-
-
-    @FXML
     void deleteAction(ActionEvent event) throws Exception {
         String Id = serviceID.getText();
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Are you sure?", ButtonType.YES, ButtonType.NO);

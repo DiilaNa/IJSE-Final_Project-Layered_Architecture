@@ -5,11 +5,10 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Scene;
 import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
-import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
@@ -18,38 +17,10 @@ import java.util.ResourceBundle;
 public class DashboardController implements Initializable {
 
     @FXML
-    private Button appointments;
-
-    @FXML
-    private Button emp;
-
-    @FXML
-    private Button owner;
-
-    @FXML
-    private Button paymnt;
-
-    @FXML
-    private Button pet;
-
-    @FXML
-    private Button sal;
-
-    @FXML
-    private Button service;
-
-
-    @FXML
-    private Button Invoice;
-
-    @FXML
-    private Button button;
-
-    @FXML
-    private Button SmS;
-
-    @FXML
     private AnchorPane anchorPane;
+
+    @FXML
+    private ImageView image;
 
     @FXML
     void SMSAction(ActionEvent event) {
@@ -57,8 +28,8 @@ public class DashboardController implements Initializable {
     }
 
     @FXML
-    void ShedulebtnAction(ActionEvent event) {
-        navigateTo("/view/Shedule.fxml");
+    void ScheduleBtnAction(ActionEvent event) {
+        navigateTo("/view/schedule.fxml");
     }
 
     @FXML
@@ -71,12 +42,12 @@ public class DashboardController implements Initializable {
     }
 
     @FXML
-    void appointmentsbtn(ActionEvent event) {
+    void appointmentsBtn(ActionEvent event) {
         navigateTo("/view/Appointments.fxml");
     }
 
     @FXML
-    void empbtn(ActionEvent event) {
+    void employeeBtn(ActionEvent event) {
         navigateTo("/view/Employee.fxml");
     }
 
@@ -85,27 +56,27 @@ public class DashboardController implements Initializable {
         navigateTo("/view/Medicine.fxml");
     }
     @FXML
-    void ownerbtn(ActionEvent event) {
+    void ownerBtn(ActionEvent event) {
         navigateTo("/view/Owner.fxml");
     }
 
     @FXML
-    void paymentsbtn(ActionEvent event) {
+    void paymentsBtn(ActionEvent event) {
         navigateTo("/view/Payment.fxml");
     }
 
     @FXML
-    void petbtn(ActionEvent event)  {
+    void petBtn(ActionEvent event)  {
         navigateTo("/view/pet.fxml");
     }
 
     @FXML
-    void salarybtn(ActionEvent event) {
+    void salaryBtn(ActionEvent event) {
         navigateTo("/view/Salary.fxml");
     }
 
     @FXML
-    void servicebtn(ActionEvent event){
+    void serviceBtn(ActionEvent event){
         navigateTo("/view/service.fxml");
     }
 
@@ -126,6 +97,8 @@ public class DashboardController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         refreshPage();
+        Image loginImage = new Image(getClass().getResourceAsStream("/images/Pets & Vets Logo.png"));
+        image.setImage(loginImage);
     }
 }
 

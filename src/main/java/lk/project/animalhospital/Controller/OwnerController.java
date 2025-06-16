@@ -140,22 +140,6 @@ public class OwnerController implements Initializable {
     }
 
     @FXML
-    void backbtnAction(ActionEvent event) {
-        try {
-            Stage stage = (Stage) backbtn.getScene().getWindow();
-            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/view/dashboard.fxml")));
-            scene.getStylesheets().add(getClass().getResource("/Css/Login.css").toExternalForm());
-            stage.setScene(scene);
-            stage.setTitle("Pets & Vets Animal Hospital");
-            stage.setResizable(false);
-            stage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-    }
-
-    @FXML
     void deletebtnAction(ActionEvent event) throws Exception {
         String ownerId = ownerIDS.getText();
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Are you sure?", ButtonType.YES, ButtonType.NO);

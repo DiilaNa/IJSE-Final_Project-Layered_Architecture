@@ -57,7 +57,6 @@
             <Font name="Georgia Bold Italic" size="20.0" />
          </font>
       </Label>
-      <Button fx:id="backbtn" layoutX="36.0" layoutY="29.0" mnemonicParsing="false" onAction="#backbtnAction" style="-fx-background-color: black; -fx-background-radius: 21;" text="BACK" textFill="WHITE" underline="true" />
       <Label fx:id="ownerIDS" layoutX="426.0" layoutY="188.0" prefHeight="24.0" prefWidth="141.0" text="OWNER ID">
          <font>
             <Font name="System Bold Italic" size="20.0" />
