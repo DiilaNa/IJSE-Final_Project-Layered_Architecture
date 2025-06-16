@@ -83,11 +83,7 @@ public class DashboardController implements Initializable {
 
     @FXML
     void invoiceAction(ActionEvent event) {
-        try {
-           login("/view/Invoice.fxml");
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+        navigateTo("/view/Invoice.fxml");
     }
 
     public void refreshPage() {

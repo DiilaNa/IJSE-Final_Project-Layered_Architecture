@@ -6,15 +6,15 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="900.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.project.animalhospital.Controller.InvoiceController">
+<AnchorPane prefHeight="790.0" prefWidth="1270.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.project.animalhospital.Controller.InvoiceController">
    <children>
-      <ImageView fx:id="image" fitHeight="907.0" fitWidth="1202.0" pickOnBounds="true">
+      <ImageView fx:id="image" fitHeight="790.0" fitWidth="1270.0" pickOnBounds="true">
          <image>
             <Image url="@../../../../../../Pictures/animal%20hospital/ALL%20PET.png" />
          </image>
@@ -45,7 +45,7 @@
          </font>
       </Label>
       <TextField fx:id="paymentInvName" layoutX="792.0" layoutY="130.0" prefHeight="31.0" prefWidth="190.0" style="-fx-background-color: transparent; -fx-border-width: 0 0 1px 0; -fx-border-color: black;" />
-      <TableView fx:id="table" layoutY="463.0" onMouseClicked="#tableClick" opacity="0.89" prefHeight="447.0" prefWidth="1202.0" style="-fx-background-color: f39c12;">
+      <TableView fx:id="table" layoutX="85.0" layoutY="349.0" onMouseClicked="#tableClick" opacity="0.89" prefHeight="327.0" prefWidth="1141.0" style="-fx-background-color: f39c12;">
         <columns>
             <TableColumn fx:id="tablePaymenID" prefWidth="360.0" style="-fx-background-color: #f39c12; -fx-border-color: #000; -fx-border-width: 1 1px 0 0;" text="PAYMENT ID" />
           <TableColumn fx:id="tableName" prefWidth="290.0" style="-fx-background-color: #f39c12; -fx-border-color: #000; -fx-border-width: 1 1px 0 0;" text="NAME" />
@@ -65,36 +65,36 @@
             <Font name="DejaVu Sans Bold" size="26.0" />
          </font>
       </Label>
-      <Button fx:id="save" layoutX="311.0" layoutY="376.0" mnemonicParsing="false" onAction="#saveAction" prefHeight="49.0" prefWidth="153.0" style="-fx-background-radius: 12; -fx-background-color: d35400;" text="SAVE" textFill="WHITE">
+      <Button fx:id="save" layoutX="909.0" layoutY="710.0" mnemonicParsing="false" onAction="#saveAction" prefHeight="49.0" prefWidth="153.0" style="-fx-background-radius: 12; -fx-background-color: d35400;" text="SAVE" textFill="WHITE">
          <font>
-            <Font name="DejaVu Sans Mono Bold Oblique" size="24.0" />
+            <Font name="Consolas Bold" size="26.0" />
          </font>
          <effect>
-            <ColorAdjust brightness="0.12" contrast="0.14" />
+            <DropShadow />
          </effect>
       </Button>
-      <Button fx:id="update" layoutX="552.0" layoutY="376.0" mnemonicParsing="false" onAction="#updateAction" prefHeight="49.0" prefWidth="153.0" style="-fx-background-radius: 12; -fx-background-color: d35400;" text="UPDATE" textFill="WHITE">
+      <Button fx:id="update" layoutX="675.0" layoutY="711.0" mnemonicParsing="false" onAction="#updateAction" prefHeight="49.0" prefWidth="153.0" style="-fx-background-radius: 12; -fx-background-color: d35400;" text="UPDATE" textFill="WHITE">
          <font>
-            <Font name="DejaVu Sans Mono Bold Oblique" size="26.0" />
+            <Font name="Consolas Bold" size="26.0" />
          </font>
          <effect>
-            <ColorAdjust brightness="0.12" contrast="0.12" />
+            <DropShadow />
          </effect>
       </Button>
-      <Button fx:id="delete" layoutX="768.0" layoutY="376.0" mnemonicParsing="false" onAction="#deleteAction" prefHeight="49.0" prefWidth="153.0" style="-fx-background-radius: 12; -fx-background-color: d35400;" text="DELETE" textFill="WHITE">
+      <Button fx:id="delete" layoutX="254.0" layoutY="704.0" mnemonicParsing="false" onAction="#deleteAction" prefHeight="49.0" prefWidth="153.0" style="-fx-background-radius: 12; -fx-background-color: d35400;" text="DELETE" textFill="WHITE">
          <font>
-            <Font name="DejaVu Sans Mono Bold Oblique" size="26.0" />
+            <Font name="Consolas Bold" size="26.0" />
          </font>
          <effect>
-            <ColorAdjust brightness="0.12" contrast="0.14" />
+            <DropShadow />
          </effect>
       </Button>
-      <Button fx:id="reset" layoutX="982.0" layoutY="376.0" mnemonicParsing="false" onAction="#resetAction" prefHeight="49.0" prefWidth="153.0" style="-fx-background-radius: 12; -fx-background-color: d35400;" text="RESET" textFill="WHITE">
+      <Button fx:id="reset" layoutX="454.0" layoutY="705.0" mnemonicParsing="false" onAction="#resetAction" prefHeight="49.0" prefWidth="153.0" style="-fx-background-radius: 12; -fx-background-color: d35400;" text="RESET" textFill="WHITE">
          <font>
-            <Font name="DejaVu Sans Mono Bold Oblique" size="26.0" />
+            <Font name="Consolas Bold" size="26.0" />
          </font>
          <effect>
-            <ColorAdjust brightness="0.12" contrast="0.14" />
+            <DropShadow />
          </effect>
       </Button>
    </children>
