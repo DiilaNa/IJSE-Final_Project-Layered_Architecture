@@ -51,31 +51,14 @@ public class DashboardController implements Initializable {
     @FXML
     private AnchorPane anchorPane;
 
-    private void login(String fxmlPath) throws IOException {
-        Stage stage = (Stage) button.getScene().getWindow();
-        Scene scene =new Scene(FXMLLoader.load(getClass().getResource(fxmlPath)));
-        scene.getStylesheets().add(getClass().getResource("/Css/Login.css").toExternalForm());
-        stage.setScene(scene);
-        stage.setTitle("Pets & Vets Animal Hospital");
-        stage.show();
-    }
-
     @FXML
     void SMSAction(ActionEvent event) {
-        try {
-            login("/view/Sms.fxml");
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+        navigateTo("/view/Sms.fxml");
     }
 
     @FXML
     void ShedulebtnAction(ActionEvent event) {
-        try {
-           login("/view/Shedule.fxml");
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+        navigateTo("/view/Shedule.fxml");
     }
 
     @FXML
@@ -123,11 +106,7 @@ public class DashboardController implements Initializable {
 
     @FXML
     void servicebtn(ActionEvent event){
-        try {
-            login("/view/service.fxml");
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+        navigateTo("/view/service.fxml");
     }
 
     private void navigateTo(String fxmlPath) {
