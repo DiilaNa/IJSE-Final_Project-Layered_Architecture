@@ -111,7 +111,7 @@
                   <Insets bottom="5.0" top="5.0" />
                </VBox.margin>
             </Button>
-            <Button fx:id="invent" alignment="CENTER" mnemonicParsing="false" onAction="#inventorybtn" prefHeight="50.0" prefWidth="250.0" style="-fx-background-color: #d35400; -fx-background-radius: 15;" text="MEDICINE" textFill="WHITE">
+            <Button alignment="CENTER" mnemonicParsing="false" onAction="#MedicineBTN" prefHeight="50.0" prefWidth="250.0" style="-fx-background-color: #d35400; -fx-background-radius: 15;" text="MEDICINE" textFill="WHITE">
                <font>
                   <Font size="23.0" />
                </font>

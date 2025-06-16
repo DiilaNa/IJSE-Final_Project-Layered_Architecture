@@ -24,9 +24,6 @@ public class DashboardController implements Initializable {
     private Button emp;
 
     @FXML
-    private Button invent;
-
-    @FXML
     private Button owner;
 
     @FXML
@@ -101,14 +98,9 @@ public class DashboardController implements Initializable {
     }
 
     @FXML
-    void inventorybtn(ActionEvent event) { //this is medicine button in dashboard
-        try {
-            login("/view/Medicine.fxml");
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+    void MedicineBTN(ActionEvent event) {
+        navigateTo("/view/Medicine.fxml");
     }
-
     @FXML
     void ownerbtn(ActionEvent event) {
         try {
