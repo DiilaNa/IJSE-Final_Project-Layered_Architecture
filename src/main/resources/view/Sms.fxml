@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
@@ -8,15 +9,15 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.effect.Reflection?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="770.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.project.animalhospital.Controller.SmsController">
+<AnchorPane prefHeight="770.0" prefWidth="1290.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.project.animalhospital.Controller.SmsController">
    <children>
-      <ImageView fx:id="image" fitHeight="770.0" fitWidth="1200.0" pickOnBounds="true">
+      <ImageView fx:id="image" fitHeight="770.0" fitWidth="1290.0" pickOnBounds="true">
          <image>
             <Image url="@../../../../../../Pictures/animal%20hospital/ALL%20PET.png" />
          </image>
@@ -36,50 +37,65 @@
       <ComboBox fx:id="status" layoutX="641.0" layoutY="224.0" prefHeight="25.0" prefWidth="185.0" promptText="select status" style="-fx-background-color: transparent; -fx-border-width: 0 0 1px 0; -fx-border-color: black;" />
       <Button fx:id="save" layoutX="833.0" layoutY="385.0" mnemonicParsing="false" onAction="#saveAction" prefHeight="39.0" prefWidth="127.0" style="-fx-background-color: d35400; -fx-background-radius: 12;" text="SAVE" textFill="WHITE">
          <font>
-            <Font name="DejaVu Sans Bold" size="21.0" />
+            <Font name="Georgia Bold" size="15.0" />
          </font>
          <effect>
-            <InnerShadow />
+            <Reflection />
          </effect>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </Button>
       <Button fx:id="update" layoutX="670.0" layoutY="307.0" mnemonicParsing="false" onAction="#updateAction" prefHeight="39.0" prefWidth="127.0" style="-fx-background-color: d35400; -fx-background-radius: 12;" text="UPDATE" textFill="WHITE">
          <font>
-            <Font name="DejaVu Sans Bold" size="21.0" />
+            <Font name="Georgia Bold" size="15.0" />
          </font>
          <effect>
-            <InnerShadow />
+            <Reflection />
          </effect>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </Button>
       <Button fx:id="delete" layoutX="825.0" layoutY="307.0" mnemonicParsing="false" onAction="#deleteAction" prefHeight="39.0" prefWidth="127.0" style="-fx-background-color: d35400; -fx-background-radius: 12;" text="DELETE" textFill="WHITE">
          <font>
-            <Font name="DejaVu Sans Bold" size="21.0" />
+            <Font name="Georgia Bold" size="15.0" />
          </font>
          <effect>
-            <InnerShadow />
+            <Reflection />
          </effect>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </Button>
       <Button fx:id="reset" layoutX="977.0" layoutY="307.0" mnemonicParsing="false" onAction="#resetAction" prefHeight="39.0" prefWidth="127.0" style="-fx-background-color: d35400; -fx-background-radius: 12;" text="RESET" textFill="WHITE">
          <font>
-            <Font name="DejaVu Sans Bold" size="21.0" />
+            <Font name="Georgia Bold" size="15.0" />
          </font>
          <effect>
-            <InnerShadow />
+            <Reflection />
          </effect>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </Button>
       <Button fx:id="send" layoutX="427.0" layoutY="446.0" mnemonicParsing="false" onAction="#sendAction" prefHeight="39.0" prefWidth="127.0" style="-fx-background-color: d35400; -fx-background-radius: 12;" text="SEND" textFill="WHITE">
          <font>
-            <Font name="DejaVu Sans Condensed Bold" size="21.0" />
+            <Font name="Georgia Bold" size="15.0" />
          </font>
          <effect>
-            <InnerShadow />
+            <Reflection />
          </effect>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </Button>
-      <TableView fx:id="table" layoutY="510.0" onMouseClicked="#tableAction" prefHeight="259.0" prefWidth="1200.0">
+      <TableView fx:id="table" layoutY="510.0" onMouseClicked="#tableAction" prefHeight="259.0" prefWidth="1290.0" style="-fx-background-color: #f39c12;">
         <columns>
-          <TableColumn fx:id="tableReminderNo" prefWidth="208.0" style="-fx-background-color: #f39c12; -fx-border-color: #000; -fx-border-width: 2 1px 0 0;" text="REMNDER NO" />
-          <TableColumn fx:id="tableDate" prefWidth="316.0" style="-fx-background-color: #f39c12; -fx-border-color: #000; -fx-border-width: 2 1px 0 0;" text="DATE" />
-            <TableColumn fx:id="tableStatus" prefWidth="374.0" style="-fx-background-color: #f39c12; -fx-border-color: #000; -fx-border-width: 2 1px 0 0;" text="STATUS" />
-            <TableColumn fx:id="tableAppointments" prefWidth="301.0" style="-fx-background-color: #f39c12; -fx-border-color: #000; -fx-border-width: 2 1px 0 0;" text="APPOINTMENT ID" />
+          <TableColumn fx:id="tableReminderNo" prefWidth="292.80003052949905" style="-fx-background-color: #f39c12; -fx-border-color: #000; -fx-border-width: 2 1px 0 0;" text="REMNDER NO" />
+          <TableColumn fx:id="tableDate" prefWidth="341.5999755859375" style="-fx-background-color: #f39c12; -fx-border-color: #000; -fx-border-width: 2 1px 0 0;" text="DATE" />
+            <TableColumn fx:id="tableStatus" prefWidth="328.80010986328125" style="-fx-background-color: #f39c12; -fx-border-color: #000; -fx-border-width: 2 1px 0 0;" text="STATUS" />
+            <TableColumn fx:id="tableAppointments" prefWidth="324.79998779296875" style="-fx-background-color: #f39c12; -fx-border-color: #000; -fx-border-width: 2 1px 0 0;" text="APPOINTMENT ID" />
         </columns>
       </TableView>
       <Button fx:id="back" layoutX="43.0" layoutY="24.0" mnemonicParsing="false" onAction="#backAction" style="-fx-background-color: black;" text="BACK" textFill="WHITE" underline="true" />

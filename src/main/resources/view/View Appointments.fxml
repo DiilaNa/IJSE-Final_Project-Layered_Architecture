@@ -1,30 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
-<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.effect.Reflection?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="770.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.project.animalhospital.Controller.ViewAppointments">
+<AnchorPane prefHeight="770.0" prefWidth="1290.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.project.animalhospital.Controller.ViewAppointments">
    <children>
-      <ImageView fx:id="image" fitHeight="770.0" fitWidth="1200.0" opacity="0.84" pickOnBounds="true">
+      <ImageView fx:id="image" fitHeight="770.0" fitWidth="1290.0" opacity="0.84" pickOnBounds="true">
          <image>
             <Image url="@../../../../../../Pictures/animal%20hospital/ALL%20PET.png" />
          </image>
       </ImageView>
-      <TableView fx:id="table" layoutY="184.0" onMouseClicked="#TableMouseClick" opacity="0.95" prefHeight="475.0" prefWidth="1200.0" style="-fx-background-color: f39c12;">
+      <TableView fx:id="table" layoutY="184.0" onMouseClicked="#TableMouseClick" opacity="0.95" prefHeight="475.0" prefWidth="1290.0" style="-fx-background-color: f39c12;">
         <columns>
-          <TableColumn fx:id="tableAptID" prefWidth="135.0" style="-fx-background-color: #f39c12; -fx-border-color: #000; -fx-border-width: 2 1px 0 0;" text="APPOINTMENT ID" />
-          <TableColumn fx:id="tableDate" minWidth="5.0" prefWidth="235.0" style="-fx-background-color: #f39c12; -fx-border-color: #000; -fx-border-width: 2 1px 0 0;" text="DATE" />
-            <TableColumn fx:id="tableTime" prefWidth="166.0" style="-fx-background-color: #f39c12; -fx-border-color: #000; -fx-border-width: 2 1px 0 0;" text="TIME" />
-            <TableColumn fx:id="tablePetId" prefWidth="186.0" style="-fx-background-color: #f39c12; -fx-border-color: #000; -fx-border-width: 2 1px 0 0;" text="PET ID" />
-            <TableColumn fx:id="tablePayId" prefWidth="194.0" style="-fx-background-color: #f39c12; -fx-border-color: #000; -fx-border-width: 2 1px 0 0;" text="PAYMENT ID" />
-            <TableColumn fx:id="tableStatus" prefWidth="280.0" style="-fx-background-color: #f39c12; -fx-border-color: #000; -fx-border-width: 2 1px 0 0;" text="STATUS (CANCELLED OR NOT)" />
+          <TableColumn fx:id="tableAptID" prefWidth="186.40001833438873" style="-fx-background-color: #f39c12; -fx-border-color: #000; -fx-border-width: 2 1px 0 0;" text="APPOINTMENT ID" />
+          <TableColumn fx:id="tableDate" minWidth="5.0" prefWidth="217.60000610351562" style="-fx-background-color: #f39c12; -fx-border-color: #000; -fx-border-width: 2 1px 0 0;" text="DATE" />
+            <TableColumn fx:id="tableTime" prefWidth="194.39999389648438" style="-fx-background-color: #f39c12; -fx-border-color: #000; -fx-border-width: 2 1px 0 0;" text="TIME" />
+            <TableColumn fx:id="tablePetId" prefWidth="216.800048828125" style="-fx-background-color: #f39c12; -fx-border-color: #000; -fx-border-width: 2 1px 0 0;" text="PET ID" />
+            <TableColumn fx:id="tablePayId" prefWidth="236.800048828125" style="-fx-background-color: #f39c12; -fx-border-color: #000; -fx-border-width: 2 1px 0 0;" text="PAYMENT ID" />
+            <TableColumn fx:id="tableStatus" prefWidth="240.79998779296875" style="-fx-background-color: #f39c12; -fx-border-color: #000; -fx-border-width: 2 1px 0 0;" text="STATUS (CANCELLED OR NOT)" />
         </columns>
       </TableView>
       <Label layoutX="420.0" layoutY="67.0" text="APPOINTMENT DETAILS">
@@ -32,14 +33,16 @@
             <Font name="Georgia Bold Italic" size="37.0" />
          </font>
       </Label>
-      <Button fx:id="delete" layoutX="485.0" layoutY="684.0" mnemonicParsing="false" onAction="#deleteAction" prefHeight="45.0" prefWidth="215.0" style="-fx-background-color: d35400; -fx-background-radius: 12;" text="DELETE APPOINTMENT" textFill="WHITE">
+      <Button fx:id="delete" layoutX="485.0" layoutY="684.0" mnemonicParsing="false" onAction="#deleteAction" prefHeight="45.0" prefWidth="215.0" style="-fx-background-color: d35400; -fx-background-radius: 12;" text="DELETE APPOINTMENT" textAlignment="CENTER" textFill="WHITE">
          <font>
-            <Font name="DejaVu Sans Bold" size="15.0" />
+            <Font name="Georgia Bold" size="13.0" />
          </font>
          <effect>
-            <InnerShadow />
+            <Reflection />
          </effect>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </Button>
-      <Button fx:id="back" layoutX="48.0" layoutY="25.0" mnemonicParsing="false" onAction="#backAction" style="-fx-background-color: black;" text="BACK" textFill="WHITE" underline="true" />
    </children>
 </AnchorPane>
