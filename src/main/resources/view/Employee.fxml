@@ -1,45 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.Reflection?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="790.0" prefWidth="1270.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.project.animalhospital.Controller.EmployeeController">
+<AnchorPane prefHeight="780.0" prefWidth="1268.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.project.animalhospital.Controller.EmployeeController">
    <children>
-      <ImageView fx:id="image" fitHeight="806.0" fitWidth="1260.0" layoutY="-11.0" pickOnBounds="true">
+      <ImageView fx:id="image" fitHeight="790.0" fitWidth="1270.0" layoutY="-11.0" pickOnBounds="true">
          <image>
             <Image url="@../../../../../../Pictures/animal%20hospital/ALL%20PET.png" />
          </image>
       </ImageView>
-      <Button fx:id="save" layoutX="468.0" layoutY="374.0" mnemonicParsing="false" onAction="#saveAction" prefHeight="44.0" prefWidth="135.0" style="-fx-background-color: #d35400; -fx-background-radius: 12;" text="SAVE" textFill="WHITE">
-         <font>
-            <Font size="20.0" />
-         </font>
-         <effect>
-            <InnerShadow choke="0.01" />
-         </effect></Button>
-      <Button fx:id="delete" layoutX="653.0" layoutY="374.0" mnemonicParsing="false" onAction="#deleteAction" prefHeight="44.0" prefWidth="135.0" style="-fx-background-color: #d35400; -fx-background-radius: 12;" text="DELETE" textFill="WHITE">
-         <font>
-            <Font size="20.0" />
-         </font>
-         <effect>
-            <InnerShadow />
-         </effect></Button>
-      <Button fx:id="update" layoutX="831.0" layoutY="374.0" mnemonicParsing="false" onAction="#updateAction" prefHeight="44.0" prefWidth="135.0" style="-fx-background-color: #d35400; -fx-background-radius: 12;" text="UPDATE" textFill="WHITE">
-         <font>
-            <Font size="20.0" />
-         </font>
-         <effect>
-            <InnerShadow />
-         </effect></Button>
       <Label layoutX="388.0" layoutY="50.0" prefHeight="46.0" prefWidth="442.0" text="EMPLOYEE DETAILS">
          <font>
             <Font name="Georgia Bold" size="38.0" />
@@ -74,13 +56,13 @@
       <TextField fx:id="duty" layoutX="889.0" layoutY="146.0" prefHeight="24.0" prefWidth="171.0" style="-fx-background-color: transparent; -fx-border-width: 0 0 1px 0; -fx-border-color: black;" />
       <TextField fx:id="address" layoutX="889.0" layoutY="278.0" style="-fx-background-color: transparent; -fx-border-width: 0 0 1px 0; -fx-border-color: black;" />
       <TextField fx:id="contact" layoutX="889.0" layoutY="211.0" style="-fx-background-color: transparent; -fx-border-width: 0 0 1px 0; -fx-border-color: black;" />
-      <TableView fx:id="table" layoutX="67.0" layoutY="456.0" onMouseClicked="#tableONACTION" opacity="0.92" prefHeight="342.0" prefWidth="1209.0" style="-fx-background-color: f39c12;">
+      <TableView fx:id="table" layoutY="384.0" onMouseClicked="#tableONACTION" opacity="0.92" prefHeight="262.0" prefWidth="1274.0" style="-fx-background-color: f39c12;">
         <columns>
           <TableColumn fx:id="tableEmpID" prefWidth="189.0" style="-fx-background-color: #f39c12; -fx-border-color: #000; -fx-border-width: 1 1px 0 0;" text="EMPLOYEE ID" />
           <TableColumn fx:id="tableEmpName" prefWidth="236.0" style="-fx-background-color: #f39c12; -fx-border-color: #000; -fx-border-width: 1 1px 0 0;" text="EMPLOYEE NAME" />
             <TableColumn fx:id="tableDuty" prefWidth="199.0" style="-fx-background-color: #f39c12; -fx-border-color: #000; -fx-border-width: 1 1px 0 0;" text="DUTY" />
             <TableColumn fx:id="tableAddress" prefWidth="290.0" style="-fx-background-color: #f39c12; -fx-border-color: #000; -fx-border-width: 1 1px 0 0;" text="ADDRESS" />
-            <TableColumn fx:id="tableContactNo" prefWidth="296.0" style="-fx-background-color: #f39c12; -fx-border-color: #000; -fx-border-width: 1 1px 0 0;" text="CONTACT NO" />
+            <TableColumn fx:id="tableContactNo" prefWidth="355.199951171875" style="-fx-background-color: #f39c12; -fx-border-color: #000; -fx-border-width: 1 1px 0 0;" text="CONTACT NO" />
         </columns>
       </TableView>
       <Button fx:id="back" layoutX="25.0" layoutY="24.0" mnemonicParsing="false" onAction="#backAction" style="-fx-background-color: black; -fx-background-radius: 21;" text="BACK" textFill="WHITE" underline="true" />
@@ -89,14 +71,57 @@
             <Font size="21.0" />
          </font>
       </Label>
-      <Button fx:id="reset" layoutX="1023.0" layoutY="374.0" mnemonicParsing="false" onAction="#resetAction" prefHeight="44.0" prefWidth="135.0" style="-fx-background-color: #d35400; -fx-background-radius: 12;" text="RESET" textFill="WHITE">
-         <font>
-            <Font size="20.0" />
-         </font>
-         <effect>
-            <InnerShadow />
-         </effect>
-      </Button>
       <ComboBox fx:id="appt" layoutX="324.0" layoutY="127.0" prefHeight="38.0" prefWidth="279.0" promptText="select an appointment" />
+      <Pane layoutY="645.0" prefHeight="134.0" prefWidth="1270.0" style="-fx-background-color: black;">
+         <children>
+            <Button fx:id="save" layoutX="68.0" layoutY="45.0" mnemonicParsing="false" onAction="#saveAction" prefHeight="44.0" prefWidth="135.0" style="-fx-background-color: #d35400; -fx-background-radius: 11;" text="SAVE" textFill="WHITE">
+               <font>
+                  <Font name="Consolas Bold" size="21.0" />
+               </font>
+               <effect>
+                  <Reflection />
+               </effect>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="delete" layoutX="253.0" layoutY="45.0" mnemonicParsing="false" onAction="#deleteAction" prefHeight="44.0" prefWidth="135.0" style="-fx-background-color: #d35400; -fx-background-radius: 11;" text="DELETE" textFill="WHITE">
+               <font>
+                  <Font name="Consolas Bold" size="21.0" />
+               </font>
+               <effect>
+                  <Reflection />
+               </effect>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="update" layoutX="431.0" layoutY="45.0" mnemonicParsing="false" onAction="#updateAction" prefHeight="44.0" prefWidth="135.0" style="-fx-background-color: #d35400; -fx-background-radius: 11;" text="UPDATE" textFill="WHITE">
+               <font>
+                  <Font name="Consolas Bold" size="21.0" />
+               </font>
+               <effect>
+                  <Reflection />
+               </effect>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="reset" layoutX="623.0" layoutY="45.0" mnemonicParsing="false" onAction="#resetAction" prefHeight="44.0" prefWidth="135.0" style="-fx-background-color: #d35400; -fx-background-radius: 11;" text="RESET" textFill="WHITE">
+               <font>
+                  <Font name="Consolas Bold" size="21.0" />
+               </font>
+               <effect>
+                  <Reflection />
+               </effect>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children>
+         <effect>
+            <DropShadow />
+         </effect>
+      </Pane>
    </children>
 </AnchorPane>
