@@ -32,7 +32,7 @@ The PetCare Management System enables efficient handling of:
 | Login Form            | ![Add Pet](ScreenShots/login.png)     |
 | Dashboard / Overview  | ![Dashboard](ScreenShots/DashBoard.png) |
 | View Appointment 	| ![Appointments](ScreenShots/viewAppointments.png) |
-| Jasper Reports        | ![Jasper](ScreenShots/jasper.pg)  	 |
+| Jasper Reports        | ![Jasper](ScreenShots/jasper.png)  	 |
 | Mails Sender	        | ![Mails](ScreenShots/Mail.png)  	 |
 
 
